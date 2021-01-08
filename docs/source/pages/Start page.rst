@@ -18,9 +18,11 @@ Components
     Shows the list of model folders once the directory, containing the model folders, is added to it.
     By default it has the 'Veda_models' directory added and will display the models that are in its root.
 
-    .. image:: images/new_models_list.png
+    .. image:: images/new_models_list.PNG
 
-    New directories can be added using .. image:: images/add_dir_button.png
+    New directories can be added using button:
+
+    .. image:: images/add_dir_button.PNG
 
 * **Recent list**
 

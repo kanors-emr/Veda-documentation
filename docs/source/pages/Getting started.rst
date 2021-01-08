@@ -5,18 +5,28 @@ Getting started
 Installation
 #############
 
-`Veda download link <https://showcase.dropbox.com/s/Veda2.0-5bA9awGzRHGWc5BWXuU3N>`_
+`Download Veda <https://showcase.dropbox.com/s/Veda2.0-5bA9awGzRHGWc5BWXuU3N>`_
 
-* To download and install VEDA2.0 it is recommend that the new user first takes a look at the `YouTube video <https://youtu.be/QQzZi2_vWBs>`_.
-    * There are two ways to go about it:
-        * Localhost: This just needs to be unzipped.
-        * Installer: This is a setup executable.
+* To download and install VEDA2.0 it is recommend that the new user first takes a look at the video:
+
+    .. raw:: html
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/QQzZi2_vWBs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+* There are two ways to go about it:
+    * Localhost: This just needs to be unzipped.
+    * Installer: This is a setup executable.
 
 
 Licensing
 #########
 
-`Demo video <https://youtu.be/6FFAw-rXD8A>`_
+Demo video:
+
+    .. raw:: html
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/6FFAw-rXD8A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 Once setup, to start using VEDA2.0, the user is required to get licence. Launching Veda will present an Activation screen:
 

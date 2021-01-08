@@ -2,6 +2,12 @@
 Navigator
 =======================
 
+Demo:
+
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/vxUzJNxfIqw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 * The Navigator provides a comprehensive view of all the templates in the various folders managed by VEDA-FE for the current model (youtube video).
 * The Navigator is the main vehicle for accessing, importing, and coordinating the various templates that make up a model.
 * Its main screen is divided into sub-windows according to the various types of templates managed by VEDA-FE.

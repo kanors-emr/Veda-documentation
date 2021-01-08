@@ -13,7 +13,7 @@ Overview
     * Settings
     * Properties
 
-.. image:: images/run_manager_1.png
+.. image:: images/run_manager_1.PNG
     :width: 600
 
 
@@ -25,7 +25,7 @@ DD and script files
     * Max Runs >1
     * Parametric scenario case (irrespective of Mas Runs)
 
-.. image:: images/dd_files.png
+.. image:: images/dd_files.PNG
     :width: 600
 
 

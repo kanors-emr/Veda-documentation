@@ -2,7 +2,14 @@
 Browse
 =======================
 
-* Browse both presents the actual model data and provides direct access to the input data  (`youtube video <https://youtu.be/sRMCd2wVqGY>`_).
+Demo:
+
+.. raw:: html
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/sRMCd2wVqGY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+* Browse both presents the actual model data and provides direct access to the input data.
+
 * Clicking any input cell in the data cube (red circle) provides direct access to specific cells in the excel templates for editing.
 
 .. image:: images/Browse.png
