@@ -1,0 +1,52 @@
+================
+Getting started
+================
+
+Installation
+#############
+
+`Veda download link <https://showcase.dropbox.com/s/Veda2.0-5bA9awGzRHGWc5BWXuU3N>`_
+
+* To download and install VEDA2.0 it is recommend that the new user first takes a look at the `YouTube video <https://youtu.be/QQzZi2_vWBs>`_.
+    * There are two ways to go about it:
+        * Localhost: This just needs to be unzipped.
+        * Installer: This is a setup executable.
+
+
+Licensing
+#########
+
+`Demo video <https://youtu.be/6FFAw-rXD8A>`_
+
+Once setup, to start using VEDA2.0, the user is required to get licence. Launching Veda will present an Activation screen:
+
+.. image:: images/license_form.png
+    :width: 600
+
+One can proceed by:
+    *	Hitting 'Get Trail Key'
+    *	Completing the Registration Form
+    *	Grabbing the Trail Key from your email,
+    *	Paste it into the Activation form, and request Activation
+
+
+This will then bring you to the VEDA2.0 Start Page, if activated successfully.
+
+
+Setting up GAMS
+################
+
+As part of registering VEDA2.0 a request is sent to the ETSAP Liaison Officer who will arrange for an evaluation GAMS license file to be created, sending it to the new user along with the download and install procedures here:
+
+1.	Copy the GAMSLICE someplace on your computer.
+2.	Head to http://www.gams.com/download/ and select the Windows download option for either Win-64/32, as appropriate
+3.	Run Setup by clicking on it in Windows Explorer
+
+    a)	Check “Use advanced installation mode” at the bottom of the GAMS Setup form.
+    b)	Let GAMS get installed into the default folder (\GAMS\<Win#>\<ver>.
+    c)	Check the Add GAMS directory to PATH environment variable.
+    d)	Have the GAMSLICE.TXT copied from wherever it currently resides.
+
+You may need to restart your computer to have the GAMS Path activated.
+
+Once you have VEDA installed you can try a TIMES model run.
