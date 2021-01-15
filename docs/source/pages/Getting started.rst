@@ -60,3 +60,27 @@ As part of registering VEDA2.0 a request is sent to the ETSAP Liaison Officer wh
 You may need to restart your computer to have the GAMS Path activated.
 
 Once you have VEDA installed you can try a TIMES model run.
+
+
+Uninstallation
+###############
+
+* Installer version:
+
+    If you installed Veda 2.0 using installer, the process of uninstalling is very straight forward.
+
+    Steps:
+        * Go to Control panel.
+        * Select Veda 2.0 and click uninstall.
+
+    .. image:: images/uninstall.PNG
+        :width: 400
+
+* Local host version:
+
+    * Launch the Veda2.0 version you are using.
+    * In the main menu -> Model –> Stop server and exit
+
+    .. image:: images/stop_server.PNG
+
+    * Now you can go ahead and delete the local host directory.
