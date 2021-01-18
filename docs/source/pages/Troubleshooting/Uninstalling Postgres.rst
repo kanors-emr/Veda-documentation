@@ -1,14 +1,17 @@
 Uninstalling Postgres
 ======================
 
-Steps:
-    * Make sure you have permission to uninstall program from your computer. Contact your IT administrator if you do not have permissions.
+.. note::
+    * Make sure you have permission to uninstall programs from your computer. Contact your IT administrator if you do not have permissions.
     * In case your anti- virus is preventing you from uninstalling it. Stop or pause your anti- virus.
+
+Steps:
     * Stop\\Delete "veda-db" service:
         * Open Task manager
         * Look for a service called "veda-db".
 
-            .. image:: images/veda-service.PNG
+        .. image:: images/veda-service.PNG
+
         * Delete "veda-db" service:
                 1. Open command prompt as an administrator
 
@@ -21,19 +24,25 @@ Steps:
                 .. image:: images/cmd-stop_service.PNG
 
     * After getting success message, you can go ahead and uninstall Postgres:
-        .. image:: images/uninstall-postgres.PNG
+
+    .. image:: images/uninstall-postgres.PNG
 
     * If the pgsql folder in Veda2.0 directory is empty then it is safe to delete it.
 
     * It is safe to delete the Veda2.0 directory as well, if it does not contain any user's model folders.
-        .. image:: images/empty_veda_dir.PNG
+
+    .. image:: images/empty_veda_dir.PNG
+
     * Delete Postgres from Registry:
         * Open Registry editor as an administrator
-            .. image:: images/registry-admin.PNG
+
+        .. image:: images/registry-admin.PNG
+
         * From the list, right-click and delete the following folders:
             1. PostgreSQL
             2. PostgreSQL Global Development Group
-                .. image:: images/registry_editor.PNG
+
+            .. image:: images/registry_editor.PNG
 
 
 
