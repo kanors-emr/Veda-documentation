@@ -21,6 +21,7 @@ Welcome to Veda 2.0's documentation!
    pages/TIMES attributes
    pages/Run Manager
    pages/Results
+   pages/Troubleshooting
 
 Indices and tables
 ==================

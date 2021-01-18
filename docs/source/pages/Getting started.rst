@@ -73,8 +73,10 @@ Uninstallation
         * Go to Control panel.
         * Select Veda 2.0 and click uninstall.
 
-    .. image:: images/uninstall.PNG
-        :width: 400
+        .. image:: images/uninstall.PNG
+            :width: 400
+
+        * Make sure that Postgres has also been removed. Usually the process of uninstallation also removes Postgres from the computer. But if it does not, please go to :ref:`Uninstalling Postgres`.
 
 * Local host version:
 
