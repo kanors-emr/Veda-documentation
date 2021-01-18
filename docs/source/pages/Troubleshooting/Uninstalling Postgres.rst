@@ -14,7 +14,6 @@ Steps:
 
         * Delete "veda-db" service:
                 1. Open command prompt as an administrator
-
                 .. image:: images/admin-cmd.PNG
 
                 2. Run the following commands:
