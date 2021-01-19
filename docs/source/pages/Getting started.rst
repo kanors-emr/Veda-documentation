@@ -76,16 +76,20 @@ Uninstallation
         .. image:: images/uninstall.PNG
             :width: 400
 
-        * Make sure that Postgres has also been removed. Usually the process of uninstallation also removes Postgres from the computer. But if it does not, please go to :ref:`Uninstalling Postgres`.
+        * Make sure that Postgres has also been removed. Usually the process of uninstallation also removes Postgres from the computer.
+        * Sometimes unistallation ends prematurely (image below) and Postgres is not removed. In such case, please go to :ref:`Uninstalling Postgres` for further instructions.
 
-* Local host version:
+        .. image:: images/Veda_Premature_Error.PNG
+            :width: 400
+
+* Localhost version:
 
     * Launch the Veda2.0 version you are using.
     * In the main menu -> Model –> Stop server and exit
 
     .. image:: images/stop_server.PNG
 
-    * Now you can go ahead and delete the local host directory.
+    * Now you can go ahead and delete the localhost directory.
 
 
 Updation
