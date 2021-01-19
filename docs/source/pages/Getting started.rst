@@ -7,7 +7,7 @@ Installation
 
 `Download Veda <https://showcase.dropbox.com/s/Veda2.0-5bA9awGzRHGWc5BWXuU3N>`_
 
-* To download and install VEDA2.0 it is recommend that the new user first takes a look at the video:
+* To download and install VEDA2.0 it is recommended that the new user first takes a look at the video:
 
     .. raw:: html
 
@@ -86,3 +86,17 @@ Uninstallation
     .. image:: images/stop_server.PNG
 
     * Now you can go ahead and delete the local host directory.
+
+
+Updation
+#########
+
+Right now the process of updation requires the user to uninstall the old version
+and install the new version of Veda2.0 manually.
+
+Refer the following links for help:
+    * :ref:`Uninstallation`
+    * :ref:`Installation`
+
+
+
