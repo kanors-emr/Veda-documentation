@@ -14,5 +14,6 @@ All VEDA-TIMES model input data is organized in Excel workbooks templates. VEDA-
     * e.g. for DemoS_012 will be Veda\\GAMS_WrkTIMES\\DemoS_012
 
 .. image:: images/data_flow_and_files.PNG
+    :width: 700
 
 
