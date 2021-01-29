@@ -5,7 +5,7 @@ Getting started
 Installation
 #############
 
-`Download Veda <https://showcase.dropbox.com/s/Veda2.0-5bA9awGzRHGWc5BWXuU3N>`_
+`Download Veda <https://github.com/kanors-emr/Veda2.0-Installation>`_
 
 * To download and install VEDA2.0 it is recommended that the new user first takes a look at the video:
 

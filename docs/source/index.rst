@@ -12,6 +12,7 @@ Welcome to Veda 2.0's documentation!
 
    pages/introduction
    pages/Getting started
+   pages/Migration
    pages/Start page
    pages/Veda Menu
    pages/Navigator
