@@ -7,12 +7,11 @@ Installation
 
 
 
-.. raw:: html
+* .. raw:: html
 
-   <a href="https://github.com/kanors-emr/Veda2.0-Installation" target="_blank">Download Veda</a>
+    <a href="https://github.com/kanors-emr/Veda2.0-Installation" target="_blank">Download Veda</a>
 
-
-* To download and install VEDA2.0 it is recommended that the new user first takes a look at the video:
+* It is recommended that the new user first takes a look at the video:
 
     .. raw:: html
 
