@@ -1,7 +1,7 @@
 ============
 Introduction
 ============
-VEDA means “Knowledge” in Sanskrit. It is a software tool to convert modelers knowledge into model input, and numerical output from models into knowledge.
+VEDA means “Knowledge” in Sanskrit. It is a software tool to convert modeler's knowledge into input for models, and output from models into knowledge.
 Veda2.0 is a data handling system for The Integrated MARKAL-EFOM System (TIMES) - a bottom-up optimization model for energy-environment systems.
 It is based on a modular approach that organizes the model input data, and results, into an integrated database.
 Information is visible via tabular browsing (data cubes) and network diagrams.
