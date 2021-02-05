@@ -16,19 +16,24 @@ Main Menu
 * Information
     * TIMES attribute: presents all the TIMES model generator attributes/parameters.
     * VEDA tags: list of all VEDA tags by template (e.g.~FI_T).
-    * Model: different options (e.g. Sync, NSV candidates, etc).
+    * Model:
+        * Sync log:
+        * NSV candidates:
+        * UD sets usage:
+        * Tag details:
+        * Manage duplicates:
 * Tools
     * User Options: syncing options update and layout settings.
     * Update TIMES Code: to update the TIMES source code.
     * Delete Log: to delete model log files.
     * Convert XLS to XLSX/M: converting xls files into xlsx/m files.
     * Jacobian Analysis: this option can be used to improve the scaling of models, showing all equations (and variables) where the largest and smallest coefficients are different by more than 4 orders of magnitude.
-    * Import GDX Files: to import GDX and VD files from other models.
-    * Import VD Files:
-    * License information:
+    * Import GDX Files: to import data GDX files.
+    * Import VD Files: to import VD files.
+    * License information: to deactivate licenses or to change the license key (deactivate first).
     * Sets
-        *Browser
-        *Editor
+        * Browser
+        * Editor
 * Reports: available only in the advanced version.
     * Select
     * Create
