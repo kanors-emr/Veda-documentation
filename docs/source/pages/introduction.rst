@@ -9,11 +9,12 @@ It is used to develop and manage model runs and to analyse model results.
 
 Philosophy and core principles
     * Most of the data used by energy modelers is already in spreadsheets, or it can get there easily. The interface should be able to read formats that analysts find intuitive, rather than forcing them to enter information via a separate UI.
-    * Assumptions should be expressed in the original form; data preprocessing should be minimal.
+    * Assumptions should be expressed in the original form; data pre-processing should be minimal.
+        * Veda can read a wide variety of layouts - timeseries, regions in columns, attributes in columns etc., to minimize structural pre-processing.
+        * Veda allows rule-based manipulation of parameters and set declarations, to minimize numerical pre-processing. Massive amounts of data can be introduced or modified with very few instructions.
     * System should be modular – easy to activate/deactivate/replace sectors or regions. Different analysts should be able to work on different sectors or regions in parallel.
     * Structures and data that is common across regions should be declared only once.
     * Different layers of assumptions should coexist so that they can be activated/deactivated/permuted at run-time.
-
 
 All VEDA-TIMES model input data is organized in Excel workbooks. Veda then integrates information from all of these workbooks into a single database to generate a TIMES model.
     * The models managed by VEDA-FE are stored in a specific folder (by default \\VEDA\\VEDA_Models). Within this folder, there is a sub-folder for each individual model a user is working with, including all of the VEDA-TIMES Demo Models ((\\VEDA\\VEDA_Models\\DemoS_001, etc.).

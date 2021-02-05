@@ -2,14 +2,13 @@
 Items detail
 ============
 
-You can examine the declaration, connectivity and data details for a Process, Commodity, User constraint (UC)
-and Commodity Group (CommGrp)
+This shows the basic information, topology, and parameters for all items - processes, commodities, user constraints, and commodity groups.
 
 .. image:: images/items_detail.png
 
 
 Basic Description of a TIMES Process
-#####################################
+""""""""""""""""""""""""""""""""""""
 
 * A process converts input commodity(ies) to output commodity(ies)
 * Each process is linear (e.g. output proportional to input, investment and fixed O&M costs scale with capacity / variable O&M scale with activity)
