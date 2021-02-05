@@ -19,9 +19,10 @@ Veda 2.0 documentation
    pages/Browse
    pages/Items List
    pages/Items detail
-   pages/TIMES attributes
    pages/Run Manager
    pages/Results
+   pages/TIMES attributes
+   pages/Veda Tags
    pages/Troubleshooting
 
 Indices and tables

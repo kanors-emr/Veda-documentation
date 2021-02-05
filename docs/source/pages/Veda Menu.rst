@@ -2,10 +2,10 @@
 Main Menu
 =========
 * Model
-    * Add new: to add new model folder in navigator.
-    * Select: to select previously loaded models.
-    * Manage: provides statics about the actual loaded model.
-    * Stop server and Exit: to stop running VEDA2.0 and exit (only in the localhost installation).
+    * Add new: to add new model folder. (Better done via the Start page)
+    * Select: to select from models that have already been synced. (Better done via the Start page)
+    * Manage disc space: shows all models and the associated GDX/VD files.
+    * Stop server and Exit: to stop PosgreSQL server and exit (only in the localhost installation).
 * Modules: to launch the main functions:
     * Navigator (keyboard shortcut F6) - to see all Excel files that are included in the model.
     * Browse (F7) - for a tabular view of the input data - across all Excel files.
