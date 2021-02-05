@@ -23,6 +23,7 @@ Veda 2.0 documentation
    pages/Results
    pages/TIMES attributes
    pages/Veda Tags
+   pages/Veda Versions
    pages/Troubleshooting
 
 Indices and tables
