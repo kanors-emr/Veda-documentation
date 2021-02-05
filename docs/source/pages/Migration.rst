@@ -1,7 +1,7 @@
 =====================
 Migrating to Veda 2.0
 =====================
-This is an incomplete list of things to keep in mind, or do, when migrating to Veda2.0
+This is an incomplete list of things to keep in mind, or do, when migrating VEDA_FE models to Veda2.0
 
 Before you start
 #################
