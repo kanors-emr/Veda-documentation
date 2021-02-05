@@ -8,4 +8,4 @@ Advanced version has two additional features - sharing across users working on t
 License are priced as per institutions as well, like before. Basic version is accessible only to academic institutions.
 
 .. image:: images/veda_versions.png
-   :width: 600
+   :width: 300
