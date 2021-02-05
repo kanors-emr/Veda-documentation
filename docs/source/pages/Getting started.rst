@@ -18,7 +18,7 @@ Installation
         <iframe width="560" height="315" src="https://www.youtube.com/embed/QQzZi2_vWBs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 * There are two ways to go about it:
-    * Localhost: This just needs to be unzipped.
+    * Localhost: This just needs to be extracted.
     * Installer: This is a setup executable.
 
 
@@ -81,7 +81,7 @@ Uninstallation
             :width: 400
 
         * Make sure that Postgres has also been removed. Usually the process of uninstallation also removes Postgres from the computer.
-        * Sometimes unistallation ends prematurely (image below) and Postgres is not removed. In such case, please go to :ref:`Uninstalling Postgres` for further instructions.
+        * Sometimes uninstallation ends prematurely (image below) and Postgres is not removed. In such case, please go to :ref:`Uninstalling Postgres` for further instructions.
 
         .. image:: images/Veda_Premature_Error.PNG
             :width: 400
