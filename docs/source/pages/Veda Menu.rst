@@ -1,12 +1,18 @@
-=======================
-VEDA 2.0: Menu bar
-=======================
+=========
+Main Menu
+=========
 * Model
     * Add new: to add new model folder in navigator.
     * Select: to select previously loaded models.
     * Manage: provides statics about the actual loaded model.
-    * Stop server and Exit: to stop running VEDA2.0 and exit.
-* Modules: to open start page component (it also provide keyboard short cuts).
+    * Stop server and Exit: to stop running VEDA2.0 and exit (only in the localhost installation).
+* Modules: to launch the main functions:
+    * Navigator (keyboard shortcut F6) - to see all Excel files that are included in the model.
+    * Browse (F7) - for a tabular view of the input data - across all Excel files.
+    * Items List - lists of all items - processes, commodities, commodity groups, and user constraints.
+    * Items Detail (F8) - to see topology and input parameters for items.
+    * Run Manager (F9)  - to define and run cases.
+    * Results (F10) - to analyse model output.
 * Information
     * TIMES attribute: presents all the TIMES model generator attributes/parameters.
     * VEDA tags: list of all VEDA tags by template (e.g.~FI_T).
@@ -17,5 +23,12 @@ VEDA 2.0: Menu bar
     * Delete Log: to delete model log files.
     * Convert XLS to XLSX/M: converting xls files into xlsx/m files.
     * Jacobian Analysis: this option can be used to improve the scaling of models, showing all equations (and variables) where the largest and smallest coefficients are different by more than 4 orders of magnitude.
-    * Import GDX and VD Files: to import GDX and VD files from other models.
-    * Reports: will be enabled in future versions
+    * Import GDX Files: to import GDX and VD files from other models.
+    * Import VD Files:
+    * License information:
+    * Sets
+        *Browser
+        *Editor
+* Reports: available only in the advanced version.
+    * Select
+    * Create
