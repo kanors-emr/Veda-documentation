@@ -17,8 +17,8 @@ Veda 2.0 documentation
    pages/Veda Menu
    pages/Navigator
    pages/Browse
-   pages/Items List
    pages/Items detail
+   pages/Items List
    pages/Run Manager
    pages/Results
    pages/TIMES attributes

@@ -1,6 +1,6 @@
-=======================
+=========
 Navigator
-=======================
+=========
 
 Demo:
 
@@ -8,16 +8,16 @@ Demo:
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/vxUzJNxfIqw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-* The Navigator provides a comprehensive view of all the templates in the various folders managed by VEDA-FE for the current model (youtube video).
+* The Navigator provides a comprehensive view of all the templates in the various folders managed by Veda for the current model (youtube video).
 * The Navigator is the main vehicle for accessing, importing, and coordinating the various templates that make up a model.
-* Its main screen is divided into sub-windows according to the various types of templates managed by VEDA-FE.
+* Its main screen is divided into sub-windows according to the various types of templates managed by Veda.
 
 .. image:: images/navigator.png
    :width: 600
 
 
 Quadrants
-###################################
+#########
 
 Template containing comprehensive information about the model’s basic structure (regions, sub-regions, time-periods, time-slices, …)
 **SysSetting**
@@ -38,23 +38,23 @@ Three groups of flexible, “rule-based”, scenarios files:
 Two new components are presented:
 
 * Parametric scenarios – “programmed” multi-value suite of scenarios
-* No Seed Values – the files that are not dependant on any other template
+* No Seed Values – the files that do not provide seed values to any other scenario. These are processed in parallel.
 
 Functionality
-###############
+#############
 
 * Navigator enables easy access to any of the Excel templates constituting the currently open model
 * Double-clicking directly on any file name (or click the Excel icon next to it, in the case of the BY_Trans and SysSettings files) will open that file in Excel
 * Clicking on the folder button above each section of the Navigator will open the associated folder in Windows Explorer
-* Provides feedback as to the status of the various files and the integrated database managed by VEDA-FE according to colour legend at the bottom of form
-    * Not imported – not yet brought into VEDA-FE
+* Provides feedback as to the status of the various files and the integrated database managed by Veda according to colour legend at the bottom of form
+    * Not imported – not yet read into the database
     * Imported – selected for importing with next SYNC
-    * Consistent – template and database aligned
-    * InConsistent – template date stamp more recent that last import
+    * Consistent – templates that are in sync with the database
+    * InConsistent – file has been modified after the last SYNC operation
     * ToRemove – missing template imported previously now flagged for removal from the database
-    * FileMissing – previously imported template no longer found
+    * FileMissing – previously imported template that no longer exists in the template folder
     * FileOpen – a template currently open, so can not be processed/imported
-    * Error – if a file error happens
+    * Error – if a file has thrown an error
 
 .. image:: images/nav_files_status_legend.png
    :width: 600
@@ -67,7 +67,7 @@ Functionality
 SYNC Operation
 ###################################
 
-Synchronize imports all selected Excel workbooks into the VEDA-FE database
+Synchronize imports all selected Excel workbooks into the Veda database
 
 .. image:: images/sync_form_2.png
    :width: 600
