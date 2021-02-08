@@ -4,7 +4,9 @@ Items detail
 
 This shows the basic information, topology, and parameters for all items - processes, commodities, user constraints, and commodity groups.
 
-.. image:: images/items_detail.png
+.. image:: images/new_items_detail.PNG
+    :width: 700
+    :height: 500
 
 
 Basic Description of a TIMES Process

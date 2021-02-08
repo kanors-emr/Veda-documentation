@@ -69,7 +69,7 @@ SYNC Operation
 
 Synchronize imports all selected Excel workbooks into the Veda database
 
-.. image:: images/sync_form_2.png
+.. image:: images/new_sync_window.PNG
    :width: 600
 
 Right form traces the SYNC operation and the left reports the time needed for each step
