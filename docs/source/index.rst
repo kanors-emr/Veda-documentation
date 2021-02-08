@@ -13,8 +13,8 @@ Veda 2.0 documentation
    pages/introduction
    pages/Getting started
    pages/Migration
-   pages/Start page
    pages/Veda Menu
+   pages/Start page
    pages/Navigator
    pages/Browse
    pages/Items detail
