@@ -26,17 +26,17 @@ Model
 #####
 
 
-Sync log:
-=========
+Sync log
+========
 
-NSV candidates:
-===============
-
-UD sets usage:
+NSV candidates
 ==============
 
-Tag details:
-============
+UD sets usage
+=============
 
-Manage duplicates:
-==================
+Tag details
+===========
+
+Manage duplicates
+=================
