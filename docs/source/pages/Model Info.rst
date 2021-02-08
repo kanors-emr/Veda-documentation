@@ -29,14 +29,24 @@ Model
 Sync log
 ========
 
+<image>
+
 NSV candidates
 ==============
+
+<image>
 
 UD sets usage
 =============
 
+<image>
+
 Tag details
 ===========
 
+<image>
+
 Manage duplicates
 =================
+
+<image>
