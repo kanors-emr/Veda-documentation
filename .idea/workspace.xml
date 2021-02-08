@@ -36,7 +36,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Veda2.0-Installation" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../virtualenvs/veda-documentation" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="SvnConfiguration">
@@ -65,14 +65,15 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1611903719451">
+    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1612522137064">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="500" y="184" key="FileChooserDialogImpl/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1611903719451" />
-    <state x="184" y="0" key="SettingsEditor" timestamp="1610081640111">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="500" y="184" key="FileChooserDialogImpl/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1612522137064" />
+    <state x="194" y="0" key="SettingsEditor" timestamp="1612522725748">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1610081640111" />
+    <state x="194" y="0" key="SettingsEditor/1440.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1612522725748" />
     <state x="481" y="52" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1610950509525">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

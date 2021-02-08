@@ -11,7 +11,7 @@ TIMES Attributes
 * For each index, like Timeslice and Currency, it shows the default values that are used for each parameter.
 * For the selected attribute, the description from the TIMES manual is displayed at the bottom.
 
-.. image:: images/times_attributes.png
+.. image:: images/new_times_attributes.PNG
    :width: 600
 
 Veda Tags
@@ -29,24 +29,29 @@ Model
 Sync log
 ========
 
-<image>
+.. image:: images/sync_log_all.PNG
+    :width: 600
 
 NSV candidates
 ==============
 
-<image>
+.. image:: images/nsv_candidates.PNG
+    :width: 600
 
 UD sets usage
 =============
 
-<image>
+.. image:: images/UD_sets_usage.PNG
+    :width: 600
 
 Tag details
 ===========
 
-<image>
+.. image:: images/tag_details.PNG
+    :width: 600
 
 Manage duplicates
 =================
 
-<image>
+.. image:: images/manage_duplicates.PNG
+    :width: 400
