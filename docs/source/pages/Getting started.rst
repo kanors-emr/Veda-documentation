@@ -39,14 +39,11 @@ Once setup, to start using VEDA2.0, the user is required to get licence. Launchi
 .. image:: images/license_form.png
     :width: 600
 
-One can proceed by:
-    *	Hitting 'Get Trial Key'
-    *	Completing the Registration Form
-    *	Grabbing the Trial Key from your email,
-    *	Paste it into the Activation form, and request Activation
+If you don't have the Trial key:
+    *	Click 'Get Trial Key'
+    *	Complete the Registration form to get Trial key by email
 
-
-This will then bring you to the VEDA2.0 Start Page, if activated successfully.
+Paste it into the Activation form, and request Activation. This will then bring you to the VEDA2.0 Start Page, if activated successfully.
 
 
 Setting up GAMS
