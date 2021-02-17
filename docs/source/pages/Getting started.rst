@@ -22,8 +22,8 @@ Installation
     * Installer: This is a setup executable.
 
 
-Licensing
-#########
+Getting a Trial license
+#######################
 
 Demo video:
 

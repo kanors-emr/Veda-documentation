@@ -22,7 +22,6 @@ Veda 2.0 documentation
    pages/Run Manager
    pages/Results
    pages/Model Info
-   pages/Veda Versions
    pages/Troubleshooting
 
 Indices and tables

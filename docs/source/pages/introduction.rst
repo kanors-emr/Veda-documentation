@@ -7,6 +7,9 @@ Veda is based on a modular approach that organizes the model input data, and res
 Information is visible via tabular browsing (data cubes) and network diagrams.
 It is used to develop and manage model runs and to analyse model results.
 
+Veda is a proprietary commercial software designed and developed by KanORS-EMR. It has been supported by ETSAP since 2000. ETSAP contracting parties get a small group license for free,
+and others can purchase it from KanORS. Access to technical support and updates is subject to an annual maintenance fee (20% of the intial cost), after the first year.
+
 Philosophy and core principles
 ------------------------------
     * Most of the data used by energy modelers is already in spreadsheets, or it can get there easily. The interface should be able to read formats that analysts find intuitive, rather than forcing them to enter information via a separate UI.
@@ -31,12 +34,83 @@ Here are some keywords that have acquired their own special meanings over the la
     * **Dummy Imports**: to avoid infeasibilities arising from broken RES connections or too tight calibration bounds, VEDA creates a dummy source for each NRG, MAT and DEM commodity that is defined in the model. The basic idea is to have these sources supply at prices that are an order of magnitude higher than the normal prices in the model, so that the source of the potential infeasibility can be easily located. One process is created for each commodity type, and their operation cost can be controlled via the SysSettings file (or any other scenario file).
     * **SYNC**: Synchronize, is used for the operation one launches from the VEDA navigator, which reads the information for various Excel files into databases.
 
-All VEDA-TIMES model input data is organized in Excel workbooks. Veda then integrates information from all of these workbooks into a single database to generate a TIMES model.
-    * The models managed by Veda are stored in a specific folder (by default \\VEDA\\VEDA_Models). Within this folder, there is a sub-folder for each individual model a user is working with, including all of the VEDA-TIMES Demo Models ((\\VEDA\\VEDA_Models\\DemoS_001, etc.).
-    * Model results are stored, for each model name, in a specific folder Veda\\GAMS_WrkTIMES\\<model name>.
-    * e.g. for DemoS_012 will be Veda\\GAMS_WrkTIMES\\DemoS_012
+Architecture
+------------
+All input data resides in Excel workbooks. XLSX/M format is recommended for Veda2.0. Modularity is one of the core features of Veda. This is to make major reconfigurations
+possible and efficient. This also makes it easier for multiple people to work on different parts of the model in parallel. This is achieved by segregating the input data into the following sections:
+
+    * Core definitions of regions, timeslices, modeling years, and commodities
+    * Technologies with existing stock
+    * New technologies
+    * Demands
+    * Trades
+    * Additional parameter definitions for technologies and commodities
+
+There can be multiple files for each type of data, apart from the first one - the core definitions. In each model folder, these files are organized in the structure shown below.
+
+.. image:: images/veda_folder_structure.png
+    :width: 700
+
+Files expected in these sub-folders are as under:
+    * Root folder has SysSettings (core definitions), Base-year templates (existing techs), and set definitions.
+    * SubRES has files with new technologies
+    * SuppXLS has the scenario files (additional parameters (or modifications) for all existing and new technologies and commodities)
+        * Demands has the DEM_Alloc+Series to allocate drivers to demands, and ScenDem_<scenario name> for driver scenarios.
+        * Trades has ScenTrade__Trade_Links for defining trade links, and ScenTrade_<scenario name> for declaring attributes for trade processes (which can also be done in regular scenario files).
+
+Veda2.0 is a C#.NET application that reads these Excel files into a PostgreSQL database, offers tabular and graphical views of the data as TIMES parameters, and submits the data to the TIMES
+code.
 
 .. image:: images/data_flow_and_files.PNG
     :width: 700
 
+Versions
+--------
+There are three different versions of Veda2.0:
+    * Basic
+    * Standard
+    * Advanced
 
+The basic version works on a single core, but is still much faster than VEDA_FE/BE. Standard version uses multiple cores for certain operations, like processing FI_T
+and DINS tags, and writing DD files. In smaller models (academic use), the difference would be imperceptible.
+Advanced version has two additional features - Collaboration, and Reports.
+
+Collaborative working on a server
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Multiple users working on the same model on a server will be able to share the following:
+    * Model runs
+        * Runs from multiple users, even with the same name, will be usable in the Results module. “User” will be a dimension in the data, like region, scenario etc.
+    * Input Data GDX
+    * Results views definitions
+    * Various groups and case definitions for Run Manager
+
+Custom reports
+^^^^^^^^^^^^^^
+VEDA_BE and the Results functionality in Veda2.0 work well for interactive and production reporting. But I see two limitations, removing which can make this a lot more powerful and flexible.
+First, the *reporting variables* are trapped in tables – we don’t have direct control over them.
+Second, we cannot add dimensions to the output views – we are limited to process and commodity sets in terms of segmenting the output beyond the native indexes like attribute, region and time.
+Let’s take transportation final energy (in a rich model like the JRC_EU-TIMES) as an example: I want to see energy consumption by scenario, region, fuel, mode, size, and technology.
+Scenario and region are separate indexes, and fuel can be managed with commodity sets. But we have only process sets to deal with mode, size and technology.
+The entirely new approach of custom reports uses an Excel template to define reporting variables in a very efficient manner, and freely add
+dimensions based process/commodity names, regions and scenarios.
+
+
+License are priced as per institutions as well, like before. Basic version is accessible only to academic institutions.
+
+.. image:: images/veda_versions.png
+   :width: 500
+
+Licensing
+---------
+Veda is licensed via keys that need to be activated on each user account. A key can be activated multiple times, depending on the license size. Users who use Veda on two machines (desktop/server and
+a portable computer) can get activations added to their keys, on request. If Veda is installed on a server, license will need to be activated from each user account that accesses Veda.
+
+License administrators will get a link to a web page that shows the activation status of license keys. Organization information, which will appear on maintenance invoices, can also be updated on this page.
+
+Licenses can be moved from one user account to another by first deactivating on the old account (Tools - License Information - Deactivate your license) and activating on the new account.
+
+Licenses are perpetual, but major versions that are released after expiry of maintenance will not be accessible to users.
+Maintenance status of the license is displayed on the main form of Veda.
+
+.. image:: images/maintenance_status.png
+   :width: 700
