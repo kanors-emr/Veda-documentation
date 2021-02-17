@@ -111,9 +111,9 @@ Organization information, which will appear on maintenance invoices, can also be
 .. image:: images/lickey_information.PNG
    :width: 700
 
-Licenses can be moved from one user account to another by first deactivating on the old account (Tools - License Information - Deactivate your license) and activating on the new account.
+Licenses can be moved from one user account to another by first deactivating on the old account (Tools - License Information - Deactivate your license) and then activating on the new account.
 
-Licenses are perpetual, but major versions that are released after expiry of maintenance will not be accessible to users.
+Licenses are perpetual, but like GAMS, **license keys will not support major versions that are released after expiry of maintenance.**
 Maintenance status of the license is displayed on the main form of Veda.
 
 .. image:: images/maintenance_status.png
