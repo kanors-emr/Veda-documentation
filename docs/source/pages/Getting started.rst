@@ -25,6 +25,8 @@ Installation
 Getting a Trial license
 #######################
 
+If you have registered an evaluation version request on the ETSAP website, then you would already have a Trial license key. If not, you can get one as shown here.
+
 Demo video:
 
     .. raw:: html
@@ -38,9 +40,9 @@ Once setup, to start using VEDA2.0, the user is required to get licence. Launchi
     :width: 600
 
 One can proceed by:
-    *	Hitting 'Get Trail Key'
+    *	Hitting 'Get Trial Key'
     *	Completing the Registration Form
-    *	Grabbing the Trail Key from your email,
+    *	Grabbing the Trial Key from your email,
     *	Paste it into the Activation form, and request Activation
 
 
