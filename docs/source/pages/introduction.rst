@@ -105,7 +105,11 @@ Licensing
 Veda is licensed via keys that need to be activated on each user account. A key can be activated multiple times, depending on the license size. Users who use Veda on two machines (desktop/server and
 a portable computer) can get activations added to their keys, on request. If Veda is installed on a server, license will need to be activated from each user account that accesses Veda.
 
-License administrators will get a link to a web page that shows the activation status of license keys. Organization information, which will appear on maintenance invoices, can also be updated on this page.
+License administrators will get a link to a web page that shows all details of a key, including activation status on various user accounts.
+Organization information, which will appear on maintenance invoices, can also be updated on this page.
+
+.. image:: images/lickey_information.PNG
+   :width: 700
 
 Licenses can be moved from one user account to another by first deactivating on the old account (Tools - License Information - Deactivate your license) and activating on the new account.
 
