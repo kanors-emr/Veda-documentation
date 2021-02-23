@@ -118,3 +118,55 @@ Maintenance status of the license is displayed on the main form of Veda.
 
 .. image:: images/maintenance_status.png
    :width: 700
+
+Key enhancements over the legacy version
+----------------------------------------
+
+Broadly, there are two differences between the old and new versions of Veda:
+
+    #. VEDA_FE/BE were based on VB6/MSACCESS and Veda2.0 is on C#.NET/PostgreSQL.
+    #. Most of the features in old versions of FE/BE were built incrementally, over 20 years. All these features (and many more), are a part of the fundamental design in Veda2.0.
+
+Ease of migration and use has been kept in mind
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    * Much smoother installation process.
+    * Very stable application and reliable data processing – No Sync surprises.
+    * Results handling integrated in the same application – Veda2.0 replaces VEDA_FE + VEDA_BE.
+        * Much faster views processing.
+        * Sets and view definitions can be migrated from old SnT MDB files.
+    * Works with practically the same model input files (Excel templates) as VEDA_FE. No change in file naming conventions or tags.
+        * The few changes that are required are clearly documented. Clean models can be migrated within hours.
+        * Automated migration of set definitions and results views from Veda_SnT.MDB files makes migration a lot easier.
+    * No limit on length of item names (process, commodity, UC, commodity groups).
+
+Veda2.0 – enhanced features
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    * Various browse features, run manager, and even navigator, work very independently and can be used concurrently. Multiple models can be used concurrently.
+    * A new Start page makes it easy to work with models, also with different branches on Git. There is a section that pulls information from the Internet – to be used to display tips for users.
+    * All pivot grids have CSV export facility, which is very useful for creating input for visualization tools like Power BI and Tableau.
+    * Unit conversion is more advanced.
+    * Possible to write GAMS instructions in different locations of the RUN file and top or bottom of DD files.
+    * Milestone years can be specified directly, instead of using period lengths.
+    * All forms are extremely independent and allow very flexible layout changes. Users can continue using other modules even when the DD files are being written or the model is synchronizing.
+    * Three to ten times faster synchronization, depending on the model structure and number of cores available.
+        * Guidance provided for reducing the processing time further.
+    * DD writing is an order of magnitude faster and scales directly with number of cores.
+    * Smart filtering available throughout the application.
+    * All data is rendered in a pivot grid for browsing, like before, but the pivot tool is much improved.
+        * Handy charting facility available with all data views.
+    * Interdependence across scenario files (due to FILL/UPD/MIG tables) is tracked and reported.
+    * Column position of any tag, including FI_T and UC_T, is not important anymore, making it less error prone.
+    * Comprehensive documentation of all tags and columns supported by each.
+    * Set definitions are shared by input and results sections and it used to be difficult to keep things in sync. Now the sets file is synchronized seamlessly by both functions.
+    * Powerful sets playground feature allows interactive viewing, editing and creating new sets, which are automatically updated in the set definitions file.
+    * Open architecture: all user definitions like scenario groups, cases, results views etc are stored in (to be documented) json and CSV files. In principle, users can modify these files programmatically.
+
+Highlights of Veda2.0 – under the hood
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    * Veda2.0 uses C#.NET for UI and PostgreSQL as the back end.
+    * Based on the MVP (Model View Presenter) architecture, which makes it very stable, and makes maintenance and further development relatively easy.
+    * State-of-the-art version control processes in place for the source code.
+    * Each release undergoes elaborate testing.
+
