@@ -23,6 +23,7 @@ Veda 2.0 documentation
    pages/Results
    pages/Model Info
    pages/Troubleshooting
+   pages/version_history
 
 Indices and tables
 ==================
