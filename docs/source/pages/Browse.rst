@@ -1,9 +1,12 @@
 ======
 Browse
 ======
-All data declaration for Veda models is done in Excel files. But to *visualize* models, one should use the interface rather than relying on Excel files.
-Excel should be used only for the intitial and additional data specification. To check the declarations or topology for any particular item,
-one must use Browse (or Items detail). This is **necessary** for two reasons:
+
+.. note::
+   All data declaration for Veda models is done in Excel files. But to *visualize* models, one should use the interface rather than relying on Excel files.
+   Excel should be used only for the initial and additional data specification. To check the declarations or topology for any particular item, one must use Browse (or Items detail).
+
+This is **necessary** for two reasons:
     * You may have a syntax error and some of your declarations may have been ignored, or read differently from what you intended.
     * The declarations for a single item may be spread across several Excel files, and you will see them all in one place in the interface.
 
