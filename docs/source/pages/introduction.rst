@@ -116,6 +116,9 @@ Licenses can be moved from one user account to another by first deactivating on 
 Licenses are perpetual, but like GAMS, **license keys will not support major versions that are released after expiry of maintenance.**
 Maintenance status of the license is displayed on the main form of Veda.
 
+Normally, permanent licenses are issued after the payment is received. But users can request a permanent license once the payment process is underway. Maintenance cycle will start from the day a permanent
+license is activated.
+
 .. image:: images/maintenance_status.png
    :width: 700
 
