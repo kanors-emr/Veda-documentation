@@ -108,7 +108,7 @@ a portable computer) can get activations added to their keys, on request. If Ved
 License administrators will get a link to a web page that shows all details of a key, including activation status on various user accounts.
 Organization information, which will appear on maintenance invoices, can also be updated on this page.
 
-.. image:: images/lickey_information.PNG
+.. image:: images/lickey_information_new.PNG
    :width: 700
 
 Licenses can be moved from one user account to another by first deactivating on the old account (Tools - License Information - Deactivate your license) and then activating on the new account.
@@ -119,7 +119,7 @@ Maintenance status of the license is displayed on the main form of Veda.
 Normally, permanent licenses are issued after the payment is received. But users can request a permanent license once the payment process is underway. Maintenance cycle will start from the day a permanent
 license is activated.
 
-.. image:: images/maintenance_status.png
+.. image:: images/maintenance_status_2.png
    :width: 700
 
 Key enhancements over the legacy version
