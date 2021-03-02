@@ -119,7 +119,7 @@ Maintenance status of the license is displayed on the main form of Veda.
 Normally, permanent licenses are issued after the payment is received. But users can request a permanent license once the payment process is underway. Maintenance cycle will start from the day a permanent
 license is activated.
 
-.. image:: images/maintenance_status_2.png
+.. image:: images/maintenance_status_2.PNG
    :width: 700
 
 Key enhancements over the legacy version
