@@ -108,8 +108,8 @@ a portable computer) can get activations added to their keys, on request. If Ved
 License administrators will get a link to a web page that shows all details of a key, including activation status on various user accounts.
 Organization information, which will appear on maintenance invoices, can also be updated on this page.
 
-.. image:: images/lickey_information_new.PNG
-   :width: 700
+.. image:: images/lickey_information.PNG
+   :width: 800
 
 Licenses can be moved from one user account to another by first deactivating on the old account (Tools - License Information - Deactivate your license) and then activating on the new account.
 
