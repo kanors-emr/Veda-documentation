@@ -75,8 +75,8 @@ The academic version works on a single core, but is still much faster than VEDA_
 and DINS tags, and writing DD files. In smaller models (academic use), the difference would be imperceptible.
 Advanced version has two additional features - Collaboration, and Reports.
 
-Collaborative working on a server
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Collaborative working
+^^^^^^^^^^^^^^^^^^^^^
 Multiple users working on the same model on a server will be able to share the following:
     * Model runs
         * Runs from multiple users, even with the same name, will be usable in the Results module. “User” will be a dimension in the data, like region, scenario etc.
@@ -84,8 +84,10 @@ Multiple users working on the same model on a server will be able to share the f
     * Results views definitions
     * Various groups and case definitions for Run Manager
 
-Custom reports
-^^^^^^^^^^^^^^
+Further, the JSON files in Appdata folder will also retain username information. So, users sharing model folders will be able to use or filter out groups, cases and views created by other users.
+
+Advanced reporting
+^^^^^^^^^^^^^^^^^^
 VEDA_BE and the Results functionality in Veda2.0 work well for interactive and production reporting. But I see two limitations, removing which can make this a lot more powerful and flexible.
 First, the *reporting variables* are trapped in tables – we don’t have direct control over them.
 Second, we cannot add dimensions to the output views – we are limited to process and commodity sets in terms of segmenting the output beyond the native indexes like attribute, region and time.
@@ -94,8 +96,7 @@ Scenario and region are separate indexes, and fuel can be managed with commodity
 The entirely new approach of custom reports uses an Excel template to define reporting variables in a very efficient manner, and freely add
 dimensions based process/commodity names, regions and scenarios.
 
-
-License are priced as per institutions as well, like before. Basic version is accessible only to academic institutions.
+Licenses are priced as per institutions as well, like before. Academic version is accessible only to degree-granting institutions.
 
 .. image:: images/veda_versions.png
    :width: 500
