@@ -67,11 +67,11 @@ code.
 Versions
 --------
 There are three different versions of Veda2.0:
-    * Basic
+    * Academic
     * Standard
     * Advanced
 
-The basic version works on a single core, but is still much faster than VEDA_FE/BE. Standard version uses multiple cores for certain operations, like processing FI_T
+The academic version works on a single core, but is still much faster than VEDA_FE/BE. Standard version uses multiple cores for certain operations, like processing FI_T
 and DINS tags, and writing DD files. In smaller models (academic use), the difference would be imperceptible.
 Advanced version has two additional features - Collaboration, and Reports.
 
