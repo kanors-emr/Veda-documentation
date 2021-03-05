@@ -2,6 +2,19 @@
 Version History
 ===============
 
+225 [05Mar21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * Automatic import of data GDX discontinued
+    * Dbl-click on data values inserted by Veda shows appropriate messages
+    * Veda checks for a healthy version of Excel on the machine
+    * Windows alert sound while reading Excel files suppressed
+    * **Default layout improved in all pivot grids**
+    * **Layout can be saved with names in Browse**
+    * **Item details pivot layout is saved, like ExRES**
+
 219 [20Feb21]
 ^^^^^^^^^^^^^
 
