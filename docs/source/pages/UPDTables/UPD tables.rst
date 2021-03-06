@@ -1,5 +1,3 @@
-:orphan:
-
 =======================================
 Efficiency considerations in UPD tables
 =======================================
