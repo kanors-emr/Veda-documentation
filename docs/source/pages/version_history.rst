@@ -20,7 +20,6 @@ Version History
 
 **ALL VERSIONS**
 
-
     * License and maintenance status reflect on the main form
     * Application version displayed on bottom right of the screen (not on the title of main form anymore)
     * **localhost version should work on some machines where it did not**
@@ -34,7 +33,6 @@ Version History
 **ACADEMIC/STANDARD/ADVANCED**
 
     * **Scenario groups (from Run manager) available to filter scenarios in Browse (like process/commodity sets)**
-
 
 213 [25Jan21]
 ^^^^^^^^^^^^^
@@ -58,7 +56,6 @@ Version History
     * **ExRes: layout and filters are saved.**
     * **Pop-ups from the auxiliary EXEs, after run completion, have been suppressed.**
 
-
 202 [25Dec20]
 ^^^^^^^^^^^^^
 
@@ -71,13 +68,11 @@ Version History
     * Tools menu has a new item Sets, with browser and editor as sub-menus
     * **Sets editor: a major new functionality that allows interactive creation/editing/copying of sets. Definitions in Excel file are updated seamlessly.**
 
-
 197 [12Dec20]
 ^^^^^^^^^^^^^
 
     * Attribute **RFCmd_bot** added to introduce GAMS commands at the bottom of RUN files
     * **Element descriptions on mouseover in Results pivot grids**
-
 
 196 [06Dec20]
 ^^^^^^^^^^^^^
@@ -87,7 +82,6 @@ Version History
     * **Run manager: New menu item "Reorder scenarios" that makes it easier to manage scenario groups**
     * Start page: Right click on a folder to remove it from "New" section
     * Information - TIMES attributes updated to the current version of documentation
-
 
 194 [02Dec20]
 ^^^^^^^^^^^^^
@@ -101,7 +95,6 @@ Version History
     * Veda_SnT to Excel migration.xlsm handles possible duplication in Setrules table of Veda_SnT.MDB
     * NSV candidates reporting improved; Open File button added
     * Arrow keys supported in PivotGrid
-
 
 189 [21Nov20]
 ^^^^^^^^^^^^^
@@ -117,7 +110,6 @@ Version History
     * Disabled default loading of DemoS_012 model
     * **Units handling in Results [See ~UnitConversion table on Defaults sheet in SysSettings - DemoS models]**
 
-
 182 [07Nov20]
 ^^^^^^^^^^^^^
 
@@ -127,7 +119,6 @@ Version History
     * **GamsWrk files (\*.VD, .LST, .GDX and QACheck) can be browsed and deleted using Model -> Manage disc space -> Text files, or the Text icon on Start page.**
     * Check introduced to trap GAMS path with spaces.
     * **Run manager now reports key solution metrics after runs finish.**
-
 
 178 [28Oct20]
 ^^^^^^^^^^^^^
@@ -139,7 +130,6 @@ Version History
     * ~MileStoneYears table supports a new column "type", which can be used to declare an "EndYear" for each period specification. The milestone years don't need any value in this column.
     * More tags, like FI_Process/Comm included in Information-Model tags.
     * Seed values for UPD,MIG,FILL tags are based on a two-level sorting: If Scenario B looks for seed values that exist in SubRES S, and scenarios A and C, then the value from scenario A will be selected.
-
 
 173 [20Oct20]
 ^^^^^^^^^^^^^

@@ -1,0 +1,14 @@
+~TFM_UPD,,
+Attribute,PSET_PN,AllRegions
+INVCOST,E[_]WON*Far*,\*1.75
+INVCOST,E[_]WON*Trans*,\*1.5
+INVCOST,E[_]WON*Near*,\*1
+INVCOST,E[_]WOF*deep*Far*,\*1.8
+INVCOST,E[_]WOF*deep*Inter*,\*1.5
+INVCOST,E[_]WOF*deep*Near*,\*1.35
+INVCOST,E[_]WOF*shal*Far*,\*1.2
+INVCOST,E[_]WOF*shal*Inter*,\*1
+INVCOST,E[_]WOF*shal*Near*,\*0.9
+INVCOST,E[_]WOF*tran*Far*,\*1.32
+INVCOST,E[_]WOF*tran*Inter*,\*1.1
+INVCOST,E[_]WOF*tran*Near*,\*0.99
