@@ -5,7 +5,7 @@ Getting started
 Hardware/software requirement
 #############################
 
-Veda2.0 works on Windows machines with Windows 8/Windows server 2012 or above. Microsoft Excel is a prerequisite.
+Veda2.0 works on Windows portables, desktops, servers, and VMs, with Windows 8/Windows server 2012 or above. Microsoft Excel is a prerequisite.
 Hardware needed depends on the size and complexity of models, but here is a configuration suitable for typical TIMES models under Veda2.0:
 
     * CPU: Minimum 4 cores are recommended for STANDARD and ADVANCED licenses. 8 - 16 would be desirable for larger models.
