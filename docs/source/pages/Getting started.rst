@@ -2,9 +2,26 @@
 Getting started
 ================
 
+Hardware/software requirement
+#############################
+
+Veda2.0 works on Windows machines with Windows 8/Windows server 2012 or above. Microsoft Excel is a prerequisite.
+Hardware needed depends on the size and complexity of models, but here is a configuration suitable for typical TIMES models under Veda2.0:
+
+    * CPU: Minimum 4 cores are recommended for STANDARD and ADVANCED licenses. 8 - 16 would be desirable for larger models.
+    * RAM: 4-8 GB is enough for Veda, but GAMS needs more RAM for larger models. 32 GB would accomodate most models.
+    * HDD: 500GB - 1TB free space for Veda and GAMS files.
+
+Veda access Internet for the following functions:
+    * Licensing
+        * Source: provided on request
+    * Displaying announcements on the Start page
+        * Source: https://veda-news.readthedocs.io/
+    * Updating TIMES source code from Github
+        * Source: https://api.github.com/repos/etsap-TIMES/TIMES_model/releases/latest
+
 Installation
 #############
-
 
 
 * .. raw:: html
@@ -19,7 +36,9 @@ Installation
 
 * There are two ways to go about it:
     * Localhost: This just needs to be extracted.
+        * Port 5432 should be accessible to PostgreSQL.
     * Installer: This is a setup executable.
+        * Port 65000 should be accessible to PostgreSQL.
 
 
 Getting a Trial license
