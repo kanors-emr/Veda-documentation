@@ -6,3 +6,4 @@ Troubleshooting
     :maxdepth: 2
 
     Troubleshooting/Uninstalling Postgres
+    Troubleshooting/Excel Errors
