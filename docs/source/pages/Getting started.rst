@@ -12,7 +12,7 @@ Hardware needed depends on the size and complexity of models, but here is a conf
     * RAM: 4-8 GB is enough for Veda, but GAMS needs more RAM for larger models. 32 GB would accomodate most models.
     * HDD: 500GB - 1TB free space for Veda and GAMS files.
 
-Veda access Internet for the following functions:
+Veda accesses Internet for the following functions:
     * Licensing
         * Source: provided on request
     * Displaying announcements on the Start page

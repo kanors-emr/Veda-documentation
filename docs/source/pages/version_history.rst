@@ -2,6 +2,14 @@
 Version History
 ===============
 
+227 [12Mar21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * Default layout settings enhanced for pivot grids in all modules
+    * Layouts can be saved with names in Browse
+
 225 [05Mar21]
 ^^^^^^^^^^^^^
 
