@@ -1,6 +1,6 @@
-==========
+########
 Results
-==========
+########
 
 
 Used to analyse TIMES model results. Results are all stored in the model folder (e.g. DemoS_012) and belongs to that model

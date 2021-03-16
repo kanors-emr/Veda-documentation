@@ -1,6 +1,6 @@
-============
+#############
 Items detail
-============
+#############
 
 This shows the basic information, topology, and parameters for all items - processes, commodities, user constraints, and commodity groups.
 
@@ -10,7 +10,7 @@ This shows the basic information, topology, and parameters for all items - proce
 
 
 Basic Description of a TIMES Process
-""""""""""""""""""""""""""""""""""""
+=====================================
 
 * A process converts input commodity(ies) to output commodity(ies)
 * Each process is linear (e.g. output proportional to input, investment and fixed O&M costs scale with capacity / variable O&M scale with activity)

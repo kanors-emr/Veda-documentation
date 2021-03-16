@@ -1,9 +1,9 @@
-===============
+###########
 Run Manager
-===============
+###########
 
 Overview
-#########
+=========
 
 * The Run Manager is used to compose and submit model runs (`YouTube video <https://youtu.be/3EkFqLyl5ZE>`_)
 * Each model run is based on a Case definition comprising:
@@ -17,7 +17,7 @@ Overview
 
 
 DD and script files
-###################
+===================
 
 * There are three different possible structures of the GAMS_Wrk.. folder and sub-folders based on the following inputs:
     * Max Runs =1
@@ -29,7 +29,7 @@ DD and script files
 
 
 Case definition
-###############
+================
 .. image:: images/case_definition.png
     :width: 400
 
@@ -49,7 +49,7 @@ Case definition
 
 
 Model run submission
-####################
+=====================
 
 .. image:: images/cases_grid.png
     :height: 150

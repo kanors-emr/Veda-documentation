@@ -1,6 +1,6 @@
-=========
+#########
 Navigator
-=========
+#########
 
 Demo:
 
@@ -17,7 +17,7 @@ Demo:
 
 
 Quadrants
-#########
+=========
 
 Template containing comprehensive information about the model’s basic structure (regions, sub-regions, time-periods, time-slices, …)
 **SysSetting**
@@ -41,7 +41,7 @@ Two new components are presented:
 * No Seed Values – the files that do not provide seed values to any other scenario. These are processed in parallel.
 
 Functionality
-#############
+=============
 
 * Navigator enables easy access to any of the Excel templates constituting the currently open model
 * Double-clicking directly on any file name (or click the Excel icon next to it, in the case of the BY_Trans and SysSettings files) will open that file in Excel
@@ -65,7 +65,7 @@ Functionality
 
 
 SYNC Operation
-###################################
+===============
 
 Synchronize imports all selected Excel workbooks into the Veda database
 

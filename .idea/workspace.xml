@@ -22,7 +22,24 @@
     <list default="true" id="ea17fc62-cb2d-4698-b4e1-187c1fe3e2cd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/source/_static/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/_static/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/pages/introduction.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/introduction.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/Browse.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/Browse.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/DINSTables/DINS tables.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/DINSTables/DINS tables.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/Getting started.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/Getting started.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/Items List.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/Items List.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/Items detail.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/Items detail.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/Migration.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/Migration.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/Model Info.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/Model Info.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/Navigator.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/Navigator.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/Notes.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/Notes.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/Results.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/Results.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/Run Manager.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/Run Manager.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/Start page.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/Start page.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/Troubleshooting.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/Troubleshooting.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/Troubleshooting/Excel Errors.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/Troubleshooting/Excel Errors.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/Troubleshooting/Uninstalling Postgres.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/Troubleshooting/Uninstalling Postgres.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/UPDTables/UPD tables.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/UPDTables/UPD tables.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/Veda Menu.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/Veda Menu.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/pages/version_history.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/pages/version_history.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

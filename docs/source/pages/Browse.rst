@@ -1,6 +1,6 @@
-======
+######
 Browse
-======
+######
 
 .. note::
    All data declaration for Veda models is done in Excel files. But to *visualize* models, one MUST use the interface and NOT rely on Excel files.

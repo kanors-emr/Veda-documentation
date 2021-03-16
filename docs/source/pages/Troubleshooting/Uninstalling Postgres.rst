@@ -1,6 +1,6 @@
-======================
+######################
 Uninstalling Postgres
-======================
+######################
 
 .. note::
     * Make sure you have permission to uninstall programs from your computer. Contact your IT administrator if you do not have permissions.

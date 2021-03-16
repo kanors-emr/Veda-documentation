@@ -1,9 +1,9 @@
-================
+################
 Getting started
-================
+################
 
 Hardware/software requirement
-#############################
+=============================
 
 Veda2.0 works on Windows portables, desktops, servers, and VMs, with Windows 8/Windows server 2012 or above. Microsoft Excel is a prerequisite.
 Hardware needed depends on the size and complexity of models, but here is a configuration suitable for typical TIMES models under Veda2.0:
@@ -21,7 +21,7 @@ Veda accesses Internet for the following functions:
         * Source: https://api.github.com/repos/etsap-TIMES/TIMES_model/releases/latest
 
 Installation
-#############
+============
 
 
 * .. raw:: html
@@ -42,7 +42,7 @@ Installation
 
 
 Getting a Trial license
-#######################
+========================
 
 If you have registered an evaluation version request on the ETSAP website, then you would already have a Trial license key. If not, you can get one as shown here.
 
@@ -66,7 +66,7 @@ Paste it into the Activation form, and request Activation. This will then bring 
 
 
 Setting up GAMS
-################
+================
 
 As part of registering VEDA2.0 a request is sent to the ETSAP Liaison Officer who will arrange for an evaluation GAMS license file to be created, sending it to the new user along with the download and install procedures here:
 
@@ -85,7 +85,7 @@ Once you have VEDA installed you can try a TIMES model run.
 
 
 Uninstallation
-###############
+===============
 
 * Installer version:
 
@@ -115,7 +115,7 @@ Uninstallation
 
 
 Updation
-#########
+=========
 
 Right now the process of updation requires the user to uninstall the old version
 and install the new version of Veda2.0 manually.

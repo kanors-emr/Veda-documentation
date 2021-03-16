@@ -1,6 +1,6 @@
-=========
+##########
 Main Menu
-=========
+##########
 * Model
     * Add new: to add new model folder. (Better done via the Start page)
     * Select: to select from models that have already been synced. (Better done via the Start page)

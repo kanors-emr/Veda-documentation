@@ -1,6 +1,6 @@
-=======================
+############
 Start Page
-=======================
+############
 
 .. image:: images/start_page_default.png
     :width: 600
@@ -11,7 +11,7 @@ Once a model has been selected the StartPage will have the Module buttons and th
     :width: 600
 
 Components
-##########
+===========
 
 * **New list**
 

@@ -1,10 +1,10 @@
-=====================
+######################
 Migrating to Veda 2.0
-=====================
+######################
 This is an incomplete list of things to keep in mind, or do, when migrating VEDA_FE models to Veda2.0
 
 Before you start
-#################
+=================
 • First time you import a new model folder, you may need resolve two types of issues that were working OK with old veda:
     * Multiple Veda tables in the same Excel range
         * Need to insert empty rows/cols around tables
@@ -14,7 +14,7 @@ Before you start
 • Veda_SnT to Excel migration.xlsm, which is in the new Veda folder, can be used to migrate sets and table definitions from a VEDA_SnT.MDB file.
 
 Things that are different
-#########################
+=========================
 
 • interpolation settings table in SysSettings needs to be converted to a MIG table.
     • if updating with year=0 (without an actual seed value) then need to convert it to in INS
@@ -48,7 +48,7 @@ Things that are different
 
 
 Migration steps
-###############
+================
 • `Download Veda 2.0 <https://github.com/kanors-emr/Veda2.0-Installation>`_
 • Update the current VEDA_FE and VEDA_BE
 • Get the latest TIMES code from `this link <https://github.com/etsap-TIMES/TIMES_model>`_.

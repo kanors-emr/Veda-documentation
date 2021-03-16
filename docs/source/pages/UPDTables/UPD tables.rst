@@ -1,11 +1,11 @@
-=======================================
+#######################################
 Efficiency considerations in UPD tables
-=======================================
+#######################################
 .. note::
     Veda2.0 reports the processing time of each tag under Information > Model > Tag details. This note can help you reduce the time taken by UPD tables.
 
 Good and bad UPD tables
-------------------------
+=========================
 There can be two reasons to use the UPD tag:
 
     *	To numerically transform existing values (seed values)
@@ -28,7 +28,7 @@ The table shown below took 4 minutes to process on a very fast machine. The func
         :header-rows: 1
 
 An alternative to UPD tables
-----------------------------
+=============================
 
 You can get the seed values via a FILL-R table, and prepare a DINS (or even INS) table with transformed values.
 The table shown below will write COM_PROJ values for qualifying demands on a sheet “Demandupdate”.
