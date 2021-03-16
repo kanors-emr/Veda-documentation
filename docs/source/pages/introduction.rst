@@ -1,6 +1,6 @@
-============
+#############
 Introduction
-============
+#############
 VEDA means “Knowledge” in Sanskrit. It is a software tool to convert modeler's knowledge into input for models, and output from models into knowledge.
 Veda2.0 is a data handling system for The Integrated MARKAL-EFOM System (TIMES) - a bottom-up optimization model for energy-environment systems. It uses C#.NET for UI and PostgreSQL as the backend.
 Veda is based on a modular approach that organizes the model input data, and results, into an integrated database.
@@ -11,7 +11,7 @@ Veda is a proprietary commercial software designed and developed by KanORS-EMR. 
 and others can purchase it from KanORS. Access to technical support and updates is subject to an annual maintenance fee (20% of the intial cost), after the first year.
 
 Philosophy and core principles
-------------------------------
+==============================
     * Most of the data used by energy modelers is already in spreadsheets, or it can get there easily. The interface should be able to read formats that analysts find intuitive, rather than forcing them to enter information via a separate UI.
     * Assumptions should be expressed in the original form; data pre-processing should be minimal.
         * Veda can read a wide variety of layouts - timeseries, regions in columns, attributes in columns etc., to minimize structural pre-processing.
@@ -21,7 +21,7 @@ Philosophy and core principles
     * Different layers of assumptions should coexist so that they can be activated/deactivated/permuted at run-time.
 
 Veda lexicon
-------------
+============
 Here are some keywords that have acquired their own special meanings over the last two decades.
 
     * **Templates**: a template is normally defined as *something that determines or serves as a pattern, a model.* In the VEDA world, this refers to all the Excel files that constitute a model.
@@ -35,7 +35,7 @@ Here are some keywords that have acquired their own special meanings over the la
     * **SYNC**: Synchronize, is used for the operation one launches from the VEDA navigator, which reads the information for various Excel files into databases.
 
 Architecture
-------------
+============
 All input data resides in Excel workbooks. XLSX/M format is recommended for Veda2.0. Modularity is one of the core features of Veda. This is to make major reconfigurations
 possible and efficient. This also makes it easier for multiple people to work on different parts of the model in parallel. This is achieved by segregating the input data into the following sections:
 
@@ -65,7 +65,7 @@ code.
     :width: 700
 
 Versions
---------
+========
 There are three different versions of Veda2.0:
     * Academic
     * Standard
@@ -102,7 +102,7 @@ Licenses are priced as per institutions as well, like before. Academic version i
    :width: 500
 
 Licensing
----------
+=========
 Veda is licensed via keys that need to be activated on each user account. A key can be activated multiple times, depending on the license size. Users who use Veda on two machines (desktop/server and
 a portable computer) can get activations added to their keys, on request. If Veda is installed on a server, license will need to be activated from each user account that accesses Veda.
 
@@ -124,7 +124,7 @@ license is activated.
    :width: 700
 
 Key enhancements over the legacy version
-----------------------------------------
+========================================
 
 Broadly, there are two differences between the old and new versions of Veda:
 
@@ -145,7 +145,6 @@ Ease of migration and use has been kept in mind
 
 Veda2.0 – enhanced features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
     * Various browse features, run manager, and even navigator, work very independently and can be used concurrently. Multiple models can be used concurrently.
     * A new Start page makes it easy to work with models, also with different branches on Git. There is a section that pulls information from the Internet – to be used to display tips for users.
     * All pivot grids have CSV export facility, which is very useful for creating input for visualization tools like Power BI and Tableau.
@@ -166,9 +165,9 @@ Veda2.0 – enhanced features
     * Powerful sets playground feature allows interactive viewing, editing and creating new sets, which are automatically updated in the set definitions file.
     * Open architecture: all user definitions like scenario groups, cases, results views etc are stored in (to be documented) json and CSV files. In principle, users can modify these files programmatically.
 
+
 Highlights of Veda2.0 – under the hood
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
     * Veda2.0 uses C#.NET for UI and PostgreSQL as the back end.
     * Based on the MVP (Model View Presenter) architecture, which makes it very stable, and makes maintenance and further development relatively easy.
     * State-of-the-art version control processes in place for the source code.
