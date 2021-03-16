@@ -22,7 +22,7 @@ copyright = '2020, KanORS-EMR'
 author = 'KanORS-EMR'
 
 # The full version, including alpha/beta/rc tags
-release = '213.1.1'
+release = '227.1.1'
 
 
 # -- General configuration ---------------------------------------------------
