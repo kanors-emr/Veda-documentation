@@ -50,7 +50,9 @@ Things that are different
 Migration steps
 ================
 • `Download Veda 2.0 <https://github.com/kanors-emr/Veda2.0-Installation>`_
-• Update the current VEDA_FE and VEDA_BE
+• Update VEDA_FE and VEDA_BE to latest versions
+    * VEDA_FE
+    * VEDA_BE
 • Get the latest TIMES code from `this link <https://github.com/etsap-TIMES/TIMES_model>`_.
 • Make a copy of the model and activate in current Veda
 • Check option “Create data-only GDX” under Tools-user options
