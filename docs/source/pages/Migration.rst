@@ -64,7 +64,6 @@ Migration steps
         <a href="https://www.dropbox.com/s/khqdvr69ak1v0cu/VEDA_BE4902022.zip?dl=0" target="_blank">VEDA_BE</a>
 
 • Get the latest TIMES code from |times code link|.
-
 .. |times code link| raw:: html
 
          <a href="https://github.com/etsap-TIMES/TIMES_model" target="_blank">this link</a>
