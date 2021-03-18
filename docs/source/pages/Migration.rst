@@ -49,11 +49,26 @@ Things that are different
 
 Migration steps
 ================
-• `Download Veda 2.0 <https://github.com/kanors-emr/Veda2.0-Installation>`_
+
+• .. raw:: html
+
+    <a href="https://github.com/kanors-emr/Veda2.0-Installation" target="_blank">Download Veda</a>
+
 • Update VEDA_FE and VEDA_BE to latest versions
-    * VEDA_FE
-    * VEDA_BE
-• Get the latest TIMES code from `this link <https://github.com/etsap-TIMES/TIMES_model>`_.
+    * .. raw:: html
+
+        <a href="https://www.dropbox.com/s/20me6y0lrbajqga/VEDA_FE450838.zip?dl=0" target="_blank">VEDA_FE</a>
+
+    * .. raw:: html
+
+        <a href="https://www.dropbox.com/s/khqdvr69ak1v0cu/VEDA_BE4902022.zip?dl=0" target="_blank">VEDA_BE</a>
+
+• Get the latest TIMES code from |times code link|.
+
+.. |times code link| raw:: html
+
+         <a href="https://github.com/etsap-TIMES/TIMES_model" target="_blank">this link</a>
+
 • Make a copy of the model and activate in current Veda
 • Check option “Create data-only GDX” under Tools-user options
 • Advanced functions – case master – export
