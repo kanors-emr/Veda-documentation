@@ -66,8 +66,9 @@ Migration steps
 • Get the latest TIMES code from |times code link|.
 • Make a copy of the model and activate in current Veda
 • Check option “Create data-only GDX” under Tools-user options
-• Advanced functions – case master – export
-    • To export current case definitions
+• To export current case definitions
+    • Go to Advanced Functions – Case Master – Export
+        .. image:: images/Advancedfunction_Export_Cases.PNG
 • Run a Ref case from current Veda
     .. image:: images/old_veda_ref_case.png
 • Edit the templates for points in :ref:`Things that are different`.
