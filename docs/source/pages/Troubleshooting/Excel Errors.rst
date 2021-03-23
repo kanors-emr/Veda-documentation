@@ -2,6 +2,9 @@
 Excel Errors
 #############
 
+Error loading type library/DLL. (Exception from HRESULT: 0x80029C4A)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
     **Issue**: Unable to cast COM object of type 'Microsoft.Office.Interop.Excel.ApplicationClass' to interface type 'Microsoft.Office.Interop.Excel._Application'. This operation failed because the Query Interface call on the COM component for the interface with IID '{000208D5-0000-0000-C000-000000000046}' failed due to the following error: **Error loading type library/DLL. (Exception from HRESULT: 0x80029C4A (TYPE_E_CANTLOADLIBRARY)**).
         
     **Solution 1**: "Repair" Office Installation from the Add/Remove programs in Control Panel
@@ -33,4 +36,16 @@ Excel Errors
         .. _Office 2013: https://support.office.com/article/7c695b06-6d1a-4917-809c-98ce43f86479
         .. _Office 2010: https://support.office.com/article/1b8f3c9b-bdd2-4a4f-8c88-aa756546529d
         .. _Office 2007: https://support.office.com/article/88a8e329-3335-4f82-abb2-ecea3e319657
-            
+
+
+The remote procedure call failed. (Exception from HRESULT: 0x800706BE)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    **Issue**: Error in Syncing the model. **The remote procedure call failed. (Exception from HRESULT: 0x800706BE)**).
+
+    .. image:: images/remote_procedure_call_failed.PNG
+       :width: 600
+
+    **Reason**: The problem was caused by third-party Excel COM plug-ins.
+
+    **Solution**: How to disable the plugin: Excel > File > Options > Add-ins > Manage, then choose "COM add-ins" > Go. And then uncheck the problematic plugin.     
