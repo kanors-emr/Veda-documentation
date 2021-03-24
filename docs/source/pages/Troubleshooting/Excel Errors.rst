@@ -15,10 +15,12 @@ Error loading type library/DLL. (Exception from HRESULT: 0x80029C4A)
     * Click Modify
 
     .. image:: images/office_365.jpg
+        :width: 400
 
     * Click Repair
 
     .. image:: images/office_repair.jpg
+        :width: 400
 
 **Solution 2**: "Uninstall" Office Automatically
     .. note::
