@@ -46,6 +46,7 @@ The remote procedure call failed. (Exception from HRESULT: 0x800706BE)
     .. image:: images/remote_procedure_call_failed.PNG
        :width: 600
 
+
     **Reason**: The problem was caused by third-party Excel COM plug-ins.
 
     **Solution**: How to disable the plugin: Excel > File > Options > Add-ins > Manage, then choose "COM add-ins" > Go. And then uncheck the problematic plugin.     
