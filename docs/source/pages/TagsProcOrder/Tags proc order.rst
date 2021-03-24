@@ -2,7 +2,7 @@
 Tags processing order
 #####################
 .. note::
-    Here is the order in which files and tags are processed in Veda2.0. **|| indicates that multiple files/tags are processed on parallel threads**.
+    Here is the order in which files and tags are processed in Veda2.0. **|| indicates that multiple files/tables are processed on parallel threads**.
 
 All files selected for synchronization are scanned for Veda tags, in parallel, and all identified tags are read as tables into PostgreSQL. Tags are processed in the following order:
     * || FI_process and FI_commodity (all BY and SubRES)
@@ -10,7 +10,7 @@ All files selected for synchronization are scanned for Veda tags, in parallel, a
     * COMEMI, PRCCOMEMI, and COMMAGG
     * AVA
     * Trade links
-    * COMMGRP
+    * COMGRP
     * TOPDINS and TOPINS
     * BY Trans (works with processes defined in BY workbooks and commodities defined in SysSettings + BY)
         * || DINS
@@ -37,7 +37,3 @@ All files selected for synchronization are scanned for Veda tags, in parallel, a
     * SysSettings
         * || DINS
         * INS/UPD/MIG
-
-
-
-
