@@ -41,7 +41,7 @@ Error loading type library/DLL. (Exception from HRESULT: 0x80029C4A)
 The remote procedure call failed. (Exception from HRESULT: 0x800706BE)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Issue**: Error in Syncing the model. **The remote procedure call failed. (Exception from HRESULT: 0x800706BE)**).
+**Issue**: Error in Syncing the model. **The remote procedure call failed. (Exception from HRESULT: 0x800706BE)**.
 
     .. image:: images/remote_procedure_call_failed.PNG
        :width: 600
