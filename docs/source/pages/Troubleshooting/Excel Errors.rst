@@ -13,9 +13,9 @@ Error loading type library/DLL. (Exception from HRESULT: 0x80029C4A)
     * Search Microsoft Office (either Office 2007, Office 2010, Office 2013, Office 2016 or Office 365 and so on...)
     * Click Microsoft Office
     * Click Modify
-        .. image:: images/office_365.jpg
+    .. image:: images/office_365.jpg
     * Click Repair
-        .. image:: images/office_repair.jpg
+    .. image:: images/office_repair.jpg
 
 **Solution 2**: "Uninstall" Office Automatically
     .. note::
