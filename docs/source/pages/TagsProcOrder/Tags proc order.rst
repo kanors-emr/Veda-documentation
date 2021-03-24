@@ -6,7 +6,7 @@ Tags processing order
 
 All files selected for synchronization are scanned for Veda tags, in parallel, and all identified tags are read as tables into PostgreSQL. Tags are processed in the following order:
     * || FI_process and FI_commodity (all BY and SubRES)
-    * || FI_T tables (all BY and SubRES)
+    * || FI_T (all BY and SubRES)
     * COMEMI, PRCCOMEMI, and COMMAGG
     * AVA
     * Trade links
