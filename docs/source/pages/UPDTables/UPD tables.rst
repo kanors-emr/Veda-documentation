@@ -9,7 +9,7 @@ Good and bad UPD tables
 There can be two reasons to use the UPD tag:
 
     *	To numerically transform existing values (seed values)
-    *	To locate indexes to apply an absolute value. For example, MINOIL could have ACT_BND(LO) in various regions and years. If you want to replace all of them by 0, UPD is a good option.
+    *	To identify indexes for applying absolute values. For example, MINOIL could have ACT_BND(LO) in various regions and years. If one wanted to replace *all* of them by 0, UPD is a good option.
 
 UPD is a particularly heavy tag to process because each row involves fetching seed values from a potentially large table.
 UPD tables that have only a few rows, even if each row affects a large number of records, work quite well. For example, see the table below where investment costs for onshore wind technologies are being differentiated based on the distance information embedded in the name, and additionally based on depth, in the case of offshore wind.
