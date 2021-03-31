@@ -2,6 +2,16 @@
 Version History
 ################
 
+230 [31Mar21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * In pivot grids, elements are displayed for dimensions that are in the aggregated section, and have single items.
+    * **Batch SYNC option available on Start page**
+    * **Backup and Restore state options added in Model menu**
+    * **Default layout settings enhanced (further) for pivot grids in all modules**
+
 227 [12Mar21]
 ^^^^^^^^^^^^^
 
