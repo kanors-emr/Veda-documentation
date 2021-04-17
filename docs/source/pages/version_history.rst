@@ -2,6 +2,25 @@
 Version History
 ################
 
+231 [17Apr21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * Several UI updates on Start page and run mananger
+    * Bulk CSV export faster
+    * Debug: GAMS instructions were not being written to RUN and DD files
+    * More layout changes are being saved in Appdata folder
+    * Item Details in context menu along with ExRes
+    * Parametric scenarios not imported in batch sync
+    * Application reopens the modules that were open at the time of closing
+    * Any GDX file can be used in reference section (only those produced on the current machine were usable earlier)
+    * Tools menu - option added to open the folder with application error logs
+
+**ADVANCED VERSION**
+
+    * **Major update in default layout of Reports**
+
 230 [31Mar21]
 ^^^^^^^^^^^^^
 
