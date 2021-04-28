@@ -114,9 +114,10 @@ Uninstallation
     * Now you can go ahead and delete the localhost directory.
 
 
-Backup and Restore (Version 230 or later)
-=========================================
-The Backup and Restore feature makes the process of updating easy.
+Backup and Restore
+==================
+The Backup and Restore feature makes upgrading Veda much easier. You can back up the "state", meaning, all models that are synchronized, and all Cases that are imported in Veda.
+This is available starting version 230.
 
 Steps:
 
@@ -132,12 +133,12 @@ Steps:
     * **Restore**
 
         * Launch the new version of Veda
-        * Go to Model > Restore state, to restore your models
+        * Go to Model > Restore state, to restore your models and cases
         * Select the saved backup file
-        * Once the file is loaded, you can modify what you want to get restored
+        * Once the file is loaded, you can select the models/cases that you want to get restored
             .. image:: images/restore_form.PNG
                 :width: 400
-        * Wait for restore process to complete
+        * Click "Restore" to synchronize all selected models and import all selected cases
 
 
 Updating
@@ -146,7 +147,7 @@ The process of updating requires the user to uninstall the old version
 and install the new version of Veda2.0 manually.
 
 Refer the following links for help:
-    * :ref:`Backup and Restore (Version 230 or later)`
+    * :ref:`Backup and Restore`
     * :ref:`Uninstallation`
     * :ref:`Installation`
 
