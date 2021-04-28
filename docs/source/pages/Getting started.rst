@@ -126,6 +126,7 @@ Steps:
                 .. image:: images/backup_state_menu.PNG
             * Save the backup file in a directory of your choice
                 .. image:: images/save_backup_form.PNG
+                    :width: 400
             * Go to Model > Stop server and exit (Terminate Veda)
 
     * **Restore**
@@ -135,6 +136,7 @@ Steps:
         * Select the saved backup file
         * Once the file is loaded, you can modify what you want to get restored
             .. image:: images/restore_form.PNG
+                :width: 400
         * Wait for restore process to complete
 
 
