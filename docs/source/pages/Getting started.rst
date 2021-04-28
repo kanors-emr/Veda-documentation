@@ -114,13 +114,37 @@ Uninstallation
     * Now you can go ahead and delete the localhost directory.
 
 
-Updation
-=========
+Backup and Restore (Version 230 or later)
+=========================================
+The Backup and Restore feature makes the process of updating easy.
 
-Right now the process of updation requires the user to uninstall the old version
+Steps:
+
+    * **Backup**
+
+            * Go to Model > Backup state
+                .. image:: images/backup_state_menu.PNG
+            * Save the backup file in a directory of your choice
+                .. image:: images/save_backup_form.PNG
+            * Go to Model > Stop server and exit (Terminate Veda)
+
+    * **Restore**
+
+        * Launch the new version of Veda
+        * Go to Model > Restore state, to restore your models
+        * Select the saved backup file
+        * Once the file is loaded, you can modify what you want to get restored
+            .. image:: images/restore_form.PNG
+        * Wait for restore process to complete
+
+
+Updating
+=========
+The process of updating requires the user to uninstall the old version
 and install the new version of Veda2.0 manually.
 
 Refer the following links for help:
+    * :ref:`Backup and Restore (Version 230 or later)`
     * :ref:`Uninstallation`
     * :ref:`Installation`
 
