@@ -50,7 +50,8 @@ Things that are different
     • Veda2.0 opens files as Excel objects to search for tags and to establish the range to be read for each tag, and closes them without saving. Then they are read as XML via Exceldatareader in a second pass. Multiple files are processed in parallel for searching as well as reading. This approach has resulted in a major performance improvement and it is far more robust.
         • Files are still refreshed and saved in cases where Veda writes to them – any scenario or trans file with FILL tables and parametric scenarios.
     • Old Veda makes temp copies of files before reading them, so they are refreshed if the calculation mode is set to automatic. Each file is read in via an Excel object, which makes Excel practically unusable during the entire Sync process.
-
+• ~RFInput and ~SFInput were used to write GAMS code in RUN and scenario files, respectively. These tags are not supported anymore. Instead, there are RFCmd* and SFCmd* attributes (See Information - TIMES Attributes) for this purpose. Use Other_indexes col to write the commands, which will be sorted by the values assigned to these attributes.
+    • If you have commas or single quotes in the commands, then use a DINS-AT table, with a dummy PSET_PN col.
 
 Migration steps
 ================
