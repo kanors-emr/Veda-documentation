@@ -1,0 +1,11 @@
+XX RFInput,,
+S.No,Attribute,Text
+1,RFSwitch,\*GG\* Set LevelizedCost/OBJ Method/Cost_NPV switches
+2,RFSwitch,$SET ANNCOST LEV
+3,RFSwitch,$SET OBJ AUTO
+4,RFSwitch,$SET OBLONG YES
+5,RFSwitch,$SET MID_YEAR YES
+6,RFSwitch,$SET RPT_OPT NCAP.1 -1
+7,RFCmd,\*GG\* Invest $/HR split & UC/PRC_MARK marginals to VBE
+8,RFCmd,"RPT_OPT('OBJ','1') = 1;"
+9,RFCmd,"RPT_OPT('COMPRD','4') = 1; "
