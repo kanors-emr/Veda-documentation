@@ -7,7 +7,7 @@ DINS - Direct Insert tables
 
 .. csv-table::
         :file: XX RFInput.csv
-        :widths: 1,1,2
+        :widths: 20,30,50
         :header-rows: 2
 
 .. csv-table::
