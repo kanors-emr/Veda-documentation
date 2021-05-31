@@ -36,8 +36,10 @@ Installation
 
 * There are two ways to go about it:
     * Localhost: This just needs to be extracted.
+        * Give full read and write permissions to the folder where it is extracted.
         * Port 5432 should be accessible to PostgreSQL.
     * Installer: This is a setup executable.
+        * Create a folder where you wish to install and give it full read and write permissions.
         * Port 65000 should be accessible to PostgreSQL.
 
 
