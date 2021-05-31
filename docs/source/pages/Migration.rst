@@ -53,6 +53,7 @@ Things that are different
 • ~RFInput and ~SFInput were used to write GAMS code in RUN and scenario files, respectively. These tags are not supported anymore. Instead, there are RFCmd* and SFCmd* attributes (See Information - TIMES Attributes) for this purpose. Use Other_indexes col to write the commands, which will be sorted by the values assigned to these attributes.
     • If you have commas or single quotes in the commands, then use a DINS-AT table, with a dummy PSET_PN col.
 • FILL/FILL-R tables: If qualifying values exist in multiple scenarios, only ones from the "last scenario", like seed values for UPD/MIG tables, will be returned. VEDA_FE would return values from all scenarios. If multiple scenarios are needed for some reason, then they can be declared (comma-separated) in "SourceScen" col.
+• ~TFM* tags are expected to be on the top left of tables, but VEDA_FE used to read all columns in the range of tags, even if they were to the left of the tag itself. Veda2 ignores cols to the left to avoid the duplicate columns issue.
 
 Migration steps
 ================
