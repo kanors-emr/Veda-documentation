@@ -88,13 +88,14 @@ Further, the JSON files in Appdata folder will also retain username information.
 
 Advanced reporting
 ^^^^^^^^^^^^^^^^^^
-VEDA_BE and the Results functionality in Veda2.0 work well for interactive and production reporting. But I see two limitations, removing which can make this a lot more powerful and flexible.
+VEDA_BE and the Results functionality in Veda2.0 work well for interactive and production reporting. But there are two limitations, removing which can make this a lot more powerful and flexible.
 First, the *reporting variables* are trapped in tables – we don’t have direct control over them.
 Second, we cannot add dimensions to the output views – we are limited to process and commodity sets in terms of segmenting the output beyond the native indexes like attribute, region and time.
 Let’s take transportation final energy (in a rich model like the JRC_EU-TIMES) as an example: I want to see energy consumption by scenario, region, fuel, mode, size, and technology.
 Scenario and region are separate indexes, and fuel can be managed with commodity sets. But we have only process sets to deal with mode, size and technology.
 The entirely new approach of custom reports uses an Excel template to define reporting variables in a very efficient manner, and freely add
-dimensions based process/commodity names, regions and scenarios.
+dimensions based process/commodity names, regions and scenarios. Further, it is possible to include exogenous data in this process. It can be used to include historical energy
+balances to show historical trends in summary views, and to set up calibration checking views.
 
 Licenses are priced as per institutions as well, like before. Academic version is accessible only to degree-granting institutions.
 
