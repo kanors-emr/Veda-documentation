@@ -2,6 +2,22 @@
 Version History
 ################
 
+232 [07Jun21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * Several UI updates; smoother loading of Navigator
+    * Smart filter box color changed to dull orange - throughout the application
+    * Excel export formatting improvement
+    * GDXDiff imports files when Diff is requested and works much faster
+        * No need to import GDX files via Tools menu
+    * Added support for the following TIMES attributes: ACT_FLO, CM_GHGMAP, NCAP_BPME, NCAP_CDME, NCAP_CEH, NCAP_CLAG, NCAP_ISPCT, RCAP_BLK
+
+**ADVANCED VERSION**
+
+    * Report creation process smoother
+
 231 [17Apr21]
 ^^^^^^^^^^^^^
 
