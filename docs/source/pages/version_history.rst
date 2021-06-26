@@ -2,6 +2,21 @@
 Version History
 ################
 
+234 [26Jun21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * Several UI updates
+    * A button on the top of pivot grids (in the center) to make pivot grids full screen on all forms where they appear
+    * Absolute negative values can be declared prefixed with "~" in UPD/MIG tables.
+        * Use case: ACT_BND FX can have ~-1 in the Interpolation options MIG table in SysSettings
+    * Commodities selected for Browse will be searched in all commodity and commodity_group fields
+
+**ADVANCED VERSION**
+
+    * Report browser enhancements
+
 233 [07Jun21]
 ^^^^^^^^^^^^^
 
