@@ -2,6 +2,23 @@
 Version History
 ################
 
+236 [17Jul21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * Debug: it was not possible to drag a case to the first position in Run Manager
+    * Debug: unselecting SubRES was throwing an error during DD writing in some cases
+    * Debug: Excel export from pivot grid was rounding numbers to two decimals
+    * MaxRuns will apply to parametric scenarios as well
+    * Localhost version uses port 65001 - will be easier to work on machines that have a non-Veda PostgreSQL installation
+    * Date modified (instead of created) shown on VD file import form
+    * GAMS engine credentials can be declared under user options
+
+**ADVANCED VERSION**
+
+    * perCapita and perGDP reporting
+
 234 [26Jun21]
 ^^^^^^^^^^^^^
 
