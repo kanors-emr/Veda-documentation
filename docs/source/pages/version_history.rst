@@ -2,6 +2,18 @@
 Version History
 ################
 
+237 [23Jul21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * Debug: Batch sync had stopped working in the previous version
+
+**ADVANCED VERSION**
+
+    * Major efficiency improvement in reports processing
+    * Additional dimensions don't need the source dimensions in group by anymore
+
 236 [17Jul21]
 ^^^^^^^^^^^^^
 
