@@ -12,7 +12,7 @@ Version History
 **ADVANCED VERSION**
 
     * Major efficiency improvement in reports processing
-    * Additional dimensions don't need the source dimensions in group by anymore
+    * Additional dimensions don't need the source dimensions in "group by" anymore
 
 236 [17Jul21]
 ^^^^^^^^^^^^^
