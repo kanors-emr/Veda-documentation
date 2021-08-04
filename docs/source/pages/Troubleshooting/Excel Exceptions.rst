@@ -1,6 +1,6 @@
-#############
-Excel Errors
-#############
+#################
+Excel Exceptions
+#################
 
 Error loading type library/DLL. (Exception from HRESULT: 0x80029C4A)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -51,3 +51,6 @@ The remote procedure call failed. (Exception from HRESULT: 0x800706BE)
 **Reason**: The problem was caused by third-party Excel COM plug-ins.
 
 **Solution**: How to disable the plugin: Excel > File > Options > Add-ins > Manage, then choose "COM add-ins" > Go. And then uncheck the problematic plugin.
+
+
+
