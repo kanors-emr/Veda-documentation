@@ -2,7 +2,7 @@
 Start Page
 ############
 
-.. image:: images/start_page_default.png
+.. image:: images/Start_page_04Aug21.PNG
     :width: 600
 
 Once a model has been selected the StartPage will have the Module buttons and the Name of the current model displayed at the top of the form.
@@ -18,7 +18,7 @@ Components
     Shows the list of model folders once the directory, containing the model folders, is added to it.
     By default it has the 'Veda_models' directory added and will display the models that are in its root.
 
-    .. image:: images/new_models_list.PNG
+    .. image:: images/new_models_list-2.PNG
 
     New directories can be added using button:
 
