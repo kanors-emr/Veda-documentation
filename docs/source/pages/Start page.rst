@@ -28,7 +28,7 @@ Components
 
     Shows the list of models that were synced or added in navigator.
 
-* **Veda News**
+* **From the developers**
 
     This component displays the latest of updates regarding the development of Veda 2.0 software.
     It is updated with every release of the software.
