@@ -21,6 +21,7 @@ Veda 2.0 documentation
    pages/Items List
    pages/Run Manager
    pages/Results
+   pages/Reports
    pages/Model Info
    pages/Troubleshooting
    pages/version_history
