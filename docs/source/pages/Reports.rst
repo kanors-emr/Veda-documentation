@@ -83,7 +83,7 @@ LMA gets a lot more out of Reports
 Sources and uses of main energy forms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. raw:: html
+* .. raw:: html
 
     <a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252583" target="_blank">See it online </a> select energy form
 
@@ -94,7 +94,7 @@ Sources and uses of main energy forms
 Road transport vehicles
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. raw:: html
+* .. raw:: html
 
     <a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252590" target="_blank">See it online </a> select region
 
@@ -105,7 +105,7 @@ Road transport vehicles
 Power generation
 ^^^^^^^^^^^^^^^^^
 
-.. raw:: html
+* .. raw:: html
 
     <a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252586" target="_blank">See it online </a> select electricity/hydrogen/heat, and region
 
@@ -116,7 +116,7 @@ Power generation
 Power generation – alternate view
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. raw:: html
+* .. raw:: html
 
     <a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252588" target="_blank">See it online </a>
 
@@ -127,7 +127,7 @@ Power generation – alternate view
 Power generation – alternate view 2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. raw:: html
+* .. raw:: html
 
     <a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252589" target="_blank">See it online </a>
 
