@@ -2,6 +2,19 @@
 Version History
 ################
 
+238 [07Aug21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * **Items detail view uses colors to indicate set membership and an icon to identify the PCG**
+    * Mouseover in pivot grids displays numbers with full precision
+
+**ADVANCED VERSION**
+
+    * `Reports <https://veda-documentation.readthedocs.io/en/latest/pages/Reports.html>`_ section has been added in Veda documentation
+    * TS_Defs tag supports fields "show_me" and "discard" to give more control over aggregations
+
 237 [23Jul21]
 ^^^^^^^^^^^^^
 

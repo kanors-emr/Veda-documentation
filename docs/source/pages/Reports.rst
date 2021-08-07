@@ -1,6 +1,6 @@
-#########
+#######
 Reports
-#########
+#######
 
 The Advanced license of Veda2.0 offers a very powerful and efficient functionality to create reports. VEDA_BE and the Results functionality in Veda2.0 work
 well for interactive and even production reporting. But there are two limitations, which are removed in the Reports feature.
@@ -13,6 +13,11 @@ The entirely new approach of Reports uses an Excel template to define reporting 
 based process/commodity names, regions and scenarios. Further, it is possible to include exogenous data in this process, which can be used to include historical
 energy balances to show historical trends in summary views, and to set up calibration checking views. Population and GDP can be introduced to look at key output
 per-capita or per unit of GDP.
+
+.. note::
+    * Examples in this section are based on the `JRC_EU-TIMES model <https://github.com/KanORS-E4SMA/EU_TIMES_Veda2.0>`_. Readers can find more examples in the file LMADefs-EU_TIMES.xlsm.
+    * Reports feature is active in Trial licenses. So, users with Academic, ETSAP, or Standard license can request one to test this feature.
+
 
 Core mechanics of Report creation
 =================================
