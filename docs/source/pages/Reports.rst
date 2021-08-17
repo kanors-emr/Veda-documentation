@@ -36,6 +36,8 @@ TS (Timeslice) and UC_N. "<Pset>" embedded in the variable name creates a separa
 .. image:: images/Reports/varbls_on_com_sets.PNG
     :width: 600
 
+To be embedded in a variable name, the process set should appear in a table **~PSet_Map**. This has PSet | Desc | LDesc as columns. Text in the Desc column replaces
+<PSet> in the variable name. For example, EProd_<PSet> with PSet=ELECOA and Desc=Coal will translate into a variable EProd_Coal. LDesc column is not in use at this time.
 
 Aggregations based on Varbl and Process names
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
