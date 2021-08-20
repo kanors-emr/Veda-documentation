@@ -1,0 +1,11 @@
+~TFM_INS,,,,
+Attribute,Other_Indexes,Value,,Comment
+RFCmd_F,$SET BENCOST YES,1,,Written to FLAG section of RUN file
+RFCmd_F,$SET ANNCOST LEV,2,,
+RFCmd_F,$SET WAVER YES,3,,
+RFCmd_G,GAMS statement 1,1,,Written GAMSOPT section
+RFCmd_Glb,GAMS statement 2,2,,Written to Global parameters section
+RFCmd_Glb,GAMS statement 3,3,,
+SFCmd_T,$OFFEPS,1,,Top of the scen DD file
+SFCmd_B,GAMS statement A,3,,Bottom of the scen DD file
+SFCmd_B,GAMS statement B,4,,

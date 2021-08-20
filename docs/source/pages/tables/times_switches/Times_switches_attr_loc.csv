@@ -1,0 +1,9 @@
+Attribute,Location,Alias
+RFCmd_GAMS ,<GAMSOPTIONS>,"RFCmd_G, RFCmd"
+RFCmd_OPTIMIZER ,<OPTIMIZER>,RFCmd_O
+RFCmd_FLAGS ,<SET FLAGS>,RFCmd_F
+RFCmd_DD ,<INCLUDE DD FILES>,RFCmd_D
+RFCmd_GLOBAL ,<GLOBAL Parameters>,RFCmd_Glb
+,,
+SFCmd_top ,top of the scen DD file,"SFCmd_T, SFCmd"
+SFCmd_bot ,bottom of the scen DD file,SFCmd_B

@@ -59,3 +59,34 @@ Model run submission
 * Solving a model opens a CMD window showing the GAMS solution log
 
 .. image:: images/solve_cmd.png
+
+
+TIMES switches and GAMS code via Scenario files
+================================================
+
+Users can introduce GAMS code at five different locations in the RUN file,
+at the top of scenario DD files and at the bottom of DD files, using the new attributes given below.
+These attributes can be declared in any scenario file or in SysSettings, using INS/DINS tables.
+
+
+.. csv-table::
+        :file: tables/times_switches/Times_switches_attr_loc.csv
+        :widths: 1,1,1
+        :header-rows: 1
+
+Commands will be ordered by Value column; only rows with value>0 will be considered.
+If multiple scenarios send commands to the RUN file,
+the blocks will be ordered as per the order of scenarios in the case definition.
+
+
+.. csv-table:: Example 1
+        :file: tables/times_switches/Example1.csv
+        :widths: 20,35,15,5,50
+        :header-rows: 2
+
+
+.. csv-table:: Example 2 (from Vangelis)
+        :file: tables/times_switches/Example2.csv
+        :widths: 20,50,30
+        :header-rows: 2
+

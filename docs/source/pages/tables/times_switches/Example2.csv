@@ -1,0 +1,20 @@
+~TFM_DINS-AT,,
+RFCmd_DD ,Other_Indexes,pset_pn
+3,set nr(all_reg);,IMPNRGZ
+4,nr(all_reg)=yes$(not r(all_reg));,IMPNRGZ
+5,\*--,IMPNRGZ
+6,\*Python embedded code to remove invalid TU and TB trade processes,IMPNRGZ
+7,"set cb_p(r,p) all crossborder processes involved",IMPNRGZ
+8,\*--,IMPNRGZ
+9,;,IMPNRGZ
+10,"cb_p(r,p)=yes$gr_genmap(r,p,'CrossBorderTrade');",IMPNRGZ
+11,\*--,IMPNRGZ
+12,embeddedCode Python:,IMPNRGZ
+13,ncb_p = [],IMPNRGZ
+14,"for r,p in gams.get('cb_p'):",IMPNRGZ
+15,\*--,IMPNRGZ
+16,\*--,IMPNRGZ
+17,\*--,IMPNRGZ
+18,"gams.set('ncb_p',ncb_p)",IMPNRGZ
+19,endEmbeddedCode ncb_p,IMPNRGZ
+20,"ACT_BND(R,T,P,S,'UP')$ncb_p(r,p) = EPS;",IMPNRGZ
