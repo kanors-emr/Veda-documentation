@@ -28,6 +28,43 @@ DD and script files
     :width: 600
 
 
+Modifying RUN files
+===================
+
+There are new attributes to write TIMES switches or GAMS code at five different locations in the RUN file. Further, these declarations can also be made
+at the top or bottom of scenario DD files (last two attributes in the table below). The attributes are supported by regular INS/DINS tables, in any scenario file or in SysSettings.
+
+
+.. csv-table::
+        :file: tables/times_switches/Times_switches_attr_loc.csv
+        :widths: 1,1,1
+        :header-rows: 1
+
+There is no need to modify the RUN file template manually.
+
+Commands will be ordered by Value column; only rows with value>0 will be considered.
+If multiple scenarios send commands to the RUN file,
+the blocks will be ordered as per the order of scenarios in the case definition.
+
+.. note::
+    This also opens up some new possibilities. For example, you can run parametric scenarios where base prices for elastic demands are picked up from different Reference cases.
+
+These examples are available in the `Advanced Demo <https://github.com/kanors-emr/Model_Demo_Adv_Veda.git>`_ model.
+
+.. csv-table:: Example 1
+        :file: tables/times_switches/Example1.csv
+        :widths: 20,35,15,5,50
+        :header-rows: 2
+
+
+If you want to use single quotes <'> in your instructions, then it is necessary to use a DINS table, as shown below. DINS tables need process or commodity specification. You can use any valid
+process instead of IMPNRGZ; it will have no impact on the outcome.
+
+.. csv-table:: Example 2
+        :file: tables/times_switches/Example2.csv
+        :widths: 20,50,30
+        :header-rows: 2
+
 Case definition
 ================
 .. image:: images/case_definition.png
@@ -59,34 +96,3 @@ Model run submission
 * Solving a model opens a CMD window showing the GAMS solution log
 
 .. image:: images/solve_cmd.png
-
-
-TIMES switches and GAMS code via Scenario files
-================================================
-
-Users can introduce GAMS code at five different locations in the RUN file,
-at the top of scenario DD files and at the bottom of DD files, using the new attributes given below.
-These attributes can be declared in any scenario file or in SysSettings, using INS/DINS tables.
-
-
-.. csv-table::
-        :file: tables/times_switches/Times_switches_attr_loc.csv
-        :widths: 1,1,1
-        :header-rows: 1
-
-Commands will be ordered by Value column; only rows with value>0 will be considered.
-If multiple scenarios send commands to the RUN file,
-the blocks will be ordered as per the order of scenarios in the case definition.
-
-
-.. csv-table:: Example 1
-        :file: tables/times_switches/Example1.csv
-        :widths: 20,35,15,5,50
-        :header-rows: 2
-
-
-.. csv-table:: Example 2 (from Vangelis)
-        :file: tables/times_switches/Example2.csv
-        :widths: 20,50,30
-        :header-rows: 2
-
