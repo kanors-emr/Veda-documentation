@@ -16,9 +16,12 @@
 
 
 # -- Project information -----------------------------------------------------
+from datetime import date
 
+# creating the date object of today's date
+current_year = date.today().year
 project = 'Veda 2.0'
-copyright = '2020, KanORS-EMR'
+copyright = '2020-{}, KanORS-EMR'.format(current_year)
 author = 'KanORS-EMR'
 
 # The full version, including alpha/beta/rc tags
