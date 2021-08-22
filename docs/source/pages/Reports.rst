@@ -16,7 +16,8 @@ per-capita or per unit of GDP.
 
 .. note::
     * Examples in this section are based on the `JRC_EU-TIMES model <https://github.com/KanORS-E4SMA/EU_TIMES_Veda2.0>`_. Readers can find more examples in the file LMADefs-EU_TIMES.xlsm.
-    * Reports feature is active in Trial licenses. So, users with Academic, ETSAP, or Standard license can request one to test this feature.
+    * Reports feature is active in Trial licenses.
+        * This feature has been activated in all licenses starting version 1.239.1.1 **till 31 Dec 2021**, so that all users test this feature.
 
 
 Core mechanics of Report creation
