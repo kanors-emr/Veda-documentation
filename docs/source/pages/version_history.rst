@@ -2,6 +2,17 @@
 Version History
 ################
 
+239 [23Aug21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * **Reports functionality will be available under all license types till 31 Dec 21.**
+    * If a run fails for any reason, then the contents of command window will be displayed in a text file automatically.
+    * Leading and trailing spaces will be removed each cell at the time of reading from Excel.
+    * Excel export format improved.
+    * Reporting of duplicate declarations improved (Information >> Model >> Manage Duplicates)
+
 238 [07Aug21]
 ^^^^^^^^^^^^^
 
