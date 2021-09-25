@@ -2,6 +2,29 @@
 Version History
 ################
 
+241 [25Sep21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * Any Base/SubRES import triggers Demand processing.
+    * Runmanager: Scenario group refresh button appears on reordering cases (it used to appear only when on change of selections).
+    * [Bugfix] Group delete in Case Manager.
+    * Possible to import VD files without VDE/S/T (via Tools menu).
+    * Control on sort order of views in Results and Reports.
+    * Added search in all dropdown lists.
+    * "Help" tab added in Veda menu.
+    * User-defined CG will be usable in the commodity columns of Veda tables.
+    * Process and commodity filters can be used in table tags. For example, ~TFM_INS: CSET_SET=DEM.
+    * TSLVL and SIDE forced to be upper case.
+    * UC_ATTR displayed under Items Detail of UC; also on mouseover (along with description) in Browse.
+
+**ACADEMIC/STANDARD/ADVANCED**
+    * **BrowseForm: multiple pivot tabs can be opened, like in Results. Use the "Add Pivot" button.**
+
+**ADVANCED VERSION**
+    * Several enhancements in Reports processing.
+
 239 [23Aug21]
 ^^^^^^^^^^^^^
 
