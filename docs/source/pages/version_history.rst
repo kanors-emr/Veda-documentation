@@ -2,6 +2,13 @@
 Version History
 ################
 
+242 [27Sep21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * [BugFix] related to lower case in Super-region name; introduced in version 241.
+
 241 [25Sep21]
 ^^^^^^^^^^^^^
 
