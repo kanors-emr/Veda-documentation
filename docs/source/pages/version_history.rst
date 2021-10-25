@@ -2,6 +2,17 @@
 Version History
 ################
 
+243 [25Oct21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * [Bugfix] User-defined sets were not available for processing if only BY_Trans was synchronized.
+    * Several UI enhancements.
+
+**ADVANCED VERSION**
+    * Reporting: timeslice_map (like process_map and commodity_map) can be used create timeslice aggregations. For example, months and hours can be different dimensions.
+
 242 [27Sep21]
 ^^^^^^^^^^^^^
 
