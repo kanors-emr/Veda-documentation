@@ -2,6 +2,21 @@
 Version History
 ################
 
+247 [15Dec21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * Menu layout enhanced for convenience in Results module.
+    * QA_Check log file will open automatically after the run if it reports "FATAL ERROR" or "INVALID PARAMETER".
+    * Option to Compact Database under Tools menu.
+    * Batch runs are launched in the order in which they appear in the list on Run Manager.
+    * [Bugfix] DD files are written for one case at a time when Max Runs < 2.
+    * When Restart Option is active in Run Manager, Region and period selections are dumped in a file <casename>_input_data.JSON.
+
+**ADVANCED VERSION**
+    * Reporting: WAttribute col in TS_Defs table can be used to compute dynamic weighted averages. See example in `Veda Adv Demo <https://github.com/kanors-emr/Model_Demo_Adv_Veda.git>`_.
+
 243 [25Oct21]
 ^^^^^^^^^^^^^
 
@@ -124,7 +139,6 @@ Version History
     * Added support for the following TIMES attributes: ACT_FLO, CM_GHGMAP, NCAP_BPME, NCAP_CDME, NCAP_CEH, NCAP_CLAG, NCAP_ISPCT, RCAP_BLK
 
 **ADVANCED VERSION**
-
     * Report creation process smoother
 
 231 [17Apr21]
@@ -143,7 +157,6 @@ Version History
     * Tools menu - option added to open the folder with application error logs
 
 **ADVANCED VERSION**
-
     * **Major update in default layout of Reports**
 
 230 [31Mar21]
@@ -195,6 +208,7 @@ Version History
 **ACADEMIC/STANDARD/ADVANCED**
 
     * **Scenario groups (from Run manager) available to filter scenarios in Browse (like process/commodity sets)**
+
 
 213 [25Jan21]
 ^^^^^^^^^^^^^
