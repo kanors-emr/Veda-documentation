@@ -7,7 +7,6 @@ Version History
 
 **ALL VERSIONS**
 
-    * Menu layout enhanced for convenience in Results module.
     * QA_Check log file will open automatically after the run if it reports "FATAL ERROR" or "INVALID PARAMETER".
     * Option to Compact Database under Tools menu.
     * Batch runs are launched in the order in which they appear in the list on Run Manager.
@@ -16,6 +15,13 @@ Version History
 
 **ADVANCED VERSION**
     * Reporting: WAttribute col in TS_Defs table can be used to compute dynamic weighted averages. See example in `Veda Adv Demo <https://github.com/kanors-emr/Model_Demo_Adv_Veda.git>`_.
+
+244 [04Nov21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * Menu layout enhanced for convenience in Results module.
 
 243 [25Oct21]
 ^^^^^^^^^^^^^
