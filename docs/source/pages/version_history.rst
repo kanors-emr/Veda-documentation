@@ -2,6 +2,13 @@
 Version History
 ################
 
+247.1.3 [23Dec21]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * [Bugfix] Export functionality from pivot grids was not working on some machines.
+
 247 [15Dec21]
 ^^^^^^^^^^^^^
 
