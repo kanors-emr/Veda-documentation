@@ -17,12 +17,17 @@ Demo:
 
 Scenario Sections
 =================
-**Base Scenario [BS]**
-----------------------
+
+------------------
+Base Scenario [BS]
+------------------
 Templates used to set up the base-year (B-Y) structure of the model (existing commodities and current processes stock, and the base-year end-use demand levels), according to the energy flows reflect the overall energy balance. Thus the start year of the model can be calibrated to the energy balance according the B-Y Templates. The B-Y templates are named as VT_<workbook name>_<sector>_<Version> (e.g. VT_REG_PRI_V1, as seen in Figure 2). The number of B-Y templates and their names depend on both the model structure (e.g., the number of regions and sectors) and the organisation of the input data (e.g., how many regions and sectors in each file). The B-Y templates are introduced in DemoS_001. 
     o BY_Trans: are transformation files used to update the information included in the B-Y templates (update existing values for existing attributes) and/or to insert new information (insert new attributes for existing processes) in the B-Y templates. They work like a scenario file (described below), but the rule-based filters and the update/insert changes apply only to those processes and commodities already existing in the B-Y templates. The BY_Trans file is introduced in DemoS_009. 
 
-**SysSettings** is used to declare the very basic structure of the model including regions, time slices, start year, etc. It also contains some settings for the synchronization process and can include some additional information. There is only one such file; it has a fixed name that stands for System Settings.
+++++++++++++++
+SysSettings
+++++++++++++++
+is used to declare the very basic structure of the model including regions, time slices, start year, etc. It also contains some settings for the synchronization process and can include some additional information. There is only one such file; it has a fixed name that stands for System Settings.
 
 **SubRES [SR]** SubRES files are used to introduce new commodities and processes in the RES that are not part of the B-Y templates. However, while the B-Y templates are region-specific, the SubRES are region independent. For each SubRES file there is a corresponding transformation (Trans) file allowing the introduction of region-specific process attributes, including the availability (or not) of processes in each region. To make changes to the SubRES_Trans-_<sector> files use the Navigator to open the associated model subfolder and access the file via Window Explorer. The naming conventions are: SubRES_<name> and SubRES_<name>_Trans. 
 
