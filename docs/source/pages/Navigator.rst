@@ -15,6 +15,10 @@ Demo:
 .. image:: images/navigator.png
    :width: 600
 
+Scenario Sections
+=================
+
+
 
 Quadrants
 =========
