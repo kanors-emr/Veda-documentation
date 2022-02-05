@@ -2,6 +2,23 @@
 Version History
 ################
 
+248.1.1 [05Feb22]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * [Bugfix] GDXDiff records had stopped showing up in Browse after multiple tabs were allowed
+    * UC_ATTR is now displayed in the Browse data grid
+    * The following indexes are written in DD files without quoation marks: group, import_export, in_out, lim_type, name, parent, peak_time_slice, side, sow, stage, time_slice, time_slice_level, time_slice2, year, year2
+    * Handling the case where UC names appear in multiple case formats (used to result in $172)
+    * Parameteric scenario group <Parscen name>_all is created automatically
+    * Topology check can be disabled in UC_T with "No" in top_check column
+    * ExRES can now be launched from pivot grid even when display type is different from "code only"
+    * Parameters deleted during Quality checks is reported in the Sync log and under Tools - Delete logs menu
+
+**ADVANCED VERSION**
+    * **New feature - ModelDiff in Browse module: Another model can be selected and differences with the active model can be identified. It is like GDXDiff, but it works across models rather than cases. It can be very useful to see differences by data file when merging different versions of a model.**
+
 247.1.3 [23Dec21]
 ^^^^^^^^^^^^^
 
