@@ -2,6 +2,13 @@
 Version History
 ################
 
+248.1.1 [07Feb22]
+^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * [Bugfix] Items list view was not loading
+
 248.1.1 [05Feb22]
 ^^^^^^^^^^^^^
 
