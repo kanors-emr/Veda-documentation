@@ -23,7 +23,12 @@ Main Menu
         * Tag details:
         * Manage duplicates:
 * Tools
-    * User Options: syncing options update and layout settings.
+    * User Options:
+        * Syncing options:
+            * Threads count: Number of cores used by Veda can be restricted. -1 will use all cores of the machine during Synchronization and DD writing.
+            * Dummy imports: Dummy imports will be created by default for the selected commodity types. Dummy commodities can also be created for user constraints.
+        * Layout settings: To restore the saved layouts to default ones.
+        * GAMS Engine: To declare GAMS engine credentials.
     * Update TIMES Code: to update the TIMES source code.
     * Delete Log: to delete model log files.
     * Convert XLS to XLSX/M: converting xls files into xlsx/m files.

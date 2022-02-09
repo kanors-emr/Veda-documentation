@@ -3,14 +3,14 @@ Version History
 ################
 
 248.1.1 [07Feb22]
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
     * [Bugfix] Items list view was not loading
 
 248.1.1 [05Feb22]
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
@@ -27,7 +27,7 @@ Version History
     * **New feature - ModelDiff in Browse module: Another model can be selected and differences with the active model can be identified. It is like GDXDiff, but it works across models rather than cases. It can be very useful to see differences by data file when merging different versions of a model.**
 
 247.1.3 [23Dec21]
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
