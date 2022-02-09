@@ -17,11 +17,11 @@ Main Menu
     * TIMES attribute: presents all the TIMES model generator attributes/parameters.
     * VEDA tags: list of all VEDA tags by template (e.g.~FI_T).
     * Model:
-        * Sync log:
-        * NSV candidates:
-        * UD sets usage:
-        * Tag details:
-        * Manage duplicates:
+        * Sync log: the synchronization log that is displayed at the end of the synchronization process.
+        * NSV candidates: scenarios that can be converted to "no seed value" scenarios, because they don't provide seed values to any other scenario.
+        * UD sets usage: usage of user-defined sets in different data files.
+        * Tag details: processing time by data table.
+        * Manage duplicates: displays duplicate declarations of processes and commodities across files.
 * Tools
     * User Options:
         * Syncing options:
@@ -38,7 +38,7 @@ Main Menu
     * License information: to deactivate licenses or to change the license key (deactivate first).
     * Sets
         * Browser
-        * Editor
+        * Editor: this is a very powerful functionality that also updates the set definitions in the Excel file.
 * Reports: available only in the advanced version.
-    * Select
-    * Create
+    * Select: to select one of the reports that have been created.
+    * Create: to create a new report.
