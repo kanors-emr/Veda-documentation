@@ -30,9 +30,9 @@ Settings
 To designate where the GAMS and TIMES files reside, in what folder the model is to be run, the Maximum number of runs that are to be submitted in parallel, 
 the Solver to be used and the Solver Options file to be employed.
 
-++++++++
-Regions
-++++++++
++++++++++++++
+Region Group
++++++++++++++
 Designation of the regions to be included in the Group definition.
 
 +++++++++++
