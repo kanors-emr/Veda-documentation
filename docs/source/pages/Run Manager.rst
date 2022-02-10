@@ -38,7 +38,7 @@ Designation of the regions to be included in the Group definition.
 +++++++++++
 Properties
 +++++++++++
-which GAMS switches are to be employed for the run.
+Which GAMS switches are to be employed for the run.
 
 ++++++
 Cases
