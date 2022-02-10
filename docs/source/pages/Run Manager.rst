@@ -16,6 +16,37 @@ Overview
     :width: 600
 
 
+Sections
+=================
+
++++++++++++++++
+Scenario Group
++++++++++++++++
+Check BASE/SysSettings and the list of scenario to be included in a “cluster” that is then given a name for inclusion later in a Case Definition for a model run.
+
++++++++++
+Settings
++++++++++
+To designate where the GAMS and TIMES files reside, in what folder the model is to be run, the Maximum number of runs that are to be submitted in parallel, 
+the Solver to be used and the Solver Options file to be employed.
+
+++++++++
+Regions
+++++++++
+Designation of the regions to be included in the Group definition.
+
++++++++++++
+Properties
++++++++++++
+which GAMS switches are to be employed for the run.
+
+++++++
+Cases
+++++++
+List of Cases prepared identifying the Run name/Description, Scenario Group, list of regions, the Property specification to be used, 
+period definition and ending year, and date information.
+
+
 DD and script files
 ===================
 
