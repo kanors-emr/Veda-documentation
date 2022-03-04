@@ -88,7 +88,7 @@ These examples are available in the `Advanced Demo <https://github.com/kanors-em
         :header-rows: 2
 
 
-If you want to use single quotes <'> in your instructions, then it is necessary to use a DINS table, as shown below. DINS tables need process or commodity specification. You can use any valid
+If you want to use single quotes <'> or commas <,> in your instructions, then it is necessary to use a DINS table, as shown below. DINS tables need process or commodity specification. You can use any valid
 process instead of IMPNRGZ; it will have no impact on the outcome.
 
 .. csv-table:: Example 2
