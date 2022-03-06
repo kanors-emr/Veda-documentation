@@ -11,7 +11,7 @@ Version History
     * **Table master functionality has been added to Results and Reports**
     * Date/time stamp added to Excel export from Items lists
     * Deleted items view improved and moved to Information - Model menu (from Tools)
-    * A group named <Parametric scenario name>_all is created automatically for each parametric scenario
+    * A group named all_<Parametric scenario name> is created automatically for each parametric scenario
     * Items view - Commodity: Right-click on processes will point to the topology declaration
 
 248.1.1 [07Feb22]
