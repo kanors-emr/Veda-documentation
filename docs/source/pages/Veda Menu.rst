@@ -33,6 +33,7 @@ Main Menu
     * Delete Log: to delete model log files.
     * Convert XLS to XLSX/M: converting xls files into xlsx/m files.
     * Jacobian Analysis: this option can be used to improve the scaling of models, showing all equations (and variables) where the largest and smallest coefficients are different by more than 4 orders of magnitude.
+        * To do jacobian analysis for a particular case, solve it with "CONVERTD" as the Solver and "CONVERTD" as the Solver option.
     * Import GDX Files: to import data GDX files.
     * Import VD Files: to import VD files.
     * License information: to deactivate licenses or to change the license key (deactivate first).
