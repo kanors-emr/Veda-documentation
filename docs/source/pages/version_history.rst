@@ -2,6 +2,20 @@
 Version History
 ################
 
+253.1.1 [11Apr22]
+^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * **PostgreSQL Server updated to 13 (from 10.20)**
+    * **~TimeSlices table is supported in regular scenario files**
+    * View name and units information is included when copying from pivot grid to clipboard
+    * Information - Veda tags has information on more tags
+
+**ADVANCED VERSION**
+    * **process and commodity map tables support all filters available in TFM tables (only name was available earlier)**
+    * Significant improvement in Reports processing efficiency when working with a large number of scenarios
+
 251.1.1 [05Mar22]
 ^^^^^^^^^^^^^^^^^
 
