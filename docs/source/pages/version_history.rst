@@ -2,8 +2,21 @@
 Version History
 ################
 
-253.1.1 [11Apr22]
-^^^^^^^^^^^^^^^^^
+2.000.0.1 [24Jun22]
+^^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * **Layout master functionality in pivot grids. See the new button to the left of Excel Export icon. This will be particularly useful in Reports**
+    * Some topology defaults have been changed to Input in the FI_T tag. See Information - Veda parameters for details.
+    * "Copy <element>" option available on right-click in the index areas of pivot grid.
+
+**ADVANCED VERSION**
+    * **Ratios of variables can be computed**
+    * **Improved way to include exogenous data, like history or results from other models, in reports.**
+
+1.253.1.1 [11Apr22]
+^^^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
@@ -16,8 +29,8 @@ Version History
     * **process and commodity map tables support all filters available in TFM tables (only name was available earlier)**
     * Significant improvement in Reports processing efficiency when working with a large number of scenarios
 
-251.1.1 [05Mar22]
-^^^^^^^^^^^^^^^^^
+1.251.1.1 [05Mar22]
+^^^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
@@ -28,15 +41,15 @@ Version History
     * A group named all_<Parametric scenario name> is created automatically for each parametric scenario
     * Items view - Commodity: Right-click on processes will point to the topology declaration
 
-248.1.1 [07Feb22]
-^^^^^^^^^^^^^^^^^
+1.248.1.1 [07Feb22]
+^^^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
     * [Bugfix] Items list view was not loading
 
-248.1.1 [05Feb22]
-^^^^^^^^^^^^^^^^^
+1.248.1.1 [05Feb22]
+^^^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
@@ -52,15 +65,15 @@ Version History
 **ADVANCED VERSION**
     * **New feature - ModelDiff in Browse module: Another model can be selected and differences with the active model can be identified. It is like GDXDiff, but it works across models rather than cases. It can be very useful to see differences by data file when merging different versions of a model.**
 
-247.1.3 [23Dec21]
-^^^^^^^^^^^^^^^^^
+1.247.1.3 [23Dec21]
+^^^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
     * [Bugfix] Export functionality from pivot grids was not working on some machines.
 
-247 [15Dec21]
-^^^^^^^^^^^^^
+1.247 [15Dec21]
+^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
@@ -73,8 +86,8 @@ Version History
 **ADVANCED VERSION**
     * Reporting: WAttribute col in TS_Defs table can be used to compute dynamic weighted averages. See example in `Veda Adv Demo <https://github.com/kanors-emr/Model_Demo_Adv_Veda.git>`_.
 
-244 [04Nov21]
-^^^^^^^^^^^^^
+1.244 [04Nov21]
+^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
