@@ -134,6 +134,6 @@ Changes to this Privacy Policy are effective when they are posted on this page.
 
 Contact Us
 ==========
-If you have any questions about this Privacy Policy, You can contact us:
+If you have any questions, You can contact us:
 
     * By email: support@kanors.com
