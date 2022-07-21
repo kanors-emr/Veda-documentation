@@ -121,7 +121,7 @@ Please follow these steps to deactivate the license from user machine.
     *	Select the **License Information** option under **Help** menu
 
         .. image:: images/GettingStarted/lic_deactivate_step1_.png
-            :width: 200
+                :width: 200
 
         .. note::
             For version < 1.240.1.1 **License Information** option can be found under **Tools** menu.
@@ -129,17 +129,17 @@ Please follow these steps to deactivate the license from user machine.
     *	Click on **Deactivate your license** from the License Wizard window
 
         .. image:: images/GettingStarted/lic_deactivate_step2.png
-            :width: 400
+                :width: 400
 
     *	Click on **Deactivate license key** (*You will find your license key in the Activation Key box*)
 
         .. image:: images/GettingStarted/lic_deactivate_step3.png
-            :width: 400
+                :width: 400
 
     *	After that, you will get a confirmatory deactivation message as shown below
 
         .. image:: images/GettingStarted/lic_deactivate_step4.png
-            :width: 400
+                :width: 400
 
     *	Click on **Finish** button to close the application.
 
