@@ -118,10 +118,13 @@ License deactivation
 Please follow these steps to deactivate the license from user machine.
 
     *	Open the Veda2.0 application
-    *	Select the **License Information** option under **Tools** menu
+    *	Select the **License Information** option under **Help** menu
 
-        .. image:: images/GettingStarted/lic_deactivate_step1.png
+        .. image:: images/GettingStarted/lic_deactivate_step1_.png
             :width: 200
+
+        .. note::
+            For version < 1.240.1.1 **License Information** option can be found under **Tools** menu.
 
     *	Click on **Deactivate your license** from the License Wizard window
 
