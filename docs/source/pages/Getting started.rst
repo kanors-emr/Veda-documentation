@@ -96,18 +96,22 @@ Offline activation
 
     .. image:: images/GettingStarted/offline_act_step2.png
             :width: 400
+
 * Step 3: Fill your **Activation Key**
 
     .. image:: images/GettingStarted/offline_act_step3.png
             :width: 400
+
 * Step 4: Click on **Scan QR Code** and scan it from your mobile (with Internet)
 
     .. image:: images/GettingStarted/offline_act_step4.png
             :width: 400
+            
 * Step 5: You will get the computer key from the above step. Now fill it in **Computer Key** and press **Activate** button
 
     .. image:: images/GettingStarted/offline_act_step5.png
             :width: 400
+
 * Step 6: Click on **Finish** button
 
     .. image:: images/GettingStarted/offline_act_step6.png
@@ -117,31 +121,31 @@ License deactivation
 ====================
 Please follow these steps to deactivate the license from user machine.
 
-    *	Open the Veda2.0 application
-    *	Select the **License Information** option under **Help** menu
+    * Open the Veda2.0 application
+    * Select the **License Information** option under **Help** menu
 
         .. image:: images/GettingStarted/lic_deactivate_step1_.png
                 :width: 200
-
+        
         .. note::
             For version < 1.240.1.1 **License Information** option can be found under **Tools** menu.
 
-    *	Click on **Deactivate your license** from the License Wizard window
+    * Click on **Deactivate your license** from the License Wizard window
 
         .. image:: images/GettingStarted/lic_deactivate_step2.png
                 :width: 400
 
-    *	Click on **Deactivate license key** (*You will find your license key in the Activation Key box*)
+    * Click on **Deactivate license key** (*You will find your license key in the Activation Key box*)
 
         .. image:: images/GettingStarted/lic_deactivate_step3.png
                 :width: 400
 
-    *	After that, you will get a confirmatory deactivation message as shown below
+    * After that, you will get a confirmatory deactivation message as shown below
 
         .. image:: images/GettingStarted/lic_deactivate_step4.png
                 :width: 400
 
-    *	Click on **Finish** button to close the application.
+    * Click on **Finish** button to close the application.
 
 If you still require any assistance regarding license activation/deactivation :ref:`Contact Us`.
 
