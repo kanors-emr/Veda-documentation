@@ -23,7 +23,8 @@ Things that are different
 
 • Interpolation settings table in SysSettings needs to be converted to a MIG table.
     • if updating with year=0 (without an actual seed value) then need to convert it to in INS
-• Text values like for PRC_TSL will need a new tag - TFM_INS-txt
+• Text values like for PRC_TSL will need a new tag - TFM_INS-txt.
+• Veda2.0 prohibits new investment in processes with existing stock (via NCAP_BND(0,UP)=2), but this is not done for processes on which **any** NCAP_BND is specified. Users can control this using an INS table with attrib_cond = RESID (or PASTI).
 • Not supported:
     • comm1/comm2 in matrix form trade links declarations
     • Trade parameter declarations in matrix form (~TRADE_Param)
