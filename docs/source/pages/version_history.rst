@@ -2,6 +2,19 @@
 Version History
 ################
 
+2.004.1.1 [11Sep22]
+^^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * **Upgrade to PostgreSQL version 13**
+    * **Retaining VD files is optional now.** `Details <https://veda-documentation.readthedocs.io/en/latest/pages/Run%20Manager.html#managing-output-files>`_ .
+    * License key activations accessible directly via Help - License operations menu.
+    * Several UI cleanups and enhancements.
+
+**ADVANCED VERSION**
+    * **Aggregation facility in Reports**
+
 2.000.0.1 [24Jun22]
 ^^^^^^^^^^^^^^^^^^
 
