@@ -2,6 +2,15 @@
 Version History
 ################
 
+2.005.1.1 [11Oct22]
+^^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * New TIMES attribute NCAP_AFSX supported.
+    * Bugfix: Parallel processing of SubRES files used to create deadlocks.
+    * Sync performance enhancement (reimports).
+
 2.004.1.1 [11Sep22]
 ^^^^^^^^^^^^^^^^^^
 
