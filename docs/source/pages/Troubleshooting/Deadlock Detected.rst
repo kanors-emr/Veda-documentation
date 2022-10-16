@@ -2,6 +2,9 @@
 Deadlock Detected
 #################
 
+    .. note::
+        **This has been resolved in version 2.005.1.1**
+
 **Issue**: Deadlock Detected
 
 The error occurs when mulitple SubRES files are imported together:
