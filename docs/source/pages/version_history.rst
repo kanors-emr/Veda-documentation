@@ -2,6 +2,13 @@
 Version History
 ################
 
+2.005.1.2 [21Oct22]
+^^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * Bugfix: Submitting runs to GAMS Engine works again
+
 2.005.1.1 [11Oct22]
 ^^^^^^^^^^^^^^^^^^
 
