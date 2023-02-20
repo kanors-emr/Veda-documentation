@@ -19,6 +19,8 @@ Veda accesses Internet for the following functions:
         * Source: https://veda-news.readthedocs.io/
     * Updating TIMES source code from Github
         * Source: https://api.github.com/repos/etsap-TIMES/TIMES_model/releases/latest
+    * Gams Engine for running GAMS jobs in cloud environments via REST API
+        * Source: https://www.gams.com/engine/engine-api.html
 
 Installation
 ============
