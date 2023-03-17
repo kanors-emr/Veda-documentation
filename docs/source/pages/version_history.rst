@@ -2,6 +2,21 @@
 Version History
 ################
 
+2.010.1.1 [17Mar23]
+^^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+	* [Debug] Tag time export from the Sync feedback form
+	* Support new TIMES feature: Logit Market Share Allocation
+	* The message "Selected files do not contain any Tag(s) which can be read with veda" has been suppressed
+	* Information - Model - NSV Candidates: No-seed-value scenarios can be converted to Scen_NSV* directly via the UI
+	* Sync performance improvement for large INS tables
+	* PostgreSQL Server upgraded to version 14.6
+	* Direct access to LST files for cases after run completion - in the Logs panel on Run Manager
+	* Handled quotation marks in GAMS statements declared via RF/SFCMd tags
+	* Support attribute PRC_GMAP
+
 2.005.1.2 [21Oct22]
 ^^^^^^^^^^^^^^^^^^
 
