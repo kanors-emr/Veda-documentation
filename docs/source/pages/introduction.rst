@@ -8,7 +8,7 @@ Information is visible via tabular browsing (data cubes) and network diagrams.
 It is used to develop and manage model runs and to analyse model results.
 
 Veda is a proprietary commercial software designed and developed by KanORS-EMR. It has been supported by ETSAP since 2000. ETSAP contracting parties get a small group license for free,
-and others can purchase it from KanORS. Access to technical support and updates is subject to an annual maintenance fee (20% of the intial cost), after the first year.
+and others can purchase it from KanORS. Access to technical support and updates is subject to an annual maintenance fee (20% of the initial cost), after the first year.
 
 Philosophy and core principles
 ==============================
