@@ -2,6 +2,14 @@
 Version History
 ################
 
+2.010.1.4 [24Apr23]
+^^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+	* [Debug] Enabling the CMD file edit parameters: CmdF_GAMS, CmdF_Title, and CmdF_bot.
+        * **Note that these attributes will not be available under Veda online**.
+
 2.010.1.1 [17Mar23]
 ^^^^^^^^^^^^^^^^^^
 
