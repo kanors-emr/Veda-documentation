@@ -3,7 +3,7 @@ Version History
 ################
 
 2.010.1.4 [24Apr23]
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
@@ -11,7 +11,7 @@ Version History
         * **Note that these attributes will not be available under Veda online**.
 
 2.010.1.1 [17Mar23]
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
@@ -26,14 +26,14 @@ Version History
 	* Support attribute PRC_GMAP
 
 2.005.1.2 [21Oct22]
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
     * Bugfix: Submitting runs to GAMS Engine works again
 
 2.005.1.1 [11Oct22]
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
@@ -42,7 +42,7 @@ Version History
     * Sync performance enhancement (reimports).
 
 2.004.1.1 [11Sep22]
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
@@ -55,7 +55,7 @@ Version History
     * **Aggregation facility in Reports**
 
 2.000.0.1 [24Jun22]
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
