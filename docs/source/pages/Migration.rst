@@ -10,12 +10,13 @@ This is an incomplete list of things to keep in mind, or do, when migrating VEDA
 
 Before you start
 =================
-• First time you import a new model folder, you may need resolve two types of issues that were working OK with old veda:
+• First time you import a new model folder, you may need resolve three types of issues that were working OK with old veda:
     * Multiple Veda tables in the same Excel range
         * Need to insert empty rows/cols around tables
     * Duplicate column names
         * Can append redundant info like ~ANNUAL or ~<baseyear> to differentiate columns. For example, if an FI_T table has two columns called “Input”, then one of them can be named “Input~2010” (if 2010 is the base year).
-    * In case there is a ScenDem_BASE file in the SuppXLS\\Demands folder then rename it to something like ScenDem_BASE_dem. BASE is reserved for the base-year templates and **Veda2 needs scenario names to be unique across file types**.
+    * **Veda2 needs scenario names to be unique across file types**
+        * In case there is a ScenDem_BASE file in the SuppXLS\\Demands folder then rename it to something like ScenDem_BASE_dem because **BASE** is reserved for the base-year templates + BY_Trans.
 
 • Veda_SnT to Excel migration.xlsm, which is in the new Veda folder, can be used to migrate sets and table definitions from a VEDA_SnT.MDB file.
 
