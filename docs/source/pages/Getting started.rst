@@ -161,7 +161,7 @@ As part of registering VEDA2.0 a request is sent to the ETSAP Liaison Officer wh
 2.	Head to http://www.gams.com/download/ and select the Windows download option for either Win-64/32, as appropriate
 3.	Run Setup by clicking on it in Windows Explorer
 
-    a)	Check “Use advanced installation mode” at the bottom of the GAMS Setup form
+    a)	Check “**Use advanced installation mode**” at the bottom of the GAMS Setup form
     b)	Let GAMS get installed into the default folder (\GAMS\<Win#>\<ver>
     c)	Check the Add GAMS directory to PATH environment variable
     d)	Have the GAMSLICE.TXT copied from wherever it currently resides
