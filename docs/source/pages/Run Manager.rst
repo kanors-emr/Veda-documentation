@@ -106,14 +106,22 @@ Case definition
     * Description - description of the case
     * Scenario Group - scenarios to be included in this run
     * Region Group - regions to be included in this run
-    * Parametric Group - driver scenario for a suite of runs
     * Properties Group - what GAMS options/switch are to be employed
     * Periods Definition - period definition for the run
-    * Ending Year - last period for the run
+    * Last Period - last period for the run
     * Source TIMES - where does the TIMES code reside
     * Solver - which solver is to be used
     * Solver Options - which solver options to use
-    * GDX References - GDX files to be used for freezing periods, elastic demand base prices or IRE bounds/prices
+    * Optional
+        * Parametric Group - Parametric scenario file to create suites of runs
+        * GDX References - GDX files to be used for freezing periods, elastic demand base prices or IRE bounds/prices
+
+++++++++++++++
+GDX References
+++++++++++++++
+Options "Save solution information" and "Write B Price for Elastic Demands" create casename_P and casename_DP GDX files, which are automatically copied to the appdata folder so that they are available for being included in subsequent runs.
+The recommended way is to create a property group, "save sol info", for example, with these options selected (in addition to the other options you are using), and use this group for Ref runs. The casename.GDX file can also be used to freeze
+the solution up to a certain period, and you can manually copy this file from the GAMSWrk folder to the appdata folder, if you want to use a case where the save information options were not selected.
 
 
 Model run submission

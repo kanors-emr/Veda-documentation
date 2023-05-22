@@ -2,13 +2,26 @@
 Version History
 ################
 
+2.010.1.7 [07May23]
+^^^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * [Debug] Default PCG allocation was wrong for some processes if parameter declarations triggered the creation of a single-commodity CG. Here is the streamlined logic:
+        * PRC_PCG declaration via SysSettings has the highest priority.
+        * PCG declaration via the primary_cg col of ~FI_Process has the second priority.
+        * Veda default PCG will be used only if no declarations are found from the above sources.
+        * If a parameter declaration triggers the creation of a single-member CG, which is also the commodity that Veda has identified as the default primary commodity, then the CG will be used (instead of the commodity) as PCG - ONLY FOR DMD processes.
+
+
 2.010.1.4 [24Apr23]
 ^^^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
-	* [Debug] Enabling the CMD file edit parameters: CmdF_GAMS, CmdF_Title, and CmdF_bot.
+    * [Debug] Enabling the CMD file edit parameters: CmdF_GAMS, CmdF_Title, and CmdF_bot.
         * **Note that these attributes will not be available under Veda online**.
+
 
 2.010.1.1 [17Mar23]
 ^^^^^^^^^^^^^^^^^^^
