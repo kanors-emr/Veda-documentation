@@ -2,6 +2,17 @@
 Version History
 ################
 
+2.011.1.1 [27May23]
+^^^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * [Debug] update excel was writing only two decimals.
+    * **Veda Assistant: Create Tag button on Information - Veda and TIMES parameters screen.**
+    * Context menu on lists in Items View: You can copy items to clipboard from lists in Items View.
+    * GDXDiff cleanup: GDX import - a legacy menu item has been removed. GDX and Model diff data is deleted when the application is launched.
+
+
 2.010.1.7 [07May23]
 ^^^^^^^^^^^^^^^^^^^
 
