@@ -46,7 +46,7 @@ Personally identifiable information may include, but is not limited to:
     * Address, State, Province, ZIP/Postal code, City
 
 .. note::
-        In order to acquire license keys from kanORS-EMR, the organization submits its information including name, email, and address. Activation of license keys does not necessitate employee details. Each activation associates the key with the computer or machine name and the Windows user account name.
+        If an organization obtains Veda license keys from KanORS-EMR, it must submit its own information including name, email, and address. Activation of license keys does not required employee details. Each activation associates the key with the computer or machine name and the Windows user account name.
 
 Use of Your Personal Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
