@@ -53,4 +53,12 @@ The remote procedure call failed. (Exception from HRESULT: 0x800706BE)
 **Solution**: How to disable the plugin: Excel > File > Options > Add-ins > Manage, then choose "COM add-ins" > Go. And then uncheck the problematic plugin.
 
 
+Element not found. (Exception from HRESULT: 0x8002802B)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue**: Unable to cast COM object of type 'Microsoft.Office.Interop.Excel.ApplicationClass' to interface type 'Microsoft.Office.Interop.Excel._Application'. This operation failed because the QueryInterface call on the COM component for the interface with IID '{000208D5-0000-0000-C000-000000000046}' failed due to the following error: **Element not found. (Exception from HRESULT: 0x8002802B (TYPE_E_ELEMENTNOTFOUND)**).
+
+**Solution**: "Repair" Office Installation from the Add/Remove programs in Control Panel
+    .. note::
+        Follow the steps of **Solution 1**
 
