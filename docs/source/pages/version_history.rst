@@ -2,16 +2,27 @@
 Version History
 ################
 
+2.014.1.1 [08Jul23]
+^^^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * VA update: Process/commodity lists are shown on VA - as per the process/commodity filters.
+    * Variables $case_name and $vd_file_name introduced in the VTRUN.CMD file, which can help automatic post-processing routines.
+    * Display issues with 4k monitors and higher zoom levels have been fixed.
+    * DD writing has been revamped. There is no change in the output but large models will see significant performance improvement.
+    * Veda2.0 has two very powerful features for managing sets - Sets Browser and Sets Editor. They have been moved from the Tools section to a new module - Sets, hoping that visibility will make more users take advantage of this feature.
+
+
 2.011.1.1 [27May23]
 ^^^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
     * [Debug] update excel was writing only two decimals.
-    * **Veda Assistant: Create Tag button on Information - Veda and TIMES parameters screen.**
+    * **Veda Assistant: Create Tag button on Information - Veda and TIMES parameters screen. We will call this VA**
     * Context menu on lists in Items View: You can copy items to clipboard from lists in Items View.
     * GDXDiff cleanup: GDX import - a legacy menu item has been removed. GDX and Model diff data is deleted when the application is launched.
-
 
 2.010.1.7 [07May23]
 ^^^^^^^^^^^^^^^^^^^
