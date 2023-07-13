@@ -6,6 +6,9 @@ Hardware/software requirement
 =============================
 
 Veda2.0 works on Windows portables, desktops, servers, and VMs, with Windows 8/Windows server 2012 or above. Microsoft Excel is a prerequisite.
+
+Suggested hardware
+^^^^^^^^^^^^^^^^^^^
 Hardware needed depends on the size and complexity of models, but here is a configuration suitable for typical TIMES models under Veda2.0:
 
     * CPU: Minimum 4 cores are recommended for STANDARD and ADVANCED licenses. 8 - 16 would be desirable for larger models
@@ -21,6 +24,13 @@ Veda accesses Internet for the following functions:
         * Source: https://api.github.com/repos/etsap-TIMES/TIMES_model/releases/latest
     * Gams Engine for running GAMS jobs in cloud environments via REST API
         * Source: https://www.gams.com/engine/engine-api.html
+
+Software prerequisites
+^^^^^^^^^^^^^^^^^^^^^^^
+
+    * Veda makes a local connection to a PostgreSQL database. In case you see “No database response” message on Veda startup and it does not go away, please make sure that the system firewall is not blocking Veda in making the said connection (This could require permissions from your IT department).
+    * Veda uses Excel in background and in case of any pending popups in Excel that require user attention, Excel will not work which in turn will stop Veda to carry out important processes like synchronization of model. One such popup is the user sign-in popup, so we advise user to make sure they are signed in to Excel properly.
+
 
 Installation
 ============
