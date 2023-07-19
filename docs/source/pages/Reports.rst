@@ -131,7 +131,7 @@ Sources and uses of main energy forms
     <a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252583" target="_blank"><b>See it online </a> <i>select energy form</i></b>
 
 
-.. image:: images/Reports/main_energy_forms.PNG
+.. image:: images/Reports/main_energy_forms1.PNG
     :width: 600
 
 Road transport vehicles
@@ -142,7 +142,7 @@ Road transport vehicles
     <a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252590" target="_blank"><b>See it online </a> <i>select region</i></b>
 
 
-.. image:: images/Reports/lma_road_transport.PNG
+.. image:: images/Reports/lma_road_transport1.PNG
     :width: 600
 
 Power generation
@@ -153,7 +153,7 @@ Power generation
     <a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252586" target="_blank"><b>See it online </a> <i>select electricity/hydrogen/heat, and region</i></b>
 
 
-.. image:: images/Reports/lma_power_gen.PNG
+.. image:: images/Reports/lma_power_gen1.PNG
     :width: 600
 
 Power generation – alternate view
@@ -164,7 +164,7 @@ Power generation – alternate view
     <a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252588" target="_blank"><b>See it online </a></b>
 
 
-.. image:: images/Reports/power_gen_alt_view.PNG
+.. image:: images/Reports/power_gen_alt_view1.PNG
     :width: 600
 
 Power generation – alternate view 2
@@ -175,6 +175,6 @@ Power generation – alternate view 2
     <a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252589" target="_blank"><b>See it online </a></b>
 
 
-.. image:: images/Reports/power_gen_alt_view-2.PNG
+.. image:: images/Reports/power_gen_alt_view-2_1.PNG
     :width: 600
 
