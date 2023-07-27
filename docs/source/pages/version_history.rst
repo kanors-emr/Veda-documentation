@@ -2,6 +2,28 @@
 Version History
 ################
 
+2.016.1.1 [25Jul23]
+^^^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * Handling links in Excel files: Files with remote links were freezing the application during Sync process in some cases. Excel objects are now opened with the following settings:
+        * Application.AskToUpdateLinks = False
+        * Application.DisplayAlerts = False
+        * getWorkbook=Workbooks.Open(bkPath,updatelinks:=0,readonly:=false)
+    * No error will be thrown in there is no time slice definition in SysSettings.
+    * CmdF_Top attribute introduced to inject code before the GAMS call in VTRUN.CMD file.
+
+2.015.1.1 [14Jul23]
+^^^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * GAMS Engine: Users can specify namespace and model under GAMS Engine settings (Case Manager). This will enable users to use thier own GAMS Engine account to launch runs in the cloud.
+    * Attribute master: Interpolation option indication (green color) has been removed. Complete information on default I/E option is available in the table at the bottom of that form.
+    * Case Manager: Select all option for saved cases.
+    * Pop-ups will appear on the same screen as the application (when using multiple screens).
+
 2.014.1.1 [08Jul23]
 ^^^^^^^^^^^^^^^^^^^
 
@@ -12,7 +34,6 @@ Version History
     * Display issues with 4k monitors and higher zoom levels have been fixed.
     * DD writing has been revamped. There is no change in the output but large models will see significant performance improvement.
     * Veda2.0 has two very powerful features for managing sets - Sets Browser and Sets Editor. They have been moved from the Tools section to a new module - Sets, hoping that visibility will make more users take advantage of this feature.
-
 
 2.011.1.1 [27May23]
 ^^^^^^^^^^^^^^^^^^^
