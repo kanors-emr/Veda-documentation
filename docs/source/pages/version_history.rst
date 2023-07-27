@@ -11,7 +11,6 @@ Version History
         * Application.AskToUpdateLinks = False
         * Application.DisplayAlerts = False
         * getWorkbook=Workbooks.Open(bkPath,updatelinks:=0,readonly:=false)
-    * No error will be thrown in there is no time slice definition in SysSettings.
     * CmdF_Top attribute introduced to inject code before the GAMS call in VTRUN.CMD file.
 
 2.015.1.1 [14Jul23]
