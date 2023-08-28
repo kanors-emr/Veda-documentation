@@ -24,8 +24,8 @@ Things that are different
 =========================
 
 • Interpolation settings table in SysSettings needs to be converted to a MIG table.
-    • if updating with year=0 (without an actual seed value) then need to convert it to in INS
-• Text values like for PRC_TSL will need a new tag - TFM_INS-txt.
+    • If a UPD table was used to insert an interpolation option without a seed value, then it needs to be converted to an INS table.
+• Text values (like for PRC_TSL) will need a new tag - TFM_INS-txt.
 • Veda2.0 prohibits new investment in processes with existing stock (via NCAP_BND(0,UP)=2), but this is not done for processes on which **any** NCAP_BND is specified. Users can control this using an INS table with attrib_cond = RESID (or PASTI).
 • Not supported:
     • comm1/comm2 in matrix form trade links declarations
@@ -57,6 +57,9 @@ Things that are different
     • If you have commas or single quotes in the commands, then use a DINS-AT table, with a dummy PSET_PN col.
 • FILL/FILL-R tables: If qualifying values exist in multiple scenarios, only ones from the "last scenario", like seed values for UPD/MIG tables, will be returned. VEDA_FE would return values from all scenarios. If multiple scenarios are needed for some reason, then they can be declared (comma-separated) in "SourceScen" col.
 • ~TFM* tags are expected to be on the top left of tables, but VEDA_FE used to read all columns in the range of tags, even if they were to the left of the tag itself. Veda2 ignores cols to the left to avoid the duplicate columns issue.
+• Update and Migrate tables will not see seed values from the scenario that they are specified in.
+• Negative (exclude) filters were combined with **AND** by default in VEDA_FE, but they are combined with **OR** in Veda2.0.
+
 
 Migration steps
 ================
