@@ -59,6 +59,7 @@ Things that are different
 • ~TFM* tags are expected to be on the top left of tables, but VEDA_FE used to read all columns in the range of tags, even if they were to the left of the tag itself. Veda2 ignores cols to the left to avoid the duplicate columns issue.
 • Update and Migrate tables will not see seed values from the scenario that they are specified in.
 • Negative (exclude) filters were combined with **AND** by default in VEDA_FE, but they are combined with **OR** in Veda2.0.
+• COST was not shown an alias of ACT_COST in the Attribute Master, but it worked like one for non-IRE processes in VEDA_FE. Veda2.0 does **not** make this exception.
 
 
 Migration steps
