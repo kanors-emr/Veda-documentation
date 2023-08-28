@@ -24,7 +24,10 @@ Things that are different
 =========================
 
 • Interpolation settings table in SysSettings needs to be converted to a MIG table.
-    • If a UPD table was used to insert an interpolation option without a seed value, then it needs to be converted to an INS table.
+    • Need to use an INS table for specifying values for year=0 when there is no seed value.
+• VEDA_FE used to generate interpolation option data from SysSettings irrespective of existing declarations in Base/SubRES/other scenario files. Veda2.0 ignores options that have been defined in Base/SubRES.
+    • The thinking is that SysSettings is meant for defining "default" interpolation options.
+    • Any other scenario file can be used to "update" interpolation options defined in Base/SubRES, but I would not recommend this approach.
 • Text values (like for PRC_TSL) will need a new tag - TFM_INS-txt.
 • Veda2.0 prohibits new investment in processes with existing stock (via NCAP_BND(0,UP)=2), but this is not done for processes on which **any** NCAP_BND is specified. Users can control this using an INS table with attrib_cond = RESID (or PASTI).
 • Not supported:
