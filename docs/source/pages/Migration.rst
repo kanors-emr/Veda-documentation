@@ -25,7 +25,7 @@ Things that are different
 
 • Interpolation settings table in SysSettings needs to be converted to a MIG table.
     • Need to use an INS table for specifying values for year=0 when there is no seed value.
-• VEDA_FE used to generate interpolation option data from SysSettings irrespective of existing declarations in Base/SubRES/other scenario files. Veda2.0 ignores options that have been defined in Base/SubRES.
+• VEDA_FE used to allow defining interpolation options in SysSettings also with TFM_INS tables, which could be used for generating IE options irrespective of existing declarations in Base/SubRES/other scenario files. This is no longer possible in VEDA2. Any redefinition (via any tag in SysSettings) of interpolation options defined in Base/SubRES is ignored in Veda2.0.
     • The thinking is that SysSettings is meant for defining "default" interpolation options.
     • Any other scenario file can be used to "update" interpolation options that are defined in Base/SubRES, but interpolation options defined and redefined in multiple files could create confusion.
 • Text values (like for PRC_TSL) will need a new tag - TFM_INS-txt.
