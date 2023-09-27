@@ -7,9 +7,11 @@ Version History
 
 **ALL VERSIONS**
 
-    * IIS value is changed from Yes to 1 in *.OPT files
-    * Bug in batch export in the Result and Reports module is solved.
-    * “Scen(ScenG)” dimension is added in Results module.
+    * Batch export did not work with some foreign languages - fixed.
+
+**ADVANCED VERSION**
+
+    * If there is a scenario map table in reports, the "Scen" column will appear in the Results view.
 
 2.017.1.1 [10Aug23]
 ^^^^^^^^^^^^^^^^^^^
