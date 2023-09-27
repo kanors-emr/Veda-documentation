@@ -2,6 +2,22 @@
 Version History
 ################
 
+2.018.1.1 [01Sep23]
+^^^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * IIS value is changed from Yes to 1 in *.OPT files
+    * Bug in batch export in the Result and Reports module is solved.
+    * “Scen(ScenG)” dimension is added in Results module.
+
+2.017.1.1 [10Aug23]
+^^^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * Export capacity from pivot table to xlsx is increased to 1.048 million rows.
+
 2.016.1.1 [25Jul23]
 ^^^^^^^^^^^^^^^^^^^
 
