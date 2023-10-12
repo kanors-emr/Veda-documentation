@@ -27,6 +27,7 @@ Veda 2.0 documentation
    pages/version_history
    pages/Notes
    pages/Privacy policy
+   pages/License Agreement
 
 Indices and tables
 ==================
