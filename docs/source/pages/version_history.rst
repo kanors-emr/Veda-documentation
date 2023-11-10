@@ -2,6 +2,33 @@
 Version History
 ################
 
+2.020.1.1 [10Nov23]
+^^^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * [Fixes] 
+        *  UC constraints on trade processes in the Item Details RES Process View.
+        *  pscet_ci generated through TOP_INS tag in Regular Scenario can't be used in the first import.
+        *  Topology tags will NOT be supported in SubParametric scenarios. Topology tags of SysSettings will be processed.
+
+    * [New] 
+        *  Enhance unit support in TS_Defs and for the Trades variable.
+        *  Modules refreshed after the sync is finished.
+        *  Import/export process flows
+        *  Open the Case Folder button on Run Manager
+        *  kill run logic changed
+        *  "ACT" should be readable as a commodity
+        *  Added "Delete All" menu option in the groups and cases menu - this deletes all the data from the database and sync from the AppData folder.
+        *  Enhancement in RunMananger
+            *  Layout button added on the menu directly
+            *  User name of Groups visible
+            *  Items count in Groups
+            *  Excel-Like filtering in Cases
+            *  Viewing Groups and Cases of different users when files are shared by the AppData folder is allowed
+
+    * UI enhancement and small bug fixes
+
 2.018.1.1 [01Sep23]
 ^^^^^^^^^^^^^^^^^^^
 
