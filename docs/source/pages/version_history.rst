@@ -14,18 +14,14 @@ Version History
         * Removed spurious TOP_IRE entries. `See details <https://forum.kanors-emr.org/showthread.php?tid=1310>`_
 
     * [New] 
-        *  Modules refreshed after the sync is finished.
-        *  Open the Case Folder button on Run Manager
-        *  Added "Delete All" menu option in the groups and cases menu - this deletes all the data from the database and sync from the AppData folder.
-        *  Enhancement in Run Manager
-            *  Layout button added on the menu directly
-            *  User name of Groups visible
-            *  Items count in Groups
-            *  Excel-Like filtering in Cases
+        *  Modules refreshed after Sync.
+        *  Open Case Folder button on Run Manager.
+        *  "Delete All" menu option in the groups and cases menu sets up groups and cases afresh from JSON files.
+        *  Multiple UI enhancements on Run Manager
 
 **ADVANCED VERSION**
-        *  Enhance unit support in TS_Defs and for the Trades variable.
-        *  Viewing Groups and Cases of different users when files are shared by the AppData folder is allowed
+        *  Commodity units displayed in Endogenous trade variable.
+        *  Possible to use groups and cases created by other users.
 
 
 2.018.1.1 [01Sep23]
