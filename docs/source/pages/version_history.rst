@@ -8,26 +8,25 @@ Version History
 **ALL VERSIONS**
 
     * [Fixes] 
-        *  UC constraints on trade processes in the Item Details RES Process View.
-        *  pscet_ci generated through TOP_INS tag in Regular Scenario can't be used in the first import.
-        *  Topology tags will NOT be supported in SubParametric scenarios. Topology tags of SysSettings will be processed.
+        * RES view in Item Details was missing some IRE process - UC links. `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/20>`_
+        * Topology tags (TFM_TOPINS*) tags were not being processed in the correct order. This would create issues only if there were interdependencies within the topology tags.
+        * Topology tags were not being read from SysSettings. See Information - Veda tags for all files where they are supported.
+        * Removed spurious TOP_IRE entries. `See details <https://forum.kanors-emr.org/showthread.php?tid=1310>`_
 
     * [New] 
-        *  Enhance unit support in TS_Defs and for the Trades variable.
         *  Modules refreshed after the sync is finished.
-        *  Import/export process flows
         *  Open the Case Folder button on Run Manager
-        *  kill run logic changed
-        *  "ACT" should be readable as a commodity
         *  Added "Delete All" menu option in the groups and cases menu - this deletes all the data from the database and sync from the AppData folder.
-        *  Enhancement in RunMananger
+        *  Enhancement in Run Manager
             *  Layout button added on the menu directly
             *  User name of Groups visible
             *  Items count in Groups
             *  Excel-Like filtering in Cases
-            *  Viewing Groups and Cases of different users when files are shared by the AppData folder is allowed
 
-    * UI enhancement and small bug fixes
+**ADVANCED VERSION**
+        *  Enhance unit support in TS_Defs and for the Trades variable.
+        *  Viewing Groups and Cases of different users when files are shared by the AppData folder is allowed
+
 
 2.018.1.1 [01Sep23]
 ^^^^^^^^^^^^^^^^^^^
