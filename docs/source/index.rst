@@ -16,6 +16,7 @@ Veda 2.0 documentation
    pages/Veda Menu
    pages/Start page
    pages/Navigator
+   pages/VedaTags
    pages/Browse
    pages/Items detail
    pages/Items List
