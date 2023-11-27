@@ -12,7 +12,15 @@ time slices, currencies and units.
 
 ~BookRegions_map
 ^^^^^^^^^^^^^^^^
+The concept of `BookRegions` serves the core Veda principle that `structures that are common across regions should be declared only once`.
+This applies to the `BaseYear templates` that exist in the root of the Veda model folder.
+They are named as `VT` (Veda Template) _ `BookRegion` _ `Sector` _ `Version`.
+For example, a model may have 'VT_ElecReg_ELC_v01' and 'VT_DemReg_EndUse_v01' in the root folder to describe electricity supply in the first file
+and the demand in the second one. ElecReg could map to Electricity grid regions, which is a reasonable way to represent electricity supply, and DemReg could map to states or provinces, which is
+a reasonable way to represent demands.
 
+This tag maps the book region (also called `super region`) to model regions. All declarations in base year templates that do not have a region
+specification apply to all regions mapped to their book region.
 
 ~StartYear
 ^^^^^^^^^^^
@@ -20,7 +28,7 @@ The first year of the model horizon.
 
 ~TimePeriods
 ^^^^^^^^^^^^
-
+To specify period lengths. TIMES automatically computes the middle years as milestone years (along with the StartYear).
 
 ~MileStoneYears
 ^^^^^^^^^^^^^^^
@@ -33,9 +41,11 @@ The default year to be used for any timeseries parameter.
 
 ~Currencies
 ^^^^^^^^^^^
+List of currencies used in the model. The first entry in this table works as the `default currency` in Veda.
 
 ~DefUnits
 ^^^^^^^^^
+This tag is used to declare the default process (activity and capacity) and commodity units by sector.
 
 Getting started with the RES
 ============================
@@ -44,6 +54,7 @@ These tags define the key elements - processes and commodities, and the topology
 
 ~FI_Process
 ^^^^^^^^^^^
+
 
 ~FI_Commodity
 ^^^^^^^^^^^^^
@@ -61,24 +72,24 @@ and topology. It is also possible to include existing parameters (and their valu
 ^^^^^^^^
 
 Variants:
-    * `TFM_INS-TS`:
-    * `TFM_INS-AT`:
-    * `TFM_INS-TSL`:
+    * `TFM_INS-TS`: value fields have `years` as column headers.
+    * `TFM_INS-AT`: value fields have `attributes` as column headers.
+    * `TFM_INS-TSL`: value fields have `timeslices` as column headers.
 
 ~TFM_DINS
 ^^^^^^^^^
 
 Variants:
-    * `TFM_DINS-TS`:
-    * `TFM_DINS-AT`:
-    * `TFM_DINS-TSL`:
+    * `TFM_DINS-TS`: value fields have `years` as column headers.
+    * `TFM_DINS-AT`: value fields have `attributes` as column headers.
+    * `TFM_DINS-TSL`: value fields have `timeslices` as column headers.
 
 ~TFM_UPD
 ^^^^^^^^
 
-Variant:
-    * `TFM_UPD-TS`:
-    * `TFM_UPD-AT`:
+Variants:
+    * `TFM_UPD-TS`: value fields have `years` as column headers.
+    * `TFM_UPD-AT`: value fields have `attributes` as column headers.
 
 ~TFM_MIG
 ^^^^^^^^
