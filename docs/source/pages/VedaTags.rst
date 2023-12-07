@@ -99,6 +99,7 @@ Variants:
 
 To create sets
 ===============
+The following tags enable creation of named groups of processes and commodities.
 
 ~TFM_CommGrp
 ^^^^^^^^^^^^

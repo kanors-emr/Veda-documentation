@@ -44,7 +44,7 @@ Things that are different
 • “Deact~UC_T” was actually not respected earlier, but now it will be.
     • The previous version searched for *<tag>*, and the new one looks for <tag>*
 • Blank cells in header rows used to mark the end of tables. Now each table will be read as per the "current region" of the table tag.
-• Column position of FI_T/UC_T tags are not important anymore
+• Column position of FI_T/UC_T tags are not important anymore. Further, it had to be - all index columns followed by value columns - in VEDA_FE, but they can be arranged freely now.
     • extra columns would appear from tables where FI_T/UC_T tags were misplaced
 • No QC of process/commodity/UC names. <list of characters> used to be replaced with "_".
     • Now the DD files are always written with <'> around each element and all names are retained as in their original form.

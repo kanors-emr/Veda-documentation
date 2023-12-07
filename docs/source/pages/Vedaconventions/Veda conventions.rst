@@ -16,7 +16,8 @@ BY_Trans sees only VT files and SubRES trans files see only their own SubRES
 'UC_T' tags are supported only in Scenario files (not in VT, SubRES, or Trade)
     *
 
-'VT files' don't support 'TFM tags'
-    *
+`VT files` don't support `TFM tags`
+    * `TFM tags` are most useful when they can access a large part of the RES. If they were supported in VT files then they would see only the processes that are defined in the same VT file. They are supported in `BY_Trans` instead, where they can access all VT files.
+
 
 
