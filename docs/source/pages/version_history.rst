@@ -5,7 +5,7 @@ Version History
 3.000.1.0 [08Dec23]
 ^^^^^^^^^^^^^^^^^^^
 
-..note::
+.. note::
     This is a major release. Your license should be under maintenance on 08Dec23 to be able to use this version (and above)
 
 
