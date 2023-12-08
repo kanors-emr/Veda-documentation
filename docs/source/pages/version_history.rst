@@ -2,6 +2,18 @@
 Version History
 ################
 
+3.000.1.0 [08Dec23]
+^^^^^^^^^^^^^^^^^^^
+
+..note::
+    This is a major release. Your license should be under maintenance on 08Dec23 to be able to use this version (and above)
+
+
+**ALL VERSIONS**
+    * Excel file reading and writing is now done using a third party library `ASPOSE <https://products.aspose.com/cells/>`_ This makes the synchronization process much faster, and also more robust, because we no loger rely on the local Excel installation.
+    * Duplicate column headers will be recognized even if the duplication is due to aliases. `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/11>`_
+    * A warning will be issued if there are unsaved modifications in groups in the Run Manager. `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/17>`_
+
 2.020.1.1 [10Nov23]
 ^^^^^^^^^^^^^^^^^^^
 
