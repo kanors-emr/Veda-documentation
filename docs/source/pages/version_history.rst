@@ -6,7 +6,7 @@ Version History
 ^^^^^^^^^^^^^^^^^^^
 
 .. note::
-    This is a major release. Your license should be under maintenance on 08Dec23 to be able to use this version (and above)
+    This is a major release. Your license should be under maintenance on 28 November 2023 to be able to use this version (and above)
 
 
 **ALL VERSIONS**
