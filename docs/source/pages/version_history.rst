@@ -11,7 +11,7 @@ Version History
 
 **ALL VERSIONS**
     * Excel file reading and writing are now done using a third-party library `ASPOSE <https://products.aspose.com/cells/>`_. This makes the synchronization process much faster, and also more robust, because we no longer rely on the local Excel installation.
-    * Duplicate column headers will be recognized even if the duplication is due to aliases. `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/11>`_
+    * Duplicate column headers will be identified even if the duplication is on account of aliases. `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/11>`_
     * A warning will be issued if there are unsaved modifications in groups in the Run Manager. `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/17>`_
 
 2.020.1.1 [10Nov23]
