@@ -2,6 +2,7 @@
 Version History
 ################
 
+
 3.0.2.0 [18Dec23]
 ^^^^^^^^^^^^^^^^^
 
@@ -14,6 +15,13 @@ Version History
 
 **ADVANCED VERSION**
     * Improved indication of shared Groups on Run manager.
+
+2.020.2.1 [18Dec23]
+^^^^^^^^^^^^^^^^^
+.. note::
+    This is a last release of major version 2.20. Those with maintenance expiration on November 28, 2023, are eligible to utilize this version (`download <https://github.com/kanors-emr/Veda2.0-Installation/releases/tag/v2.20.2.1>`_). 
+
+    * Single-user view has been restored in Groups and Cases for Academic and Standard licenses. Multi-user support was enabled recently but it was causing `some confusion <https://github.com/kanors-emr/Veda2.0-Installation/issues/23>`_.
 
 
 3.0.1.0 [08Dec23]
