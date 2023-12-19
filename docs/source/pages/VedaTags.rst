@@ -5,14 +5,14 @@ VEDA Tags
 This section describes the genesis and design purpose of the Veda syntax, which started with the Flexible Import tag - **~FI_T** - in Excel VBA at the turn of the 21st century.
 Various tags and conventions have evolved over two decades to serve the `core design philosophy of Veda <https://veda-documentation.readthedocs.io/en/latest/pages/introduction.html#philosophy-and-core-principles>`_.
 
-Regions and Time dimension
-==========================
+Regions and Time
+================
 The system settings file (SysSettings) supports some tags that specify the basic structure of the model in terms of regions, time periods,
-time slices, currencies and units.
+time slices, currencies, and units.
 
 ~BookRegions_map
 ^^^^^^^^^^^^^^^^
-The concept of `BookRegions` serves the core Veda principle that `structures that are common across regions should be declared only once`.
+The concept of `BookRegions` serves a core Veda principle that `structures that are common across regions should be declared only once`.
 This applies to the `BaseYear templates` that exist in the root of the Veda model folder.
 They are named as `VT` (Veda Template) _ `BookRegion` _ `Sector` _ `Version`.
 For example, a model may have 'VT_ElecReg_ELC_v01' and 'VT_DemReg_EndUse_v01' in the root folder to describe electricity supply in the first file
@@ -49,7 +49,7 @@ This tag is used to declare the default process (activity and capacity) and comm
 
 Getting started with the RES
 ============================
-These tags define the key elements - processes and commodities, and the topology and core parameters. These tags don't support wild cards
+These tags define the key elements - processes, commodities, topology, and core parameters. **These tags don't support wild cards**.
 
 
 ~FI_Process
@@ -61,6 +61,7 @@ These tags define the key elements - processes and commodities, and the topology
 
 ~FI_T
 ^^^^^
+
 
 The data workhorses
 ===================
