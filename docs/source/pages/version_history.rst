@@ -20,11 +20,11 @@ Version History
 ^^^^^^^^^^^^^^^^^
 
 .. note::
-    Users' licenses whose maintenance expired on and before **November 28, 2023**, are advised to exclusively use this version, which is the final release within the major version **2.20** (`download <https://github.com/kanors-emr/Veda2.0-Installation/releases/tag/v2.20.2.1>`_).
+    Users of licenses with maintenance expiration before **November 28, 2023** are advised to use this version, which is the final release within the major version **2.20** (`download <https://github.com/kanors-emr/Veda2.0-Installation/releases/tag/v2.20.2.1>`_).
 
-    Major version **3.0** is intended solely for users' licenses with maintenance active on and beyond **November 28, 2023**.
     
-    * Single-user view has been restored in Groups and Cases for Academic and Standard licenses. Multi-user support was enabled recently but it was causing `some confusion <https://github.com/kanors-emr/Veda2.0-Installation/issues/23>`_.
+* Single-user view has been restored in Groups and Cases for Academic and Standard licenses. Multi-user support was enabled recently but it was causing `some confusion <https://github.com/kanors-emr/Veda2.0-Installation/issues/23>`_.
+
 
 3.0.1.0 [08Dec23]
 ^^^^^^^^^^^^^^^^^
@@ -34,7 +34,7 @@ Version History
 
 
 **ALL VERSIONS**
-    * Excel file reading and writing are now done using a third-party library `ASPOSE <https://products.aspose.com/cells/>`_. This makes the synchronization process much faster, and also more robust, because we no longer rely on the local Excel installation.
+    * **Major Enhancement**: Excel file reading and writing are now done using a third-party library `ASPOSE <https://products.aspose.com/cells/>`_. This makes the synchronization process much faster, and also more robust, because we no longer rely on the local Excel installation.
     * Duplicate column headers will be identified even if the duplication is on account of aliases. `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/11>`_
     * A warning will be issued if there are unsaved modifications in groups in the Run Manager. `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/17>`_
 
