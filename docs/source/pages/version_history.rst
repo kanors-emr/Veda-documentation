@@ -18,13 +18,13 @@ Version History
 
 2.020.2.1 [18Dec23]
 ^^^^^^^^^^^^^^^^^
+
 .. note::
-	Users' licenses whose maintenance expired on and before **November 28, 2023**, are advised to exclusively use this version, which is the final release within the major version **2.20** (`download <https://github.com/kanors-emr/Veda2.0-Installation/releases/tag/v2.20.2.1>`_).
-	
-	Major version **3.0** is intended solely for users' licenses with maintenance active on and beyond **November 28, 2023**.
+    Users' licenses whose maintenance expired on and before **November 28, 2023**, are advised to exclusively use this version, which is the final release within the major version **2.20** (`download <https://github.com/kanors-emr/Veda2.0-Installation/releases/tag/v2.20.2.1>`_).
 
-	    * Single-user view has been restored in Groups and Cases for Academic and Standard licenses. Multi-user support was enabled recently but it was causing `some confusion <https://github.com/kanors-emr/Veda2.0-Installation/issues/23>`_.
-
+    Major version **3.0** is intended solely for users' licenses with maintenance active on and beyond **November 28, 2023**.
+    
+    * Single-user view has been restored in Groups and Cases for Academic and Standard licenses. Multi-user support was enabled recently but it was causing `some confusion <https://github.com/kanors-emr/Veda2.0-Installation/issues/23>`_.
 
 3.0.1.0 [08Dec23]
 ^^^^^^^^^^^^^^^^^
