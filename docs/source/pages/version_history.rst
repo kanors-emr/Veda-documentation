@@ -7,7 +7,7 @@ Version History
 ^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
-    * `ACT` and `NRG` will be recognized as commodities during the synchronization process.
+    * `ACT` and `NRG` will be recognized as commodity groups during the synchronization process.
     * Commodity definition has been added as a dependency dimension. So far Veda used process definition, seed values for UPD/MIG, and source data for FILL tables as dependency indicators.
     * Single-user view has been restored in Groups and Cases for Academic and Standard licenses. Multi-user support was enabled recently but it was causing `some confusion <https://github.com/kanors-emr/Veda2.0-Installation/issues/23>`_.
     * Synchronization window will close automatically (if no errors) when it opens to read SysSettings and Set definitions during Results and Sets processing operations.
