@@ -4,7 +4,7 @@ Browse
 
 .. note::
    All data declaration for Veda models is done in Excel files. But to *visualize* models, one MUST use the interface and NOT rely on Excel files.
-   Excel should be used only for the initial and additional data specification. To check the declarations or topology for any particular item, one must use Browse (or Items detail).
+   Excel should be used only for the initial and additional data specification. To check the parameter declarations or topology for any particular item, one must use Browse (or Items detail). `For example <https://forum.kanors-emr.org/showthread.php?tid=1326>`_...
 
 Browsing model input is **necessary** for two reasons:
     * You may have a syntax error and some of your declarations may have been ignored, or read differently from what you intended.
