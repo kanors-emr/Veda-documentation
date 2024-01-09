@@ -140,8 +140,8 @@ Please follow these steps to deactivate the license from user machine.
                 :width: 166
 
 
-    .. note::
-            For version < 1.240.1.1 **License Information** option can be found under **Tools** menu.
+    .. tip::
+            **License Information** option is available under **Tools** menu.
 
     * Click on **Deactivate your license** from the License Wizard window
 

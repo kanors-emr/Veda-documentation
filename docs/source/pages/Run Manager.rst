@@ -77,7 +77,7 @@ Commands will be ordered by Value column; only rows with value>0 will be conside
 If multiple scenarios send commands to the RUN file,
 the blocks will be ordered as per the order of scenarios in the case definition.
 
-.. note::
+.. tip::
     This also opens up some new possibilities. For example, you can run parametric scenarios where base prices for elastic demands are picked up from different Reference cases.
 
 These examples are available in the `Advanced Demo <https://github.com/kanors-emr/Model_Demo_Adv_Veda.git>`_ model.
@@ -149,9 +149,12 @@ Import runs from Veda online
 
 To import the zip files in Veda2.0, follow these steps:
     * Create a folder named "Veda_case_zip_files" within the Zip Files Location folder. However, if the folder already exists, you can skip this step) (see attached image).
+
     .. image:: images/Zip_files_location_RunManager.png
         :width: 500
+
     * Inside the "Veda_case_zip_files" folder, create subfolders for your username, model name, and study name {username\\model name\\study name}. Place your zip files into study name subfolder.
     * The final path will depend on your username, model name, and study name. For instance, if your username is "rohit", model name is "DemoS_012", and study name is "Base" the path will be: Veda_case_zip_files\\rohit\\DemoS_012\\Base\\model_results_Case-demos_012_Solver-CPLEX.zip. (See attached image)
+
     .. image:: images/Import_runs_name_description_of_RunManager.png
         :width: 600

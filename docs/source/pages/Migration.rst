@@ -2,7 +2,7 @@
 Migrating to Veda 2.0
 ######################
 
-.. note::
+.. Caution::
     **Familiarity with the model database and Veda_FE/BE are necessary to migrate efficiently. I request users to not delegate this task to new members of the team.**
 
 

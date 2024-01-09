@@ -74,7 +74,7 @@ Aggregations based on Commodity names
 .. image:: images/Reports/agg_on_comm_grps.PNG
     :width: 600
 
-.. note::
+.. tip::
     Like in INS tables of Veda, subsequent declarations override the previous ones. For example, one may have several different types of oil, named OILxyz. If one wants to track only Oil other, Diesel and Gasoline, then write OIL* | Oil other; OILDST | Diesel; OILGSL | Gasoline, one below the other.
 
 Aggregations based on Process names
@@ -113,7 +113,7 @@ Advanced features
     * Efficiency (by DEM)
     * CO2 intensity (by DEM)
 
-.. note::
+.. tip::
     It is recommended that one uses "pc" in the "show_me" column when creating new variables, to check the validity of variables and aggregations. Aggregating them makes the reports lighter, so it should be done when possible.
 
 LMA gets a lot more out of Reports
