@@ -116,12 +116,12 @@ Advanced features
 .. tip::
     It is recommended that one uses "pc" in the "show_me" column when creating new variables, to check the validity of variables and aggregations. Aggregating them makes the reports lighter, so it should be done when possible.
 
-LMA gets a lot more out of Reports
+VO gets a lot more out of Reports
 ==================================
-LMA (Last Mile Analytics) is a proprietary web-based data visualization platform, which can be used for many different types of datasets, including results from TIMES models.
-At this point, LMA is hosted on a server in KanORS office and users have to send VD files to KanORS (along with Report definitions file) to be uploaded. We are in the process
-of deploying it in the cloud, and eventually users will be able to upload their reports directly from Veda2.0.
-Access to LMA will not be included in the Advanced license; it will have to be arranged separately.
+
+VO (`Veda Online <https://vedaonline.cloud/>`_) offers the core Veda-TIMES functionality via Internet browsers. Veda model folders need to reside on GitHub to be used under VO.
+Registered users can submit their GitHub credentials to see a list of all model folders, along with the branches, under their account.
+Any folder/branch can be selected to create a model. Supported functionality: Synchronize, Browse, Items view, Run manager, Results, and Reports.
 
 Sources and uses of main energy forms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
