@@ -123,6 +123,8 @@ VO (`Veda Online <https://vedaonline.cloud/>`_) offers the core Veda-TIMES funct
 Registered users can submit their GitHub credentials to see a list of all model folders, along with the branches, under their account.
 Any folder/branch can be selected to create a model. Supported functionality: Synchronize, Browse, Items view, Run manager, Results, and Reports.
 
+Here are some sample visualizations on the same platform that drives VO reports.
+
 Sources and uses of main energy forms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
