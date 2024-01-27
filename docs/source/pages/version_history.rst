@@ -8,18 +8,18 @@ Version History
 
 **ALL VERSIONS**
 
-* [Enhancement]
+[Enhancement]
         *  Enhance quality checking for FI_T tag in the synchronization.
 	*  Accelerate the consolidate set rules step in Sets processing.
 	*  MAT, ENV, DEM, and FIN will also be recognized as commodity groups during the synchronization process.
 
-* [Fixes]
+[Fixes]
         *  Solving a case with multiple time slice definitions selected. `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/29>`_
 	*  Super region should be case insensitive.
 	*  FILL_R tag error if sheet name is not provided.
 	*  The order in which we assign dimensions to FI_T col header elements.
 
-* [New]
+[New]
         *  Veda version introduced as a title in the Run file.
 	*  Suppress the Sankey variables from the list of variables.
 	*  Leading and trailing spaces are in exclude conditions in rules in the synchronization process.
