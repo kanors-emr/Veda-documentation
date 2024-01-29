@@ -16,7 +16,7 @@ Version History
 * [Fixes]
 
     * Blank spaces after the Minus sign are removed in exclusion rules.
-    * Solving a case with multiple time slice definitions selected. See details https://github.com/kanors-emr/Veda2.0-Installation/issues/29
+    * Solving a case with multiple time slice definitions selected. `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/29>`_
     * Super region is now case insensitive.
     * Veda assigns dimension based on the element in FI_T/UC_T col headers and table tags. The allocation will be done in the following priority order: attribute,currency,lim_type,region,side,time_slice,year,commodity.
 
