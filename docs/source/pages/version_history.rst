@@ -2,6 +2,15 @@
 Version History
 ################
 
+3.0.4.0 [06Feb24]
+^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * Bugfix: A bug was introduced in version 3.0.3 with FI_T tag QC. DINS tables in BY/SubRES trans files **could** lead to duplication.
+    * HiGHS solver made available on Run Manager.
+
+
 3.0.3.0 [26Jan24]
 ^^^^^^^^^^^^^^^^^
 
@@ -121,7 +130,7 @@ Version History
 
 **ALL VERSIONS**
 
-    * GAMS Engine: Users can specify namespace and model under GAMS Engine settings (Case Manager). This will enable users to use thier own GAMS Engine account to launch runs in the cloud.
+    * GAMS Engine: Users can specify namespace and model under GAMS Engine settings (Case Manager). This will enable users to use their own GAMS Engine account to launch runs in the cloud.
     * Attribute master: Interpolation option indication (green color) has been removed. Complete information on default I/E option is available in the table at the bottom of that form.
     * Case Manager: Select all option for saved cases.
     * Pop-ups will appear on the same screen as the application (when using multiple screens).
@@ -197,7 +206,7 @@ Version History
 
     * New TIMES attribute NCAP_AFSX supported.
     * Bugfix: Parallel processing of SubRES files used to create deadlocks.
-    * Sync performance enhancement (reimports).
+    * Sync performance enhancement (re-imports).
 
 2.004.1.1 [11Sep22]
 ^^^^^^^^^^^^^^^^^^^
@@ -265,9 +274,9 @@ Version History
 
     * [Bugfix] GDXDiff records had stopped showing up in Browse after multiple tabs were allowed
     * UC_ATTR is now displayed in the Browse data grid
-    * The following indexes are written in DD files without quoation marks: group, import_export, in_out, lim_type, name, parent, peak_time_slice, side, sow, stage, time_slice, time_slice_level, time_slice2, year, year2
+    * The following indexes are written in DD files without quotation marks: group, import_export, in_out, lim_type, name, parent, peak_time_slice, side, sow, stage, time_slice, time_slice_level, time_slice2, year, year2
     * Handling the case where UC names appear in multiple case formats (used to result in $172)
-    * Parameteric scenario group <Parscen name>_all is created automatically
+    * Parametric scenario group <Parscen name>_all is created automatically
     * Topology check can be disabled in UC_T with "No" in top_check column
     * ExRES can now be launched from pivot grid even when display type is different from "code only"
     * Parameters deleted during Quality checks is reported in the Sync log and under Tools - Delete logs menu
@@ -524,7 +533,7 @@ Version History
     * **Veda.FrontEnd.exe has been renamed as Veda2.0.exe**
     * Sets Browser: Processes and Commodities on different tabs
     * Batch export: Results.xlsx file has a time stamp and opens on creation
-    * Pivot Grids enhancement: Page field dimensions where items are being aggregated are higlighted with an orange line
+    * Pivot Grids enhancement: Page field dimensions where items are being aggregated are highlighted with an orange line
     * Subtotals option available in pivot grids
     * New functionality Information - Model - Manage duplicates: shows duplicate declarations of processes/commodities
     * Tools menu has a new item Sets, with browser and editor as sub-menus
