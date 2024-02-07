@@ -2,12 +2,13 @@
 Version History
 ################
 
-3.0.4.0 [06Feb24]
+3.0.5.0 [07Feb24]
 ^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
     * **Bugfix**: A bug was introduced in version 3.0.3 with FI_T tag QC. DINS tables in BY/SubRES trans files **could** lead to duplication.
+    * Enhanced QC of DINS tags.
     * HiGHS solver made available on Run Manager.
     * TOP_IRE entries for trade processes coming from BY/SubRES `#28 <https://github.com/kanors-emr/Veda2.0-Installation/issues/28>`_
 
