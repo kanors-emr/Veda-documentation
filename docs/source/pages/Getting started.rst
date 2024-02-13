@@ -44,11 +44,11 @@ Installation
     * Localhost: This just needs to be extracted
         * .. raw:: html
 
-             <a href="https://github.com/kanors-emr/Veda2.0-Installation/tree/master/Localhost%20Version%20Prerequisites" target="_blank">Download and install prerequisites</a>
+             <a href="https://github.com/kanors-emr/Veda2.0-Installation/tree/master/Localhost%20Version%20Prerequisites" target="blank">Download and install prerequisites</a>
 
         * .. raw:: html
 
-             <a href="https://github.com/kanors-emr/Veda2.0-Installation/releases/download/v3.0.5.0/Veda2.0_localhost_3.0.5.0.7z" target="_blank">Download localhost</a>
+             <a href="https://github.com/kanors-emr/Veda2.0-Installation/releases/download/v3.0.2.0/Veda2.0_localhost_3.0.2.0.7z" target="blank">Download localhost</a>
 
         * Give full read and write permissions to the folder where it is extracted
         * Port 65001 should be accessible to PostgreSQL
@@ -56,7 +56,7 @@ Installation
     * Installer: This is a setup executable
         * .. raw:: html
 
-                     <a href="https://github.com/kanors-emr/Veda2.0-Installation/releases/download/v3.0.5.0/Veda2.0.Setup.3.0.5.0.exe" target="_blank">Download installer</a>
+            <a href="https://github.com/kanors-emr/Veda2.0-Installation/releases/download/v3.0.2.0/Veda2.0.Setup.3.0.2.0.exe" target="blank">Download installer</a>
 
         * Create a folder where you wish to install and give it full read and write permissions
         * Port 65000 should be accessible to PostgreSQL
