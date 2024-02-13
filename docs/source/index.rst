@@ -12,6 +12,7 @@ Veda 2.0 documentation
 
    pages/introduction
    pages/Getting started
+   pages/License operations
    pages/Migration
    pages/Veda Menu
    pages/Start page
