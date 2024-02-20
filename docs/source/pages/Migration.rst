@@ -14,7 +14,7 @@ Before you start
     * Multiple Veda tables in the same Excel range
         * Need to insert empty rows/cols around tables
     * Duplicate column names
-        * Can append redundant info like ~ANNUAL or ~<baseyear> to differentiate columns. For example, if an FI_T table has two columns called “Input”, then one of them can be named “Input~2010” (if 2010 is the base year).
+        * FI_T is the only table that supports duplicate column names like Veda_FE used to: the rightmost non-empty value over the duplicate columns in each row will survive. Other tags will report duplicate column headers that will need to be resolved by the user.
     * **Veda2 needs scenario names to be unique across file types**
         * In case there is a ScenDem_BASE file in the SuppXLS\\Demands folder then rename it to something like ScenDem_BASE_dem because **BASE** is reserved for the base-year templates + BY_Trans.
 
