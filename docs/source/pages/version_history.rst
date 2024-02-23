@@ -2,15 +2,23 @@
 Version History
 ################
 
-3.0.5.0 [07Feb24]
+3.0.7.0 [23Feb24]
 ^^^^^^^^^^^^^^^^^
 
 **ALL VERSIONS**
 
-    * **Bugfix**: A bug was introduced in version 3.0.3 with FI_T tag QC. DINS tables in BY/SubRES trans files **could** lead to duplication.
-    * Enhanced QC of DINS tags.
+* [Enhancements]
+
+    * IRE_XBND parameter handle `See details <https://forum.kanors-emr.org/showthread.php?tid=1348&pid=7171>`_
+    * Enhanced QC of non-FI_T tags and DINS tags.
     * HiGHS solver made available on Run Manager.
     * TOP_IRE entries for trade processes coming from BY/SubRES `#28 <https://github.com/kanors-emr/Veda2.0-Installation/issues/28>`_
+    * Enhanced GDX file reference on Run Manager
+
+* [Fixes]
+
+    * Units Conversion in Update Excel
+    * A bug was introduced in version 3.0.3 with FI_T tag QC. DINS tables in BY/SubRES trans files **could** lead to duplication.
 
 
 3.0.3.0 [26Jan24]
