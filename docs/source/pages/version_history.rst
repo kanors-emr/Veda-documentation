@@ -2,6 +2,32 @@
 Version History
 ################
 
+3.1.1.0 [27Apr24]
+^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+	* [Enhancements]
+
+		* Enhanced data validation for Sync
+		* Enhanced GDX file reference on Run Manager
+		* Input validation - non-numeric values. `User request <https://github.com/kanors-emr/Veda2.0-Installation/issues/35>`_
+		* Sync log warning if a single row uses seed values from multiple scenarios. `See details <https://forum.kanors-emr.org/showthread.php?tid=1377&pid=7380#pid7380>`_
+		* Sync logs in a text file.  `User request <https://github.com/kanors-emr/Veda2.0-Installation/issues/39>`_
+		* New user option to not write Fill-R tables if the contents have not changed. Turned on by default. `User request <https://github.com/kanors-emr/Veda2.0-Installation/issues/37>`_
+
+	* [Fixes]
+		* Fill_R tag writing during Sync was starting from cell B1 instead of A1 when column A was empty
+		* Data type checking for hidden rows during tag reading
+		* SolveTime reporting.  `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/33>`_
+		* Remove filter option from check all tables in result viewer.  `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/40>`_
+
+**ADVANCED VERSION**
+
+	* Multiple enhancements in Reporting, especially in creating Sankey diagrams.
+	* Option on Run manager to automatically generate data to plot a histogram that guides the choice of cplex parameter `barcolnz`.
+
+
 3.0.7.0 [23Feb24]
 ^^^^^^^^^^^^^^^^^
 

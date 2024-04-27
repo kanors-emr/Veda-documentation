@@ -29,6 +29,7 @@ Things that are different
     • The thinking is that SysSettings is meant for defining "default" interpolation options.
     • Any other scenario file can be used to "update" interpolation options that are defined in Base/SubRES, but interpolation options defined and redefined in multiple files could create confusion.
 • Text values (like for PRC_TSL) will need a new tag - TFM_INS-txt.
+• UC sets declaration, like "~UC_Sets: R_E: AllRegions", is required for Veda2.0 to process UC tables. AllRegions was assumed by default in Veda_FE if this declaration was missing.
 • Veda2.0 prohibits new investment in processes with existing stock (via NCAP_BND(0,UP)=2), but this is not done for processes on which **any** NCAP_BND is specified. Users can control this using an INS table with attrib_cond = RESID (or PASTI).
 • Not supported:
     • comm1/comm2 in matrix form trade links declarations
