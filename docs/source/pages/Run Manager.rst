@@ -121,7 +121,41 @@ GDX References
 ++++++++++++++
 Options "Save solution information" and "Write B Price for Elastic Demands" create casename_P and casename_DP GDX files, which are automatically copied to the appdata folder so that they are available for being included in subsequent runs.
 The recommended way is to create a property group, "save sol info", for example, with these options selected (in addition to the other options you are using), and use this group for Ref runs. The casename.GDX file can also be used to freeze
-the solution up to a certain period, and you can manually copy this file from the GAMSWrk folder to the appdata folder, if you want to use a case where the save information options were not selected.
+the solution up to a certain period.
+
+Managing GDX files
+------------------
+**In version 3.1.1.0**, we have made a major change in GDX file management. In order to give flexibility to link GDX files from anywhere in the system, **Select Folder** button has been provided to browse the source folder. By default this form loads the current WrkTimes folder, so you can link your files directly from there. AppData/GAMSSAVE has now been reduced to just a backup folder to your linked gdx files.
+Three new utilities has also been introduced in the Cases grid: Resolve, Backup, and Remove under **Options** menu. These utilities aim to enhance your experience and streamline your workflow by providing more control and flexibility over your GDX file management.
+
+* **Resolve**
+
+Resolve is designed to simplify the process of managing GDX file references within your cases. It replaces existing links from current GDX files to files present within the designated backup directory (`AppData/GAMSSAVE`). Upon detecting files with the same name, Resolve automatically updates the references.
+
+Resolve can handle even valid GDX references by linking files from the backup, making it even more versatile and efficient.
+
+* **Backup**
+
+In previous versions of Veda, GDX files were copied to their respective model's `AppData/GAMSSAVE` folder after each solve operation. Now this directory is only meant to serve as a backup GDX files container. GDX files will only be copied to the `AppData` folder when they are linked to a case for the first time.
+
+This can result in outdated files in the `AppData/GAMSSAVE` directory. The Backup button gives users full control over this process. By selecting one or more cases, users can ensure that the GDX files linked to those cases are copied to the `AppData` folder, refreshing the files in the `AppData/GAMSSAVE` directory from work times.
+
+We would suggest users backup their cases' linked GDX files every time they decide to move or create a new instance of the model.
+
+* **Remove**
+
+The Remove utility simplifies the task of managing GDX file links within your cases. By selecting one or more cases, users can effortlessly remove all GDX file links associated with those cases. This feature provides a quick and convenient way to clean up unnecessary references and streamline your cases.
+
+
+(**GDX Link Status Indicators**) In addition to the new utilities, we have improved the GDX link status indicators in the grid to provide better visibility and understanding of your file links:
+
+.. image:: images/gdx_file_status_indicators.png
+    :height: 100
+
+- **Missing:** Indicates that the linked GDX file is not available, not even in the backup folder.
+- **Backup Available:** Indicates that the linked file is not available, but a file with the same name is present in the backup (`AppData/GAMSSAVE`) folder, which can be used.
+
+
 
 
 Model run submission
