@@ -125,7 +125,7 @@ the solution up to a certain period.
 
 Managing GDX files
 ------------------
-**In version 3.1.1.0**, we have made a major change in GDX file management. In order to give flexibility to link GDX files from anywhere in the system, **Select Folder** button has been provided to browse the source folder. By default this form loads the current WrkTimes folder, so you can link your files directly from there. AppData/GAMSSAVE has now been reduced to just a backup folder to your linked gdx files.
+**In version 3.1.1.0**, we have made a major change in GDX file management. By default GDX Reference form now loads the current WrkTimes folder, so you can link your files directly from there. In order to give flexibility to link GDX files from anywhere in the system, **Select Folder** button has been provided to browse the source folder. AppData/GAMSSAVE has now been reduced to just a backup folder to your linked gdx files.
 
 Three new utilities has also been introduced in the Cases grid: Resolve, Backup, and Remove under **Options** menu. These utilities aim to enhance your experience and streamline your workflow by providing more control and flexibility over your GDX file management.
 
