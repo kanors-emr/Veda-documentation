@@ -10,7 +10,7 @@ Version History
 	* [Enhancements]
 
 		* Enhanced data validation for Sync
-		* Enhanced GDX file reference on Run Manager
+		* Enhanced GDX file reference on Run Manager `See details <https://veda-documentation.readthedocs.io/en/latest/pages/Run%20Manager.html#managing-gdx-files>`_
 		* Input validation - non-numeric values. `User request <https://github.com/kanors-emr/Veda2.0-Installation/issues/35>`_
 		* Sync log warning if a single row uses seed values from multiple scenarios. `See details <https://forum.kanors-emr.org/showthread.php?tid=1377&pid=7380#pid7380>`_
 		* Sync logs in a text file.  `User request <https://github.com/kanors-emr/Veda2.0-Installation/issues/39>`_
