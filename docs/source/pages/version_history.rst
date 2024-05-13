@@ -19,7 +19,7 @@ Version History
 	* [Fixes]
 		* Fill_R tag writing during Sync was starting from cell B1 instead of A1 when column A was empty
 		* Data type checking for hidden rows during tag reading
-		* SolveTime reporting.  `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/33>`_
+		* SolveTime reporting (GAMS version 32 or higher is required as a minimum).  `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/33>`_
 		* Remove filter option from check all tables in result viewer.  `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/40>`_
 
 **ADVANCED VERSION**
