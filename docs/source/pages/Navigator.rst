@@ -75,6 +75,14 @@ Two new components are presented:
 * Parametric scenarios – “programmed” multi-value suite of scenarios
 * No Seed Values – the files that do not provide seed values to any other scenario. These are processed in parallel.
 
+.. tip::
+        To handle parametric files better in Github's version control we suggest to add the following block quote to your .gitignore file to ignore changes in the ParScenFiles directory within your Git model folder. This applies only to users who utilize the model folder 
+        in their GitHub repository.
+        
+        .. code-block:: rst
+
+                suppxls/ParScenFiles/                
+
 Functionality
 =============
 
