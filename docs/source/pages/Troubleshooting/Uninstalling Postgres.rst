@@ -1,3 +1,5 @@
+.. _Uninstalling_Postgres:
+
 ######################
 Uninstalling Postgres
 ######################

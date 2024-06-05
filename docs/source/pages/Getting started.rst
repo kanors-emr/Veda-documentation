@@ -31,6 +31,7 @@ Software prerequisites
     * Veda makes a local connection to a PostgreSQL database. In case you see “No database response” message on Veda startup and it does not go away, please make sure that the system firewall is not blocking Veda in making the said connection (This could require permissions from your IT department).
     * Veda uses Excel in background and in case of any pending popups in Excel that require user attention, Excel will not work which in turn will stop Veda to carry out important processes like synchronization of model. One such popup is the user sign-in popup, so we advise user to make sure they are signed in to Excel properly.
 
+.. _installation_section:
 
 Installation
 ============
@@ -68,18 +69,45 @@ Setting up GAMS
 As part of registering VEDA2.0 a request is sent to the ETSAP Liaison Officer who will arrange for an evaluation GAMS license file to be created, sending it to the new user along with the download and install procedures here:
 
 1.	Copy the GAMSLICE someplace on your computer
-2.	Head to http://www.gams.com/download/ and select the Windows download option for either Win-64/32, as appropriate
+2.	Head to https://www.gams.com/download/ and select the Windows download option for either Win-64/32, as appropriate
 3.	Run Setup by clicking on it in Windows Explorer
 
     a)	Check “**Use advanced installation mode**” at the bottom of the GAMS Setup form
     b)	Let GAMS get installed into the default folder (\GAMS\<Win#>\<ver>
-    c)	Check the Add GAMS directory to PATH environment variable
-    d)	Have the GAMSLICE.TXT copied from wherever it currently resides
+    c)	Have the GAMSLICE.TXT copied from wherever it currently resides to the GAMS directory
+    d)	Verify and add the GAMS directory to the PATH environment variable
+
+        * After installation, open a Command Prompt and type “gams” to see if GAMS is recognized      
+            .. image:: images/gams_command_recognized.png
+                :width: 400
+        
+        * If GAMS is not recognized        
+            .. image:: images/gams_command_not_recognized.png
+                :width: 400
+
+        Follow the below steps to add GAMS directory Path to the environment variables.
+        
+            * Let suppose your GAMS installation directory Path is C:\\GAMS\\32            
+                .. image:: images/gams_location_c_drive.png
+                    :width: 275
+            
+            * Steps to add GAMS directory path to Environment Variables           
+                .. image:: images/environment_variables.png
+                    :width: 400
+
+            * After clicked on Environment Variables > {System variables} Path  > Edit
+                .. image:: images/system_variables_path_edit.png
+                    :width: 400
+
+            * Click on New and add the GAMS directory path (C:\\GAMS\\32) to the list
+                .. image:: images/add_gams_path.png
+                    :width: 400     
 
 You may need to restart your computer to have the GAMS Path activated.
 
 Once you have VEDA installed you can try a TIMES model run.
 
+.. _unistallation_section:
 
 Uninstallation
 ===============
@@ -96,7 +124,7 @@ Uninstallation
             :width: 400
 
         * Make sure that Postgres has also been removed. Usually the process of uninstallation also removes Postgres from the computer
-        * Sometimes uninstallation ends prematurely (image below) and Postgres is not removed. In such case, please go to :ref:`Uninstalling Postgres` for further instructions
+        * Sometimes uninstallation ends prematurely (image below) and Postgres is not removed. In such case, please go to :ref:`Uninstalling Postgres <Uninstalling_Postgres>` for further instructions
 
         .. image:: images/Veda_Premature_Error.PNG
             :width: 400
@@ -110,6 +138,7 @@ Uninstallation
 
     * Now you can go ahead and delete the localhost directory
 
+.. _Backup and Restore:
 
 Backup and Restore
 ==================
@@ -144,9 +173,6 @@ The process of updating requires the user to uninstall the old version
 and install the new version of Veda2.0 manually.
 
 Refer the following links for help:
-    * :ref:`Backup and Restore`
-    * :ref:`Uninstallation`
-    * :ref:`Installation`
-
-
-
+    * :ref:`Backup and Restore <Backup and Restore>`
+    * :ref:`Uninstallation <unistallation_section>`
+    * :ref:`Installation <installation_section>`
