@@ -54,49 +54,54 @@ These tags define the key elements - processes, commodities, topology, and core 
 
 ~FI_Process
 ^^^^^^^^^^^
-
+This tag defines processes. The only other way to create processes is via the Trade links table.
 
 ~FI_Commodity
 ^^^^^^^^^^^^^
+This tag defines commodities. The following commodities (climate module) can be used without being defined:
+BEOHMOD,CH4-ATM,CH4-GTC,CH4-LO,CH4-MT,CH4-PPB,CH4-PPM,CH4-PREIND,CH4-UP,CO2-ATM,CO2-GTC,CO2-LO,CO2-PPM,CO2-PREIND,CO2-UP,CS,DELTA-ATM,
+DELTA-LO,EXT-EOH,FORCING,GAMMA,LAMBDA,N2O-ATM,N2O-GTC,N2O-LO,N2O-MT,N2O-PPB,N2O-PPM,N2O-PREIND,N2O-UP,PHI-AT-UP,PHI-CH4,PHI-LO-UP,PHI-N2O,PHI-UP-AT,PHI-UP-LO,
+SIGMA1,SIGMA2,SIGMA3,TOTCH4,TOTN2O.
 
 ~FI_T
 ^^^^^
-
+Preparing input data for models usually imposes a significant data processing burden on the modeler because the input is expected in a particular format, which is different from the format
+that is used to maintain the data.
 
 The data workhorses
 ===================
 
-These tags enable bulk insert or update of parameters via technology/commodity filters that are based on set membership, shortname, description,
+The TFM (Transformation) tags enable bulk insert or update of parameters in a **rule-based manner** - via technology/commodity filters that are based on set membership, shortname, description,
 and topology. It is also possible to include existing parameters (and their values) as filter criteria.
 
 ~TFM_INS
 ^^^^^^^^
 
 Variants:
-    * `TFM_INS-TS`: value fields have `years` as column headers.
     * `TFM_INS-AT`: value fields have `attributes` as column headers.
+    * `TFM_INS-TS`: value fields have `years` as column headers.
     * `TFM_INS-TSL`: value fields have `timeslices` as column headers.
 
 ~TFM_DINS
 ^^^^^^^^^
 
 Variants:
-    * `TFM_DINS-TS`: value fields have `years` as column headers.
     * `TFM_DINS-AT`: value fields have `attributes` as column headers.
+    * `TFM_DINS-TS`: value fields have `years` as column headers.
     * `TFM_DINS-TSL`: value fields have `timeslices` as column headers.
 
 ~TFM_UPD
 ^^^^^^^^
 
 Variants:
-    * `TFM_UPD-TS`: value fields have `years` as column headers.
     * `TFM_UPD-AT`: value fields have `attributes` as column headers.
+    * `TFM_UPD-TS`: value fields have `years` as column headers.
 
 ~TFM_MIG
 ^^^^^^^^
 
-~TFM_FILL
-^^^^^^^^^
+~TFM_FILL-R
+^^^^^^^^^^^
 
 To create sets
 ===============
@@ -114,6 +119,16 @@ The following tags enable creation of named groups of processes and commodities.
 Other Tags
 ==========
 
+~Tradelinks
+^^^^^^^^^^^
+
+~Tradelinks_DINS
+^^^^^^^^^^^^^^^^
+
+~Tradelinks_Desc
+^^^^^^^^^^^^^^^^
+
+
 ~UC_T
 ^^^^^
 
@@ -122,10 +137,24 @@ Other Tags
 This works exactly like the INS tag, but supports **text values** for the following Veda attributes that can be used to override values that come from the original process/
 commodity definition tables: PRC_PCG, PRC_TSL, PRC_VINT, COM_LIM, COM_TSL, COM_TYPE.
 
+~TFM_TOPINS
+^^^^^^^^^^^
+
+~TFM_TOPDINS
+^^^^^^^^^^^
+
+Legacy Tags
+===========
+It is not recommended to use these tags anymore, but they are still supported for backward compatibility reasons.
+
 ~COMEMI
 ^^^^^^^^^^^
-**This is a legacy tag. Use attribute VDA_EMCB via any regular Veda tag instead.**
+Use attribute VDA_EMCB via any regular Veda tag instead.
 
 ~PRCCOMEMI
 ^^^^^^^^^^
-**This is a legacy tag. Use attribute FLO_EMIS via any regular Veda tag instead.**
+Use attribute FLO_EMIS via any regular Veda tag instead.
+
+~TFM_Fill
+^^^^^^^^^
+Use TFM_Fill-R instead.
