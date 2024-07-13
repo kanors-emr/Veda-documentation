@@ -2,6 +2,24 @@
 Version History
 ################
 
+3.1.2.0 [13Jul24]
+^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+	* [Enhancements]
+		* Implement the functionality to copy Veda-tag from a Scenario using the right-click context menu in Navigator.
+		* Introduce support for the ~NOPCOL (No operation column headers) tag within SysSettings `See details <https://forum.kanors-emr.org/showthread.php?tid=1364&pid=7484>`_
+		* Add the feature to color-code types in AuxItems section of Item Details for better visual differentiation.
+		* Make improvements related to synchronization functionalities.
+		* Enhance the Fill-R feature for more efficient data handling.
+		* Upgrade the Attribute master with new capabilities.
+
+**ADVANCED VERSION**
+
+	* Conduct multiple enhancements in Reports, with a focus on improving the creation of Sankey diagrams.
+
+
 3.1.1.0 [27Apr24]
 ^^^^^^^^^^^^^^^^^
 
