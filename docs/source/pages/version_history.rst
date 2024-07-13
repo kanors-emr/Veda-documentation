@@ -5,19 +5,24 @@ Version History
 3.1.2.0 [13Jul24]
 ^^^^^^^^^^^^^^^^^
 
+.. note::
+    Reports and some other Advanced license features have been activated for the ETSAP license. This will be reviewed at the Winter 2024 ETSAP meeting.
+
+
 **ALL VERSIONS**
 
-	* [Enhancements]
-		* Implement the functionality to copy Veda-tag from a Scenario using the right-click context menu in Navigator.
-		* Introduce support for the ~NOPCOL (No operation column headers) tag within SysSettings `See details <https://forum.kanors-emr.org/showthread.php?tid=1364&pid=7484>`_
-		* Add the feature to color-code types in AuxItems section of Item Details for better visual differentiation.
-		* Make improvements related to synchronization functionalities.
-		* Enhance the Fill-R feature for more efficient data handling.
-		* Upgrade the Attribute master with new capabilities.
+    * [Enhancements]
+
+        * **Major Enhancement**: New feature on right click on any file on the navigator - all tags supported for that particular file will be listed under the `Copy Veda-tag to clipboard` option.
+        * New tag ~NOPCOL (No operation column headers) supported in SysSettings `See details <https://forum.kanors-emr.org/showthread.php?tid=1364&pid=7484>`_
+        * Items view: Processes and commodities in the auxiliary flow boxes are also color-coded (as per the set membership) like they are in the main flow boxes.
+        * Removed more spurious sync log entries from FI_T tag processing.
+        * Search in Attributes master section looks at attribute description as well.
+        * [Bugfix]: Handled a language issue in the new Fill-R data comparison feature.
 
 **ADVANCED VERSION**
 
-	* Conduct multiple enhancements in Reports, with a focus on improving the creation of Sankey diagrams.
+    * Multiple enhancements in Reports - focused on making it easier to create Sankey diagrams.
 
 
 3.1.1.0 [27Apr24]
@@ -25,25 +30,25 @@ Version History
 
 **ALL VERSIONS**
 
-	* [Enhancements]
+    * [Enhancements]
 
-		* Enhanced data validation for Sync
-		* Enhanced GDX file reference on Run Manager `See details <https://veda-documentation.readthedocs.io/en/latest/pages/Run%20Manager.html#managing-gdx-files>`_
-		* Input validation - non-numeric values. `User request <https://github.com/kanors-emr/Veda2.0-Installation/issues/35>`_
-		* Sync log warning if a single row uses seed values from multiple scenarios. `See details <https://forum.kanors-emr.org/showthread.php?tid=1377&pid=7380#pid7380>`_
-		* Sync logs in a text file.  `User request <https://github.com/kanors-emr/Veda2.0-Installation/issues/39>`_
-		* New user option to not write Fill-R tables if the contents have not changed. Turned on by default. `User request <https://github.com/kanors-emr/Veda2.0-Installation/issues/37>`_
+        * Enhanced data validation for Sync
+        * Enhanced GDX file reference on Run Manager `See details <https://veda-documentation.readthedocs.io/en/latest/pages/Run%20Manager.html#managing-gdx-files>`_
+        * Input validation - non-numeric values. `User request <https://github.com/kanors-emr/Veda2.0-Installation/issues/35>`_
+        * Sync log warning if a single row uses seed values from multiple scenarios. `See details <https://forum.kanors-emr.org/showthread.php?tid=1377&pid=7380#pid7380>`_
+        * Sync logs in a text file.  `User request <https://github.com/kanors-emr/Veda2.0-Installation/issues/39>`_
+        * New user option to not write Fill-R tables if the contents have not changed. Turned on by default. `User request <https://github.com/kanors-emr/Veda2.0-Installation/issues/37>`_
 
-	* [Fixes]
-		* Fill_R tag writing during Sync was starting from cell B1 instead of A1 when column A was empty
-		* Data type checking for hidden rows during tag reading
-		* SolveTime reporting (GAMS version 32 or higher is required as a minimum).  `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/33>`_
-		* Remove filter option from check all tables in result viewer.  `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/40>`_
+    * [Fixes]
+        * TFM_Fill-R tag writing during Sync was starting from cell B1 instead of A1 when column A was empty
+        * Data type checking for hidden rows during tag reading
+        * SolveTime reporting (GAMS version 32 or higher is required as a minimum).  `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/33>`_
+        * Remove filter option from check all tables in result viewer.  `See details <https://github.com/kanors-emr/Veda2.0-Installation/issues/40>`_
 
 **ADVANCED VERSION**
 
-	* Multiple enhancements in Reporting, especially in creating Sankey diagrams.
-	* Option on Run manager to automatically generate data to plot a histogram that guides the choice of cplex parameter `barcolnz`.
+    * Multiple enhancements in Reporting, especially in creating Sankey diagrams.
+    * Option on Run manager to automatically generate data to plot a histogram that guides the choice of cplex parameter `barcolnz`.
 
 
 3.0.7.0 [23Feb24]
