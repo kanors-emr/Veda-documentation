@@ -2,6 +2,19 @@
 Version History
 ################
 
+
+3.1.3.0 [17Jul24]
+^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+    * [Enhancements]
+
+        * Removed more spurious sync log entries from FI_T tag processing.
+        * Modified the method for retrieving announcements
+        * Adjusted the color display in Items View to differentiate between multiple sets of the same commodity
+
+
 3.1.2.0 [13Jul24]
 ^^^^^^^^^^^^^^^^^
 
