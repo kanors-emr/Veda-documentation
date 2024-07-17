@@ -11,9 +11,7 @@ Version History
     * [Enhancements]
 
         * Removed more spurious sync log entries from FI_T tag processing.
-        * Modified the method for retrieving announcements
-        * Adjusted the color display in Items View to differentiate between multiple sets of the same commodity
-
+        * The announcements on Start page ("from the developers") will show up in higher security environments as well.
 
 3.1.2.0 [13Jul24]
 ^^^^^^^^^^^^^^^^^
