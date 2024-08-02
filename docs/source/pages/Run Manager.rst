@@ -192,7 +192,7 @@ To import the zip files in Veda2.0, follow these steps:
 .. _Gams Engine Settings:
 
 GAMS Engine Settings
-============================
+====================
 
 Imagine a user in the VEDA2.0 application attempting to run a case, such as **DemoS_001**, using the GAMS Engine. 
 To do this, the user selects the 'GAMS Engine' option under 'Settings' in the Run Manager Module, and then clicks on the 'GAMS Engine Settings' button to enter their GAMS Engine credentials.
