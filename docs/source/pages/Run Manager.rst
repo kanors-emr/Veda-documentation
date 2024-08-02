@@ -188,3 +188,45 @@ To import the zip files in Veda2.0, follow these steps:
 
     .. image:: images/Import_runs_name_description_of_RunManager.png
         :width: 600
+
+.. _Gams Engine Settings:
+
+GAMS Engine Settings
+============================
+
+Imagine a user in the VEDA2.0 application attempting to run a case, such as **DemoS_001**, using the GAMS Engine. 
+To do this, the user selects the 'GAMS Engine' option under 'Settings' in the Run Manager Module, and then clicks on the 'GAMS Engine Settings' button to enter their GAMS Engine credentials.
+    
+    .. image:: images/gams_engine_credentials.png
+        :width: 500
+
+Users must enter their User Name and Password as provided by 'GAMS.' For the Namespace and Model name, follow these steps:
+
+    * Launch the GAMS Engine UI.
+    * Navigate to the Namespaces tab.
+    * Review the listed Namespaces and Models to find yours.
+    * Ensure that your namespace and model name are correct.
+    * If your model's name isn't registered, you will need to register it on this platform.
+
+        .. image:: images/gams_engineui_modelname_registration.png
+            :width: 500            
+
+        In the form shown above, users need to fill in the following fields:
+
+        * **Drop model files here** - Upload the TIMES model source code zip file along with the **`times.gms`** file.
+
+            For reference, use the sample zip file **`times473.zip`**, which contains the TIMES model source code version 4.7.3 along with the **`times.gms`** file. 
+            You can download it from `here <https://www.dropbox.com/scl/fi/ph1g8r43og3ugaxdlyxu8/times473.zip?rlkey=9z11wf9e2pz47fhvx3ezstrvy&dl=0>`_.
+            
+            .. note:: **DemoS_001** is a Veda model. You need to add TIMES model source instead of Veda model. You can download the latest TIMES model code from `here <https://github.com/etsap-TIMES/TIMES_model/releases>`_. 
+            
+            After downloading, replace the source folder files with the new files. Do not change or remove the **`times.gms`** file.
+
+        * **Identifier for the model** - Enter `latest`
+        * **Name of the main file** – Enter `times.gms`
+        * **Command line arguments** – Enter `idir1=source,idir2=model,fileCase=2`        
+        
+        .. image:: images/gams_engineui_modelname_registration_filled.png
+            :width: 500
+
+For more detailed guidance and an illustrative image, please refer to the provided `link <https://www.gams.com/engine/administration.html>`_.
