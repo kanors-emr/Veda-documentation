@@ -3,6 +3,42 @@ Version History
 ################
 
 
+4.0.0.0 [07Nov24]
+^^^^^^^^^^^^^^^^^
+
+**[Enhancements]**
+
+- Introducing metadata in Veda.
+- WildCard support for User Constraint field in INS and UPD tags.
+
+
+3.2.1.0 [07Nov24]
+^^^^^^^^^^^^^^^^^
+
+.. note::
+    Users of licenses with maintenance expiration before **October 25, 2024** are advised to use this version, which is the final release within the major version **3** (`download <https://github.com/kanors-emr/Veda2.0-Installation/releases/tag/v3.2.1.0>`_).
+
+
+**[Enhancements]**
+
+- Included XLSM (macro enabled) workbook tag reading which contains FILL tag. Such workbooks were earlier being skipped.
+- Introduced a button for SubResTrans file in the Navigator grid
+- Simplified import of VO runs in Veda2.0
+- UI enhancements
+- Set default relative tolerance in GDXDiff to 1e-4
+
+**[Fixes]**
+
+- Can't create new or view existing Table Master groups or select tables by filtering `#44 <https://github.com/kanors-emr/Veda2.0-Installation/issues/44>`_
+- Expanded Excel export limit in Items List `#43 <https://github.com/kanors-emr/Veda2.0-Installation/issues/43>`_
+- Enabled Excel export in Times and Veda Attributes `#43 <https://github.com/kanors-emr/Veda2.0-Installation/issues/43#issuecomment-2269648594>`_
+- Shorter list of VDA_FLOP Deletions `#42 <https://github.com/kanors-emr/Veda2.0-Installation/issues/42#issuecomment-2452224383>`_
+- Issue with UC on cum subsidies for period of years `[See details] <https://forum.kanors-emr.org/showthread.php?tid=1431&pid=7644#pid7644>`_
+- Controversial handling of CG indexes by VEDA (FI_T) `[See details] <https://forum.kanors-emr.org/showthread.php?tid=1426&pid=7648#pid7648>`_
+- Priority resolution of dimensions for tag processing `[See details] <https://forum.kanors-emr.org/showthread.php?tid=1426&pid=7598#pid7598>`_
+- CG declarations in col headers `[See details] <https://forum.kanors-emr.org/showthread.php?tid=1426&pid=7614#pid7614>`_
+
+
 3.1.3.0 [17Jul24]
 ^^^^^^^^^^^^^^^^^
 
