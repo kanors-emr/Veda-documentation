@@ -53,7 +53,7 @@ These tags define the key elements - processes, commodities, topology, and core 
 
 
 Commodity Definition Table (~FI_COMM)
-=====================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The **Commodity Definition Table (~FI_COMM)** is used to declare the non-numerical characteristics of commodities in the model. Each commodity must be declared only once within these tables to avoid conflicts, such as inconsistent attributes (e.g., different time slice levels).
 
@@ -302,7 +302,6 @@ Below is an example of a **~FI_PROCESS** table:
      - MW
      - DAYNITE
 
----
 
 Best Practices
 --------------
@@ -321,25 +320,28 @@ that is used to maintain the data.
 
 The **Flexible Import Table (~FI_T)** is a versatile table used primarily to create the model topology, defining process inputs, outputs, and parameters in Base-Year (B-Y) templates and SubRES files. Its flexible structure allows users to specify parameters and their numerical values with minimal intervention. Data is imported as provided, without modification during the import process.
 
-Unlike most other table types, the **~FI_T** tag is not placed directly above the upper-leftmost table cell. Instead, it appears in the row immediately above the table headers and in the column preceding the first data-containing column. This placement enables a dynamic structure, allowing any number of columns to be designated for row identifiers instead of data.
 
 Key Features
 ------------
 1. **Flexible Structure**
-   - The table layout can be adapted to match source data, minimizing preprocessing efforts.
-   - Indexes for attributes such as region, year, and timeslice can be specified as either row identifiers or column headers.
+    * The table layout can be adapted to match source data, minimizing preprocessing efforts.
+    * Indexes for attributes such as region, year, and timeslice can be specified as either row identifiers or column headers.
 
 2. **Direct Data Import**
-   - Data is not altered or expanded during import.
-   - This behavior is consistent with the **UC** tables (see Section 2.4.7), making it ideal for precise, user-defined parameter definitions.
+    * Data is not altered or expanded during import.
+    * This behavior is consistent with the **UC** tables (see Section 2.4.7), making it ideal for precise, user-defined parameter definitions.
 
 3. **Row and Column Organization**
-   - Row identifiers and column headers define the dimensions for data rows.
-   - Numerical data is input directly into the corresponding cells.
+    * Row identifiers and column headers define the dimensions for data rows.
+    * Numerical data is input directly into the corresponding cells.
 
 Layout and Regions
 ------------------
 The **~FI_T** table consists of six distinct regions:
+    .. image:: images/use_FIT_table.png
+        :width: 600
+        :height: 300
+        :align: center
 
 1. **Row ID Column Headers**
    These columns define the dimensions for data rows. Valid headers are listed below (see Table 3 for details):
@@ -360,18 +362,19 @@ The **~FI_T** table consists of six distinct regions:
    *Note: Comma-separated elements are allowed in these headers.*
 
 2. **Row Identifiers**
-   The specific elements for the dimensions defined in the row ID column headers.
+    The specific elements for the dimensions defined in the row ID column headers.
 
 3. **Data Area Column Headers**
-   Columns define additional dimensions for the data. These can include:
-   - Attribute
-   - Year
-   - TimeSlice
-   - LimType
-   - Commodity
-   - CommGrp (internal VEDA groups only: ``DEMO``, ``DEMI``, ``NRGO``, etc.)
-   - Region
-   - Currency
+    Columns define additional dimensions for the data. These can include:
+
+    - Attribute
+    - Year
+    - TimeSlice
+    - LimType
+    - Commodity
+    - CommGrp (internal VEDA groups only: ``DEMO``, ``DEMI``, ``NRGO``, etc.)
+    - Region
+    - Currency
 
    *Multiple dimensions can be combined in column headers, separated by a ``~``.*
 
@@ -385,6 +388,7 @@ The **~FI_T** table consists of six distinct regions:
 
 6. **Comments**
    Comment rows can be identified by:
+
    - A ``*`` character at the beginning of any cell in the row.
    - A ``\I:`` prefix, which is safer and avoids confusion with wildcard or operation symbols.
 
@@ -435,12 +439,19 @@ and topology. It is also possible to include existing parameters (and their valu
 DINS, INS, and UPD Tables
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Veda supports three main table types for inputting data: **DINS (Direct Insert)**, **INS (Insert)**, and **UPD (Update)**. Each serves a distinct purpose, with varying degrees of efficiency and complexity depending on the dataset's structure and the modeling requirements.
+Veda supports three main transformation table types for inputting data:**DINS (Direct Insert)**, **INS (Insert)**, and **UPD (Update)**. Each serves a distinct purpose, with varying degrees of efficiency and complexity depending on the dataset's structure and the modeling requirements.
 
-1. DINS (Direct Insert)
------------------------
+.. important::
+
+   The **~TFM_DINS** tag offers the highest processing efficiency, followed by `~FI_T <#flexible-import-table-fi-t>`_ and **~TFM_INS**.
+
+   Tags **~TFM_UPD** and **~TFM_MIG** are the least efficient. Whenever possible, users are encouraged to use **DINS** or **INS**, provided the logic can be transferred.
+
+
+1. ~TFM_DINS (Transformation Direct Insert Tables)
+--------------------------------------------------
 **Purpose:**
-DINS is the preferred table type when the dataset is fully enumerated, meaning all fields are explicitly defined without any wildcards or comma-separated lists.
+~TFM_DINS is the preferred table type when the dataset is fully enumerated, meaning all fields are explicitly defined without any wildcards or comma-separated lists.
 
 **Key Characteristics:**
 - **Processes** are identified using only the ``pset_pn`` column.
@@ -453,23 +464,27 @@ DINS is the preferred table type when the dataset is fully enumerated, meaning a
 **Use Case:**
 When all model elements are clearly defined in advance, such as a process-specific bound (``ACT_BND``) applied to individual processes without any `rules`.
 
-2. INS (Insert)
----------------
+2. ~TFM_INS (Transformation Insert Tables)
+------------------------------------------
 **Purpose:**
 INS is the general-purpose table for inserting new data into the database. It allows for greater flexibility in specifying model elements.
 
 **Key Characteristics:**
 - Supports **wildcards** (e.g., ``ALL``, ``*``) and **comma-separated values** in fields like ``pset_pn`` and ``cset_cn``.
-- Inserts absolute values directly into the database without referencing existing seed data.
+- Inserts **absolute values** directly into the database without referencing existing seed data.
 
 **Advantages:**
 - Provides flexibility for users who work with less granular or generic data definitions.
 - Easy to use for scenarios where exact enumeration is not required.
 
 **Use Case:**
-When defining constraints or parameters that apply to multiple processes or commodities using wildcards or lists (e.g., applying a cost parameter to ``ALL`` processes in a group).
+    .. image:: images/use_TFM_INS.png
+       :width: 400
 
-3. UPD (Update)
+In this example from DemoS_001, it is used to declare three new attributes
+(G_DYEAR, Discount, and YRFR) by row.
+
+3. ~TFM_UPD (Transformation Update Tables)
 ---------------
 **Purpose:**
 UPD is used when data modifications depend on the presence of existing seed values in the database.
@@ -484,7 +499,13 @@ UPD is used when data modifications depend on the presence of existing seed valu
 - Enables dynamic adjustments of seed values without overwriting them.
 
 **Use Case:**
-When modifying activity bounds by a factor (e.g., scaling an existing ``ACT_BND`` by ``0.5``) or adding parameters only to pre-existing processes.
+    .. image:: images/use_TFM_UPD.png
+        :width: 850
+        :height: 100
+
+In this figure it sets default prices (ACTCOST) for the backstop dummy processes for energy commodities (IMP*Z - dummy IMPort processes ending with “Z”)
+and demands (IMPDEMZ - a dummy IMPDEMZ process that can feed any demand). Note that the process and attribute MUST already have been specified for the qualifying process. Though
+not shown in the example above the data specification field may also contain operators (+, *, -, /) there the resulting value is applied to the existing value for the qualifying processes.
 
 .. note::
 
