@@ -222,19 +222,19 @@ The following are valid column headers for the **~FI_PROCESS** table:
    * - **Sets**
      - Sets to which processes belong, indicating the process type.
        Valid entries include:
-           - ``ELE``: Thermal or other power plant
-           - ``CHP``: Combined heat and power
-           - ``PRE``: Generic process
-           - ``DMD``: Demand device
-           - ``IMP``: Import process
-           - ``EXP``: Export process
-           - ``MIN``: Mining process
-           - ``HPL``: Heating plant
-           - ``IPS``: Inter-period storage
-           - ``NST``: Night storage device
-           - ``STG``: General timeslice storage
-           - ``STS``: Simultaneous DayNite/Weekly/Seasonal storage
-           - ``STK``: Combined DayNite/Weekly/Seasonal and inter-period storage.
+            - ``ELE``: Thermal or other power plant
+            - ``CHP``: Combined heat and power
+            - ``PRE``: Generic process
+            - ``DMD``: Demand device
+            - ``IMP``: Import process
+            - ``EXP``: Export process
+            - ``MIN``: Mining process
+            - ``HPL``: Heating plant
+            - ``IPS``: Inter-period storage
+            - ``NST``: Night storage device
+            - ``STG``: General timeslice storage
+            - ``STS``: Simultaneous DayNite/Weekly/Seasonal storage
+            - ``STK``: Combined DayNite/Weekly/Seasonal and inter-period storage.
    * - **Region**
      - Specifies the region(s) where the process exists (comma-separated entries allowed).
        - Default: Applied to all regions if not specified.
@@ -485,7 +485,7 @@ In this example from DemoS_001, it is used to declare three new attributes
 (G_DYEAR, Discount, and YRFR) by row.
 
 3. ~TFM_UPD (Transformation Update Tables)
----------------
+------------------------------------------
 **Purpose:**
 UPD is used when data modifications depend on the presence of existing seed values in the database.
 
@@ -728,3 +728,76 @@ Use attribute FLO_EMIS via any regular Veda tag instead.
 ~TFM_Fill
 ^^^^^^^^^
 Use TFM_Fill-R instead.
+
+Wildcard Support
+================
+
+The columns **PSET_PN**, **PSET_PD**, **PSET_CO**, **PSET_CI** (for process filters), and **CSET_CN**, **CSET_CD** (for commodity filters) support the use of comma-separated entries, with wild cards ,
+in all TFM tables apart from DINS:
+
+1. **Comma-Separated Entries**:
+   You can specify multiple entries in these columns by separating them with commas (`,`).
+
+   Example:
+   ``Process1,Process2,Process3``
+
+2. **Wildcards**:
+   Wildcards allow flexible and broad pattern-matching for process or commodity names.
+
+Wildcards Overview
+^^^^^^^^^^^^^^^^^^
+
+1. **Asterisk (`*`)**:
+   - Acts as a **multi-character wildcard**, matching zero or more characters.
+
+     Examples:
+       - ``Elec*`` matches ``Elec``, ``Electricity``, ``ElecGen``, etc.
+       - ``*Gen`` matches ``ElecGen``, ``HeatGen``, etc.
+
+2. **Question Mark (`?`) or Underscore (`_`)**:
+   - Acts as a **single-character wildcard**, matching exactly one character.
+
+     Examples:
+       - ``Tech_?`` matches ``Tech_A``, ``Tech_B``, etc.
+       - ``Fuel_?`` matches ``Fuel_X``, ``Fuel_Y``, etc.
+
+3. **Square Brackets for Literal `_`**:
+   - If you want to refer to `_` as an actual character (not a wildcard), enclose it in square brackets ``[ ]``.
+
+     Example:
+       - ``Tech[_]_`` matches ``Tech_A``, ``Tech_B``, etc.
+
+Examples
+^^^^^^^^
+
+**Process Set Columns (PSET_...)**
+
+- Entry: ``PSET_PN``
+
+  - Value: ``Elec*``
+    Matches: ``Electricity_Generation``, ``ElecStorage``, etc.
+
+  - Value: ``Fuel?_Gen``
+    Matches: ``Fuel1_Gen``, ``Fuel2_Gen``, etc.
+
+  - Value: ``Tech_[_]X``
+    Matches: ``Tech_X``.
+
+**Commodity Set Columns (CSET_...)**
+
+- Entry: ``CSET_CN``
+
+  - Value: ``Elec, Heat*``
+    Matches: ``Elec``, ``Heat``, ``HeatPump``, etc.
+
+  - Value: ``Gas?_Supply``
+    Matches: ``Gas1_Supply``, ``Gas2_Supply``, etc.
+
+Note
+^^^^
+
+**Combining Wildcards with Comma-Separated Entries**:
+    Wildcards can be mixed with specific names in the same column.
+
+    Example:
+        ``Elec*,Heat1,Fuel?_Gen`` matches ``Electricity``, ``Heat1``, and any ``Fuel?_Gen``
