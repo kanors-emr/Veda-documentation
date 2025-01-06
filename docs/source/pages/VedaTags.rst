@@ -792,12 +792,3 @@ Examples
 
   - Value: ``Gas?_Supply``
     Matches: ``Gas1_Supply``, ``Gas2_Supply``, etc.
-
-Note
-^^^^
-
-**Combining Wildcards with Comma-Separated Entries**:
-    Wildcards can be mixed with specific names in the same column.
-
-    Example:
-        ``Elec*,Heat1,Fuel?_Gen`` matches ``Electricity``, ``Heat1``, and any ``Fuel?_Gen``
