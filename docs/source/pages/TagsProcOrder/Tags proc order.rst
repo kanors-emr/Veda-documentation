@@ -12,6 +12,7 @@ All files selected for synchronization are scanned for Veda tags, in parallel, a
     * Trade links
     * COMGRP
     * TOPDINS and TOPINS
+        * Across all files - BY_Trans, SubRES_Trans and scenario files.
     * BY Trans (works with processes defined in BY workbooks and commodities defined in SysSettings + BY)
         * || DINS
         * INS
@@ -30,6 +31,8 @@ All files selected for synchronization are scanned for Veda tags, in parallel, a
     * || NSV scenarios
         * || DINS
         * INS/UPD/MIG
+    * || UC_T
+        * UC tags collected till this point are processed so that they are fully available for modifications in parametric scenarios.
     * || Parametric scenarios
         * || DINS
         * INS/UPD/MIG
