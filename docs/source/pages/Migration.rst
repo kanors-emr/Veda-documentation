@@ -64,7 +64,7 @@ Things that are different
 • Update and Migrate tables will not see seed values from the scenario that they are specified in.
 • Negative (exclude) filters were combined with **AND** by default in VEDA_FE, but they are combined with **OR** in Veda2.0.
 • COST was not shown an alias of ACT_COST in the Attribute Master, but it worked like one for non-IRE processes in VEDA_FE. Veda2.0 does **not** make this exception.
-
+• In parametric scenario files, Veda_FE interpreted a single number in the **~InputCell** field as a range from **1 to that number**. For example, specifying `~InputCell: 5` would generate scenarios **1 through 5**. To create only scenario **#5**, you had to explicitly write `5-5`. In Veda2, this behavior has changed. A single number in **~InputCell** is now interpreted **as it is**, meaning `5` will generate only scenario **#5**, not a range.
 
 Migration steps
 ================
