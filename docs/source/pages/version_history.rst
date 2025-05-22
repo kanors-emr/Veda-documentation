@@ -3,6 +3,45 @@ Version History
 ################
 
 
+4.1.1.1 [21May25]
+^^^^^^^^^^^^^^^^^
+
+### **ALL VERSIONS**
+
+**[New]**
+
+- **Advanced and Academic licenses support the OSeMOSYS model**.
+- Enables users to define and manage custom TIMES attributes with enhanced control - via UserTimesAttributes.xlsx file in the Model folder.
+- Allows SysSettings to see seed values across all scenarios, removing limitations in NSV processing and enabling interpolation options for all parameters.
+- Introduces a new dummy process IMPDUCZ to better manage UC commodities. `[See details] <https://forum.kanors-emr.org/showthread.php?tid=1213&pid=8049#pid8049>`_
+
+
+**[Enhancements]**
+
+- New ~FI_PROCESS_Trades tag supported in the Trade links file for better control on Trade processes.
+- Controlled Splitting of Other_Indexes, configuration to better handle large result datasets.
+- Added new modeling capabilities for representing Gas Transport Infrastructure.
+- GIS Trades Enhanced with VAR_CAP and VAR_NCAP Support
+- Extended TFM_COMMGRP Tag Support in BY/SubRES Workbooks
+- Includes multiplication support, parent region mapping, and improved unit conversion to TS_Ratios.
+- Improved support in tags INS, UC_T, R_E, and R_S in RegionGroup.
+- RegionGroup can now be used in both rows and columns in FI_T Tag.
+- Multiple UI upgrades including splash screen, grid icons, paddings, color schemes, and startup visuals.
+- PostgreSQL Server version upgraded to 15.9
+
+
+**[Fixes]**
+
+- Skip Fill-R Comparison When Output Sheet Is Missing
+- Fixed entries that were incorrectly marked with “X” for Timeseries Data Correction.
+- Fix for Commodity Group Filtering in cset_set
+- Removed Workbook Dependency in Excel Merge Logic
+- Decimal Separator and Unit Conversion resolved in pivot and export formatting.
+- Incorrect Numbers in Turkish Locales
+- Excel Sheet Naming Restrictions replaces invalid characters with ~ in Batch Export.
+- Validation on Sheet Name Entry for Results Views
+
+
 4.0.0.0 [07Nov24]
 ^^^^^^^^^^^^^^^^^
 
