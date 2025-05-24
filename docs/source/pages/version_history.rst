@@ -5,11 +5,20 @@ Version History
 4.1.1.1 [21May25]
 ^^^^^^^^^^^^^^^^^
 
+.. important::
+
+   **New Feature in ADVANCED and ACADEMIC Licenses:** Veda now supports full interoperability between **TIMES** and **OSeMOSYS**!
+
+   Two primary workflows are supported:
+    * **Starting from OSeMOSYS CSVs**: Import data directly to seamlessly create OSeMOSYS or TIMES models.
+    * **Starting from Veda Templates**: Any simple model built with Veda templates can now be viewed and executed as either TIMES or OSeMOSYS.
+   Additionally, you can combine both workflows by starting from OSeMOSYS CSVs (treated as BaseYear templates) and further expanding your model using standard Veda input components like **SubRES** and **Scenario files**. A powerful use-case is conducting detailed sensitivity analyses around an existing OSeMOSYS reference case using Veda's parametric scenario files.
+
+
 **ALL VERSIONS**
 
 **[New]**
 
-- **Advanced and Academic licenses support the OSeMOSYS model**.
 - Users can define and manage TIMES attributes with enhanced control - via UserTimesAttributes.xlsx file in the Model folder.
 - Allows SysSettings to see seed values across all scenarios - including NSV and parametric scenarios.
 - Introduces a new process IMPDUCZ to supply the dummy commodities used to relax User Constraints. `[See details] <https://forum.kanors-emr.org/showthread.php?tid=1213&pid=8049#pid8049>`_
