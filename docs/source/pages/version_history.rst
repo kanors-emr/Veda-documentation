@@ -2,7 +2,6 @@
 Version History
 ################
 
-
 4.1.1.1 [21May25]
 ^^^^^^^^^^^^^^^^^
 
@@ -11,28 +10,23 @@ Version History
 **[New]**
 
 - **Advanced and Academic licenses support the OSeMOSYS model**.
-- Enables users to define and manage custom TIMES attributes with enhanced control - via UserTimesAttributes.xlsx file in the Model folder.
-- Allows SysSettings to see seed values across all scenarios, removing limitations in NSV processing and enabling interpolation options for all parameters.
-- Introduces a new dummy process IMPDUCZ to better manage UC commodities. `[See details] <https://forum.kanors-emr.org/showthread.php?tid=1213&pid=8049#pid8049>`_
-
+- Users can define and manage TIMES attributes with enhanced control - via UserTimesAttributes.xlsx file in the Model folder.
+- Allows SysSettings to see seed values across all scenarios - including NSV and parametric scenarios.
+- Introduces a new process IMPDUCZ to supply the dummy commodities used to relax User Constraints. `[See details] <https://forum.kanors-emr.org/showthread.php?tid=1213&pid=8049#pid8049>`_
+- New ~FI_PROCESS_Trades tag supported in the Trade links file for better control on Trade processes.
+- Improved support in tags INS, UC_T, R_E, and R_S in RegionGroup.
+- RegionGroup can now be used in both rows and columns in FI_T Tag.
 
 **[Enhancements]**
 
-- New ~FI_PROCESS_Trades tag supported in the Trade links file for better control on Trade processes.
-- Controlled Splitting of Other_Indexes, configuration to better handle large result datasets.
-- Added new modeling capabilities for representing Gas Transport Infrastructure.
-- GIS Trades Enhanced with VAR_CAP and VAR_NCAP Support
-- Extended TFM_COMMGRP Tag Support in BY/SubRES Workbooks
-- Includes multiplication support, parent region mapping, and improved unit conversion to TS_Ratios.
-- Improved support in tags INS, UC_T, R_E, and R_S in RegionGroup.
-- RegionGroup can now be used in both rows and columns in FI_T Tag.
+- Controlled Splitting of Other_Indexes `[See details] <https://forum.kanors-emr.org/showthread.php?tid=1367&pid=8043#pid8043>`_
+- TFM_COMMGRP Tag can now be used in BY/SubRES files.
 - Multiple UI upgrades including splash screen, grid icons, paddings, color schemes, and startup visuals.
-- PostgreSQL Server version upgraded to 15.9
-
+- PostgreSQL Server version upgraded to 15.9.
 
 **[Fixes]**
 
-- Skip Fill-R Comparison When Output Sheet Is Missing
+- Skip Fill-R Comparison When Output Sheet Is Missing.
 - Fixed entries that were incorrectly marked with “X” for Timeseries Data Correction.
 - Fix for Commodity Group Filtering in cset_set
 - Removed Workbook Dependency in Excel Merge Logic
@@ -41,6 +35,11 @@ Version History
 - Excel Sheet Naming Restrictions replaces invalid characters with ~ in Batch Export.
 - Validation on Sheet Name Entry for Results Views
 
+**ADVANCED VERSION**
+
+- Reporting enhancements
+    * GIS Trades Enhanced with VAR_CAP and VAR_NCAP Support
+    * Includes multiplication support, parent region mapping, and improved unit conversion to TS_Ratios.
 
 4.0.0.0 [07Nov24]
 ^^^^^^^^^^^^^^^^^
