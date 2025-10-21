@@ -241,7 +241,6 @@ Getting started with the RES
 ============================
 These tags define the key elements - processes, commodities, topology, and core parameters. **These tags don't support wild cards**.
 
-
 Commodity Definition Table (~FI_COMM)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -412,25 +411,28 @@ The following are valid column headers for the **~FI_PROCESS** table:
    * - **Sets**
      - Sets to which processes belong, indicating the process type.
        Valid entries include:
-            - ``ELE``: Thermal or other power plant
-            - ``CHP``: Combined heat and power
-            - ``PRE``: Generic process
-            - ``DMD``: Demand device
-            - ``IMP``: Import process
-            - ``EXP``: Export process
-            - ``MIN``: Mining process
-            - ``HPL``: Heating plant
-            - ``IPS``: Inter-period storage
-            - ``NST``: Night storage device
-            - ``STG``: General timeslice storage
-            - ``STS``: Simultaneous DayNite/Weekly/Seasonal storage
-            - ``STK``: Combined DayNite/Weekly/Seasonal and inter-period storage.
+       
+       - ``ELE``: Thermal or other power plant
+       - ``CHP``: Combined heat and power
+       - ``PRE``: Generic process
+       - ``DMD``: Demand device
+       - ``IMP``: Import process
+       - ``EXP``: Export process
+       - ``MIN``: Mining process
+       - ``HPL``: Heating plant
+       - ``IPS``: Inter-period storage
+       - ``NST``: Night storage device
+       - ``STG``: General timeslice storage
+       - ``STS``: Simultaneous DayNite/Weekly/Seasonal storage
+       - ``STK``: Combined DayNite/Weekly/Seasonal and inter-period storage.
    * - **Region**
      - Specifies the region(s) where the process exists (comma-separated entries allowed).
+       
        - Default: Applied to all regions if not specified.
        - Valid only in B-Y templates (regional data for SubRES processes must be provided in ``SubRES_<sector>_Trans`` files).
    * - **TechName**
      - The name of the process (e.g., ``MINCOA1``), up to 32 characters.
+       
        - Recommendation: Limit to 27 characters to account for potential VEDA2.0 additions (e.g., for vintaging or dummy imports).
    * - **ProcessDesc**
      - A descriptive name for the process (e.g., ``Domestic supply of Solid Fuels Step 1``), up to 255 characters.
@@ -441,23 +443,28 @@ The following are valid column headers for the **~FI_PROCESS** table:
    * - **Tslvl**
      - The operational time-slice level of the process.
        Valid entries:
-           - ``ANNUAL``
-           - ``SEASON``
-           - ``WEEKLY``
-           - ``DAYNITE``
+       
+       - ``ANNUAL``
+       - ``SEASON``
+       - ``WEEKLY``
+       - ``DAYNITE``
+       
        Default behavior:
-           - ``DAYNITE`` for ``ELE``, ``STGTSS``, and ``STGIPS`` processes.
-           - ``SEASON`` for ``CHP`` and ``HPL`` processes.
-           - ``ANNUAL`` for all other process types.
+       
+       - ``DAYNITE`` for ``ELE``, ``STGTSS``, and ``STGIPS`` processes.
+       - ``SEASON`` for ``CHP`` and ``HPL`` processes.
+       - ``ANNUAL`` for all other process types.
    * - **PrimaryCG**
      - The Primary Commodity Group (PCG) of the process.
+       
        - Normally, this is left unspecified as VEDA assigns a default PCG.
        - Specify only if overriding the default or creating a new PCG.
    * - **Vintage**
      - Indicates whether the process uses vintage tracking.
        Valid entries:
-           - ``YES``: Vintage tracking enabled.
-           - ``NO`` (default): Vintage tracking disabled.
+       
+       - ``YES``: Vintage tracking enabled.
+       - ``NO`` (default): Vintage tracking disabled.
 
 .. note::
    Comma-separated entries are allowed for applicable columns (e.g., ``Region``, ``Sets``).
@@ -620,6 +627,206 @@ Best Practices
 By leveraging the flexibility of the **~FI_T** table, users can efficiently configure process inputs, outputs, and parameters, aligning the model structure with source data seamlessly.
 
 
+Process and Commodity Filtering
+===============================
+
+The Foundation of VEDA's Rule-Based Processing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Process and commodity filtering is the core mechanism that enables VEDA's powerful rule-based data processing. This system allows users to apply parameters, transformations, and operations to groups of processes and commodities based on flexible criteria, eliminating the need for repetitive individual declarations.
+
+**Applications Across VEDA:**
+  - **Transformation Tables** (INS, UPD, MIG): Bulk parameter insertion and updates
+  - **Reports**: Multi-dimensional classification and aggregation  
+  - **Set Definitions**: Dynamic process and commodity groupings
+
+Five Filtering Dimensions
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+VEDA provides five complementary methods for identifying processes and commodities:
+
+**1. Set Membership** (``pset_set``, ``cset_set``)
+   - Filter by predefined VEDA process or commodity sets
+   - Most robust for administrative groupings
+   - Example: ``pset_set: ELEGEN`` (all electricity generation processes)
+
+**2. Name Patterns** (``pset_pn``, ``cset_cn``)
+   - Filter by process or commodity name patterns
+   - Supports wildcards and exclusions
+   - Example: ``pset_pn: *COAL*`` (processes with "COAL" in name)
+
+**3. Description Patterns** (``pset_pd``, ``cset_cd``)
+   - Filter by process or commodity description text
+   - Useful when names are cryptic but descriptions are clear
+   - Example: ``pset_pd: *Combined Cycle*``
+
+**4. Input Topology** (``pset_ci``)
+   - Filter processes by input commodities (most robust for functional classification)
+   - Based on actual energy flows, not naming conventions
+   - Example: ``pset_ci: TRDELC`` (all processes consuming electricity for transport)
+
+**5. Output Topology** (``pset_co``)
+   - Filter processes by output commodities
+   - Functional classification based on what processes produce
+   - Example: ``pset_co: ELC`` (all electricity-producing processes)
+
+Pattern Syntax
+^^^^^^^^^^^^^^
+
+**Wildcards:**
+  - ``*``: Multi-character wildcard (zero or more characters)
+  - ``?``: Single-character wildcard (exactly one character)
+  - ``[_]``: Literal underscore (when not used as wildcard)
+
+**Examples:**
+  - ``*COAL*``: Contains "COAL" anywhere
+  - ``COAL*``: Starts with "COAL"  
+  - ``*COAL``: Ends with "COAL"
+  - ``PWR??01``: "PWR" + exactly 2 characters + "01"
+
+**Comma-Separated Lists (OR Logic):**
+  - ``COA,GAS,OIL``: Coal OR Gas OR Oil
+  - ``*ELEC*,*GRID*``: Contains "ELEC" OR contains "GRID"
+
+**Exclusion Syntax:**
+  - ``-*OLD*``: Exclude processes with "OLD" in name
+  - ``*,--RETIRED*``: All processes EXCEPT those with "RETIRED"
+
+Logic Control Architecture
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+VEDA provides sophisticated control over how filtering conditions are combined through six logic control columns:
+
+**Two-Block Architecture:**
+
+.. code-block:: none
+
+   ┌─────────────────┐    ┌──────────────────────────────────┐
+   │   Set Block     │    │  Name/Desc/Input/Output Block   │
+   │   pset_set      │ ←──┤  pset_pn, pset_pd,              │
+   │   cset_set      │    │  pset_ci, pset_co               │
+   └─────────────────┘    └──────────────────────────────────┘
+           ↑                              ↑
+      _forsets columns              _andor columns
+   (block integration)           (within-block logic)
+
+**Logic Control Columns:**
+
+**Within Name/Desc/Input/Output Block:**
+  - ``t_pos_andor``: Process positive conditions (AND/OR across pset_pn, pset_pd, pset_ci, pset_co)
+  - ``c_pos_andor``: Commodity positive conditions (AND/OR across cset_cn, cset_cd)
+  - ``t_neg_andor``: Process negative/exclusion conditions (AND/OR across exclusion fields)
+  - ``c_neg_andor``: Commodity negative/exclusion conditions (AND/OR across exclusion fields)
+
+**Set Block Integration:**
+  - ``t_pos_andor_forsets``: How process sets join with other process conditions
+  - ``c_pos_andor_forsets``: How commodity sets join with other commodity conditions
+
+**Default Behavior (when columns omitted):**
+  - **All logic = AND** (most restrictive)
+  - **Within comma-separated values = OR** (always)
+
+Logic Control Examples
+^^^^^^^^^^^^^^^^^^^^^^
+
+**Example 1: Standard AND Logic (Default)**
+
+.. code-block:: none
+
+   pset_set: ELEGEN        # Set membership
+   pset_pn: *COAL*         # Name pattern  
+   pset_ci: COA            # Input commodity
+   # Result: Processes in ELEGEN set AND name contains COAL AND consumes COA
+
+**Example 2: OR Logic Within Block**
+
+.. code-block:: none
+
+   pset_pn: *COAL*         # Name pattern
+   pset_ci: COA            # Input commodity  
+   t_pos_andor: OR         # Name OR Input
+   # Result: Processes with COAL in name OR consuming COA
+
+**Example 3: Set Block OR Integration**
+
+.. code-block:: none
+
+   pset_set: ELEGEN        # Set membership
+   pset_pn: *RENEW*        # Name pattern
+   t_pos_andor_forsets: OR # Set OR Name
+   # Result: Processes in ELEGEN set OR with RENEW in name
+
+**Example 4: Complex Mixed Logic**
+
+.. code-block:: none
+
+   # Positive conditions
+   pset_set: PWRGEN        # Power generation set
+   pset_pn: *COAL*,*GAS*   # Coal or gas in name
+   pset_ci: COA,GAS        # Consumes coal or gas
+   t_pos_andor: OR         # Name patterns OR input commodities
+   t_pos_andor_forsets: AND # Set AND (name OR input)
+   
+   # Negative conditions  
+   pset_pn: -*OLD*         # Exclude old plants
+   pset_pd: -*RETIRED*     # Exclude retired plants
+   t_neg_andor: OR         # Exclude if old OR retired
+   
+   # Result: (PWRGEN set) AND (coal/gas name OR coal/gas input) 
+   #         AND NOT (old name OR retired description)
+
+**Example 5: Commodity Filtering**
+
+.. code-block:: none
+
+   cset_set: ALLELC        # Electricity commodity set
+   cset_cn: *H2*           # Hydrogen commodities
+   c_pos_andor_forsets: OR # Set OR name pattern
+   # Result: All electricity commodities OR hydrogen commodities
+
+Filtering Method Selection Guidelines
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Use Topology-Based Filtering When:**
+  - Functional relationships are primary concern (``pset_ci``, ``pset_co``)
+  - Model has inconsistent naming conventions
+  - New technologies added frequently  
+  - Cross-model compatibility required
+
+**Use Set-Based Filtering When:**
+  - Predefined VEDA process sets exist (``pset_set``, ``cset_set``)
+  - Administrative or organizational groupings needed
+  - Consistent with existing model structure
+
+**Use Pattern-Based Filtering When:**
+  - Topology insufficient for distinction (``pset_pn``, ``pset_pd``, ``cset_cn``, ``cset_cd``)
+  - Regional, size, or vintage distinctions needed
+  - Legacy compatibility required
+
+**Recommended Approach:**
+  1. **Start with topology** (``pset_ci``, ``pset_co``) for primary functional classification
+  2. **Add sets** (``pset_set``) for administrative groupings  
+  3. **Supplement with patterns** (``pset_pn``, ``pset_pd``) for secondary attributes
+  4. **Use logic control** to create sophisticated combination rules
+
+Best Practices
+^^^^^^^^^^^^^^
+
+**Efficiency:**
+  - **Topology first**: Most robust and maintenance-free
+  - **Specific patterns last**: Place most restrictive conditions at the end
+  - **Avoid over-complexity**: Use simplest logic that achieves the goal
+
+**Maintainability:**
+  - **Document logic choices**: Explain why specific combinations are used
+  - **Test edge cases**: Verify filtering captures intended processes/commodities
+  - **Plan for growth**: Design filters that handle new technologies automatically
+
+**Performance:**
+  - **Use sets when available**: Faster than pattern matching
+  - **Minimize wildcards**: More specific patterns process faster
+  - **Combine related conditions**: Group related filters in single operations
+
 The data workhorses
 ===================
 
@@ -682,7 +889,7 @@ UPD is used when data modifications depend on the presence of existing seed valu
 **Key Characteristics:**
 - Performs **numerical transformations** on seed values (e.g., multiplying or dividing an existing value).
 - Supports **conditional insertion**, where new data is added only if a corresponding seed value exists.
-- Requires prior existence of seed data `in an alphabetically inferior scenario` in the database.
+- Requires prior existence of seed data *in an alphabetically inferior scenario* in the database.
 
 **Advantages:**
 - Ensures data integrity by operating conditionally on existing entries.
@@ -778,80 +985,87 @@ By understanding the distinct roles and advantages of each table type, users can
     ### ~TFM_UPD Variants
     The **~TFM_UPD** variants allow update tables to organize value fields differently. The supported variants include:
 
-    - **TFM_UPD-AT:**
-      The value fields use **attributes** as column headers.
+- **TFM_UPD-AT:**
+  The value fields use **attributes** as column headers.
 
-    - **TFM_UPD-TS:**
-      The value fields use **years** as column headers.
+- **TFM_UPD-TS:**
+  The value fields use **years** as column headers.
 
-    Example Table Layouts
-    **TFM_INS-TS Example**
-    .. list-table::
-       :header-rows: 1
+Example Table Layouts
+^^^^^^^^^^^^^^^^^^^^^
 
-       * - **~TFM_INS-TS**
-         - **Region**
-         - **TechName**
-         - **Attribute**
-         - **2020**
-         - **2025**
-       * -
-         - US
-         - PowerPlant1
-         - ACT_BND
-         - 500
-         - 550
-       * -
-         - US
-         - PowerPlant2
-         - ACT_BND
-         - 300
-         - 320
+**TFM_INS-TS Example**
 
-    In this example:
-    - The value fields use **years** (2020, 2025) as column headers.
-    - Each row specifies the activity bounds (`ACT_BND`) for a technology in a region.
+.. list-table::
+   :header-rows: 1
 
+   * - **~TFM_INS-TS**
+     - **Region**
+     - **TechName**
+     - **Attribute**
+     - **2020**
+     - **2025**
+   * -
+     - US
+     - PowerPlant1
+     - ACT_BND
+     - 500
+     - 550
+   * -
+     - US
+     - PowerPlant2
+     - ACT_BND
+     - 300
+     - 320
 
-     **TFM_UPD-AT Example**
-    .. list-table::
-       :header-rows: 1
+In this example:
 
-       * - **~TFM_UPD-AT**
-         - **Region**
-         - **TechName**
-         - **2020~UP**
-         - **2025~UP**
-       * -
-         - US
-         - PowerPlant1
-         - ACT_BND=500
-         - ACT_BND=550
-       * -
-         - US
-         - PowerPlant2
-         - ACT_BND=300
-         - ACT_BND=320
-
-    In this example:
-    - The value fields use **attributes** (`ACT_BND`) as column headers, enabling a compact layout for multiple attributes.
+- The value fields use **years** (2020, 2025) as column headers.
+- Each row specifies the activity bounds (`ACT_BND`) for a technology in a region.
 
 
-     Best Practices
-    1. **Choose Variants Wisely:**
-       Select a table variant that aligns with the structure of your source data to minimize preprocessing.
+**TFM_UPD-AT Example**
 
-    2. **Keep Tables Wide:**
-       Wider tables (fewer rows) are more efficient, as they reduce the rule processing required for each row.
+.. list-table::
+   :header-rows: 1
 
-    3. **Simplify Preprocessing:**
-       Use the variant that closely matches your source data layout, reducing the need for manual restructuring.
+   * - **~TFM_UPD-AT**
+     - **Region**
+     - **TechName**
+     - **2020~UP**
+     - **2025~UP**
+   * -
+     - US
+     - PowerPlant1
+     - ACT_BND=500
+     - ACT_BND=550
+   * -
+     - US
+     - PowerPlant2
+     - ACT_BND=300
+     - ACT_BND=320
 
-    4. **Fully Enumerate Data for DINS Variants:**
-       Ensure all data is fully enumerated (no wildcards or lists) when using **DINS** variants for optimal performance.
+In this example:
+
+- The value fields use **attributes** (`ACT_BND`) as column headers, enabling a compact layout for multiple attributes.
 
 
-    By leveraging these variants, users can efficiently configure their tables for improved readability and reduced computational overhead, while ensuring that data aligns seamlessly with Veda’s processing structure.
+Best Practices
+^^^^^^^^^^^^^^
+
+1. **Choose Variants Wisely:**
+   Select a table variant that aligns with the structure of your source data to minimize preprocessing.
+
+2. **Keep Tables Wide:**
+   Wider tables (fewer rows) are more efficient, as they reduce the rule processing required for each row.
+
+3. **Simplify Preprocessing:**
+   Use the variant that closely matches your source data layout, reducing the need for manual restructuring.
+
+4. **Fully Enumerate Data for DINS Variants:**
+   Ensure all data is fully enumerated (no wildcards or lists) when using **DINS** variants for optimal performance.
+
+By leveraging these variants, users can efficiently configure their tables for improved readability and reduced computational overhead, while ensuring that data aligns seamlessly with Veda's processing structure.
 
 
 
