@@ -103,8 +103,386 @@ It can be consumed in applications like Tableau, Power BI, or LMA
 Advanced features
 ==================
 * By default process, commodity, and timeslice dimensions are aggregated while generating variables. TS_Defs supports a column "show_me", where one can indicate dimensions **not** to be aggregated. Dimensions are indicated by their first characters. "pct" in this column will make process, commodity, and timeslice dimensions survive.
-* Sankey diagrams: Reports functionality can be used to prepare data for Sankey diagrams. See the report definitions file in JRC_EU-TIMES for one way to do this.
 * Unit conversion: **~UnitConv** tag can be used to convert units. For example, EProd variables can have **PJe** as the unit, which can be converted to **Twh** in the report.
+
+Sankey Diagram Creation
+=======================
+
+The Reports functionality provides sophisticated capabilities for creating Sankey diagrams that visualize energy and material flows through the modeled system. Sankey diagrams are automatically generated from TIMES model results by defining source-commodity-sink relationships that VEDA processes into connected flow visualizations.
+
+Conceptual Approach
+^^^^^^^^^^^^^^^^^^^
+
+The key to successful Sankey creation is thinking in terms of **source-commodity-sink triplets**. Each energy or material flow can be conceptualized as:
+
+**Source → Commodity → Sink**
+
+Examples:
+- Coal Mining → Coal → Power Plant
+- Power Plant → Electricity → Industrial Demand  
+- Solar Farm → Electricity → Battery Storage
+- Battery Storage → Electricity → Residential Demand
+
+VEDA automatically chains these triplets together when the sink of one layer becomes the source of the next layer, creating seamless flow visualizations.
+
+Three Types of Sankey Creation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**1. Set-Based Sankey Diagrams**
+
+Set-based Sankey diagrams aggregate flows using process and commodity sets, creating clean high-level visualizations with semantic naming.
+
+**Pattern**: ``<cset description>_src/snk_<pset description>``
+
+**Configuration Example**:
+
+**~TS_Defs: Snk_attr=SANKEY_energy_overview**
+
+.. list-table::
+   :header-rows: 1
+   :widths: 10 15 10 10 10 10 20 10 10 8 5 8 25
+
+   * - **Attribute**
+     - **PSET_Set**
+     - **PSET_PN**
+     - **PSET_PD**
+     - **PSET_CI**
+     - **PSET_CO**
+     - **CSET_Set**
+     - **CSET_CN**
+     - **CSET_CD**
+     - **Unit**
+     - **TS**
+     - **UC_N**
+     - **Name**
+   * - VAR_FIN
+     - "ELE,CHP"
+     - 
+     - 
+     - 
+     - 
+     - "ALLSOL,ALLWIN,ALLHYD"
+     - 
+     - 
+     - PJ
+     - 
+     - 
+     - <cset>_src_<pset>
+   * - VAR_FOUT
+     - "DMD_IND,DMD_RES,DMD_COM"
+     - 
+     - 
+     - 
+     - 
+     - "ALLELC"
+     - 
+     - 
+     - PJ
+     - 
+     - 
+     - <cset>_snk_<pset>
+
+**Process**:
+1. Uses ``PSET_Set`` and ``CSET_Set`` columns to specify process/commodity sets
+2. Descriptions come from separate ``~PSet_Map`` and ``~CSet_Map`` tables
+3. Creates flows between all commodity sets × process sets combinations
+
+**Generated Variables**:
+- ``Electricity_src_Renewable_Generation`` (from ALLSOL,ALLWIN,ALLHYD to ELE,CHP)
+- ``Electricity_snk_Industrial_Demand`` (from ALLELC to DMD_IND)
+- ``Electricity_snk_Residential_Demand`` (from ALLELC to DMD_RES)
+
+**Use Cases**: Sector-level energy flow analysis
+
+**Set-Based Sankey Example: Whole Energy System Overview**
+
+.. image:: images/Reports/sankey_wholesystem.png
+    :width: 100%
+    :align: center
+
+This diagram illustrates a comprehensive energy system view using set-based aggregation, showing flows from primary energy sources through conversion technologies to end-use sectors, with clean semantic naming for intuitive understanding.
+
+**2. Region-Based Sankey Diagrams**
+
+Region-based Sankey diagrams focus on inter-regional trade flows, particularly useful for gas pipelines, electricity transmission, and energy security analysis.
+
+**Pattern**: ``<commodity>-<region>_Src/Snk_<process description>``
+
+**Configuration Example**:
+
+**~TS_Defs: Snk_attr=SANKEY_gas_trade**
+
+.. list-table::
+   :header-rows: 1
+   :widths: 10 12 12 10 10 10 12 10 10 8 5 8 30
+
+   * - **Attribute**
+     - **PSET_Set**
+     - **PSET_PN**
+     - **PSET_PD**
+     - **PSET_CI**
+     - **PSET_CO**
+     - **CSET_Set**
+     - **CSET_CN**
+     - **CSET_CD**
+     - **Unit**
+     - **TS**
+     - **UC_N**
+     - **Name**
+   * - VAR_FIN
+     - IRE
+     - \*gaspip\*
+     - 
+     - 
+     - 
+     - 
+     - GASNGA
+     - 
+     - Pjneg
+     - 
+     - 
+     - Nat Gas-<region>_Snk_<gen_pname>
+   * - VAR_FOUT
+     - IRE
+     - \*gaspip\*
+     - 
+     - 
+     - 
+     - 
+     - GASNGA
+     - 
+     - PJ
+     - 
+     - 
+     - Nat Gas-<region>_Src_<gen_pname>
+   * - VAR_FIN
+     - PRE
+     - 
+     - 
+     - 
+     - GASLNG
+     - 
+     - GASNGA
+     - 
+     - Pjneg
+     - 
+     - 
+     - Nat Gas-<region>_Snk_<gen_pname>
+   * - VAR_FOUT
+     - PRE
+     - 
+     - 
+     - GASLNG
+     - 
+     - 
+     - GASNGA
+     - 
+     - PJ
+     - 
+     - 
+     - Nat Gas-<region>_Src_<gen_pname>
+
+**Process**:
+1. ``<region>`` placeholder gets replaced with actual region names
+2. ``<gen_pname>`` generates descriptive process names
+3. Pattern matching (``*gaspip*``) identifies relevant processes
+
+**Generated Variables**:
+- ``Nat Gas-USA_Snk_Pipeline-to-Canada`` (US gas export to Canada)
+- ``Nat Gas-Russia_Src_Pipeline-to-Europe`` (Russian gas export to Europe)  
+- ``Nat Gas-Germany_Snk_LNG-Terminal`` (German LNG imports)
+
+**Use Cases**: Gas pipeline networks, LNG trade flows, regional energy security, cross-border electricity trade
+
+**Region-Based Sankey Example: Natural Gas Trade Networks**
+
+.. image:: images/Reports/sankey_natgas.png
+    :width: 100%
+    :align: center
+
+This diagram demonstrates inter-regional natural gas trade flows, showing pipeline connections and LNG terminals with region-specific naming that enables energy security and infrastructure analysis across multiple countries.
+
+**3. Granular Sankey Diagrams**
+
+Granular Sankey diagrams preserve full model detail, showing individual processes and commodities without aggregation.
+
+**Pattern**: ``<gen_cname>_Snk/Src_<gen_pname>``
+
+**Configuration Example**:
+
+**~TS_Defs: Snk_attr=SANKEY_steel_detailed**
+
+.. list-table::
+   :header-rows: 1
+   :widths: 10 15 10 10 10 10 12 15 10 8 5 8 25
+
+   * - **Attribute**
+     - **PSET_Set**
+     - **PSET_PN**
+     - **PSET_PD**
+     - **PSET_CI**
+     - **PSET_CO**
+     - **CSET_Set**
+     - **CSET_CN**
+     - **CSET_CD**
+     - **Unit**
+     - **TS**
+     - **UC_N**
+     - **Name**
+   * - VAR_FIN
+     - "PRE,DMD"
+     - 
+     - 
+     - 
+     - 
+     - MAT
+     - "im_\*,ind[_]\*"
+     - 
+     - Mtneg
+     - 
+     - 
+     - <gen_cname>_Snk_<gen_pname>
+   * - VAR_FOUT
+     - "PRE,DMD"
+     - 
+     - 
+     - 
+     - 
+     - MAT
+     - "im_\*,ind[_]\*"
+     - 
+     - Mt
+     - 
+     - 
+     - <gen_cname>_Src_<gen_pname>
+   * - VAR_FIN
+     - IRE
+     - 
+     - 
+     - 
+     - 
+     - MAT
+     - "im_\*,ind[_]\*"
+     - 
+     - Mtneg
+     - 
+     - 
+     - <gen_cname>_Snk_Export
+   * - VAR_FOUT
+     - IRE
+     - 
+     - 
+     - 
+     - 
+     - MAT
+     - "im_\*,ind[_]\*"
+     - 
+     - Mt
+     - 
+     - 
+     - <gen_cname>_Src_Import
+
+**Process**:
+1. Each commodity and process gets its own flow variable
+2. Uses ``PSET_PN`` and ``CSET_CN`` for pattern-based selection
+3. ``<gen_cname>`` and ``<gen_pname>`` use actual model names
+
+**Generated Variables**:
+- ``Iron_Ore_Snk_Blast_Furnace_Plant_01`` (specific iron ore to specific plant)
+- ``Steel_Src_Electric_Arc_Furnace_02`` (specific steel from specific EAF)
+- ``Crude_Oil_Snk_Refinery_Houston`` (specific crude to specific refinery)
+
+**Use Cases**: Detailed industrial analysis, plant-level material flows, supply chain traceability, bottleneck identification
+
+**Granular Sankey Example: Industrial Material Flows**
+
+.. image:: images/Reports/sankey_industry.png
+    :width: 100%
+    :align: center
+
+This diagram shows detailed iron and steel production flows in the Middle East region for 2025, demonstrating how granular Sankey diagrams can trace individual material streams through specific industrial processes.
+
+Advanced Sankey Features
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Flow Direction and Units**
+
+VEDA uses variable types and units to determine flow directions:
+- **VAR_FIN** with negative units (``Pjneg``, ``ktneg``) = Consumption/Sink flows
+- **VAR_FOUT** with positive units (``PJ``, ``kT``) = Production/Source flows
+
+**Pattern Matching and Exclusions**
+
+Sophisticated filtering using wildcards and exclusions:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 20 30 50
+
+   * - **Filter Type**
+     - **Pattern**
+     - **Description**
+   * - PSET_PN
+     - "\*gaspip\*"
+     - Matches all gas pipeline processes
+   * - PSET_PN
+     - "MinBio\*"
+     - Matches biomass mining processes
+   * - PSET_PN
+     - "-EA_HH2\*"
+     - Excludes hydrogen heating processes
+   * - CSET_CN
+     - "-SUP\*,-COAOVC"
+     - Excludes supply and coal processes
+
+**Dynamic Naming with Placeholders**
+
+Flexible variable naming using placeholders:
+- ``<cset>`` - Replaced with commodity set description
+- ``<pset>`` - Replaced with process set description
+- ``<region>`` - Replaced with region name
+- ``<gen_pname>`` - Generated process name
+- ``<gen_cname>`` - Generated commodity name
+
+**Automatic Flow Chaining**
+
+VEDA automatically connects flows when naming patterns match:
+- ``Coal_snk_Power_Plant`` ←→ ``Electricity_src_Power_Plant``
+- ``Electricity_snk_Battery`` ←→ ``Electricity_src_Battery``
+
+This intelligence allows complex multi-layer Sankey diagrams to be created with minimal configuration.
+
+Sankey Configuration Strategy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Choose Set-Based When**:
+- Creating executive dashboards for policy makers
+- Showing technology competition (renewables vs. fossils)
+- Sector-level energy flow analysis
+- Clean, interpretable visualizations needed
+
+**Choose Region-Based When**:
+- Analyzing energy security and trade dependencies
+- Visualizing cross-border infrastructure
+- Geographic context is primary concern
+- Regional integration analysis
+
+**Choose Granular When**:
+- Engineering analysis of specific facilities
+- Supply chain optimization and bottleneck analysis
+- Detailed validation against real-world data
+- Asset-level investment decisions
+
+**Practical Design Workflow**:
+1. Sketch the physical system on paper
+2. Identify major transformation/aggregation points  
+3. Define commodity flows between each point
+4. Write source-commodity-sink triplets for each flow
+5. Configure VEDA filters to capture these triplets
+6. Let VEDA automatically chain and visualize
+
+This approach puts energy system understanding in the user's hands while leveraging VEDA's automation for technical implementation.
+
 * Including exogenous data
     * Historical trends/calibration check
     * Producing per/capita and per/GDP metrics
