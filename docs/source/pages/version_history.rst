@@ -8,7 +8,7 @@ Version History
 
 .. important::
 
-   **ETSAP License Support** All features are now supported for **ETSAP** license users.
+   All features are now supported for **ETSAP license** users.
 
 **ALL VERSIONS**
 
