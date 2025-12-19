@@ -2,6 +2,46 @@
 Version History
 ################
 
+
+4.2.1.0 [19Oct25]
+^^^^^^^^^^^^^^^^^
+
+.. important::
+
+   **ETSAP License Support** All features are now supported for **ETSAP** license users.
+
+**ALL VERSIONS**
+
+**[New]**
+
+- Run GDX2VEDA Interface - Added new setting in User Options and Run Manager with refreshed UI design.
+- The Properties window now includes a drop-down menu for DSC options with YES, NO, and DSCAUTO as choices. Additionally, the MLF option has been added under Macro for improved configurability.
+- Added new section in RES View under Items view for better navigation.
+
+**[Enhancements]**
+
+- Improved the RunStatus Grid View in the Run Manager Logs for more efficient monitoring and management of runs. 
+- Introduced metadata handling in Veda, allowing for multiple metadata rows in process and commodity views, thereby streamlining data management.
+- Dynamic Timeslice Definitions in Parametric Scenarios. Enhanced the ability to permute timeslice definitions with scenario assumptions, allowing for more flexible scenario management.
+- Improved the handling of spaces around commas in timeslice lists, ensuring proper processing when lists are formatted with spaces.  
+- Introduced wildcard support for pattern matching in the `PSET_SET` column, enabling more flexible and accurate set processing in Excel workbooks.
+- Improved the SnT processing to ensure reserved commodities are returned only when relevant, enhancing system efficiency and accuracy. `[See details] <https://forum.kanors-emr.org/showthread.php?tid=1540>`_
+- Commodity Group QC for FLO* and VDA_FLOP attributes. The core issue involved wildcards being used in the other-indexes column, which are not permitted and need to be reported if entered mistakenly. `[See details] <https://forum.kanors-emr.org/showthread.php?tid=1540&pid=8256#pid8256>`_
+
+**[Fixes]**
+
+- Improved UC Tags Handling in SubParametric Scenarios. Resolved an issue where UC tags were not outputting correctly due to duplication in the dimension_elements table, enhancing the reliability of scenario processing.
+- Fixed the UC TS resolution process during DD writing, ensuring accurate cross-joining with DAYNITE/SEASON levels for reduced flatfile records.
+- Addressed a problem where GAMS Engine credentials were not being saved, ensuring seamless execution of TIMES models.  
+- Fixed an issue with missing Ins tag data in certain parametric scenarios, ensuring complete data availability and process accuracy.  
+
+
+**ADVANCED VERSION**
+
+- Reporting enhancements
+    * Improved Commodity Group Handling in Reports. Addressed the issue of commodity group duplication by refining the handling of case differences, thus ensuring accurate and consistent data reporting. 
+
+
 4.1.1.1 [21May25]
 ^^^^^^^^^^^^^^^^^
 
