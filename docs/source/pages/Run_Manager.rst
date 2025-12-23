@@ -46,6 +46,339 @@ Cases
 List of Cases prepared identifying the Run name/Description, Scenario Group, list of regions, the Property specification to be used, 
 period definition and ending year, and date information.
 
+Understanding Case Composition
+-------------------------------
+
+VEDA uses a **dimensional group composition** approach for defining model runs. This allows you to create reusable groups in each dimension and then compose cases by selecting one group from each dimension.
+
+Each case is composed by selecting **one group from each of five dimensions**:
+
+.. list-table:: Case Composition Dimensions
+   :header-rows: 1
+   :widths: 20 40 40
+
+   * - Dimension
+     - Purpose
+     - Example Groups
+   * - Scenario Group
+     - Which data files/scenarios to include
+     - "Ref", "HighRE", "CarbonPolicy"
+   * - Region Group
+     - Which geographic regions to model
+     - "AllRegion", "ERCOT_only", "Western_US"
+   * - Properties Group
+     - TIMES switches and GAMS options
+     - "DefaultProperties", "Myopic_20yr", "Stochastic"
+   * - Parametric Group
+     - Parametric variations (optional)
+     - CO2 tax levels, demand sensitivities
+   * - Settings
+     - Solver, paths, execution settings
+     - CPLEX solver, max runs=2
+
+**Benefits of this approach:**
+
+- **Reusability**: Define "Myopic_20yr" properties once, use with any scenario
+- **Consistency**: Same properties guaranteed across multiple cases
+- **Flexibility**: Quick scenario testing by swapping groups
+- **Organization**: Clear separation of modeling dimensions
+
+Properties Groups: Two Configuration Methods
+---------------------------------------------
+
+VEDA provides two complementary ways to configure TIMES switches and modeling options:
+
+**GUI Properties Window**
+
+The Properties window provides graphical controls for the most frequently used TIMES switches (~15 options):
+
+- Time-Stepped Solution (myopic/limited foresight)
+- TIMES Extensions (Climate Module, Discrete Investment, etc.)
+- General Equilibrium (MACRO variants)
+- Objective Function options (OBLONG, Mid-Year Discounting)
+- General Options (QA checks, solution saving, etc.)
+
+**When to use**: Common workflows, interactive testing, user-friendly configuration
+
+**Declarative Parameter System**
+
+For advanced switches not available in the GUI (~50+ additional switches), use the declarative parameter system with RFCmd, SFCmd, and CmdF attributes.
+
+**When to use**: Advanced TIMES switches (STAGES, SPINES, REDUCE, etc.), project-specific configurations, version-controlled settings
+
+See the "Modifying RUN files" section below for complete documentation of the declarative system.
+
+Properties Window Reference
+----------------------------
+
+This section documents the GUI options available in the Properties window.
+
+.. image:: images/run_manager_properties_1.png
+   :width: 450px
+   :align: center
+
+.. image:: images/run_manager_properties_2.png
+   :width: 450px
+   :align: center
+
+**Time-Stepped Solution**
+
+**Purpose**: Configure sequential solving with limited foresight (myopic mode) instead of perfect foresight.
+
+**Setting**: Run In Steps Of
+
+- **0** (default) - Perfect foresight: optimizes entire horizon in one solve with complete future knowledge
+- **10-30** - Myopic/limited foresight: optimizes in sequential steps of specified years with no knowledge beyond each step
+
+**How it works:**
+
+The model solves in sequential steps, each optimizing a limited horizon. After each step, previous decisions are fixed and the optimization window advances forward. Successive steps overlap by default (half the step length) to ensure continuity.
+
+**Use cases:**
+
+- **Realistic decision-making**: Simulate planning without perfect future knowledge
+- **Uncertainty analysis**: Test robustness of strategies under limited foresight
+- **Policy analysis**: Understand near-term vs long-term decision trade-offs
+- **Large models**: Faster solving due to smaller problem size per step
+
+**Example configurations:**
+
+.. list-table::
+   :header-rows: 1
+   
+   * - Run In Steps Of
+     - Mode
+     - Description
+   * - 0
+     - Perfect Foresight
+     - Optimize 2020-2100 in one solve (default)
+   * - 20
+     - Limited Foresight
+     - Sequential 20-year optimization windows
+   * - 10
+     - Short Horizon
+     - Sequential 10-year windows for more myopic behavior
+
+**See also**: TIMES Documentation Part I, Section 9 "Using TIMES with limited foresight"
+
+**TIMES Extensions**
+
+**Climate Module**
+
+Enable the TIMES climate module to estimate atmospheric CO₂ concentrations, radiative forcing, and temperature changes.
+
+- **Checkbox**: Enabled/Disabled
+- **See**: TIMES Documentation on Climate Module
+
+**Discrete Investment**
+
+Enable lumpy (discrete/integer) investment decisions instead of continuous investments.
+
+- **Setting**: Auto (default) / Enabled / Disabled
+- **Note**: Creates Mixed-Integer Programming (MIP) problem
+- **See**: TIMES Documentation Part I, Chapter 10 "The lumpy investment extension"
+
+**Discrete Unit Commitment**
+
+Enable discrete unit commitment formulation for detailed operational modeling.
+
+- **Checkbox**: Enabled/Disabled
+- **See**: TIMES Documentation on unit commitment features
+
+**Endogenous Technology Learning**
+
+Enable endogenous technology learning based on cumulative capacity (learning-by-doing).
+
+- **Checkbox**: Enabled/Disabled
+- **Note**: Creates Mixed-Integer Programming (MIP) problem
+- **See**: TIMES Documentation Part I-II on Endogenous Technology Learning
+
+**OBJ Function Variant**
+
+*Mid Year Discounting*
+
+Use mid-year discounting for cost accounting instead of beginning-of-year discounting.
+
+- **Checkbox**: Enabled (recommended) / Disabled
+- **Purpose**: More accurate cost representation
+
+*OBJ Function Variant*
+
+Select objective function formulation:
+
+- **Auto** (default) - TIMES selects appropriate formulation
+- **STD** - Standard formulation
+- **MOD** - Modified formulation with flexible period boundaries
+- **ALT** - Alternative with improved capacity transfer coefficients
+- **LIN** - Linear flow/activity evolution between milestone years
+
+*OBLONG*
+
+Synchronize capacity-related costs with process activities for improved cost accounting.
+
+- **Checkbox**: Enabled (recommended) / Disabled
+- **Purpose**: Eliminates distortions in cost accounting and salvaging
+- **Note**: Automatically enabled when using MOD objective function
+
+*Shift Discounting By*
+
+Shift the time-of-year for discounting continuous payment streams (in years).
+
+- **Default**: 0
+- **0.5**: Equivalent to Mid Year Discounting
+- **1.0**: End-of-year discounting
+
+**General Equilibrium**
+
+Select general equilibrium mode:
+
+- **None** (default) - Partial equilibrium (TIMES standalone)
+- **MACRO variants** - Full general equilibrium with macroeconomic feedback
+
+  - **YES** - Standard MACRO formulation
+  - **MSA** - MACRO decomposition algorithm
+  - **CSA** - Calibration for MSA
+  - **MLF** - Linearized MACRO-MLF formulation
+
+**See**: TIMES-MACRO Documentation
+
+**General Options**
+
+*CO2 Calibration at BOH*
+
+Calibrate CO₂ to base year observations.
+
+*Do Extended QA Checks*
+
+Enable extended quality assurance checks during model generation.
+
+*P/w Linear VarCost*
+
+Use piecewise linear interpolation for variable costs (memory efficient for large models).
+
+*Retire*
+
+Enable early retirement of process capacities:
+
+- **LP** - Continuous early retirements
+- **MIP** - Lumpy early retirements
+
+*Save Solution Information*
+
+Save solution to GDX file (\*_P.GDX) for use in subsequent runs (warm start, fixing periods, etc.).
+
+*Use Last Run As Starting Point*
+
+Use previous solution as starting point for faster solve (warm start).
+
+*Use Slack Variables in UC*
+
+Enable explicit slack variables in user constraints (required for stochastic/sensitivity modes).
+
+*Write B Price for Elast Dem*
+
+Write base prices for elastic demand to GDX file (\*_DP.GDX) for use in policy scenarios.
+
+**Levelized Costs**
+
+Select cost reporting method:
+
+- **None** - Standard annual costs at milestone year
+- **LEV** - Levelized costs over process lifetimes/periods
+
+**Damage**
+
+Include damage costs in objective function:
+
+- **NO** - Damage costs not included
+- **LP** - Linearized damage costs (default if damage costs defined)
+- **NLP** - Non-linear damage costs
+
+**See**: TIMES Documentation Part II, Appendix B on damage cost functions
+
+**Trade Off**
+
+*Activate Sensitivity Analysis*
+
+Enable sensitivity and trade-off analysis features with automatic warm start.
+
+*GAMS Option Bratio*
+
+Set GAMS BRATIO option for basis retention in successive solves.
+
+**TS For Flow Reporting Types**
+
+Control timeslices used for reporting flow variables:
+
+- **Flow Variable** - Use original flow variable timeslices
+- **COM** - Report at commodity timeslices
+- **ANNUAL** - Report at annual level only (memory efficient for large models)
+
+**Uncertainty**
+
+Configure stochastic programming mode:
+
+- **PF** (default) - Perfect foresight (deterministic)
+- **Stochastic modes** - Must be configured via declarative parameters (RFCmd_FLAGS)
+
+**For stochastic programming**, use the declarative system:
+
+.. code-block::
+
+   Attribute: RFCmd_FLAGS
+   Value: 1
+   Text: $SET STAGES YES
+
+**For recurring uncertainties (SPINES)**:
+
+.. code-block::
+
+   Attribute: RFCmd_FLAGS
+   Value: 1
+   Text: $SET SPINES YES
+
+**See**: TIMES Documentation on Stochastic Programming
+
+Advanced TIMES Switches via Declarative Parameters
+---------------------------------------------------
+
+Many advanced TIMES switches are not available in the GUI and must be configured using the declarative parameter system. Common examples include:
+
+.. list-table:: Common Advanced Switches
+   :header-rows: 1
+   :widths: 25 50 25
+
+   * - Switch
+     - Purpose
+     - Parameter to Use
+   * - STAGES
+     - Multi-stage stochastic programming
+     - RFCmd_FLAGS
+   * - SPINES
+     - Recurring uncertainties hedging
+     - RFCmd_FLAGS
+   * - REDUCE
+     - Model reduction algorithm
+     - RFCmd_FLAGS
+   * - FIXBOH
+     - Fix beginning-of-horizon periods
+     - RFCmd_FLAGS
+   * - TIMESED
+     - Elastic demand control
+     - RFCmd_FLAGS
+   * - DEBUG
+     - Extended debugging output
+     - RFCmd_FLAGS
+   * - ANNCOST
+     - Annualized cost reporting
+     - RFCmd_FLAGS
+   * - RPT_OPT
+     - Reporting options
+     - RFCmd_GLOBAL
+
+**See the "Modifying RUN files" section below for complete documentation of the declarative parameter system.**
+
+For complete reference of all TIMES switches, see: `TIMES Documentation Part III: Execution Control Switches <https://iea-etsap.org/index.php/documentation>`_
 
 DD and script files
 ===================

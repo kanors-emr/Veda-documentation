@@ -1,9 +1,15 @@
 Attribute,Location,Alias
-RFCmd_GAMS ,<GAMSOPTIONS>,"RFCmd_G, RFCmd"
-RFCmd_OPTIMIZER ,<OPTIMIZER>,RFCmd_O
-RFCmd_FLAGS ,<SET FLAGS>,RFCmd_F
-RFCmd_DD ,<INCLUDE DD FILES>,RFCmd_D
-RFCmd_GLOBAL ,<GLOBAL Parameters>,RFCmd_Glb
+CmdF_top,Before GAMS call in VTRun.CMD,
+CmdF_bot,After GDX2VEDA call in VTRun.CMD,
+CmdF_GAMS,Parameters to GAMS Call in VTRun.CMD,
+CmdF_Title,Command window title (0=no title),
 ,,
-SFCmd_top ,top of the scen DD file,"SFCmd_T, SFCmd"
-SFCmd_bot ,bottom of the scen DD file,SFCmd_B
+RFCmd_bot,Bottom of RUN file,
+RFCmd_DD,<INCLUDE DD FILES>,RFCmd_D
+RFCmd_FLAGS,<SET FLAGS>,RFCmd_F
+RFCmd_GAMS,<GAMSOPTIONS>,"RFCmd_G, RFCmd"
+RFCmd_GLOBAL,<GLOBAL Parameters>,RFCmd_Glb
+RFCmd_OPTIMIZER,<OPTIMIZER>,RFCmd_O
+,,
+SFCmd_top,Top of scenario DD file,"SFCmd_T, SFCmd"
+SFCmd_bot,Bottom of scenario DD file,SFCmd_B

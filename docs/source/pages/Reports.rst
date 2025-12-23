@@ -483,6 +483,11 @@ Sankey Configuration Strategy
 
 This approach puts energy system understanding in the user's hands while leveraging VEDA's automation for technical implementation.
 
+.. seealso::
+
+   These Sankey capabilities have been used extensively in KiNESYS applications — see the Argonne NetZero World example 
+   (EU-Ukraine trade corridors) and KAPSARC OPEC oil & gas systems in the `KiNESYS Applications and Impact <https://kinesys-documentation.readthedocs.io/en/latest/pages/Applications_and_Impact.html>`_ documentation.
+
 * Including exogenous data
     * Historical trends/calibration check
     * Producing per/capita and per/GDP metrics
@@ -500,6 +505,12 @@ VO gets a lot more out of Reports
 VO (`Veda Online <https://vedaonline.cloud/>`_) offers the core Veda-TIMES functionality via Internet browsers. Veda model folders need to reside on GitHub to be used under VO.
 Registered users can submit their GitHub credentials to see a list of all model folders, along with the branches, under their account.
 Any folder/branch can be selected to create a model. Supported functionality: Synchronize, Browse, Items view, Run manager, Results, and Reports.
+
+.. seealso::
+
+   The ``_map`` table capabilities and Sankey diagram creation documented above have been extensively used in real-world applications 
+   including World Bank CCDRs, corporate transition planning, and multi-model research. For concrete examples of how these features 
+   enable interactive exploration across scenarios and regions, see the `KiNESYS Applications and Impact <https://kinesys-documentation.readthedocs.io/en/latest/pages/Applications_and_Impact.html>`_ documentation.
 
 Here are some sample visualizations on the same platform that drives VO reports.
 
