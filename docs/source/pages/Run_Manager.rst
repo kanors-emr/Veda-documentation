@@ -128,11 +128,20 @@ This section documents the GUI options available in the Properties window.
 **Setting**: Run In Steps Of
 
 - **0** (default) - Perfect foresight: optimizes entire horizon in one solve with complete future knowledge
-- **10-30** - Myopic/limited foresight: optimizes in sequential steps of specified years with no knowledge beyond each step
+- **Any positive number** - Myopic/limited foresight: optimizes in sequential steps of specified years with no knowledge beyond each step. Typical values: 10, 15, 20, or 30 years
 
 **How it works:**
 
 The model solves in sequential steps, each optimizing a limited horizon. After each step, previous decisions are fixed and the optimization window advances forward. Successive steps overlap by default (half the step length) to ensure continuity.
+
+**Overlap control (G_OVERLAP):**
+
+By default, successive optimization steps overlap by half of the TIMESTEP value. For example, with TIMESTEP=20, the overlap would be 10 years. This overlap ensures continuity between steps - decisions in step N provide initial conditions for step N+1.
+
+You can customize the overlap using the G_OVERLAP parameter, which can be declared in any scenario file or SysSettings. For example:
+
+- TIMESTEP=20, G_OVERLAP=5: Each step optimizes 20 years with only 5 years overlap
+- TIMESTEP=20, G_OVERLAP=15: Each step optimizes 20 years with 15 years overlap (more conservative, more continuity)
 
 **Use cases:**
 
