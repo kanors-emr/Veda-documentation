@@ -253,21 +253,22 @@ Valid column headers for the **~FI_COMM** table are described in Table 1 below. 
 **Best Practice:**
 Declare commodities only once in a single template location to prevent errors or conflicting definitions.
 
+.. warning::
+   
+   **Critical: Parallel Processing and Non-Deterministic Results**
+   
+   FI_COMM and FI_PROCESS tags are processed in parallel across all files during synchronization. If the same commodity or process is declared multiple times with inconsistent attributes (e.g., ELC declared with TSLVL=DAYNITE in one table and TSLVL=ANNUAL in another), the final result will depend on which thread finishes first and **may vary between synchronizations**, leading to non-deterministic model behavior.
+   
+   **Always ensure each commodity and process is declared exactly once with consistent attributes across all templates.**
+
 
 Table Layout and Usage
 ----------------------
-Figure 7 illustrates how a **~FI_COMM** table is used. Each commodity is declared once with its associated attributes and properties.
-
-.. figure:: path/to/figure7.png
-   :alt: Example of ~FI_COMM Table
-   :align: center
-   :figclass: align-center
-
-   Figure 7: Example of a Commodity Definition Table (~FI_COMM)
+The **~FI_COMM** table is used to declare commodities with their associated attributes and properties. Each commodity is declared once with its characteristics.
 
 Valid Column Headers
 --------------------
-The valid column headers for a **~FI_COMM** table are listed below (refer to Figure 7 for context):
+The valid column headers for a **~FI_COMM** table are listed below (see the Example Table section for a complete example):
 
 .. list-table::
    :header-rows: 1
@@ -382,6 +383,10 @@ The **Process Definition Table (~FI_PROCESS)** is used to declare the **non-nume
 .. note::
 
    The **~FI_PROCESS** table provides a flexible layout: the column order can be changed, and valid entries for each header are well-defined.
+
+.. warning::
+   
+   **Each process must be declared exactly once** with consistent attributes across all templates. Like FI_COMM tags, FI_PROCESS tags are processed in parallel, which can cause non-deterministic results if duplicate or inconsistent declarations exist. See the parallel processing warning in the FI_COMM section above for details.
 
 Key Features
 ------------
