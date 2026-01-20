@@ -254,12 +254,16 @@ Valid column headers for the **~FI_COMM** table are described in Table 1 below. 
 Declare commodities only once in a single template location to prevent errors or conflicting definitions.
 
 .. warning::
-   
-   **Critical: Parallel Processing and Non-Deterministic Results**
-   
-   FI_COMM and FI_PROCESS tags are processed in parallel across all files during synchronization. If the same commodity or process is declared multiple times with inconsistent attributes (e.g., ELC declared with TSLVL=DAYNITE in one table and TSLVL=ANNUAL in another), the final result will depend on which thread finishes first and **may vary between synchronizations**, leading to non-deterministic model behavior.
-   
-   **Always ensure each commodity and process is declared exactly once with consistent attributes across all templates.**
+
+   **Critical: Multiple duplicate declarations**
+
+   **Avoid declaring the same Commodity or Process with conflicting attributes across multiple tables or scenarios.**
+
+   When you run the model with different scenario combinations, the same commodity (e.g., `ELC`) or process may have different attributes in each run if it is declared with conflicting attributes—such as different Time Slice Levels (**TSLVL**) in the `~FI_Comm` or `~FI_Process` tags—across multiple scenarios. This makes debugging and interpreting the output of GAMS runs difficult.
+
+   **Best Practice:**
+
+   Always declare each commodity and process exactly once with consistent attributes across all templates and scenarios. This ensures that all GAMS runs use the same fundamental parameter definitions, allowing you to confidently analyze and compare results across different scenario combinations.
 
 
 Table Layout and Usage
