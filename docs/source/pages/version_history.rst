@@ -3,6 +3,40 @@ Version History
 ################
 
 
+4.3.2.1 [15Apr26]
+^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+**[Enhancements]**
+
+- After solving runs on Run Manager, their status can be exported in a Excel file and improved visualization of the progress grid. `[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1601>`_
+- Enable the RFCmd* and SFCmd* commands in parametric scenario. `[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1603&pid=8652#pid8652>`_
+- Implemented a critical warning system for inconsistencies in duplicates for process and commodity and added export functionality.   
+- Resolved an issue preventing changes to uncertainty in Properties groups within the Run Manager. `[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1600>`_
+- Enhanced the topology source functionality with a user confirmation popup to manage multiple file openings.  
+- Enabled the use of a single TimeSeries for parametric scenarios, providing greater flexibility in scenario analysis.  
+- Addressed issues related to case sensitivity in documentation metadata, enhancing consistency and usability.  
+- Enhanced the SyncAppData folders management tool with options to delete groups and cases, improving data organization.  
+- Region index allowed in CM_GHGMAP   
+- Encounter a error in the Results after running a new study
+- Improved support in few more tags in RegionGroup
+    * Tag header  - 	TFM_INS-TS, TFM_DINS-TS, TFM_FILL-R
+    * Region column header - TFM_INS-TS, FI_Comm 
+    * Value column header - TFM_FILL-R, TFM_AVA
+- If climate and base entries, such as TOTCH4 and TOTN2O, are also user-defined. Then they are not appearing in the sets editor due to exclusion rules in SNT processing.	`[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1591&pid=8544#pid8544>`_
+- Inconsistent commodity definitions across sectors + sector not included in uniqueness = incorrect joins and data inconsistencies. `[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1589&pid=8523#pid8523>`_
+- Jacobian Histogram Feature - Missing process filtering caused execution errors, and timeslice mappings were not properly exported to the base data file.
+
+
+**ADVANCED VERSION**
+
+- Reporting enhancements 
+    * Create grid_flows variables in Reports
+    * The issue involves the absence of a region join when processing pset_* columns in reports.
+
+
+
 4.2.1.0 [19Oct25]
 ^^^^^^^^^^^^^^^^^
 
