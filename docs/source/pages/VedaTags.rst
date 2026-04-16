@@ -994,11 +994,11 @@ By understanding the distinct roles and advantages of each table type, users can
     ### ~TFM_UPD Variants
     The **~TFM_UPD** variants allow update tables to organize value fields differently. The supported variants include:
 
-- **TFM_UPD-AT:**
-  The value fields use **attributes** as column headers.
+    - **TFM_UPD-AT:**
+      The value fields use **attributes** as column headers.
 
-- **TFM_UPD-TS:**
-  The value fields use **years** as column headers.
+    - **TFM_UPD-TS:**
+      The value fields use **years** as column headers.
 
 Example Table Layouts
 ^^^^^^^^^^^^^^^^^^^^^
@@ -1057,6 +1057,10 @@ In this example:
 In this example:
 
 - The value fields use **attributes** (`ACT_BND`) as column headers, enabling a compact layout for multiple attributes.
+
+Multiple regions or region groups (comma-separated) can be specified in table-level declarations for ``~TFM_DINS-TS``, ``~TFM_INS-TS``, and ``~TFM_FILL-R`` tags.
+Example:
+``~TFM_INS-TS:Region=Reg_Dev,Reg_Eme;`` specifies ``Reg_Dev`` and ``Reg_Eme`` as table-level region declarations.
 
 
 Best Practices
