@@ -10,12 +10,12 @@ Version History
 
 **[Enhancements]**
 
-- After solving runs on Run Manager, their status can be exported in a Excel file and improved visualization of the progress grid. `[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1601>`_
-- Enable the RFCmd* and SFCmd* commands in parametric scenario. `[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1603&pid=8652#pid8652>`_
+- Added option to export run status to Excel with improved progress grid visualization in Run Manager. `[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1601>`_
+- Enable RFCmd* and SFCmd* commands for parametric scenario. `[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1603&pid=8652#pid8652>`_
 - Enhanced the topology source functionality with a user confirmation popup to manage multiple file openings.  
-- Enabled the use of a single TimeSeries for parametric scenarios, providing greater flexibility in scenario analysis.   
-- Enhanced the SyncAppData folders management tool with options to delete groups and cases, improving data organization.  
-- Improved support in few more tags in RegionGroup
+- Enabled the use of a single TimeSeries for parametric scenarios, providing greater flexibility in scenario analysis.
+- Enhanced the SyncAppData folders management tool with options to delete groups and cases, improving data organization.
+- Extended support to additional tags in RegionGroup support
     * Tag header  - 	TFM_INS-TS, TFM_DINS-TS, TFM_FILL-R
     * Region column header - TFM_INS-TS, FI_Comm 
     * Value column header - TFM_FILL-R, TFM_AVA
@@ -23,21 +23,21 @@ Version History
 
 **[Fixes]**
 
-- Implemented a critical warning system for inconsistencies in duplicates for process and commodity and added export functionality. 
-- Resolved an issue preventing changes to uncertainty in Properties groups within the Run Manager. `[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1600>`_
-- Addressed issues related to case sensitivity in documentation metadata, enhancing consistency and usability. 
+- Added critical warnings and export option for duplicate process/commodity entries.
+- Fixed issue preventing changes to uncertainty in Properties groups with in the Run Manager. `[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1600>`_
+- Fixed case sensitivity issues in documentation metadata.
 - Fixed region index restriction issue in CM_GHGMAP
-- Resolved error occurring after running a new study in the Results 
+- Resolved error occurring after running a new study in Results
 - If climate and base entries, such as TOTCH4 and TOTN2O, are also user-defined. Then they are not appearing in the sets editor due to exclusion rules in SNT processing.	`[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1591&pid=8544#pid8544>`_
-- Inconsistent commodity definitions across sectors and sector not included in uniqueness that lead to inconsistencies in the data. `[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1589&pid=8523#pid8523>`_
-- Jacobian Histogram Feature - Missing process filtering caused execution errors, and timeslice mappings were not properly exported to the base data file.
+- Fixed commodity definitions inconsistencies due to missing sector in uniqueness checks. `[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1589&pid=8523#pid8523>`_
+- Fixed Jacobian Histogram missing process filtering and incorrect timeslice export.
 
 
 **ADVANCED VERSION**
 
 - Reporting enhancements 
-    * Create grid_flows variables in Reports
-    * process_map processing in Reports
+    * Introduced *grid_flows* variables in Reports
+    * Improved *process_map* processing in Reports
 
 
 
