@@ -3,6 +3,17 @@ Version History
 ################
 
 
+4.3.3.0 [28Apr26]
+^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+**[Fixes]**
+
+- Fixed issue regarding the ~TFM_FILL-R processing: Regular vs. Parametric Scenarios `[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1606>`_
+
+
+
 4.3.2.1 [15Apr26]
 ^^^^^^^^^^^^^^^^^
 
