@@ -5,3 +5,25 @@ h1 {font-size: 40px;}
 h2 {font-size: 30px;}
 
 h3 { font-size: 20px; }
+
+/* Wrap table cell text instead of forcing horizontal scroll.
+   The Read the Docs theme wraps tables in .wy-table-responsive
+   with overflow-x: auto, and forces white-space: nowrap on cells.
+   Override both so wide tables wrap to the page width. */
+.wy-table-responsive {
+    overflow: visible !important;
+}
+
+.wy-table-responsive table td,
+.wy-table-responsive table th,
+table.docutils td,
+table.docutils th {
+    white-space: normal !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+table.docutils {
+    table-layout: fixed;
+    width: 100%;
+}
