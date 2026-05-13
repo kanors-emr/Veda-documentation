@@ -5,22 +5,13 @@
 
 name: Veda MkDocs — build and deploy
 
+# Any change in the repo triggers build; deploy still only on push to master
+# or manual run (see deploy job).
 on:
   push:
     branches:
       - master
-    paths:
-      - "veda-mkdocs/docs/**"
-      - "veda-mkdocs/mkdocs.yml"
-      - "veda-mkdocs/requirements.txt"
-      - "veda-mkdocs/overrides/**"
-      - ".github/workflows/veda-mkdocs-pages.yml"
-  pull_request:
-    paths:
-      - "veda-mkdocs/docs/**"
-      - "veda-mkdocs/mkdocs.yml"
-      - "veda-mkdocs/requirements.txt"
-      - "veda-mkdocs/overrides/**"
+  pull_request: {}
   workflow_dispatch:
 
 permissions:
