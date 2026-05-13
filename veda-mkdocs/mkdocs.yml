@@ -4,7 +4,7 @@ site_name: Veda 2.0 Documentation
 site_description: Veda2.0 is a data handling system for The Integrated MARKAL-EFOM System (TIMES) — a bottom-up optimization model for energy-environment systems.
 site_author: KanORS-EMR
 copyright: "© KanORS-EMR, 2026"
-site_url: https://kanors-emr.github.io/Veda2.0-Installation/
+site_url: https://kanors-emr.github.io/Veda-documentation/
 
 repo_url: https://github.com/kanors-emr/Veda2.0-Installation
 repo_name: kanors-emr/Veda2.0-Installation
