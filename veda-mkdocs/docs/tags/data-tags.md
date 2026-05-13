@@ -262,27 +262,29 @@ Wherever you provide a `2`-suffix value, that axis is **overridden** in
 the migrated row. Where no `2` value is provided, the source axis is
 preserved as-is.
 
-#### All columns at a glance
+#### Migratable axes
 
-| Source filter             | Destination override         | What it migrates                        |
-|---------------------------|------------------------------|-----------------------------------------|
-| `attribute`               | `attribute2`                 | The TIMES parameter being rewritten     |
-| `pset_set` / `pset_pn` / `pset_pd` / `pset_ci` / `pset_co` | (no `2` form — use commodity2 to redirect) | Source process filter |
-| `cset_set` / `cset_cn` (alias `commodity`) / `cset_cd` | `cset_cn2` (alias `commodity2`) | Source / destination commodity |
-| `region`                  | (use `region` in the destination directly via a paired row, or the `value` column) | Source region |
-| `year` / `yr`             | `year2` / `yr2`              | Year migration (e.g. project base-year data forward) |
-| `timeslice` / `ts`        | `timeslice2` / `ts2`         | Timeslice migration                     |
-| `currency` / `curr`       | `currency2` / `curr2`        | Currency migration (e.g. with rescaling) |
-| `limtype` (alias `lim_type`, `bd`) | `limtype2`           | Bound type migration (LO ↔ UP ↔ FX)     |
-| `other_indexes` (aliases `other_ind`, `oth_ind`) | `other_indexes2` | Commodity group / aux index migration |
-| `sow`                     | `sow2`                       | State-of-the-world migration            |
-| `stage`                   | `stage2`                     | Stage (multi-stage stochastic)          |
+These are the axes that have both a source and a destination form. The
+left column matches existing rows; the right column overrides that axis
+in the migrated row.
 
-**Filter helpers** (no destination form): `c_pos_andor`, `c_neg_andor`,
-`c_pos_andor_forsets`, `c_neg_andor_forsets`, `t_pos_andor`,
-`t_neg_andor`, `t_pos_andor_forsets`, `t_neg_andor_forsets`,
-`top_check`, `attrib_cond`, `val_cond`, `avc_year`, `avc_timeslice`,
-`avc_limtype`, `uc_n`, `side`, `sourcescen`.
+| Source filter                                       | Destination override         | What it migrates                        |
+|-----------------------------------------------------|------------------------------|-----------------------------------------|
+| `attribute`                                         | `attribute2`                 | The TIMES parameter being rewritten     |
+| `cset_cn` (alias `commodity`)                       | `commodity2` (alias `cset_cn2`) | Commodity                            |
+| `year` / `yr`                                       | `year2` / `yr2`              | Year migration (e.g. project base-year data forward) |
+| `timeslice` / `ts`                                  | `timeslice2` / `ts2`         | Timeslice migration                     |
+| `currency` / `curr`                                 | `currency2` / `curr2`        | Currency migration (e.g. with rescaling) |
+| `limtype` (aliases `lim_type`, `bd`)                | `limtype2`                   | Bound type migration (LO ↔ UP ↔ FX)     |
+| `other_indexes` (aliases `other_ind`, `oth_ind`)    | `other_indexes2`             | Commodity group / aux index migration   |
+| `sow`                                               | `sow2`                       | State-of-the-world migration            |
+| `stage`                                             | `stage2`                     | Stage (multi-stage stochastic)          |
+
+#### Source-only filters
+
+The remaining columns, including process, shape *which* existing rows the migration applies to,
+but have no corresponding destination form. They participate as filter
+inputs only.
 
 **Value column** (the migrated number): `value` (aliases `valfield`,
 `val_field`, `allregions`):
