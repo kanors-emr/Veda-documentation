@@ -1,0 +1,65 @@
+/* Veda 2.0 documentation custom styles */
+
+/* Wider content area for tables */
+.md-grid {
+  max-width: 1400px;
+}
+
+/* Tables — two strategies depending on column count.
+ *
+ * Default (≤5 columns): wrap text inside cells so the table fits the page
+ * width without forcing horizontal scroll. This is the right behaviour for
+ * column-reference tables, comparison tables, and most prose tables.
+ *
+ * Wide tables (6+ columns): keep the native auto layout and let the parent
+ * wrapper scroll horizontally. Trying to wrap 13-column tables into the page
+ * width crushes each cell to one character per line — unreadable. The
+ * :has() selector below detects "this table has a 6th column" and opts out
+ * of the wrapping rules.
+ */
+
+.md-typeset table:not([class]) {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  vertical-align: top;
+  /* Tighter vertical padding than mkdocs-material's default.
+     Defaults are ~0.9375em top/bottom; this trims to ~0.4em while keeping
+     comfortable horizontal padding. */
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  line-height: 1.4;
+}
+
+/* Opt-out for wide tables: tables with 6 or more header columns.
+   Revert to native auto layout and let the cell contents flow naturally. */
+.md-typeset table:not([class]):has(thead tr th:nth-child(6)) {
+  display: table;
+  width: auto;
+  table-layout: auto;
+}
+
+.md-typeset table:not([class]):has(thead tr th:nth-child(6)) td,
+.md-typeset table:not([class]):has(thead tr th:nth-child(6)) th {
+  white-space: nowrap;
+}
+
+/* Slightly tighter heading sizes (matching the prior Sphinx layout) */
+.md-typeset h1 {
+  font-size: 2em;
+}
+
+.md-typeset h2 {
+  font-size: 1.5em;
+}
+
+.md-typeset h3 {
+  font-size: 1.2em;
+}

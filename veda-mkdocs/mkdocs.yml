@@ -1,0 +1,180 @@
+# Veda 2.0 documentation — mkdocs-material configuration
+
+site_name: Veda 2.0 Documentation
+site_description: Veda2.0 is a data handling system for The Integrated MARKAL-EFOM System (TIMES) — a bottom-up optimization model for energy-environment systems.
+site_author: KanORS-EMR
+copyright: "© KanORS-EMR, 2026"
+site_url: https://kanors-emr.github.io/Veda2.0-Installation/
+
+repo_url: https://github.com/kanors-emr/Veda2.0-Installation
+repo_name: kanors-emr/Veda2.0-Installation
+edit_uri: edit/master/docs/
+
+docs_dir: docs
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+  custom_dir: overrides
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search:
+      lang: [en, ja, fr, de, es, zh]
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+        - locale: ja
+          name: 日本語
+          build: true
+          site_name: Veda 2.0 ドキュメント
+        - locale: fr
+          name: Français
+          build: true
+          site_name: Documentation Veda 2.0
+        - locale: de
+          name: Deutsch
+          build: true
+          site_name: Veda 2.0 Dokumentation
+        - locale: es
+          name: Español
+          build: true
+          site_name: Documentación de Veda 2.0
+        - locale: zh
+          name: 中文
+          build: true
+          site_name: Veda 2.0 文档
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: Permalink
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.keys
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation and setup: getting-started.md
+      - Migration from legacy Veda: migration.md
+  - Concepts:
+      - Introduction: introduction.md
+  - Build the model:
+      - Start page: start-page.md
+      - Navigator: navigator.md
+      - Browse: browse.md
+      - Items list: items-list.md
+      - Items detail: items-detail.md
+      - Model Info: model-info.md
+      - Menu: veda-menu.md
+  - Run and analyze:
+      - Run Manager: run-manager.md
+      - Results: results.md
+      - Reports: reports.md
+  - Tags:
+      - Overview: tags/index.md
+      - System settings: tags/system-settings.md
+      - RES templates: tags/res-templates.md
+      - Data (INS / DINS / UPD): tags/data-tags.md
+      - Sets and groups: tags/sets-and-groups.md
+      - Trade: tags/trade.md
+      - User constraints: tags/user-constraints.md
+      - Parametric scenarios: tags/parametric.md
+      - Metadata: tags/metadata.md
+      - Reference: tags/reference.md
+  - Reference:
+      - Notes:
+          - Overview: notes.md
+          - UPD tables: upd-tables.md
+          - Fill tables: filltables.md
+          - DINS tables: dins-tables.md
+          - Tags processing order: tags-proc-order.md
+          - Conventions: veda-conventions.md
+      - Version history: version-history.md
+  - About:
+      - License operations: license-operations.md
+      - License agreement: license-agreement.md
+      - Privacy policy: privacy-policy.md
+  - Troubleshooting:
+      - Overview: troubleshooting.md
+      - Deadlock detected: trouble-deadlock.md
+      - Excel exceptions: trouble-excel-exceptions.md
+      - GAMS Engine credentials: trouble-gams-credentials.md
+      - Problem with Microsoft Excel: trouble-excel-problem.md
+      - Uninstalling Postgres: trouble-uninstall-postgres.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/kanors-emr/Veda2.0-Installation
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/playlist?list=PLED97cPMXPOm60xOKSwvmXaGIsQrjoM8Y
+    - icon: fontawesome/solid/globe
+      link: https://www.kanors-emr.org/
