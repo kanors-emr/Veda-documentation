@@ -73,22 +73,257 @@ plugins:
           name: 日本語
           build: true
           site_name: Veda 2.0 ドキュメント
+          nav_translations:
+            Home: ホーム
+            Getting Started: はじめに
+            Installation and setup: インストールとセットアップ
+            Migration from legacy Veda: 旧 Veda からの移行
+            Concepts: コンセプト
+            Introduction: 概要
+            Build the model: モデルの構築
+            Start page: スタートページ
+            Navigator: ナビゲーター
+            Browse: ブラウズ
+            Items list: 項目一覧
+            Items detail: 項目詳細
+            Model Info: モデル情報
+            Menu: メニュー
+            Run and analyze: 実行と分析
+            Run Manager: 実行マネージャー
+            Results: 結果
+            Reports: レポート
+            Tags: タグ
+            Overview: 概要
+            System settings: システム設定
+            RES templates: RES テンプレート
+            "Data (INS / DINS / UPD)": "データ (INS / DINS / UPD)"
+            Sets and groups: セットとグループ
+            Trade: 取引
+            User constraints: ユーザー制約
+            Parametric scenarios: パラメトリックシナリオ
+            Metadata: メタデータ
+            Reference: リファレンス
+            Notes: ノート
+            UPD tables: UPD テーブル
+            Fill tables: Fill テーブル
+            DINS tables: DINS テーブル
+            Tags processing order: タグ処理順序
+            Conventions: 慣例
+            Version history: バージョン履歴
+            About: について
+            License operations: ライセンス操作
+            License agreement: ライセンス契約
+            Privacy policy: プライバシーポリシー
+            Troubleshooting: トラブルシューティング
+            Deadlock detected: デッドロック検出
+            Excel exceptions: Excel 例外
+            GAMS Engine credentials: GAMS Engine 認証情報
+            Problem with Microsoft Excel: Microsoft Excel の問題
+            Uninstalling Postgres: Postgres のアンインストール
         - locale: fr
           name: Français
           build: true
           site_name: Documentation Veda 2.0
+          nav_translations:
+            Home: Accueil
+            Getting Started: Premiers pas
+            Installation and setup: Installation et configuration
+            Migration from legacy Veda: Migration depuis l'ancien Veda
+            Concepts: Concepts
+            Introduction: Introduction
+            Build the model: Construire le modèle
+            Start page: Page de démarrage
+            Navigator: Navigateur
+            Browse: Parcourir
+            Items list: Liste des éléments
+            Items detail: Détail des éléments
+            Model Info: Informations sur le modèle
+            Menu: Menu
+            Run and analyze: Exécuter et analyser
+            Run Manager: Gestionnaire d'exécution
+            Results: Résultats
+            Reports: Rapports
+            Tags: Balises
+            Overview: Aperçu
+            System settings: Paramètres système
+            RES templates: Modèles RES
+            "Data (INS / DINS / UPD)": "Données (INS / DINS / UPD)"
+            Sets and groups: Ensembles et groupes
+            Trade: Échanges
+            User constraints: Contraintes utilisateur
+            Parametric scenarios: Scénarios paramétriques
+            Metadata: Métadonnées
+            Reference: Référence
+            Notes: Notes
+            UPD tables: Tables UPD
+            Fill tables: Tables Fill
+            DINS tables: Tables DINS
+            Tags processing order: Ordre de traitement des balises
+            Conventions: Conventions
+            Version history: Historique des versions
+            About: À propos
+            License operations: Opérations de licence
+            License agreement: Accord de licence
+            Privacy policy: Politique de confidentialité
+            Troubleshooting: Dépannage
+            Deadlock detected: Interblocage détecté
+            Excel exceptions: Exceptions Excel
+            GAMS Engine credentials: Identifiants GAMS Engine
+            Problem with Microsoft Excel: Problème avec Microsoft Excel
+            Uninstalling Postgres: Désinstallation de Postgres
         - locale: de
           name: Deutsch
           build: true
           site_name: Veda 2.0 Dokumentation
+          nav_translations:
+            Home: Startseite
+            Getting Started: Erste Schritte
+            Installation and setup: Installation und Einrichtung
+            Migration from legacy Veda: Migration von Legacy-Veda
+            Concepts: Konzepte
+            Introduction: Einführung
+            Build the model: Modell erstellen
+            Start page: Startbildschirm
+            Navigator: Navigator
+            Browse: Durchsuchen
+            Items list: Elementliste
+            Items detail: Elementdetails
+            Model Info: Modellinformationen
+            Menu: Menü
+            Run and analyze: Ausführen und analysieren
+            Run Manager: Run-Manager
+            Results: Ergebnisse
+            Reports: Berichte
+            Tags: Tags
+            Overview: Übersicht
+            System settings: Systemeinstellungen
+            RES templates: RES-Vorlagen
+            "Data (INS / DINS / UPD)": "Daten (INS / DINS / UPD)"
+            Sets and groups: Sets und Gruppen
+            Trade: Handel
+            User constraints: Benutzerbeschränkungen
+            Parametric scenarios: Parametrische Szenarien
+            Metadata: Metadaten
+            Reference: Referenz
+            Notes: Hinweise
+            UPD tables: UPD-Tabellen
+            Fill tables: Fill-Tabellen
+            DINS tables: DINS-Tabellen
+            Tags processing order: Tag-Verarbeitungsreihenfolge
+            Conventions: Konventionen
+            Version history: Versionsverlauf
+            About: Über
+            License operations: Lizenzoperationen
+            License agreement: Lizenzvereinbarung
+            Privacy policy: Datenschutzerklärung
+            Troubleshooting: Fehlerbehebung
+            Deadlock detected: Deadlock erkannt
+            Excel exceptions: Excel-Ausnahmen
+            GAMS Engine credentials: GAMS-Engine-Anmeldedaten
+            Problem with Microsoft Excel: Problem mit Microsoft Excel
+            Uninstalling Postgres: Postgres deinstallieren
         - locale: es
           name: Español
           build: true
           site_name: Documentación de Veda 2.0
+          nav_translations:
+            Home: Inicio
+            Getting Started: Primeros pasos
+            Installation and setup: Instalación y configuración
+            Migration from legacy Veda: Migración desde Veda anterior
+            Concepts: Conceptos
+            Introduction: Introducción
+            Build the model: Construir el modelo
+            Start page: Pantalla de inicio
+            Navigator: Navegador
+            Browse: Explorar
+            Items list: Lista de elementos
+            Items detail: Detalle de elementos
+            Model Info: Información del modelo
+            Menu: Menú
+            Run and analyze: Ejecutar y analizar
+            Run Manager: Gestor de ejecución
+            Results: Resultados
+            Reports: Informes
+            Tags: Etiquetas
+            Overview: Resumen
+            System settings: Configuración del sistema
+            RES templates: Plantillas RES
+            "Data (INS / DINS / UPD)": "Datos (INS / DINS / UPD)"
+            Sets and groups: Conjuntos y grupos
+            Trade: Comercio
+            User constraints: Restricciones de usuario
+            Parametric scenarios: Escenarios paramétricos
+            Metadata: Metadatos
+            Reference: Referencia
+            Notes: Notas
+            UPD tables: Tablas UPD
+            Fill tables: Tablas Fill
+            DINS tables: Tablas DINS
+            Tags processing order: Orden de procesamiento de etiquetas
+            Conventions: Convenciones
+            Version history: Historial de versiones
+            About: Acerca de
+            License operations: Operaciones de licencia
+            License agreement: Acuerdo de licencia
+            Privacy policy: Política de privacidad
+            Troubleshooting: Resolución de problemas
+            Deadlock detected: Bloqueo detectado
+            Excel exceptions: Excepciones de Excel
+            GAMS Engine credentials: Credenciales de GAMS Engine
+            Problem with Microsoft Excel: Problema con Microsoft Excel
+            Uninstalling Postgres: Desinstalación de Postgres
         - locale: zh
           name: 中文
           build: true
           site_name: Veda 2.0 文档
+          nav_translations:
+            Home: 主页
+            Getting Started: 入门
+            Installation and setup: 安装和设置
+            Migration from legacy Veda: 从旧版 Veda 迁移
+            Concepts: 概念
+            Introduction: 简介
+            Build the model: 构建模型
+            Start page: 启动页面
+            Navigator: 导航器
+            Browse: 浏览
+            Items list: 项目列表
+            Items detail: 项目详情
+            Model Info: 模型信息
+            Menu: 菜单
+            Run and analyze: 运行和分析
+            Run Manager: 运行管理器
+            Results: 结果
+            Reports: 报告
+            Tags: 标签
+            Overview: 概览
+            System settings: 系统设置
+            RES templates: RES 模板
+            "Data (INS / DINS / UPD)": "数据 (INS / DINS / UPD)"
+            Sets and groups: 集合和组
+            Trade: 贸易
+            User constraints: 用户约束
+            Parametric scenarios: 参数化方案
+            Metadata: 元数据
+            Reference: 参考
+            Notes: 注释
+            UPD tables: UPD 表
+            Fill tables: Fill 表
+            DINS tables: DINS 表
+            Tags processing order: 标签处理顺序
+            Conventions: 约定
+            Version history: 版本历史
+            About: 关于
+            License operations: 许可证操作
+            License agreement: 许可协议
+            Privacy policy: 隐私政策
+            Troubleshooting: 故障排除
+            Deadlock detected: 检测到死锁
+            Excel exceptions: Excel 异常
+            GAMS Engine credentials: GAMS Engine 凭据
+            Problem with Microsoft Excel: Microsoft Excel 问题
+            Uninstalling Postgres: 卸载 Postgres
 
 markdown_extensions:
   - abbr
@@ -118,6 +353,9 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.keys
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
   - Home: index.md

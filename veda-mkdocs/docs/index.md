@@ -1,8 +1,8 @@
 # Veda 2.0 Documentation
 
-**The Complete Data Management Solution for Energy System Models**
+**The complete data-management solution for energy-system models**
 
-Veda 2.0 is a powerful data handling system for [The Integrated MARKAL-EFOM System (TIMES)](https://iea-etsap.org/index.php/etsap-tools/model-generators/times) — a bottom-up optimization model for energy-environment systems. Support for additional models like **OSeMOSYS** and **TEMOA** is currently in development.
+Veda 2.0 is a powerful data handling system for [The Integrated MARKAL-EFOM System (TIMES)](https://iea-etsap.org/index.php/etsap-tools/model-generators/times) — a bottom-up optimization model for energy-environment systems. Support for additional models like **OSeMOSYS** and **TEMOA** is in development.
 
 Built with C#.NET and PostgreSQL, Veda 2.0 runs natively on Windows.
 
@@ -11,10 +11,11 @@ Built with C#.NET and PostgreSQL, Veda 2.0 runs natively on Windows.
 
 ## Where to start
 
-- [**Getting Started**](getting-started.md) — installation, setup, and first model.
-- [**Introduction**](introduction.md) — philosophy, architecture, license types, and the workflow Veda is designed around.
-- [**Reports**](reports.md) — define, classify, and aggregate model output for downstream analysis and visualisation.
+- **[Installation and setup](getting-started.md)** — download Veda, install prerequisites, get your first model running.
+- **[Introduction](introduction.md)** — philosophy, architecture, license types, and the workflow Veda is designed around.
+- **[Veda Tags](tags/index.md)** — the syntax for declaring model components and parameters.
+- **[Reports](reports.md)** — define, classify, and aggregate model output for downstream analysis and visualisation.
 
-## Pilot release
+## Multilingual
 
-This documentation is in the middle of a migration from the previous [Sphinx-based site](https://veda-documentation.readthedocs.io/) to a multi-lingual MkDocs site. The first three pages above are live; the remainder will land in subsequent updates.
+This documentation is being made available in several languages. Use the language switcher (the globe icon in the top-right) to switch between **English**, **日本語**, **Français**, **Deutsch**, **Español**, and **中文**. The navigation labels are localised across all six languages; most page bodies currently fall back to English content until translators fill in the local-language versions.
