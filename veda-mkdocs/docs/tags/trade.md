@@ -82,4 +82,3 @@ Augments the `TradeLinks` files with per-trade-process data. Where
 between which regions, `~FI_Process_Trades` lets process-specific
 data (such as the trade process's own attributes) be attached to
 those links.
-

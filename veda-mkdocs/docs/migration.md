@@ -108,10 +108,10 @@ migrating VEDA_FE models to Veda2.0
 
     - extra columns would appear from tables where FI_T/UC_T tags were misplaced
 
-- **No QC of process/commodity/UC names. <list of characters> used to be replaced
+- **No QC of process/commodity/UC names. `<list of characters>` used to be replaced
   with "_".**
 
-    - Now the DD files are always written with <'> around each element and all
+    - Now the DD files are always written with `'` around each element and all
       names are retained as in their original form.
 
 - **The default year has been changed from the first milestone year to the start

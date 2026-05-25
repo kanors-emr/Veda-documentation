@@ -148,7 +148,7 @@ The Set Block joins the Name/Desc/Input/Output Block via `_forsets` columns; wit
 | `pset_set` | ELEGEN | Set membership |
 | `pset_pn` | `*COAL*` | Name pattern |
 | `pset_ci` | COA | Input commodity |
-| **Result** | | Processes in ELEGEN set AND name contains COAL AND consumes COA |
+| **Result** | Processes in ELEGEN set AND name contains COAL AND consumes COA | |
 
 **Example 2: OR Logic Within Block**
 
@@ -157,7 +157,7 @@ The Set Block joins the Name/Desc/Input/Output Block via `_forsets` columns; wit
 | `pset_pn` | `*COAL*` | Name pattern |
 | `pset_ci` | COA | Input commodity |
 | `t_pos_andor` | OR | Name OR Input |
-| **Result** | | Processes with COAL in name OR consuming COA |
+| **Result** | Processes with COAL in name OR consuming COA | |
 
 **Example 3: Set Block OR Integration**
 
@@ -166,7 +166,7 @@ The Set Block joins the Name/Desc/Input/Output Block via `_forsets` columns; wit
 | `pset_set` | ELEGEN | Set membership |
 | `pset_pn` | `*RENEW*` | Name pattern |
 | `t_pos_andor_forsets` | OR | Set OR Name |
-| **Result** | | Processes in ELEGEN set OR with RENEW in name |
+| **Result** | Processes in ELEGEN set OR with RENEW in name | |
 
 **Example 4: Complex Mixed Logic**
 
@@ -197,7 +197,7 @@ The Set Block joins the Name/Desc/Input/Output Block via `_forsets` columns; wit
 | `cset_set` | ALLELC | Electricity commodity set |
 | `cset_cn` | `*H2*` | Hydrogen commodities |
 | `c_pos_andor_forsets` | OR | Set OR name pattern |
-| **Result** | | All electricity commodities OR hydrogen commodities |
+| **Result** | All electricity commodities OR hydrogen commodities | |
 
 ### Filtering Method Selection Guidelines
 

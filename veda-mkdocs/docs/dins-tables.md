@@ -5,9 +5,10 @@
     DINS tables are designed for adding large chunks of data, when it is
     fully enumerated.
 
-| **XX RFInput** | | |
-| --- | --- | --- |
+**XX RFInput**
+
 | **S.No** | **Attribute** | **Text** |
+| --- | --- | --- |
 | 1 | RFSwitch | `*GG*` Set LevelizedCost/OBJ Method/Cost_NPV switches |
 | 2 | RFSwitch | $SET ANNCOST LEV |
 | 3 | RFSwitch | $SET OBJ AUTO |
@@ -18,9 +19,10 @@
 | 8 | RFCmd | RPT_OPT('OBJ','1') = 1; |
 | 9 | RFCmd | RPT_OPT('COMPRD','4') = 1; |
 
-| **~TFM_DINS-AT** | | | |
-| --- | --- | --- | --- |
+**~TFM_DINS-AT**
+
 | **Pset_PN** | **RFCmd_FLAGS** | **RFCmd_GAMS** | **Other_Indexes** |
+| --- | --- | --- | --- |
 | IMPNRGZ | 1 | | `*GG*` Set LevelizedCost/OBJ Method/Cost_NPV switches |
 | IMPNRGZ | 2 | | $SET ANNCOST LEV |
 | IMPNRGZ | 3 | | $SET OBJ AUTO |

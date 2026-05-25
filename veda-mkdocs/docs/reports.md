@@ -207,15 +207,17 @@ variable name using the placeholders `<Pset>`, `<Cset>`, `<PName>`,
 `<CName>`, paired with the lookup tables `~PSet_Map`, `~CSet_Map`,
 `~PName_Map`, `~CName_Map`:
 
-| **~TS_Defs** | | |
-| --- | --- | --- |
-| **Attribute** | **PSET_Set** | **Name** |
-| VAR_FOUT | E_Coal | EProd_<Pset> |
-| VAR_FOUT | E_Gas | EProd_<Pset> |
+**~TS_Defs**
 
-| **~PSet_Map** | | |
+| **Attribute** | **PSET_Set** | **Name** |
 | --- | --- | --- |
+| VAR_FOUT | E_Coal | `EProd_<Pset>` |
+| VAR_FOUT | E_Gas | `EProd_<Pset>` |
+
+**~PSet_Map**
+
 | **Pset** | **Desc** | **Ldesc** |
+| --- | --- | --- |
 | E_Coal | Coal | Coal |
 | E_Gas | Gas | Gas |
 
@@ -295,9 +297,10 @@ A real example from a production model — the `Tech` dimension for
 power-generation technologies, combining process set membership with
 commodity flows to pick out the right subsets:
 
-| **~Process_Map** | | | | | |
-| --- | --- | --- | --- | --- | --- |
+**~Process_Map**
+
 | **dimension** | **name** | **description** | **pset_set** | **pset_ci** | **pset_co** |
+| --- | --- | --- | --- | --- | --- |
 | Tech | | Bio | ELE,CHP | ???BSL,???BIO | `-CO2Captured*` |
 | Tech | | Coal | ELE,CHP | ???COA | `-CO2Captured*` |
 | Tech | | Gas | ELE,CHP | ???NGA | `-CO2Captured*` |
@@ -326,9 +329,10 @@ for example, a coarser `Tech_Agg` dimension that groups Bio + Coal + Gas
 + Bio(CCS) + Coal(CCS) + Gas(CCS) under `Thermal`, Wind + Solar + Hydro
 under `Renewable`, and so on:
 
-| **~Process_Map** | | | |
-| --- | --- | --- | --- |
+**~Process_Map**
+
 | **dimension** | **description** | **pset_set** | **pset_ci** |
+| --- | --- | --- | --- |
 | Tech_Agg | Thermal | ELE,CHP | ???COA,???NGA,???BSL,???BIO,???OIL |
 | Tech_Agg | Renewable | ELE,CHP | ???SPV,???STH,???WIN,???HYD,???GEO,???TDL |
 | Tech_Agg | Nuclear | ELE,CHP | ???NUC |
@@ -344,9 +348,10 @@ A third `~Process_Map` block can extract a `sector_weo` dimension purely
 from process-set membership, which is typically used for WEO-style
 sector aggregations:
 
-| **~Process_Map** | | |
-| --- | --- | --- |
+**~Process_Map**
+
 | **dimension** | **description** | **pset_set** |
+| --- | --- | --- |
 | sector_weo | PriSup | s_Imports |
 | sector_weo | PriSup | s_Mining |
 | sector_weo | Power | s_Utility |
@@ -369,9 +374,10 @@ The `Fuel` / `Fuel_Agg` pair is the canonical example of overlapping
 classifications on commodities — a fine-grained dimension and a coarser
 one, both present on every output row:
 
-| **~Commodity_Map** | | | |
-| --- | --- | --- | --- |
+**~Commodity_Map**
+
 | **dimension** | **name** | **description** | **cset_set** |
+| --- | --- | --- | --- |
 | Fuel | `*ELC*` | Electricity | |
 | Fuel | ELCCurt | Int. Elec | |
 | Fuel | `*H2*,-[_]*` | Hydrogen | |
@@ -417,9 +423,10 @@ Classifies output variables. **Typical dimensions:** `attribute` (a
 high-level grouping shown at the top of the report viewer),
 `source/use`, `CostType`, `Emi/Cap`.
 
-| **~Varbl_Map** | | |
-| --- | --- | --- |
+**~Varbl_Map**
+
 | **dimension** | **name** | **description** |
+| --- | --- | --- |
 | attribute | `*GDP*,*popu*,*percap*,*househo*,-rep*` | Macro Indices |
 | attribute | `TFC[_]*,*[_]FE[_]*,Fin E[_]*,-*[_]IND[_]*,-*[_]Fuels[_]*,...` | Final energy |
 | attribute | `Pri_Prod*,Pri_Imp*,Pri_Exp*,PE[_]*,PriE*,Pri E*` | Primary En and Trade |
@@ -447,9 +454,10 @@ high-level grouping shown at the top of the report viewer),
 Region → grouping. Commonly used for WEO regions, OECD vs. non-OECD,
 EU-27 vs. EFTA, or any partition of model regions.
 
-| **~Region_Map** | | |
-| --- | --- | --- |
+**~Region_Map**
+
 | **Dimension** | **Name** | **Description** |
+| --- | --- | --- |
 | Region_WEO | Africa_North | Africa |
 | Region_WEO | Africa_South | Africa |
 | Region_WEO | Asia_Cen | Eurasia |
@@ -535,9 +543,10 @@ want to weight on a dimension you don't want to join on).
 
 From a production model:
 
-| **~TS_Ratios** | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- |
+**~TS_Ratios**
+
 | **var_num** | **var_den** | **Name** | **Unit** | **show_me** | **include_null** | **include_dim** |
+| --- | --- | --- | --- | --- | --- | --- |
 | Elec_act | Capacity_Elec | Capacity_factor | Twh/GW | p | y | p |
 | H2_Prod | Capacity_H2 | Capacity_factor | PJ/GW | | y | p |
 | Elec_Prod | Fuel_cons_power | Efficiency | Twh/PJ | | | p |
@@ -629,9 +638,10 @@ pipeline has run. It is the standard way to bring in historical IEA
 energy balances, WEO projections, calibration overlays, or any other
 already-shaped data that needs to sit alongside the model output:
 
-| **~ATS_Final** | | | | | | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+**~ATS_Final**
+
 | **model** | **Scenario** | **scen** | **Region** | **Varbl** | **Unit** | **year** | **val** | **fuel** | **fuel_agg** | **Sector** | **Region_WEO** |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | IEA | Hist | Hist | Africa_North | CO2_emissions | Mt CO2 | 1995 | 0.088852 | Oil | Oil crude | Industry | Africa |
 | IEA | Hist | Hist | Africa_North | CO2_emissions | Mt CO2 | 2000 | 3.722594 | Diesel | Oil prod. | Transport | Africa |
 | ... | | | | | | | | | | | |
@@ -683,9 +693,10 @@ matches `Unit1`, multiply by `MultFact` and replace the unit with
 `Unit2`. Applies to both `~TS_Defs` outputs and `~TS_Ratios`-derived
 variables.
 
-| **~UnitConv** | | | |
-| --- | --- | --- | --- |
+**~UnitConv**
+
 | **Model** | **Unit1** | **Unit2** | **MultFact** |
+| --- | --- | --- | --- |
 | KINESYS | kt CH4 | Mt CH4/yr | 0.001 |
 | KINESYS | kt CO2 | Mt CO2/yr | 0.001 |
 | KINESYS | kt CO2neg | Mt CO2/yr | -0.001 |
@@ -703,9 +714,10 @@ The `~Geolocation` tag is a simple region → (latitude, longitude) table.
 Its primary role is to enable auto-generated trade-flow variables for
 visualisation on maps.
 
-| **~Geolocation** | | |
-| --- | --- | --- |
+**~Geolocation**
+
 | **Region** | **Lat** | **Lng** |
+| --- | --- | --- |
 | UAE | 23.424076 | 53.847818 |
 | LatAm | -38.416097 | -63.616672 |
 | Australia | -25.274398 | 133.775136 |
@@ -753,16 +765,18 @@ tags. Typical `~ScenG` columns: `Climate`, `SSP`, `Exo_price`, `NZYear`,
 `C_Budget`, `CO2Price` — so a single report can be sliced by climate
 scenario, SSP scenario, or any other axis the modeler chose to declare.
 
-| **~ScenMap** | | | |
-| --- | --- | --- | --- |
+**~ScenMap**
+
 | **Oname** | **Name** | **Desc** | **Ldesc** |
+| --- | --- | --- | --- |
 | KS~0001 | Base.SSP2 | | |
 | KS~0002 | STEPS.SSP2 | | |
 | KS~0003 | APS.SSP2 | | |
 
-| **~ScenG** | | | |
-| --- | --- | --- | --- |
+**~ScenG**
+
 | **Scen** | **SSP** | **Climate** | **Exo_price** |
+| --- | --- | --- | --- |
 | Base.SSP2 | SSP2 | Base | |
 | STEPS.SSP2 | SSP2 | ESTPS | |
 | APS.SSP2 | SSP2 | PAS | |
@@ -777,9 +791,10 @@ canonical English label); each remaining column is an
 language code (e.g. `FRA`, `DEU`, `ESP`, `JPN`, `CHI`) with the
 translated value.
 
-| **~Language** | | | | | |
-| --- | --- | --- | --- | --- | --- |
+**~Language**
+
 | **name** | **FRA** | **DEU** | **ESP** | **JPN** | **CHI** |
+| --- | --- | --- | --- | --- | --- |
 | Agriculture | Agriculture | Landwirtschaft | Agricultura | 農業 | 农业 |
 | Asia Pacific | Asie-Pacifique | Asien-Pazifik | Asia Pacífico | アジア太平洋地域 | 亚太地区 |
 | BF gas | Gaz BF | BF-Gas | gasolina BF | BFガス | 高炉气体 |
@@ -914,8 +929,8 @@ processes and commodities without aggregation.
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | VAR_FIN      | "PRE,DMD"     |              |              |              |              | MAT           | `im_*,ind[_]*` |              | Mtneg    |        |           | `<gen_cname>_Snk_<gen_pname>` |
 | VAR_FOUT     | "PRE,DMD"     |              |              |              |              | MAT           | `im_*,ind[_]*` |              | Mt       |        |           | `<gen_cname>_Src_<gen_pname>` |
-| VAR_FIN      | IRE           |              |              |              |              | MAT           | `im_*,ind[_]*` |              | Mtneg    |        |           | <gen_cname>_Snk_Export           |
-| VAR_FOUT     | IRE           |              |              |              |              | MAT           | `im_*,ind[_]*` |              | Mt       |        |           | <gen_cname>_Src_Import           |
+| VAR_FIN      | IRE           |              |              |              |              | MAT           | `im_*,ind[_]*` |              | Mtneg    |        |           | `<gen_cname>_Snk_Export` |
+| VAR_FOUT     | IRE           |              |              |              |              | MAT           | `im_*,ind[_]*` |              | Mt       |        |           | `<gen_cname>_Src_Import` |
 
 **Process**:
 

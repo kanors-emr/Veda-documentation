@@ -45,4 +45,3 @@ the set name afterwards.
 The commodity-set analogue of `~TFM_PSets`. Uses the commodity filter
 columns to define named commodity sets that can then be referenced
 wherever a `cset_set` is accepted.
-

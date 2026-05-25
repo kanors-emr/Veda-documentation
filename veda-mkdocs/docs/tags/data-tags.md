@@ -264,7 +264,6 @@ left column matches existing rows; the right column overrides that axis
 in the migrated row.
 
 | Source filter                                       | Destination override         | What it migrates                        |
-| --- | --- | --- |
 | `attribute`                                         | `attribute2`                 | The TIMES parameter being rewritten     |
 | `cset_cn` (alias `commodity`)                       | `commodity2` (alias `cset_cn2`) | Commodity                            |
 | `year` / `yr`                                       | `year2` / `yr2`              | Year migration (e.g. project base-year data forward) |
@@ -298,14 +297,16 @@ existing number matches the condition are migrated. Examples: `>1`,
 Some patterns this enables:
 
 | Pattern | Source / destination columns to use |
-| --- | --- |
 | **Re-attribute** a value (write the same numbers under a different attribute) | `attribute` → `attribute2` |
+| --- | --- |
 | **Project a base-year value forward** to a target year | `year` (source) → `year2` (target), value can be a multiplier |
+| --- | --- |
 | **Shift values between regions** | `region` (source) and a paired destination row |
 | **Re-classify a commodity** (move data from `COA1` to `COA2`) | `commodity` → `commodity2` |
 | **Convert currency** | `currency` → `currency2` with `value = *<rate>` |
 | **Switch bound type** (e.g. an LO becomes a FX) | `limtype` → `limtype2` |
 | **Conditional clamp** (only act on rows whose value exceeds a threshold) | `val_cond` plus a value override |
+| --- | --- |
 | **Time-slice retiming** | `timeslice` → `timeslice2` |
 | **Move data between scenarios in stochastic mode** | `sow` → `sow2`, `stage` → `stage2` |
 
@@ -619,4 +620,3 @@ NoSeedValueScenario.
     **RFCmd** family of attributes now provides a structured
     alternative that does not require hand-written GAMS. Prefer RFCmd
     attributes for new work.
-

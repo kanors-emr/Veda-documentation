@@ -223,9 +223,8 @@ is activated.
 
 Single user prices for VEDA2.0
 
-| US $ | OECD | | NON-OECD | | |
+| US $ | OECD Academic | OECD Govt | NON-OECD Academic | NON-OECD Govt | Commercial |
 | --- | --- | --- | --- | --- | --- |
-| | Academic | Govt | Academic | Govt | Commercial |
 | **Academic** | 3,000 | x | 2,400 | x | x |
 | **Standard** | 6,200 | 9,100 | 5,000 | 6,200 | 12,000 |
 | **Advanced** | 9,000 | 12,000 | 7,500 | 9,000 | 15,000 |

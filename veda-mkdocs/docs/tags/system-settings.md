@@ -223,4 +223,3 @@ temporal resolution.
 should **ignore** during tag processing — useful when a template
 carries annotation or audit columns alongside the real parameter
 columns. Lives in `SysSettings`.
-

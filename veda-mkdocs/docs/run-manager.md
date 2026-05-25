@@ -408,16 +408,16 @@ INS/DINS tables, in any scenario file or in SysSettings.
 | CmdF_bot        | After GDX2VEDA call in VTRun.CMD     |                 |
 | CmdF_GAMS       | Parameters to GAMS Call in VTRun.CMD |                 |
 | CmdF_Title      | Command window title (0=no title)    |                 |
-| --- | --- | --- |
+|                 |                                      |                 |
 | RFCmd_bot       | Bottom of RUN file                   |                 |
-| RFCmd_DD        | <INCLUDE DD FILES>                 | RFCmd_D        |
-| RFCmd_FLAGS     | <SET FLAGS>                        | RFCmd_F        |
-| RFCmd_GAMS      | <GAMSOPTIONS>                      | RFCmd_G, RFCmd |
-| RFCmd_GLOBAL    | <GLOBAL Parameters>                | RFCmd_Glb      |
-| RFCmd_OPTIMIZER | <OPTIMIZER>                        | RFCmd_O        |
-| --- | --- | --- |
-| SFCmd_top       | Top of scenario DD file              | SFCmd_T, SFCmd |
-| SFCmd_bot       | Bottom of scenario DD file           | SFCmd_B        |
+| RFCmd_DD        | `<INCLUDE DD FILES>`                 | RFCmd_D         |
+| RFCmd_FLAGS     | `<SET FLAGS>`                        | RFCmd_F         |
+| RFCmd_GAMS      | `<GAMSOPTIONS>`                      | RFCmd_G, RFCmd  |
+| RFCmd_GLOBAL    | `<GLOBAL Parameters>`                | RFCmd_Glb       |
+| RFCmd_OPTIMIZER | `<OPTIMIZER>`                        | RFCmd_O         |
+|                 |                                      |                 |
+| SFCmd_top       | Top of scenario DD file              | SFCmd_T, SFCmd  |
+| SFCmd_bot       | Bottom of scenario DD file           | SFCmd_B         |
 
 There is no need to modify the RUN file template manually.
 
@@ -437,47 +437,49 @@ Demo](https://github.com/kanors-emr/Model_Demo_Adv_Veda.git){ target="_blank" re
 
 <p align="center"><em>Example 1</em></p>
 
-| ~TFM_INS |                  |       |  |                                      |
-| --- | --- | --- | --- | --- |
-| Attribute  | Other_Indexes   | Value |  | Comment                              |
-| RFCmd_F   | $SET BENCOST YES | 1     |  | Written to FLAG section of RUN file  |
-| RFCmd_F   | $SET ANNCOST LEV | 2     |  |                                      |
-| RFCmd_F   | $SET WAVER YES   | 3     |  |                                      |
-| RFCmd_G   | GAMS statement 1 | 1     |  | Written GAMSOPT section              |
-| RFCmd_Glb | GAMS statement 2 | 2     |  | Written to Global parameters section |
-| RFCmd_Glb | GAMS statement 3 | 3     |  |                                      |
-| SFCmd_T   | $OFFEPS          | 1     |  | Top of the scen DD file              |
-| SFCmd_B   | GAMS statement A | 3     |  | Bottom of the scen DD file           |
-| SFCmd_B   | GAMS statement B | 4     |  |                                      |
+**~TFM_INS**
 
-If you want to use single quotes <'> or commas <,> in your
+| Attribute | Other_Indexes | Value | Comment |
+| --- | --- | --- | --- |
+| RFCmd_F | $SET BENCOST YES | 1 | Written to FLAG section of RUN file |
+| RFCmd_F | $SET ANNCOST LEV | 2 | |
+| RFCmd_F | $SET WAVER YES | 3 | |
+| RFCmd_G | GAMS statement 1 | 1 | Written GAMSOPT section |
+| RFCmd_Glb | GAMS statement 2 | 2 | Written to Global parameters section |
+| RFCmd_Glb | GAMS statement 3 | 3 | |
+| SFCmd_T | $OFFEPS | 1 | Top of the scen DD file |
+| SFCmd_B | GAMS statement A | 3 | Bottom of the scen DD file |
+| SFCmd_B | GAMS statement B | 4 | |
+
+If you want to use single quotes `'` or commas `,` in your
 instructions, then it is necessary to use a DINS table, as shown below.
 DINS tables need process or commodity specification. You can use any
 valid process instead of IMPNRGZ; it will have no impact on the outcome.
 
 <p align="center"><em>Example 2</em></p>
 
-| ~TFM_DINS-AT |                                                                    |          |
+**~TFM_DINS-AT**
+
+| | Other_Indexes | pset_pn |
 | --- | --- | --- |
-| RFCmd_DD      | Other_Indexes                                                     | pset_pn |
-| 3              | set nr(all_reg);                                                  | IMPNRGZ  |
-| 4              | nr(all_reg)=yes$(not r(all_reg));                                | IMPNRGZ  |
-| 5              | `*--` | IMPNRGZ |
+| 3 | set nr(all_reg); | IMPNRGZ |
+| 4 | nr(all_reg)=yes$(not r(all_reg)); | IMPNRGZ |
+| 5 | `*-` | IMPNRGZ |
 | 6 | `*Python embedded code to remove invalid TU and TB trade processes` | IMPNRGZ |
-| 7              | set cb_p(r,p) all crossborder processes involved                  | IMPNRGZ  |
-| 8              | `*--` | IMPNRGZ |
-| 9              | ;                                                                  | IMPNRGZ  |
-| 10             | cb_p(r,p)=yes$gr_genmap(r,p,'CrossBorderTrade');                 | IMPNRGZ  |
-| 11             | `*--` | IMPNRGZ |
-| 12             | embeddedCode Python:                                               | IMPNRGZ  |
+| 7 | set cb_p(r,p) all crossborder processes involved | IMPNRGZ |
+| 8 | `*-` | IMPNRGZ |
+| 9 | ; | IMPNRGZ |
+| 10 | cb_p(r,p)=yes$gr_genmap(r,p,'CrossBorderTrade'); | IMPNRGZ |
+| 11 | `*-` | IMPNRGZ |
+| 12 | embeddedCode Python: | IMPNRGZ |
 | 13 | ncb_p = [] | IMPNRGZ |
-| 14             | for r,p in gams.get('cb_p'):                                      | IMPNRGZ  |
-| 15             | `*--` | IMPNRGZ |
-| 16             | `*--` | IMPNRGZ |
-| 17             | `*--` | IMPNRGZ |
-| 18             | gams.set('ncb_p',ncb_p)                                          | IMPNRGZ  |
-| 19             | endEmbeddedCode ncb_p                                             | IMPNRGZ  |
-| 20             | ACT_BND(R,T,P,S,'UP')$ncb_p(r,p) = EPS;                          | IMPNRGZ  |
+| 14 | for r,p in gams.get('cb_p'): | IMPNRGZ |
+| 15 | `*-` | IMPNRGZ |
+| 16 | `*-` | IMPNRGZ |
+| 17 | `*-` | IMPNRGZ |
+| 18 | gams.set('ncb_p',ncb_p) | IMPNRGZ |
+| 19 | endEmbeddedCode ncb_p | IMPNRGZ |
+| 20 | ACT_BND(R,T,P,S,'UP')$ncb_p(r,p) = EPS; | IMPNRGZ |
 
 ## Case definition
 

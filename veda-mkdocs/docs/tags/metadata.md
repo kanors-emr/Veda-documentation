@@ -53,4 +53,3 @@ table-row, table-column) and the target (value vs. technology vs.
 commodity) differ. The `_W` / `_S` forms are placed at the top of the
 workbook or sheet; the `_R` / `_C` forms sit inline on the row or
 column they annotate.
-

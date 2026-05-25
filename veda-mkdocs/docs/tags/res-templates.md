@@ -430,4 +430,3 @@ In this example:
 By leveraging the flexibility of the **~FI_T** table, users can
 efficiently configure process inputs, outputs, and parameters, aligning
 the model structure with source data seamlessly.
-

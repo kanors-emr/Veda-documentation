@@ -24,6 +24,7 @@ Key columns from this and other UC_T tables:
 | `UC_N`                                                  | The user-constraint instance name                             |
 | `*`                                                     | Default value across regions                                  |
 | Per-region columns (`Bangladesh`, `Indonesia`, …)       | Region-specific value                                         |
+| --- | --- |
 | `pset_set` / `pset_pn` / standard process filter columns| Which processes participate                                   |
 | `cset_set` / `cset_cn` / standard commodity filters     | Which commodities participate                                 |
 | `attribute` (aliases `prmtr`, `parameter`)              | The TIMES parameter being constrained                         |
@@ -44,8 +45,8 @@ this set applies). Each row binds a set name to its members.
 
 Real example from `Scen_RE-Targets_EMBER.xlsx :: Ember`:
 
-| **~UC_Sets: R_E: Bangladesh,Indonesia,Malaysia,Philippines,Thailand,Vietnam** | |
-| --- | --- |
+**~UC_Sets: R_E: Bangladesh,Indonesia,Malaysia,Philippines,Thailand,Vietnam**
+
 | Bioenergy | E_Bio |
 | Hydro | E_Hydro |
 | Solar | E_Solar |
@@ -54,4 +55,3 @@ Real example from `Scen_RE-Targets_EMBER.xlsx :: Ember`:
 
 The first column is the set name (used in `UC_N` of subsequent UC_T
 rows); the second column lists the member processes or process sets.
-
