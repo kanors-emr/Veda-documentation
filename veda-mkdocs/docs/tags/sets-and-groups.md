@@ -13,14 +13,12 @@ membership rule built from the standard commodity filter columns.
 
 Real example from `SysSettings.xlsx :: CommGrp`:
 
-```
-~TFM_COMGRP
-Name        | Description                       | AllRegions | Cset_CN
-IIS_Gases   | IIS CommGrp for gases             | y          | INDNGA, INDIIS, INDCOG, INCOP
-ELC_gc      | Electricity - grid + curtailed    | y          | ELC,ELCCurt
-cg_NGAHH2   | Nat gas + Hydrogen - primary      | y          | GASNGA,HH2
-cg_NAPBIO   | Naphtha + biofuels - primary      | y          | OILNAP,BIOGSL,BIODST
-```
+| **~TFM_COMGRP** | **Name** | **Description** | **AllRegions** | **Cset_CN** |
+| --- | --- | --- | --- | --- |
+| | IIS_Gases | IIS CommGrp for gases | y | INDNGA, INDIIS, INDCOG, INCOP |
+| | ELC_gc | Electricity - grid + curtailed | y | ELC,ELCCurt |
+| | cg_NGAHH2 | Nat gas + Hydrogen - primary | y | GASNGA,HH2 |
+| | cg_NAPBIO | Naphtha + biofuels - primary | y | OILNAP,BIOGSL,BIODST |
 
 The columns are `Name`, `Description`, `AllRegions` (set to `y` when the
 group is the same across all regions), and the standard commodity

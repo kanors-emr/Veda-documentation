@@ -13,10 +13,12 @@ named in the license file.
 ## Multi-User/Department (MUD) Licenses
 
 Multi-User/Department (MUD) licenses allow several users to run the
-licensed software on one or more computers. License Users Price small
-MUD up to 5 twice the price of a single user system medium MUD up to 10
-three times the price of a single user system larger MUD add one more
-single user price for each additional 10 users.
+licensed software on one or more computers.
+
+- License Users Price small MUD up to 5 twice the price of a single user
+    system
+- medium MUD up to 10 three times the price of a single user system
+- larger MUD add one more single user price for each additional 10 users.
 
 ## Maintenance and Support
 

@@ -3,16 +3,16 @@
 Veda checks for a functioning version of Microsoft Excel in the user
 machine and upon not finding one, it can generate following errors:
 
-  - Microsoft Excel is not installed/found:
-    
+- Microsoft Excel is not installed/found:
+
     ![](images/excel_missing.png)
-    
+
     It can be fixed by installing Microsoft Excel.
 
-  - There are some pop-ups on opening Microsoft Excel which requires
+- There are some pop-ups on opening Microsoft Excel which requires
     user's attention:
-    
+
     ![](images/excel-popups.png)
-    
+
     It can be fixed by opening Microsoft Excel manually and resolving
     them.

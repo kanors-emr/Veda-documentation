@@ -1,7 +1,7 @@
 # Reports
 
 The Advanced license of Veda2.0 offers a powerful, efficient way to
-create reports. VEDA\_BE and the Results functionality in Veda2.0 work
+create reports. VEDA_BE and the Results functionality in Veda2.0 work
 well for interactive and even production reporting, but they have two
 limitations that the Reports feature removes. First, reporting variables
 are trapped inside tables — they cannot be controlled directly. Second,
@@ -9,7 +9,7 @@ output views cannot grow new dimensions; segmentation is limited to
 process and commodity sets on top of the native indexes (attribute,
 region, time).
 
-Take transportation final energy in a rich model like JRC\_EU-TIMES: you
+Take transportation final energy in a rich model like JRC_EU-TIMES: you
 may want to see energy consumption by scenario, region, fuel, mode,
 size, and technology. Scenario and region are separate indexes, and fuel
 can be managed with commodity sets — but mode, size and technology have
@@ -23,40 +23,40 @@ and GDP for per-capita and per-GDP metrics.
 
 !!! note "Note"
 
-    \* Examples in this section are based on the [JRC\_EU-TIMES
-    model](https://github.com/KanORS-E4SMA/EU_TIMES_Veda2.0). Further
-    examples are in the file LMADefs-EU\_TIMES.xlsm. \* The Reports feature
+    Examples in this section are based on the [JRC_EU-TIMES
+    model](https://github.com/KanORS-E4SMA/EU_TIMES_Veda2.0){ target="_blank" rel="noopener noreferrer" }. Further
+    examples are in the file LMADefs-EU_TIMES.xlsm. The Reports feature
     is active in Trial licenses.
 
 ## Core mechanics of Report creation
 
-  - The Reports menu can be used to select scenarios across models and
+- The Reports menu can be used to select scenarios across models and
     users.
 
-  - Reports are defined in one or more Excel files (analogous to the Set
+- Reports are defined in one or more Excel files (analogous to the Set
     definitions file).
 
-  - The Excel files contain *tagged tables* — each table begins with a
+- The Excel files contain *tagged tables* — each table begins with a
     tag like `~TS_Defs` or `~Process_Map` and is followed by a header
     row and data rows.
 
-  - There are two main steps in building a report:
-        
-        1.  **Define variables** (`~TS_Defs`, `~TS_Ratios`,
-            `~ATS_final`). Each row produces one or more numbers,
-            indexed by attribute, region, year, scenario, and optionally
-            process/commodity/timeslice/user-constraint/vintage.
-        2.  **Classify them with overlapping dimensions** using the
-            `_Map` tags (`~Varbl_Map`, `~Process_Map`, `~Commodity_Map`,
-            `~Region_Map`, `~Timeslice_Map`). Every `dimension` listed
-            in a `_Map` table becomes a new column on the report fact
-            table, which Excel / CSV / VO / LMA can pivot, filter and
-            slice on. The same process or commodity can carry multiple
-            overlapping classifications (e.g. a single solar PV plant is
-            simultaneously *Tech = Solar*, *Sector = Power*, *Tech\_Agg
-            = Renewables*).
+- **There are two main steps in building a report:**
 
-  - All processing is region-aware: region is preserved by default in
+    1. **Define variables** (`~TS_Defs`, `~TS_Ratios`,
+       `~ATS_final`). Each row produces one or more numbers,
+       indexed by attribute, region, year, scenario, and optionally
+       process/commodity/timeslice/user-constraint/vintage.
+    2. **Classify them with overlapping dimensions** using the
+       `_Map` tags (`~Varbl_Map`, `~Process_Map`, `~Commodity_Map`,
+       `~Region_Map`, `~Timeslice_Map`). Every `dimension` listed
+       in a `_Map` table becomes a new column on the report fact
+       table, which Excel / CSV / VO / LMA can pivot, filter and
+       slice on. The same process or commodity can carry multiple
+       overlapping classifications (e.g. a single solar PV plant is
+       simultaneously *Tech = Solar*, *Sector = Power*, *Tech_Agg
+       = Renewables*).
+
+- All processing is region-aware: region is preserved by default in
     every output, and ratios computed via `~TS_Ratios` group by region
     implicitly. Region can be aggregated explicitly via `~Region_Map`.
 
@@ -91,7 +91,7 @@ which substitutions happen first. The simplified order is:
 The `~TS_Defs` tag is the core of Reports. Each row defines one output
 variable from a combination of attribute, process and commodity filters,
 plus optional timeslice and user-constraint qualifiers. The standard
-pattern is **one variable per row, with a fixed \`\`Name\`\`** — the
+pattern is **one variable per row, with a fixed `Name`** — the
 classifications and aggregations that the report consumer cares about
 are added downstream by the `_Map` tags (see the next section). Trying
 to encode classifications in the variable name itself is a legacy
@@ -103,7 +103,7 @@ approach and is not recommended for new work; see
 ### Column reference (`~TS_Defs`)
 
 | **Column**                                                                    | **Recognised aliases**                                          | **Meaning**                                                                                                                                                                                                                                                                                                                                                                                    |
-| ----------------------------------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --- | --- | --- |
 | `Attribute`                                                                   | `attribute`                                                     | The TIMES output attribute the variable is built on (e.g. `VAR_FIN`, `VAR_FOUT`, `VAR_ACT`, `VAR_CAP`, `VAR_NCAP`, `Cost_INV`, `Val_Flo`). A row may also reference a User Constraint value with `Attribute = User_con` — see "User-constraint reporting variables" below.                                                                                                                     |
 | `WAttribute`                                                                  | `wattribute`                                                    | Weighting attribute for dynamic weighted averages. When set, the variable's value is multiplied by this attribute's value and the attribute's value is stored as `val~den`, so the result aggregates correctly as a weighted average.                                                                                                                                                          |
 | `Region`                                                                      | `region`                                                        | Comma-separated list of regions this variable applies to. Empty = all regions.                                                                                                                                                                                                                                                                                                                 |
@@ -117,26 +117,26 @@ approach and is not recommended for new work; see
 | `Name`                                                                        | `name`                                                          | Output variable name. For Sankey-specific naming with placeholders like `<region>` and `<gen_pname>` / `<gen_cname>`, see the Sankey section. (Legacy: `<Pset>`, `<Cset>`, `<PName>`, `<CName>` — see [the legacy section below](#legacy-name-embedding-via-sets).)                                                                                                                                                                |
 | `Desc` / `Ldesc`                                                              | `desc`, `ldesc`                                                 | Short and long descriptions of the variable.                                                                                                                                                                                                                                                                                                                                                   |
 | `show_me`                                                                     | `group_by`                                                      | Dimensions to **retain** in the output. Any combination of `p` (process), `c` (commodity), `t` (timeslice), `u` (user constraint), `v` (vintage). Empty = aggregate them all away.                                                                                                                                                                                                             |
-| `ignore`                                                                      | `discard`, `agg_across`                                         | Dimensions whose `_Map` classifications should **not** be applied to this variable. Any combination of `p` (suppress `~Process_Map`), `c` (suppress `~Commodity_Map`), `r` (suppress `~Region_Map`), `t` (suppress `~Timeslice_Map`). The dimensions on `ignore` are exactly the four that have a corresponding `_Map` tag. This is distinct from `show_me` — see "show\_me vs. ignore" below. |
+| `ignore`                                                                      | `discard`, `agg_across`                                         | Dimensions whose `_Map` classifications should **not** be applied to this variable. Any combination of `p` (suppress `~Process_Map`), `c` (suppress `~Commodity_Map`), `r` (suppress `~Region_Map`), `t` (suppress `~Timeslice_Map`). The dimensions on `ignore` are exactly the four that have a corresponding `_Map` tag. This is distinct from `show_me` — see "show_me vs. ignore" below. |
 | `top_check`                                                                   | `top_chk`                                                       | Restrict the variable to topology-valid (process, commodity) pairs. `i` (or `in`) keeps only commodity-in flows; `o` (or `out`) keeps only commodity-out flows; empty disables the check.                                                                                                                                                                                                      |
 | `t_pos_andor` / `t_neg_andor` / `t_pos_andor_forsets` / `t_neg_andor_forsets` | aliases `p_pos_andor`, …                                        | Connector words (`AND` / `OR`) for the positive and negative process-filter expressions. Default is `AND`; `OR` makes the comma-separated list behave as alternatives. `_forsets` variants apply the connector when the filter is a set rather than a name.                                                                                                                                    |
 | `c_pos_andor` / `c_neg_andor` / `c_pos_andor_forsets` / `c_neg_andor_forsets` |                                                                 | Same as above, for commodity filters.                                                                                                                                                                                                                                                                                                                                                          |
 
-### show\_me vs. ignore — two different controls
+### show_me vs. ignore — two different controls
 
 These two columns are often confused, but they control different things
 and operate on different dimension sets.
 
-  - `show_me` (alias `group_by`) controls **per-row retention of the raw
+- `show_me` (alias `group_by`) controls **per-row retention of the raw
     model dimensions**. Codes: `p` (process), `c` (commodity), `t`
     (timeslice), `u` (user constraint), `v` (vintage). If a code is
     present, that dimension appears on each row of the output; if not,
     the variable is aggregated across that dimension. Leaving `show_me`
     empty means the variable is fully aggregated — one row per (region,
     year, scenario).
-  - `ignore` (alias `discard` / `agg_across`) is **not** another
+- `ignore` (alias `discard` / `agg_across`) is **not** another
     aggregation control — `show_me` already does that. `ignore` is a
-    separate setting that tells the pipeline to **suppress \`\`\_Map\`\`
+    separate setting that tells the pipeline to **suppress `_Map`
     classification** for the listed dimensions on this variable. Codes:
     `p`, `c`, `r`, `t` — exactly the four dimensions that have a
     corresponding `_Map` tag. Use `ignore` when a variable doesn't make
@@ -144,17 +144,17 @@ and operate on different dimension sets.
 
 When to reach for each:
 
-  - **Want a variable with no per-process detail?** Leave `show_me`
+- **Want a variable with no per-process detail?** Leave `show_me`
     empty (the default). Don't touch `ignore`.
-  - **Want a variable to show per-process detail?** Put `p` in
+- **Want a variable to show per-process detail?** Put `p` in
     `show_me`.
-  - **Want a variable to skip the \`\`Fuel\`\` / \`\`Fuel\_Agg\`\`
-    classifications produced by \`\`\~Commodity\_Map\`\`?** Put `c` in
+- **Want a variable to skip the `Fuel` / `Fuel_Agg`
+    classifications produced by `~Commodity_Map`?** Put `c` in
     `ignore`. (Common for variables that are inherently fuel-aggregated
     already, where carrying per-commodity classification would be
     misleading.)
-  - **Want a variable to skip the \`\`Region\_WEO\`\` etc.
-    classifications from \`\`\~Region\_Map\`\`?** Put `r` in `ignore`.
+- **Want a variable to skip the `Region_WEO` etc.
+    classifications from `~Region_Map`?** Put `r` in `ignore`.
     (Common for variables that already aggregate across regions, or for
     global totals.)
 
@@ -173,7 +173,7 @@ or zero.
 This is the recommended way to build utilization factors, efficiencies,
 prices and emission intensities — anything that needs to behave
 correctly under aggregation. A worked example ships with the [Veda Adv
-Demo model](https://github.com/kanors-emr/Model_Demo_Adv_Veda.git).
+Demo model](https://github.com/kanors-emr/Model_Demo_Adv_Veda.git){ target="_blank" rel="noopener noreferrer" }.
 
 !!! note "Note"
 
@@ -191,13 +191,12 @@ standard pattern for reporting drivers that the model carries as user
 constraints — population, GDP, demand projections, sectoral indicators —
 and is used heavily in production models. A typical pattern:
 
-``` text
-Attribute | Unit    | Name
-User_con  | b$      | rep_GDP
-User_con  | b$      | rep_GDPIND
-User_con  | b$      | rep_GDPSER
-User_con  | million | rep_POP
-```
+| **Attribute** | **Unit** | **Name** |
+| --- | --- | --- |
+| User_con | b$ | rep_GDP |
+| User_con | b$ | rep_GDPIND |
+| User_con | b$ | rep_GDPSER |
+| User_con | million | rep_POP |
 
 <a id="legacy-name-embedding-via-sets"></a>
 
@@ -208,17 +207,22 @@ variable name using the placeholders `<Pset>`, `<Cset>`, `<PName>`,
 `<CName>`, paired with the lookup tables `~PSet_Map`, `~CSet_Map`,
 `~PName_Map`, `~CName_Map`:
 
-``` text
-~TS_Defs                                       ~PSet_Map
-Attribute | PSET_Set    | Name                 Pset   | Desc | Ldesc
-VAR_FOUT  | E_Coal      | EProd_<Pset>         E_Coal | Coal | Coal
-VAR_FOUT  | E_Gas       | EProd_<Pset>         E_Gas  | Gas  | Gas
-```
+| **~TS_Defs** | | |
+| --- | --- | --- |
+| **Attribute** | **PSET_Set** | **Name** |
+| VAR_FOUT | E_Coal | EProd_<Pset> |
+| VAR_FOUT | E_Gas | EProd_<Pset> |
+
+| **~PSet_Map** | | |
+| --- | --- | --- |
+| **Pset** | **Desc** | **Ldesc** |
+| E_Coal | Coal | Coal |
+| E_Gas | Gas | Gas |
 
 The row with `PSET_Set = E_Coal` produced the variable `EProd_Coal`, the
 row with `E_Gas` produced `EProd_Gas`, and so on.
 
-**This mechanism has been completely superseded by the \`\`\_Map\`\`
+**This mechanism has been completely superseded by the `_Map`
 aggregation tables.** The `_Map` approach is more expressive (the same
 process can participate in multiple overlapping classifications), keeps
 variable names stable, and lets downstream tools pivot on
@@ -244,11 +248,11 @@ number of classifications simultaneously, on different dimensions.
 For example, a coal-fired power plant can be classified as all of these
 at once:
 
-  - `Sector = Power-util`
-  - `Tech = Coal`
-  - `Tech_Agg = Thermal`
-  - `Tech_CCS_flag = Without CCS`
-  - `Region_WEO = North America`
+- `Sector = Power-util`
+- `Tech = Coal`
+- `Tech_Agg = Thermal`
+- `Tech_CCS_flag = Without CCS`
+- `Region_WEO = North America`
 
 A natural-gas combined-cycle plant might share four of those five
 values, differing only on `Tech = Gas`. A coal-with-CCS plant might
@@ -266,7 +270,7 @@ Every `_Map` table has the same core columns plus a tag-specific set of
 filter columns:
 
 | **Core column** | **Meaning**                                                                                                                                                                                                                                                                                                                              |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --- | --- |
 | `dimension`     | The name of the classification this row contributes to. Becomes a column on the output fact table. Multiple rows with the same `dimension` together form one classification; multiple `dimension` values in one `_Map` table create multiple parallel classifications.                                                                   |
 | `name`          | A name pattern (with wildcards `*`, `?` and exclusion prefix `-`) that selects which entities this classification applies to. For `~Process_Map` this matches the process name; for `~Commodity_Map` the commodity name; for `~Region_Map` the region name; for `~Timeslice_Map` the timeslice name; for `~Varbl_Map` the variable name. |
 | `description`   | The classification value placed in the dimension column. (E.g. for a row with `dimension = Tech, name = *SPV*, description = Solar` — every process matching `*SPV*` gets `Tech = Solar` on the output.)                                                                                                                                 |
@@ -291,29 +295,28 @@ A real example from a production model — the `Tech` dimension for
 power-generation technologies, combining process set membership with
 commodity flows to pick out the right subsets:
 
-``` text
-~Process_Map
-dimension | name           | description     | pset_set | pset_ci         | pset_co
-Tech      |                | Bio             | ELE,CHP  | ???BSL,???BIO   | -CO2Captured*
-Tech      |                | Coal            | ELE,CHP  | ???COA          | -CO2Captured*
-Tech      |                | Gas             | ELE,CHP  | ???NGA          | -CO2Captured*
-Tech      |                | Geothermal      | ELE,CHP  | ???GEO
-Tech      |                | Nuclear         | ELE,CHP  | ???NUC
-Tech      |                | Solar           | ELE,CHP  | ???SPV,???STH,ELC_spv_*
-Tech      | *WON*,*WINONS* | Wind-Onshore    | ELE,CHP  | ???WIN,ELC_Won_*
-Tech      | *WOF*,*WINOFS* | Wind-Offshore   | ELE,CHP  | ???WIN,ELC_Wof_*
-Tech      |                | Bio (CCS)       | ELE,CHP  | ???BSL,???BIO   | CO2Captured*
-Tech      |                | Coal (CCS)      | ELE,CHP  | ???COA          | CO2Captured*
-Tech      |                | Gas (CCS)       | ELE,CHP  | ???NGA          | CO2Captured*
-```
+| **~Process_Map** | | | | | |
+| --- | --- | --- | --- | --- | --- |
+| **dimension** | **name** | **description** | **pset_set** | **pset_ci** | **pset_co** |
+| Tech | | Bio | ELE,CHP | ???BSL,???BIO | `-CO2Captured*` |
+| Tech | | Coal | ELE,CHP | ???COA | `-CO2Captured*` |
+| Tech | | Gas | ELE,CHP | ???NGA | `-CO2Captured*` |
+| Tech | | Geothermal | ELE,CHP | ???GEO | |
+| Tech | | Nuclear | ELE,CHP | ???NUC | |
+| Tech | | Solar | ELE,CHP | ???SPV,???STH,ELC_spv_* | |
+| Tech | `*WON*,*WINONS*` | Wind-Onshore | ELE,CHP | ???WIN,ELC_Won_* | |
+| Tech | `*WOF*,*WINOFS*` | Wind-Offshore | ELE,CHP | ???WIN,ELC_Wof_* | |
+| Tech | | Bio (CCS) | ELE,CHP | ???BSL,???BIO | `CO2Captured*` |
+| Tech | | Coal (CCS) | ELE,CHP | ???COA | `CO2Captured*` |
+| Tech | | Gas (CCS) | ELE,CHP | ???NGA | `CO2Captured*` |
 
 Three things to notice:
 
-  - `pset_set = ELE,CHP` restricts the classification to electricity and
+- `pset_set = ELE,CHP` restricts the classification to electricity and
     CHP processes.
-  - `pset_ci` (commodity-in) narrows further by the fuel a process
+- `pset_ci` (commodity-in) narrows further by the fuel a process
     consumes — `???COA` matches any 3-character region prefix + `COA`.
-  - The CCS rows reuse the same `pset_ci` filter and add `pset_co =
+- The CCS rows reuse the same `pset_ci` filter and add `pset_co =
     CO2Captured*` (CO<sub>2</sub>-out is captured), distinguishing them
     from the non-CCS rows with `pset_co = -CO2Captured*`.
 
@@ -323,16 +326,15 @@ for example, a coarser `Tech_Agg` dimension that groups Bio + Coal + Gas
 + Bio(CCS) + Coal(CCS) + Gas(CCS) under `Thermal`, Wind + Solar + Hydro
 under `Renewable`, and so on:
 
-``` text
-~Process_Map
-dimension | description | pset_set | pset_ci
-Tech_Agg  | Thermal     | ELE,CHP  | ???COA,???NGA,???BSL,???BIO,???OIL
-Tech_Agg  | Renewable   | ELE,CHP  | ???SPV,???STH,???WIN,???HYD,???GEO,???TDL
-Tech_Agg  | Nuclear     | ELE,CHP  | ???NUC
-Tech_Agg  | Hydrogen    | ELE,CHP  | ???H2*
-Tech_Agg  | Trade       | IRE
-Tech_Agg  | Storage     | STG
-```
+| **~Process_Map** | | | |
+| --- | --- | --- | --- |
+| **dimension** | **description** | **pset_set** | **pset_ci** |
+| Tech_Agg | Thermal | ELE,CHP | ???COA,???NGA,???BSL,???BIO,???OIL |
+| Tech_Agg | Renewable | ELE,CHP | ???SPV,???STH,???WIN,???HYD,???GEO,???TDL |
+| Tech_Agg | Nuclear | ELE,CHP | ???NUC |
+| Tech_Agg | Hydrogen | ELE,CHP | ???H2* |
+| Tech_Agg | Trade | IRE | |
+| Tech_Agg | Storage | STG | |
 
 Both dimensions land as separate columns on every output row. A pivot
 can show electricity production by `Tech`, or roll it up by `Tech_Agg`,
@@ -342,20 +344,19 @@ A third `~Process_Map` block can extract a `sector_weo` dimension purely
 from process-set membership, which is typically used for WEO-style
 sector aggregations:
 
-``` text
-~Process_Map
-dimension  | description | pset_set
-sector_weo | PriSup      | s_Imports
-sector_weo | PriSup      | s_Mining
-sector_weo | Power       | s_Utility
-sector_weo | Power       | s_Autoprod
-sector_weo | Industry    | s_Industry
-sector_weo | Transport   | s_Transport
-sector_weo | Buildings   | s_Commercial
-sector_weo | Buildings   | s_Residential
-sector_weo | Hydrogen    | s_Hydrogen
-sector_weo | Non-Energy  | s_Industry_NE
-```
+| **~Process_Map** | | |
+| --- | --- | --- |
+| **dimension** | **description** | **pset_set** |
+| sector_weo | PriSup | s_Imports |
+| sector_weo | PriSup | s_Mining |
+| sector_weo | Power | s_Utility |
+| sector_weo | Power | s_Autoprod |
+| sector_weo | Industry | s_Industry |
+| sector_weo | Transport | s_Transport |
+| sector_weo | Buildings | s_Commercial |
+| sector_weo | Buildings | s_Residential |
+| sector_weo | Hydrogen | s_Hydrogen |
+| sector_weo | Non-Energy | s_Industry_NE |
 
 ![](images/Reports/agg_on_process.PNG)
 
@@ -368,34 +369,32 @@ The `Fuel` / `Fuel_Agg` pair is the canonical example of overlapping
 classifications on commodities — a fine-grained dimension and a coarser
 one, both present on every output row:
 
-``` text
-~Commodity_Map
-dimension | name                  | description     | cset_set
-Fuel      | *ELC*                 | Electricity
-Fuel      | ELCCurt               | Int. Elec
-Fuel      | *H2*,-[_]*            | Hydrogen
-Fuel      | *HET*                 | Heat
-Fuel      | *OIL*,???RPP,???RFG   | Oil
-Fuel      | *GAS*,*NGA*           | Gas
-Fuel      | *COA*                 | Coal
-Fuel      | ???DST                | Diesel
-Fuel      | ???GSL                | Gasoline
-Fuel      | ???LNG                | LNG
-Fuel      |                       | Biomass         | ALLBIO
-
-Fuel_Agg  |                       | Solar           | ALLSOL
-Fuel_Agg  |                       | Wind            | ALLWIN
-Fuel_Agg  |                       | Hydro           | ALLHYD
-Fuel_Agg  |                       | Biomass         | ALLBIO
-Fuel_Agg  |                       | Nuclear         | ALLNUC
-Fuel_Agg  |                       | Grid Elec       | ALLELC
-Fuel_Agg  |                       | Gas             | ALLGAS
-Fuel_Agg  |                       | Coal            | ALLCOAL
-Fuel_Agg  |                       | Heat            | ALLHEAT
-Fuel_Agg  |                       | Oil crude+NGL   | ALLOILCrd
-Fuel_Agg  |                       | Oil prod.       | ALLOILprd
-Fuel_Agg  | -[_]*                 | Hydrogen        | ALLH2
-```
+| **~Commodity_Map** | | | |
+| --- | --- | --- | --- |
+| **dimension** | **name** | **description** | **cset_set** |
+| Fuel | `*ELC*` | Electricity | |
+| Fuel | ELCCurt | Int. Elec | |
+| Fuel | `*H2*,-[_]*` | Hydrogen | |
+| Fuel | `*HET*` | Heat | |
+| Fuel | `*OIL*,???RPP,???RFG` | Oil | |
+| Fuel | `*GAS*,*NGA*` | Gas | |
+| Fuel | `*COA*` | Coal | |
+| Fuel | ???DST | Diesel | |
+| Fuel | ???GSL | Gasoline | |
+| Fuel | ???LNG | LNG | |
+| Fuel | | Biomass | ALLBIO |
+| Fuel_Agg | | Solar | ALLSOL |
+| Fuel_Agg | | Wind | ALLWIN |
+| Fuel_Agg | | Hydro | ALLHYD |
+| Fuel_Agg | | Biomass | ALLBIO |
+| Fuel_Agg | | Nuclear | ALLNUC |
+| Fuel_Agg | | Grid Elec | ALLELC |
+| Fuel_Agg | | Gas | ALLGAS |
+| Fuel_Agg | | Coal | ALLCOAL |
+| Fuel_Agg | | Heat | ALLHEAT |
+| Fuel_Agg | | Oil crude+NGL | ALLOILCrd |
+| Fuel_Agg | | Oil prod. | ALLOILprd |
+| Fuel_Agg | `-[_]*` | Hydrogen | ALLH2 |
 
 Note how `Fuel` uses name-pattern matching (`*ELC*`, `???DST`, `*OIL*`)
 while `Fuel_Agg` uses set membership (`cset_set = ALLSOL` etc.). Both
@@ -418,48 +417,45 @@ Classifies output variables. **Typical dimensions:** `attribute` (a
 high-level grouping shown at the top of the report viewer),
 `source/use`, `CostType`, `Emi/Cap`.
 
-``` text
-~Varbl_Map
-dimension | name                                                          | description
-attribute | *GDP*,*popu*,*percap*,*househo*,-rep*                         | Macro Indices
-attribute | TFC[_]*,*[_]FE[_]*,Fin E[_]*,-*[_]IND[_]*,-*[_]Fuels[_]*,...  | Final energy
-attribute | Pri_Prod*,Pri_Imp*,Pri_Exp*,PE[_]*,PriE*,Pri E*               | Primary En and Trade
-attribute | Elec*_Prod                                                    | Elec Generation
-attribute | Fuel_con*                                                     | Fuel Consumption
-attribute | Capacity*                                                     | Capacity
-attribute | CO2_emi*,CO2_cap*                                             | Emissions
-attribute | Power*                                                        | Power
-attribute | Prices                                                        | Prices
-attribute | Cost*                                                         | Sector Costs
-
-source/use | *[_]Agri          | Agri
-source/use | *[_]Commercial    | Commercial
-source/use | *[_]Residential   | Residential
-source/use | *[_]Industry      | Industry
-source/use | *[_]Transport     | Transport
-source/use | *[_]Thermal Elec  | Thermal Elec
-source/use | *[_]Thermal CCS   | Thermal CCS
-source/use | *[_]Ren Elec      | Ren Elec
-source/use | *[_]Bio Ref       | Bio Ref
-source/use | *[_]Trade         | Trade
-source/use | *[_]Extraction    | Extraction
-```
+| **~Varbl_Map** | | |
+| --- | --- | --- |
+| **dimension** | **name** | **description** |
+| attribute | `*GDP*,*popu*,*percap*,*househo*,-rep*` | Macro Indices |
+| attribute | `TFC[_]*,*[_]FE[_]*,Fin E[_]*,-*[_]IND[_]*,-*[_]Fuels[_]*,...` | Final energy |
+| attribute | `Pri_Prod*,Pri_Imp*,Pri_Exp*,PE[_]*,PriE*,Pri E*` | Primary En and Trade |
+| attribute | `Elec*_Prod` | Elec Generation |
+| attribute | `Fuel_con*` | Fuel Consumption |
+| attribute | `Capacity*` | Capacity |
+| attribute | `CO2_emi*,CO2_cap*` | Emissions |
+| attribute | `Power*` | Power |
+| attribute | Prices | Prices |
+| attribute | `Cost*` | Sector Costs |
+| source/use | `*[_]Agri` | Agri |
+| source/use | `*[_]Commercial` | Commercial |
+| source/use | `*[_]Residential` | Residential |
+| source/use | `*[_]Industry` | Industry |
+| source/use | `*[_]Transport` | Transport |
+| source/use | `*[_]Thermal Elec` | Thermal Elec |
+| source/use | `*[_]Thermal CCS` | Thermal CCS |
+| source/use | `*[_]Ren Elec` | Ren Elec |
+| source/use | `*[_]Bio Ref` | Bio Ref |
+| source/use | `*[_]Trade` | Trade |
+| source/use | `*[_]Extraction` | Extraction |
 
 ### `~Region_Map`
 
 Region → grouping. Commonly used for WEO regions, OECD vs. non-OECD,
 EU-27 vs. EFTA, or any partition of model regions.
 
-``` text
-~Region_Map
-Dimension  | Name         | Description
-Region_WEO | Africa_North | Africa
-Region_WEO | Africa_South | Africa
-Region_WEO | Asia_Cen     | Eurasia
-Region_WEO | Asia_Dev     | Asia Pacific
-Region_WEO | Brazil       | C&S America
-Region_WEO | Canada       | North America
-```
+| **~Region_Map** | | |
+| --- | --- | --- |
+| **Dimension** | **Name** | **Description** |
+| Region_WEO | Africa_North | Africa |
+| Region_WEO | Africa_South | Africa |
+| Region_WEO | Asia_Cen | Eurasia |
+| Region_WEO | Asia_Dev | Asia Pacific |
+| Region_WEO | Brazil | C&S America |
+| Region_WEO | Canada | North America |
 
 Multiple `Dimension` values give a region multiple grouping memberships
 — e.g. `Region_WEO`, `Region_OECD`, `Region_Continent` can all coexist
@@ -501,7 +497,7 @@ grouping is the default and does not need to be requested.
 ### Column reference (`~TS_Ratios`)
 
 | **Column**                   | **Type**      | **Meaning**                                                                                                                                                                                                                                                                                                                                                                                            |
-| ---------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| --- | --- | --- |
 | `scalar`                     | integer (0/1) | When `1`, the denominator is treated as a *scalar* variable (one defined at region/year level only, with `process = '-'` — typical for population, GDP, total demand). The numerator's process dimension is carried through to the output without being part of the join key. Default `0`.                                                                                                             |
 | `var_num`                    | varchar       | Numerator variable name (must already exist as a `~TS_Defs` output or another report variable).                                                                                                                                                                                                                                                                                                        |
 | `var_den`                    | varchar       | Denominator variable name.                                                                                                                                                                                                                                                                                                                                                                             |
@@ -539,18 +535,17 @@ want to weight on a dimension you don't want to join on).
 
 From a production model:
 
-``` text
-~TS_Ratios
-var_num    | var_den         | Name             | Unit    | show_me | include_null | include_dim
-Elec_act   | Capacity_Elec   | Capacity_factor  | Twh/GW  | p       | y            | p
-H2_Prod    | Capacity_H2     | Capacity_factor  | PJ/GW   |         | y            | p
-Elec_Prod  | Fuel_cons_power | Efficiency       | Twh/PJ  |         |              | p
-H2_Prod    | Fuel_cons_H2    | Efficiency       | %       |         |              | p
-```
+| **~TS_Ratios** | | | | | | |
+| --- | --- | --- | --- | --- | --- | --- |
+| **var_num** | **var_den** | **Name** | **Unit** | **show_me** | **include_null** | **include_dim** |
+| Elec_act | Capacity_Elec | Capacity_factor | Twh/GW | p | y | p |
+| H2_Prod | Capacity_H2 | Capacity_factor | PJ/GW | | y | p |
+| Elec_Prod | Fuel_cons_power | Efficiency | Twh/PJ | | | p |
+| H2_Prod | Fuel_cons_H2 | Efficiency | % | | | p |
 
-  - `Capacity_factor` is built per process (`include_dim = p`) so each
+- `Capacity_factor` is built per process (`include_dim = p`) so each
     technology gets its own capacity factor.
-  - `include_null = y` is the positive form of "use the default LEFT
+- `include_null = y` is the positive form of "use the default LEFT
     join" — capacity rows are preserved even if no production exists,
     and the ratio reads as zero in that case.
 
@@ -560,9 +555,9 @@ Setting `multiply = y` flips the operation from division to
 multiplication. The typical use is decomposing one variable using a
 share or fraction defined as a second variable:
 
-  - `Fossil_share` × `Petrol_total` → `Petrol_fossil`
-  - `Efficiency` × `Capacity` → `Effective_capacity`
-  - `Pop_growth_factor` × `GDP_2020` → `GDP_projection`
+- `Fossil_share` × `Petrol_total` → `Petrol_fossil`
+- `Efficiency` × `Capacity` → `Effective_capacity`
+- `Pop_growth_factor` × `GDP_2020` → `GDP_projection`
 
 For multiplication the `den ≠ 0` filter is dropped (`num × 0 = 0` is a
 valid result). The `val~den` weight on the output is set to NULL,
@@ -576,9 +571,9 @@ by a region-level scalar (e.g. national GDP) to get per-GDP intensities
 for each process: set `scalar = 1`. The scalar variable is defined with
 `process = '-'` in its source. Veda then:
 
-  - does **not** join on `process` (the denominator has no process
+- does **not** join on `process` (the denominator has no process
     dimension);
-  - keeps `process` on the output so the per-process intensities are
+- keeps `process` on the output so the per-process intensities are
     reported.
 
 This is the standard pattern for `rep_totco2 / rep_POP → CO2 per
@@ -603,13 +598,13 @@ in `var_num` / `var_den`.
 
 With the default `LEFT JOIN` (`include_null` empty or `y`):
 
-  - For **division** (`num / den`), all denominator rows are preserved.
+- For **division** (`num / den`), all denominator rows are preserved.
     In a region where the numerator is missing, the result is reported
     as zero.
-  - For **multiplication** (`multiply = y`), all numerator rows are
+- For **multiplication** (`multiply = y`), all numerator rows are
     preserved. In a region where the denominator is missing, the result
     is reported as zero.
-  - So with multiplication, if the share/ratio (defined in fewer
+- So with multiplication, if the share/ratio (defined in fewer
     regions) is placed in `var_den`, every region where the total
     quantity is reported will appear in the output — with zero for the
     regions where the share is undefined. If the share is placed in
@@ -634,13 +629,12 @@ pipeline has run. It is the standard way to bring in historical IEA
 energy balances, WEO projections, calibration overlays, or any other
 already-shaped data that needs to sit alongside the model output:
 
-``` text
-~ATS_Final
-model | Scenario | scen     | Region        | Varbl          | Unit   | year | val      | fuel | fuel_agg   | Sector       | Region_WEO
-IEA   | Hist     | Hist     | Africa_North  | CO2_emissions  | Mt CO2 | 1995 | 0.088852 | Oil  | Oil crude  | Industry     | Africa
-IEA   | Hist     | Hist     | Africa_North  | CO2_emissions  | Mt CO2 | 2000 | 3.722594 | Diesel | Oil prod.| Transport    | Africa
-...
-```
+| **~ATS_Final** | | | | | | | | | | | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **model** | **Scenario** | **scen** | **Region** | **Varbl** | **Unit** | **year** | **val** | **fuel** | **fuel_agg** | **Sector** | **Region_WEO** |
+| IEA | Hist | Hist | Africa_North | CO2_emissions | Mt CO2 | 1995 | 0.088852 | Oil | Oil crude | Industry | Africa |
+| IEA | Hist | Hist | Africa_North | CO2_emissions | Mt CO2 | 2000 | 3.722594 | Diesel | Oil prod. | Transport | Africa |
+| ... | | | | | | | | | | | |
 
 Note how the source table can carry classification columns (`fuel`,
 `fuel_agg`, `Sector`, `Region_WEO`) that match the `dimension` values
@@ -664,10 +658,10 @@ classification columns added by the `_Map` tags such as `Fuel`, `Tech`,
 Any required `lma_dts` column missing from the source table is filled
 with a default:
 
-  - `scenario`, `model`, `user`, `study` and `scen_model_framework` fall
+- `scenario`, `model`, `user`, `study` and `scen_model_framework` fall
     back to the first row of `scenario_master` (the first scenario in
     the report) — or to `-` if no scenario is registered.
-  - All other process/commodity/timeslice/UC/vintage columns default to
+- All other process/commodity/timeslice/UC/vintage columns default to
     `-`.
 
 Because the pass runs **after** `~TS_Ratios` and `~UnitConv`, anything
@@ -689,16 +683,15 @@ matches `Unit1`, multiply by `MultFact` and replace the unit with
 `Unit2`. Applies to both `~TS_Defs` outputs and `~TS_Ratios`-derived
 variables.
 
-``` text
-~UnitConv
-Model    | Unit1     | Unit2          | MultFact
-KINESYS  | kt CH4    | Mt CH4/yr      | 0.001
-KINESYS  | kt CO2    | Mt CO2/yr      | 0.001
-KINESYS  | kt CO2neg | Mt CO2/yr      | -0.001
-KINESYS  | m$        | billion $/yr   | 0.001
-KINESYS  | PJe       | Twh            | 0.27778
-KINESYS  | PJ2gw     | GW             | 0.03171
-```
+| **~UnitConv** | | | |
+| --- | --- | --- | --- |
+| **Model** | **Unit1** | **Unit2** | **MultFact** |
+| KINESYS | kt CH4 | Mt CH4/yr | 0.001 |
+| KINESYS | kt CO2 | Mt CO2/yr | 0.001 |
+| KINESYS | kt CO2neg | Mt CO2/yr | -0.001 |
+| KINESYS | m$ | billion $/yr | 0.001 |
+| KINESYS | PJe | Twh | 0.27778 |
+| KINESYS | PJ2gw | GW | 0.03171 |
 
 The `Model` column scopes the rule (so different models can carry
 different conversion factors). `Unit1` matches case-insensitively
@@ -710,14 +703,13 @@ The `~Geolocation` tag is a simple region → (latitude, longitude) table.
 Its primary role is to enable auto-generated trade-flow variables for
 visualisation on maps.
 
-``` text
-~Geolocation
-Region        | Lat        | Lng
-UAE           | 23.424076  | 53.847818
-LatAm         | -38.416097 | -63.616672
-Australia     | -25.274398 | 133.775136
-Bangladesh    | 23.684994  | 90.356331
-```
+| **~Geolocation** | | |
+| --- | --- | --- |
+| **Region** | **Lat** | **Lng** |
+| UAE | 23.424076 | 53.847818 |
+| LatAm | -38.416097 | -63.616672 |
+| Australia | -25.274398 | 133.775136 |
+| Bangladesh | 23.684994 | 90.356331 |
 
 ### Auto-generated trade-flow variables
 
@@ -725,11 +717,11 @@ When `~Geolocation` is present and there are inter-regional exchange
 (IRE) processes, Veda automatically generates three trade variables on
 top of the report:
 
-  - `trade_flows` — built from `VAR_FIN` (import side) and `VAR_FOUT`
+- `trade_flows` — built from `VAR_FIN` (import side) and `VAR_FOUT`
     (export side) on IRE processes.
-  - `trade_flows_cap` — capacity of trade infrastructure (from `VAR_CAP`
+- `trade_flows_cap` — capacity of trade infrastructure (from `VAR_CAP`
     on IRE).
-  - `trade_flows_ncap` — new capacity additions of trade infrastructure
+- `trade_flows_ncap` — new capacity additions of trade infrastructure
     (from `VAR_NCAP` on IRE).
 
 Each output row carries a `region_to` column with the destination
@@ -761,13 +753,19 @@ tags. Typical `~ScenG` columns: `Climate`, `SSP`, `Exo_price`, `NZYear`,
 `C_Budget`, `CO2Price` — so a single report can be sliced by climate
 scenario, SSP scenario, or any other axis the modeler chose to declare.
 
-``` text
-~ScenMap                                   ~ScenG
-Oname    | Name        | Desc | Ldesc      Scen        | SSP  | Climate | Exo_price
-KS~0001  | Base.SSP2   |      |            Base.SSP2   | SSP2 | Base    |
-KS~0002  | STEPS.SSP2  |      |            STEPS.SSP2  | SSP2 | ESTPS   |
-KS~0003  | APS.SSP2    |      |            APS.SSP2    | SSP2 | PAS     |
-```
+| **~ScenMap** | | | |
+| --- | --- | --- | --- |
+| **Oname** | **Name** | **Desc** | **Ldesc** |
+| KS~0001 | Base.SSP2 | | |
+| KS~0002 | STEPS.SSP2 | | |
+| KS~0003 | APS.SSP2 | | |
+
+| **~ScenG** | | | |
+| --- | --- | --- | --- |
+| **Scen** | **SSP** | **Climate** | **Exo_price** |
+| Base.SSP2 | SSP2 | Base | |
+| STEPS.SSP2 | SSP2 | ESTPS | |
+| APS.SSP2 | SSP2 | PAS | |
 
 ## Multi-language support (`~Language`)
 
@@ -775,17 +773,16 @@ The `~Language` tag holds translations of variable names, dimension
 values, region names — anything that appears in the report and may need
 to be displayed in a non-English UI. The first column is `name` (the
 canonical English label); each remaining column is an
-[ISO 639-2](https://www.loc.gov/standards/iso639-2/php/code_list.php)
+[ISO 639-2](https://www.loc.gov/standards/iso639-2/php/code_list.php){ target="_blank" rel="noopener noreferrer" }
 language code (e.g. `FRA`, `DEU`, `ESP`, `JPN`, `CHI`) with the
 translated value.
 
-``` text
-~Language
-name         | FRA            | DEU           | ESP                  | JPN                | CHI
-Agriculture  | Agriculture    | Landwirtschaft| Agricultura          | 農業                | 农业
-Asia Pacific | Asie-Pacifique | Asien-Pazifik | Asia Pacífico        | アジア太平洋地域    | 亚太地区
-BF gas       | Gaz BF         | BF-Gas        | gasolina BF          | BFガス             | 高炉气体
-```
+| **~Language** | | | | | |
+| --- | --- | --- | --- | --- | --- |
+| **name** | **FRA** | **DEU** | **ESP** | **JPN** | **CHI** |
+| Agriculture | Agriculture | Landwirtschaft | Agricultura | 農業 | 农业 |
+| Asia Pacific | Asie-Pacifique | Asien-Pazifik | Asia Pacífico | アジア太平洋地域 | 亚太地区 |
+| BF gas | Gaz BF | BF-Gas | gasolina BF | BFガス | 高炉气体 |
 
 Veda transforms the wide table into a long mapping (one row per (name,
 language) pair) and back into a pivoted lookup table, so downstream
@@ -826,12 +823,12 @@ sets, creating clean high-level visualizations with semantic naming.
 
 **Configuration Example**:
 
-**\~TS\_Defs: Snk\_attr=SANKEY\_energy\_overview**
+**~TS_Defs: Snk_attr=SANKEY_energy_overview**
 
-| **Attribute** | **PSET\_Set**                | **PSET\_PN** | **PSET\_PD** | **PSET\_CI** | **PSET\_CO** | **CSET\_Set**          | **CSET\_CN** | **CSET\_CD** | **Unit** | **TS** | **UC\_N** | **Name**                  |
-| ------------- | ---------------------------- | ------------ | ------------ | ------------ | ------------ | ---------------------- | ------------ | ------------ | -------- | ------ | --------- | ------------------------- |
-| VAR\_FIN      | "ELE,CHP"                    |              |              |              |              | "ALLSOL,ALLWIN,ALLHYD" |              |              | PJ       |        |           | \<cset\>\_[src]()\<pset\> |
-| VAR\_FOUT     | "DMD\_IND,DMD\_RES,DMD\_COM" |              |              |              |              | "ALLELC"               |              |              | PJ       |        |           | \<cset\>\_[snk]()\<pset\> |
+| **Attribute** | **PSET_Set**                | **PSET_PN** | **PSET_PD** | **PSET_CI** | **PSET_CO** | **CSET_Set**          | **CSET_CN** | **CSET_CD** | **Unit** | **TS** | **UC_N** | **Name**                  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| VAR_FIN      | "ELE,CHP"                    |              |              |              |              | "ALLSOL,ALLWIN,ALLHYD" |              |              | PJ       |        |           | `<cset>_src_<pset>` |
+| VAR_FOUT     | "DMD_IND,DMD_RES,DMD_COM" |              |              |              |              | "ALLELC"               |              |              | PJ       |        |           | `<cset>_snk_<pset>` |
 
 **Process**:
 
@@ -842,10 +839,10 @@ sets, creating clean high-level visualizations with semantic naming.
 
 **Generated Variables**:
 
-  - `Electricity_src_Renewable_Generation` (from ALLSOL,ALLWIN,ALLHYD to
+- `Electricity_src_Renewable_Generation` (from ALLSOL,ALLWIN,ALLHYD to
     ELE,CHP)
-  - `Electricity_snk_Industrial_Demand` (from ALLELC to DMD\_IND)
-  - `Electricity_snk_Residential_Demand` (from ALLELC to DMD\_RES)
+- `Electricity_snk_Industrial_Demand` (from ALLELC to DMD_IND)
+- `Electricity_snk_Residential_Demand` (from ALLELC to DMD_RES)
 
 **Use Cases**: Sector-level energy flow analysis
 
@@ -868,14 +865,14 @@ energy security analysis.
 
 **Configuration Example**:
 
-**\~TS\_Defs: Snk\_attr=SANKEY\_gas\_trade**
+**~TS_Defs: Snk_attr=SANKEY_gas_trade**
 
-| **Attribute** | **PSET\_Set** | **PSET\_PN** | **PSET\_PD** | **PSET\_CI** | **PSET\_CO** | **CSET\_Set** | **CSET\_CN** | **CSET\_CD** | **Unit** | **TS** | **UC\_N** | **Name**                                  |
-| ------------- | ------------- | ------------ | ------------ | ------------ | ------------ | ------------- | ------------ | ------------ | -------- | ------ | --------- | ----------------------------------------- |
-| VAR\_FIN      | IRE           | \*gaspip\*   |              |              |              |               | GASNGA       |              | Pjneg    |        |           | Nat Gas-\<region\>\_[Snk]()\<gen\_pname\> |
-| VAR\_FOUT     | IRE           | \*gaspip\*   |              |              |              |               | GASNGA       |              | PJ       |        |           | Nat Gas-\<region\>\_[Src]()\<gen\_pname\> |
-| VAR\_FIN      | PRE           |              |              |              | GASLNG       |               | GASNGA       |              | Pjneg    |        |           | Nat Gas-\<region\>\_[Snk]()\<gen\_pname\> |
-| VAR\_FOUT     | PRE           |              |              | GASLNG       |              |               | GASNGA       |              | PJ       |        |           | Nat Gas-\<region\>\_[Src]()\<gen\_pname\> |
+| **Attribute** | **PSET_Set** | **PSET_PN** | **PSET_PD** | **PSET_CI** | **PSET_CO** | **CSET_Set** | **CSET_CN** | **CSET_CD** | **Unit** | **TS** | **UC_N** | **Name**                                  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| VAR_FIN      | IRE           | `*gaspip*`   |              |              |              |               | GASNGA       |              | Pjneg    |        |           | `Nat Gas-<region>_Snk_<gen_pname>` |
+| VAR_FOUT     | IRE           | `*gaspip*`   |              |              |              |               | GASNGA       |              | PJ       |        |           | `Nat Gas-<region>_Src_<gen_pname>` |
+| VAR_FIN      | PRE           |              |              |              | GASLNG       |               | GASNGA       |              | Pjneg    |        |           | `Nat Gas-<region>_Snk_<gen_pname>` |
+| VAR_FOUT     | PRE           |              |              | GASLNG       |              |               | GASNGA       |              | PJ       |        |           | `Nat Gas-<region>_Src_<gen_pname>` |
 
 **Process**:
 
@@ -885,10 +882,10 @@ energy security analysis.
 
 **Generated Variables**:
 
-  - `Nat Gas-USA_Snk_Pipeline-to-Canada` (US gas export to Canada)
-  - `Nat Gas-Russia_Src_Pipeline-to-Europe` (Russian gas export to
+- `Nat Gas-USA_Snk_Pipeline-to-Canada` (US gas export to Canada)
+- `Nat Gas-Russia_Src_Pipeline-to-Europe` (Russian gas export to
     Europe)
-  - `Nat Gas-Germany_Snk_LNG-Terminal` (German LNG imports)
+- `Nat Gas-Germany_Snk_LNG-Terminal` (German LNG imports)
 
 **Use Cases**: Gas pipeline networks, LNG trade flows, regional energy
 security, cross-border electricity trade
@@ -911,14 +908,14 @@ processes and commodities without aggregation.
 
 **Configuration Example**:
 
-**\~TS\_Defs: Snk\_attr=SANKEY\_steel\_detailed**
+**~TS_Defs: Snk_attr=SANKEY_steel_detailed**
 
-| **Attribute** | **PSET\_Set** | **PSET\_PN** | **PSET\_PD** | **PSET\_CI** | **PSET\_CO** | **CSET\_Set** | **CSET\_CN**         | **CSET\_CD** | **Unit** | **TS** | **UC\_N** | **Name**                              |
-| ------------- | ------------- | ------------ | ------------ | ------------ | ------------ | ------------- | -------------------- | ------------ | -------- | ------ | --------- | ------------------------------------- |
-| VAR\_FIN      | "PRE,DMD"     |              |              |              |              | MAT           | "im\_\*,ind\[\_\]\*" |              | Mtneg    |        |           | \<gen\_cname\>\_[Snk]()\<gen\_pname\> |
-| VAR\_FOUT     | "PRE,DMD"     |              |              |              |              | MAT           | "im\_\*,ind\[\_\]\*" |              | Mt       |        |           | \<gen\_cname\>\_[Src]()\<gen\_pname\> |
-| VAR\_FIN      | IRE           |              |              |              |              | MAT           | "im\_\*,ind\[\_\]\*" |              | Mtneg    |        |           | \<gen\_cname\>\_Snk\_Export           |
-| VAR\_FOUT     | IRE           |              |              |              |              | MAT           | "im\_\*,ind\[\_\]\*" |              | Mt       |        |           | \<gen\_cname\>\_Src\_Import           |
+| **Attribute** | **PSET_Set** | **PSET_PN** | **PSET_PD** | **PSET_CI** | **PSET_CO** | **CSET_Set** | **CSET_CN**         | **CSET_CD** | **Unit** | **TS** | **UC_N** | **Name**                              |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| VAR_FIN      | "PRE,DMD"     |              |              |              |              | MAT           | `im_*,ind[_]*` |              | Mtneg    |        |           | `<gen_cname>_Snk_<gen_pname>` |
+| VAR_FOUT     | "PRE,DMD"     |              |              |              |              | MAT           | `im_*,ind[_]*` |              | Mt       |        |           | `<gen_cname>_Src_<gen_pname>` |
+| VAR_FIN      | IRE           |              |              |              |              | MAT           | `im_*,ind[_]*` |              | Mtneg    |        |           | <gen_cname>_Snk_Export           |
+| VAR_FOUT     | IRE           |              |              |              |              | MAT           | `im_*,ind[_]*` |              | Mt       |        |           | <gen_cname>_Src_Import           |
 
 **Process**:
 
@@ -928,11 +925,11 @@ processes and commodities without aggregation.
 
 **Generated Variables**:
 
-  - `Iron_Ore_Snk_Blast_Furnace_Plant_01` (specific iron ore to specific
+- `Iron_Ore_Snk_Blast_Furnace_Plant_01` (specific iron ore to specific
     plant)
-  - `Steel_Src_Electric_Arc_Furnace_02` (specific steel from specific
+- `Steel_Src_Electric_Arc_Furnace_02` (specific steel from specific
     EAF)
-  - `Crude_Oil_Snk_Refinery_Houston` (specific crude to specific
+- `Crude_Oil_Snk_Refinery_Houston` (specific crude to specific
     refinery)
 
 **Use Cases**: Detailed industrial analysis, plant-level material flows,
@@ -952,8 +949,8 @@ processes.
 **Flow Direction and Units**
 
 VEDA uses variable types and units to determine flow directions: -
-**VAR\_FIN** with negative units (`Pjneg`, `ktneg`) = Consumption/Sink
-flows - **VAR\_FOUT** with positive units (`PJ`, `kT`) =
+**VAR_FIN** with negative units (`Pjneg`, `ktneg`) = Consumption/Sink
+flows - **VAR_FOUT** with positive units (`PJ`, `kT`) =
 Production/Source flows
 
 **Pattern Matching and Exclusions**
@@ -961,11 +958,11 @@ Production/Source flows
 Sophisticated filtering using wildcards and exclusions:
 
 | **Filter Type** | **Pattern**      | **Description**                     |
-| --------------- | ---------------- | ----------------------------------- |
-| PSET\_PN        | "\*gaspip\*"     | Matches all gas pipeline processes  |
-| PSET\_PN        | "MinBio\*"       | Matches biomass mining processes    |
-| PSET\_PN        | "-EA\_HH2\*"     | Excludes hydrogen heating processes |
-| CSET\_CN        | "-SUP\*,-COAOVC" | Excludes supply and coal processes  |
+| --- | --- | --- |
+| PSET_PN | `*gaspip*` | Matches all gas pipeline processes |
+| PSET_PN | `MinBio*` | Matches biomass mining processes |
+| PSET_PN | `-EA_HH2*` | Excludes hydrogen heating processes |
+| CSET_CN | `-SUP*,-COAOVC` | Excludes supply and coal processes |
 
 **Dynamic Naming with Placeholders**
 
@@ -987,24 +984,24 @@ created with minimal configuration.
 
 **Choose Set-Based When**:
 
-  - Creating executive dashboards for policy makers
-  - Showing technology competition (renewables vs. fossils)
-  - Sector-level energy flow analysis
-  - Clean, interpretable visualizations needed
+- Creating executive dashboards for policy makers
+- Showing technology competition (renewables vs. fossils)
+- Sector-level energy flow analysis
+- Clean, interpretable visualizations needed
 
 **Choose Region-Based When**:
 
-  - Analyzing energy security and trade dependencies
-  - Visualizing cross-border infrastructure
-  - Geographic context is primary concern
-  - Regional integration analysis
+- Analyzing energy security and trade dependencies
+- Visualizing cross-border infrastructure
+- Geographic context is primary concern
+- Regional integration analysis
 
 **Choose Granular When**:
 
-  - Engineering analysis of specific facilities
-  - Supply chain optimization and bottleneck analysis
-  - Detailed validation against real-world data
-  - Asset-level investment decisions
+- Engineering analysis of specific facilities
+- Supply chain optimization and bottleneck analysis
+- Detailed validation against real-world data
+- Asset-level investment decisions
 
 **Practical Design Workflow**:
 
@@ -1024,7 +1021,7 @@ leveraging VEDA's automation for technical implementation.
     applications — see the Argonne NetZero World example (EU-Ukraine trade
     corridors) and KAPSARC OPEC oil & gas systems in the [KiNESYS
     Applications and
-    Impact](https://kinesys-documentation.readthedocs.io/en/latest/pages/Applications_and_Impact.html)
+    Impact](https://kinesys-documentation.readthedocs.io/en/latest/pages/Applications_and_Impact.html){ target="_blank" rel="noopener noreferrer" }
     documentation.
 
 ## Less common tags
@@ -1035,7 +1032,7 @@ with a one-line description and a pointer to the underlying processing
 procedure for readers who need to dig deeper.
 
 | **Tag**                                                 | **Purpose**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| --- | --- |
 | `~ATS`                                                  | Simpler cousin of `~ATS_final`. Single fixed-shape table (`model`, `scen`, `region`, `varbl`, `unit`, `year`, `val`); injected into the scenario fact table once at report start with all process/commodity/timeslice/UC/vintage columns forced to `-`. Use when an exogenous variable should behave like a model output (participate in `~Varbl_Map`, `~TS_Ratios`, `~UnitConv`, weighted averaging). `~ATS_final` is the right choice when the data is already in final reporting shape. |
 | `~Op_Varbl`                                             | Variable-operations builder. Combines existing report variables via a configurable `op` (e.g. `+`, `-`, `*`, `/`) with predicates (`wherecond`), inner-only joins (`inneronly`), `yrforelast` smoothing, and ordering (`procord`). Used for special computations beyond what `~TS_Ratios` covers.                                                                                                                                                                                          |
 | `~TS_Agg`                                               | Similar to `~Op_Varbl` but without the `procord` column. Used for timeseries-level aggregations.                                                                                                                                                                                                                                                                                                                                                                                           |
@@ -1062,7 +1059,7 @@ tools:
 
 ## VO gets a lot more out of Reports
 
-VO ([Veda Online](https://vedaonline.cloud/)) offers the core Veda-TIMES
+VO ([Veda Online](https://vedaonline.cloud/){ target="_blank" rel="noopener noreferrer" }) offers the core Veda-TIMES
 functionality via Internet browsers. Veda model folders need to reside
 on GitHub to be used under VO. Registered users can submit their GitHub
 credentials to see a list of all model folders, along with the branches,
@@ -1078,7 +1075,7 @@ manager, Results, and Reports.
     research. For concrete examples of how these features enable interactive
     exploration across scenarios and regions, see the [KiNESYS Applications
     and
-    Impact](https://kinesys-documentation.readthedocs.io/en/latest/pages/Applications_and_Impact.html)
+    Impact](https://kinesys-documentation.readthedocs.io/en/latest/pages/Applications_and_Impact.html){ target="_blank" rel="noopener noreferrer" }
     documentation.
 
 Here are some sample visualizations on the same platform that drives VO
@@ -1086,40 +1083,30 @@ reports.
 
 ### Sources and uses of main energy forms
 
-  - 
-    
-    <a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252583" target="_blank"><b>See it online </a> <i>select energy form</i></b>
+<a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252583" target="_blank" rel="noopener noreferrer"><b>See it online </a> <i>select energy form</i></b>
 
 ![](images/Reports/main_energy_forms1.PNG)
 
 ### Road transport vehicles
 
-  - 
-    
-    <a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252590" target="_blank"><b>See it online </a> <i>select region</i></b>
+<a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252590" target="_blank" rel="noopener noreferrer"><b>See it online </a> <i>select region</i></b>
 
 ![](images/Reports/lma_road_transport1.PNG)
 
 ### Power generation
 
-  - 
-    
-    <a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252586" target="_blank"><b>See it online </a> <i>select electricity/hydrogen/heat, and region</i></b>
+<a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252586" target="_blank" rel="noopener noreferrer"><b>See it online </a> <i>select electricity/hydrogen/heat, and region</i></b>
 
 ![](images/Reports/lma_power_gen1.PNG)
 
 ### Power generation – alternate view
 
-  - 
-    
-    <a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252588" target="_blank"><b>See it online </a></b>
+<a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252588" target="_blank" rel="noopener noreferrer"><b>See it online </a></b>
 
 ![](images/Reports/power_gen_alt_view1.PNG)
 
 ### Power generation – alternate view 2
 
-  - 
-    
-    <a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252589" target="_blank"><b>See it online </a></b>
+<a href="https://lma.vedaviz.com/Presenter/Predex.aspx?pkp=1041&pkv=252589" target="_blank" rel="noopener noreferrer"><b>See it online </a></b>
 
 ![](images/Reports/power_gen_alt_view-2_1.PNG)

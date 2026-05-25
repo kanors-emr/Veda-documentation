@@ -41,11 +41,9 @@ per individual region**. Cells carry `0` (unavailable) or `1`
 
 Real example from `SubRES_H2-Production_Trans.xlsx :: AVA`:
 
-```
-~TFM_AVA
-PSET_PN | AllRegions | GBL
-*       | 1          | 0
-```
+| **~TFM_AVA** | **PSET_PN** | **AllRegions** | **GBL** |
+| --- | --- | --- | --- |
+| | `*` | 1 | 0 |
 
 This row says: every process matching `*` (i.e. all H2-production
 processes in this SubRES) is available in `AllRegions = 1` (default
@@ -66,11 +64,9 @@ region-specific identifiers (e.g. ISO codes) and metadata.
 
 Real example from `SubRes_B-NewTechs_Trans.xlsx :: TechSelection`:
 
-```
-~ReplicateInRegions
-Region        | incode | indesc                | Process
-Africa_North  | DZA    | Algeria - [Export]    | LNG_New-Export
-```
+| **~ReplicateInRegions** | **Region** | **incode** | **indesc** | **Process** |
+| --- | --- | --- | --- | --- |
+| | Africa_North | DZA | Algeria - [Export] | LNG_New-Export |
 
 The columns: `Region` (model region), `incode` (an ISO/country code or
 similar identifier to plug into the cloned process name), `indesc`

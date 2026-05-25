@@ -2,12 +2,12 @@
 
 **La solution complète de gestion des données pour les modèles de systèmes énergétiques**
 
-Veda 2.0 est un puissant système de gestion de données pour [The Integrated MARKAL-EFOM System (TIMES)](https://iea-etsap.org/index.php/etsap-tools/model-generators/times) — un modèle d'optimisation ascendant pour les systèmes énergie-environnement. La prise en charge d'autres modèles tels que **OSeMOSYS** et **TEMOA** est en cours de développement.
+Veda 2.0 est un puissant système de gestion de données pour [The Integrated MARKAL-EFOM System (TIMES)](https://iea-etsap.org/index.php/etsap-tools/model-generators/times){ target="_blank" rel="noopener noreferrer" } — un modèle d'optimisation ascendant pour les systèmes énergie-environnement. La prise en charge d'autres modèles tels que **OSeMOSYS** et **TEMOA** est en cours de développement.
 
 Construit avec C#.NET et PostgreSQL, Veda 2.0 fonctionne nativement sous Windows.
 
-[:material-download: Télécharger Veda 2.0](https://github.com/kanors-emr/Veda2.0-Installation/releases/latest){ .md-button .md-button--primary }
-[:material-youtube: Tutoriels vidéo](https://www.youtube.com/playlist?list=PLED97cPMXPOm60xOKSwvmXaGIsQrjoM8Y){ .md-button }
+[:material-download: Télécharger Veda 2.0](https://github.com/kanors-emr/Veda2.0-Installation/releases/latest){ .md-button .md-button--primary  target="_blank" rel="noopener noreferrer" }
+[:material-youtube: Tutoriels vidéo](https://www.youtube.com/playlist?list=PLED97cPMXPOm60xOKSwvmXaGIsQrjoM8Y){ .md-button  target="_blank" rel="noopener noreferrer" }
 
 ## Par où commencer
 

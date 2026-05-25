@@ -8,7 +8,7 @@ each tag is accepted (taken from `scentype_taglist` in
 identifiers used in the *Available in* column:
 
 | Name | Meaning |
-|---|---|
+| --- | --- |
 | `BY` | Base Year template (`VT_*.xlsx`) |
 | `BY_Trans` | Base Year transformation scenario (`BY_Trans.xlsx`) |
 | `SubRES` | SubRES technology template |
@@ -24,7 +24,7 @@ identifiers used in the *Available in* column:
 | `NoSeedValueScenario` | A scenario file flagged not to carry seed values |
 
 | Tag | Available in | Description |
-|---|---|---|
+| --- | --- | --- |
 | `~BookRegions_Map` | SysSettings | Map book (super) regions to model regions |
 | `~COMEMI` | BY, SubRES | Legacy — use VDA_EMCB via a regular Veda tag instead |
 | `~Currencies` | SysSettings | list of all currencies used in the model |

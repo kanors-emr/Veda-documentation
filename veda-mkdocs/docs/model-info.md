@@ -6,12 +6,12 @@ current model.
 
 ## TIMES Attributes
 
-  - This is a comprehensive list of all TIMES parameters that can be
-    used in Veda.
-  - For each index, like Timeslice and Currency, it shows the default
-    values that are used for each parameter.
-  - For the selected attribute, the description from the TIMES manual is
-    displayed at the bottom.
+- This is a comprehensive list of all TIMES parameters that can be
+  used in Veda.
+- For each index, like Timeslice and Currency, it shows the default
+  values that are used for each parameter.
+- For the selected attribute, the description from the TIMES manual is
+  displayed at the bottom.
 
 ![](images/new_times_attributes.PNG)
 

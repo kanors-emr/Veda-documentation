@@ -2,12 +2,12 @@
 
 **面向能源系统模型的完整数据管理解决方案**
 
-Veda 2.0 是一个强大的数据处理系统，专为 [The Integrated MARKAL-EFOM System (TIMES)](https://iea-etsap.org/index.php/etsap-tools/model-generators/times) — 一种用于能源-环境系统的自底向上优化模型 — 服务。对 **OSeMOSYS** 和 **TEMOA** 等其他模型的支持正在开发中。
+Veda 2.0 是一个强大的数据处理系统，专为 [The Integrated MARKAL-EFOM System (TIMES)](https://iea-etsap.org/index.php/etsap-tools/model-generators/times){ target="_blank" rel="noopener noreferrer" } — 一种用于能源-环境系统的自底向上优化模型 — 服务。对 **OSeMOSYS** 和 **TEMOA** 等其他模型的支持正在开发中。
 
 Veda 2.0 基于 C#.NET 和 PostgreSQL 构建，可在 Windows 上原生运行。
 
-[:material-download: 下载 Veda 2.0](https://github.com/kanors-emr/Veda2.0-Installation/releases/latest){ .md-button .md-button--primary }
-[:material-youtube: 视频教程](https://www.youtube.com/playlist?list=PLED97cPMXPOm60xOKSwvmXaGIsQrjoM8Y){ .md-button }
+[:material-download: 下载 Veda 2.0](https://github.com/kanors-emr/Veda2.0-Installation/releases/latest){ .md-button .md-button--primary  target="_blank" rel="noopener noreferrer" }
+[:material-youtube: 视频教程](https://www.youtube.com/playlist?list=PLED97cPMXPOm60xOKSwvmXaGIsQrjoM8Y){ .md-button  target="_blank" rel="noopener noreferrer" }
 
 ## 从哪里开始
 

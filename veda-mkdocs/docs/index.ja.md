@@ -2,12 +2,12 @@
 
 **エネルギーシステムモデル向けの完全なデータ管理ソリューション**
 
-Veda 2.0 は、[The Integrated MARKAL-EFOM System (TIMES)](https://iea-etsap.org/index.php/etsap-tools/model-generators/times) — エネルギー・環境システムのためのボトムアップ最適化モデル — を扱う強力なデータ処理システムです。**OSeMOSYS** や **TEMOA** など他のモデルへの対応も開発中です。
+Veda 2.0 は、[The Integrated MARKAL-EFOM System (TIMES)](https://iea-etsap.org/index.php/etsap-tools/model-generators/times){ target="_blank" rel="noopener noreferrer" } — エネルギー・環境システムのためのボトムアップ最適化モデル — を扱う強力なデータ処理システムです。**OSeMOSYS** や **TEMOA** など他のモデルへの対応も開発中です。
 
 C#.NET と PostgreSQL で構築されており、Windows 上でネイティブに動作します。
 
-[:material-download: Veda 2.0 をダウンロード](https://github.com/kanors-emr/Veda2.0-Installation/releases/latest){ .md-button .md-button--primary }
-[:material-youtube: ビデオチュートリアル](https://www.youtube.com/playlist?list=PLED97cPMXPOm60xOKSwvmXaGIsQrjoM8Y){ .md-button }
+[:material-download: Veda 2.0 をダウンロード](https://github.com/kanors-emr/Veda2.0-Installation/releases/latest){ .md-button .md-button--primary  target="_blank" rel="noopener noreferrer" }
+[:material-youtube: ビデオチュートリアル](https://www.youtube.com/playlist?list=PLED97cPMXPOm60xOKSwvmXaGIsQrjoM8Y){ .md-button  target="_blank" rel="noopener noreferrer" }
 
 ## はじめにお読みください
 

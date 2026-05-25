@@ -54,12 +54,42 @@
 /* Slightly tighter heading sizes (matching the prior Sphinx layout) */
 .md-typeset h1 {
   font-size: 2em;
+  font-weight: 800;
 }
 
 .md-typeset h2 {
   font-size: 1.5em;
+  font-weight: 800;
 }
 
 .md-typeset h3 {
   font-size: 1.2em;
+  font-weight: 700;
+}
+
+.md-typeset h1 strong,
+.md-typeset h2 strong,
+.md-typeset h3 strong {
+  font-weight: inherit;
+}
+
+/* Nested ordered lists under bullets: Material uses lower-alpha (a, b) for
+   `li > ol`. Force decimal (1, 2) for procedure steps in nested lists. */
+.md-typeset ul ol,
+.md-typeset li > ol {
+  list-style-type: decimal !important;
+}
+
+.md-typeset ul ol ol,
+.md-typeset li > ol ol {
+  list-style-type: decimal !important;
+}
+
+/* Keep screenshots block-level inside list items (avoids inline float/overlap). */
+.md-typeset li > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.75em;
+  clear: both;
 }

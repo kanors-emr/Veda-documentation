@@ -396,7 +396,7 @@ nav:
           - Tags processing order: tags-proc-order.md
           - Conventions: veda-conventions.md
       - Version history: version-history.md
-  - About:
+  - Licensing:
       - License operations: license-operations.md
       - License agreement: license-agreement.md
       - Privacy policy: privacy-policy.md

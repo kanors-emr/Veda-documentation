@@ -1,19 +1,17 @@
 # Metadata tags
 
-## Metadata tags
-
 The `MD-*` tags attach metadata (provenance, source URLs, data version,
 notes) to any value, technology, or commodity in the model. Each tag
 targets a different *scope*:
 
-| Suffix | Scope                                                              |
-|--------|--------------------------------------------------------------------|
-| `_W`   | Workbook                                                           |
-| `_S`   | Worksheet                                                          |
-| `_R`   | Row (a single row in the table)                                    |
-| `_C`   | Column (a single column in the table)                              |
-| `_TR`  | Table-row scope (multiple values in a single row of a table)       |
-| `_TC`  | Table-column scope (multiple values in a single column)            |
+| **Suffix** | **Scope** |
+| --- | --- |
+| `_W` | Workbook |
+| `_S` | Worksheet |
+| `_R` | Row (a single row in the table) |
+| `_C` | Column (a single column in the table) |
+| `_TR` | Table-row scope (multiple values in a single row of a table) |
+| `_TC` | Table-column scope (multiple values in a single column) |
 
 In real models the most commonly used forms are the inline `_R` and
 `_S` variants — they sit next to (or above) the table they annotate,
@@ -24,9 +22,7 @@ so the metadata is co-located with the data it describes.
 Real example from `BY_Trans.xlsx :: pumped hydro` (row 1, immediately
 above the table it annotates):
 
-```
-~md-v_s: default parameters for pumped hydro - assuming 6h storage
-```
+`~md-v_s: default parameters for pumped hydro - assuming 6h storage`
 
 A single free-text annotation that applies to every value on the
 sheet.

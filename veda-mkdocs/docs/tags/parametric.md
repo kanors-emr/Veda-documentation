@@ -1,7 +1,5 @@
 # Parametric scenarios
 
-## Parametric scenarios
-
 ### ~INPUTCELL
 
 A `ParScen` tag that marks specific cells in a parametric-scenario

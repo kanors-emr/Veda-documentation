@@ -13,82 +13,85 @@ filter criteria.
 ### DINS, INS, and UPD Tables
 
 Veda supports three main transformation table types for inputting
-data:**DINS (Direct Insert)**, **INS (Insert)**, and **UPD (Update)**.
+data: **DINS (Direct Insert)**, **INS (Insert)**, and **UPD (Update)**.
 Each serves a distinct purpose, with varying degrees of efficiency and
 complexity depending on the dataset's structure and the modeling
 requirements.
 
 !!! important "Important"
 
-    The **\~TFM\_DINS** tag offers the highest processing efficiency,
-    followed by [\~FI\_T](#flexible-import-table-fi-t) and **\~TFM\_INS**.
+    The **~TFM_DINS** tag offers the highest processing efficiency,
+    followed by [~FI_T](res-templates.md#flexible-import-table-fi_t) and **~TFM_INS**.
 
-    Tags **\~TFM\_UPD** and **\~TFM\_MIG** are the least efficient. Whenever
+    Tags **~TFM_UPD** and **~TFM_MIG** are the least efficient. Whenever
     possible, users are encouraged to use **DINS** or **INS**, provided the
     logic can be transferred.
 
-#### 1\. \~TFM\_DINS (Transformation Direct Insert Tables)
+#### 1. ~TFM_DINS (Transformation Direct Insert Tables)
 
-**Purpose:** \~TFM\_DINS is the preferred table type when the dataset is
+**Purpose:** ~TFM_DINS is the preferred table type when the dataset is
 fully enumerated, meaning all fields are explicitly defined without any
 wildcards or comma-separated lists.
 
-**Key Characteristics:** - **Processes** are identified using only the
-`pset_pn` column. - **Commodities** (if applicable) are defined
-explicitly via the `cset_cn` column. - **No wildcards** (e.g., `?`, `*`)
-or **comma-separated values** are allowed.
+**Key Characteristics:**
 
-**Advantages:** - The most efficient tag.
+- **Processes** are identified using only the `pset_pn` column.
+- **Commodities** (if applicable) are defined explicitly via the `cset_cn` column.
+- **No wildcards** (e.g., `?`, `*`) or **comma-separated values** are allowed.
+
+**Advantages:**
+
+- The most efficient tag.
 
 **Use Case:** When all model elements are clearly defined in advance,
 such as a process-specific bound (`ACT_BND`) applied to individual
-processes without any <span class="title-ref">rules</span>.
+processes without any `rules`.
 
-#### 2\. \~TFM\_INS (Transformation Insert Tables)
+#### 2. ~TFM_INS (Transformation Insert Tables)
 
 **Purpose:** INS is the general-purpose table for inserting new data
 into the database. It allows for greater flexibility in specifying model
 elements.
 
-**Key Characteristics:** - Supports **wildcards** (e.g., `ALL`, `*`) and
-**comma-separated values** in fields like `pset_pn` and `cset_cn`. -
-Inserts **absolute values** directly into the database without
-referencing existing seed data.
+**Key Characteristics:**
 
-**Advantages:** - Provides flexibility for users who work with less
-granular or generic data definitions. - Easy to use for scenarios where
-exact enumeration is not required.
+- Supports **wildcards** (e.g., `ALL`, `*`) and **comma-separated values** in fields like `pset_pn` and `cset_cn`.
+- Inserts **absolute values** directly into the database without referencing existing seed data.
 
-  - **Use Case:**  
-    ![](../images/use_TFM_INS.png)
+**Advantages:**
 
-In this example from DemoS\_001, it is used to declare three new
-attributes (G\_DYEAR, Discount, and YRFR) by row.
+- Provides flexibility for users who work with less granular or generic data definitions.
+- Easy to use for scenarios where exact enumeration is not required.
 
-#### 3\. \~TFM\_UPD (Transformation Update Tables)
+![](../images/use_TFM_INS.png)
+
+In this example from DemoS_001, it is used to declare three new
+attributes (G_DYEAR, Discount, and YRFR) by row.
+
+#### 3. ~TFM_UPD (Transformation Update Tables)
 
 **Purpose:** UPD is used when data modifications depend on the presence
 of existing seed values in the database.
 
-**Key Characteristics:** - Performs **numerical transformations** on
-seed values (e.g., multiplying or dividing an existing value). -
-Supports **conditional insertion**, where new data is added only if a
-corresponding seed value exists. - Requires prior existence of seed data
-*in an alphabetically inferior scenario* in the database.
+**Key Characteristics:**
 
-**Advantages:** - Ensures data integrity by operating conditionally on
-existing entries. - Enables dynamic adjustments of seed values without
-overwriting them.
+- Performs **numerical transformations** on seed values (e.g., multiplying or dividing an existing value).
+- Supports **conditional insertion**, where new data is added only if a corresponding seed value exists.
+- Requires prior existence of seed data *in an alphabetically inferior scenario* in the database.
 
-  - **Use Case:**  
-    ![](../images/use_TFM_UPD.png)
+**Advantages:**
+
+- Ensures data integrity by operating conditionally on existing entries.
+- Enables dynamic adjustments of seed values without overwriting them.
+
+![](../images/use_TFM_UPD.png)
 
 In this figure it sets default prices (ACTCOST) for the backstop dummy
-processes for energy commodities (IMP\*Z - dummy IMPort processes ending
+processes for energy commodities (IMP*Z - dummy IMPort processes ending
 with “Z”) and demands (IMPDEMZ - a dummy IMPDEMZ process that can feed
 any demand). Note that the process and attribute MUST already have been
 specified for the qualifying process. Though not shown in the example
-above the data specification field may also contain operators (+, \*, -,
+above the data specification field may also contain operators (+, *, -,
 /) there the resulting value is applied to the existing value for the
 qualifying processes.
 
@@ -105,7 +108,7 @@ qualifying processes.
 #### Comparison of DINS, INS, and UPD
 
 | **Feature**                            | **DINS**                  | **INS**                  | **UPD**                   |
-| -------------------------------------- | ------------------------- | ------------------------ | ------------------------- |
+| --- | --- | --- | --- |
 | **Data Enumeration**                   | Fully enumerated          | Supports wildcards/lists | Relies on existing data   |
 | **Wildcards / Comma-Separated Values** | Not allowed               | Allowed                  | Allowed                   |
 | **Seed Data Requirement**              | Not required              | Not required             | Required                  |
@@ -114,11 +117,11 @@ qualifying processes.
 
 #### Best Practices
 
-  - Use **DINS** wherever possible for maximum efficiency, especially
+- Use **DINS** wherever possible for maximum efficiency, especially
     when handling large datasets that are fully enumerated.
-  - Use **INS** for flexible data insertion when working with generic
+- Use **INS** for flexible data insertion when working with generic
     definitions or multiple entries defined using wildcards or lists.
-  - Use **UPD** sparingly, only for cases where transformations or
+- Use **UPD** sparingly, only for cases where transformations or
     conditional insertions are explicitly required, as it involves
     additional computational overhead.
 
@@ -140,36 +143,32 @@ model performance.
     **INS**, and **UPD** tables. These variants allow the user to specify
     **attributes**, **years**, or **timeslices** as value column headers.
 
-    \~TFM\_INS Variants The **\~TFM\_INS** variants offer flexible table
-    layouts for inserting data. The following variants are available:
+    **~TFM_INS Variants**
 
-      - **TFM\_INS-AT:** The value fields use **attributes** as column
-        headers.
-      - **TFM\_INS-TS:** The value fields use **years** as column headers.
-      - **TFM\_INS-TSL:** The value fields use **timeslices** as column
-        headers.
+    The **~TFM_INS** variants offer flexible table layouts for inserting data. The following variants are available:
 
-    \---
+    - **TFM_INS-AT:** The value fields use **attributes** as column headers.
+    - **TFM_INS-TS:** The value fields use **years** as column headers.
+    - **TFM_INS-TSL:** The value fields use **timeslices** as column headers.
 
-    \~TFM\_DINS Variants The **\~TFM\_DINS** variants allow fully
-    enumerated data to use alternative column headers. The following
-    variants are supported:
+    ---
 
-      - **TFM\_DINS-AT:** The value fields use **attributes** as column
-        headers.
-      - **TFM\_DINS-TS:** The value fields use **years** as column headers.
-      - **TFM\_DINS-TSL:** The value fields use **timeslices** as column
-        headers.
+    **~TFM_DINS Variants**
 
-    \---
+    The **~TFM_DINS** variants allow fully enumerated data to use alternative column headers. The following variants are supported:
 
-    \~TFM\_UPD Variants The **\~TFM\_UPD** variants allow update
-    tables to organize value fields differently. The supported variants
-    include:
+    - **TFM_DINS-AT:** The value fields use **attributes** as column headers.
+    - **TFM_DINS-TS:** The value fields use **years** as column headers.
+    - **TFM_DINS-TSL:** The value fields use **timeslices** as column headers.
 
-      - **TFM\_UPD-AT:** The value fields use **attributes** as column
-        headers.
-      - **TFM\_UPD-TS:** The value fields use **years** as column headers.
+    ---
+
+    **~TFM_UPD Variants**
+
+    The **~TFM_UPD** variants allow update tables to organize value fields differently. The supported variants include:
+
+    - **TFM_UPD-AT:** The value fields use **attributes** as column headers.
+    - **TFM_UPD-TS:** The value fields use **years** as column headers.
 
 ### Example Table Layouts
 
@@ -177,13 +176,11 @@ model performance.
 
 Real example from `SubRES_H2-Production_Trans.xlsx :: misc.`:
 
-```
-~TFM_INS-TS
-pset_set | pset_ci | pset_co | pset_pn | attribute | oth_ind  | commodity        | 2020 | 2022 | 2030 | 0 | limtype
-         | GASNGA  | HH2     | *CCS    | FLO_EMIS  | HH2CO2Ng | CO2Captured_sup  | 0.9  |      | 0.95
-         | BIOBSL  | HH2     | *CCS    | FLO_EMIS  | HH2CO2Nb | CO2Captured_ccu  | 0.9  |      | 0.95
-         | ELCCurt | HH2     |         | FLO_SHAR  | ELC_gc   | ELC              | 0    |      |      | 3 | LO
-```
+| **~TFM_INS-TS** | **pset_set** | **pset_ci** | **pset_co** | **pset_pn** | **attribute** | **oth_ind** | **commodity** | **2020** | **2022** | **2030** | **0** | **limtype** |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| | GASNGA | HH2 | `*CCS` | FLO_EMIS | HH2CO2Ng | CO2Captured_sup | 0.9 | | 0.95 | | | |
+| | BIOBSL | HH2 | `*CCS` | FLO_EMIS | HH2CO2Nb | CO2Captured_ccu | 0.9 | | 0.95 | | | |
+| | ELCCurt | HH2 | | FLO_SHAR | ELC_gc | ELC | 0 | | | 3 | LO |
 
 In this example:
 
@@ -198,12 +195,10 @@ In this example:
 
 Real example from `Scen_RE-Targets_EMBER.xlsx :: RE outlook`:
 
-```
-~TFM_INS-AT
-pset_set | year     | PRC_AOFF | START | region
-E_Coal   | 2040-EOH | 0        |       | Bangladesh,Indonesia,Malaysia,Philippines,Thailand,Vietnam
-E_Coal   |          |          | 2025  | Bangladesh,Indonesia,Malaysia,Philippines,Thailand,Vietnam
-```
+| **~TFM_INS-AT** | **pset_set** | **year** | **PRC_AOFF** | **START** | **region** |
+| --- | --- | --- | --- | --- | --- |
+| E_Coal | 2040-EOH | 0 | | Bangladesh,Indonesia,Malaysia,Philippines,Thailand,Vietnam |
+| E_Coal | | | 2025 | Bangladesh,Indonesia,Malaysia,Philippines,Thailand,Vietnam |
 
 In this example:
 
@@ -222,13 +217,13 @@ In this example:
 
 ### Best Practices
 
-1.  **Choose Variants Wisely:** Select a table variant that aligns with
+1. **Choose Variants Wisely:** Select a table variant that aligns with
     the structure of your source data to minimize preprocessing.
-2.  **Keep Tables Wide:** Wider tables (fewer rows) are more efficient,
+2. **Keep Tables Wide:** Wider tables (fewer rows) are more efficient,
     as they reduce the rule processing required for each row.
-3.  **Simplify Preprocessing:** Use the variant that closely matches
+3. **Simplify Preprocessing:** Use the variant that closely matches
     your source data layout, reducing the need for manual restructuring.
-4.  **Fully Enumerate Data for DINS Variants:** Ensure all data is fully
+4. **Fully Enumerate Data for DINS Variants:** Ensure all data is fully
     enumerated (no wildcards or lists) when using **DINS** variants for
     optimal performance.
 
@@ -269,7 +264,7 @@ left column matches existing rows; the right column overrides that axis
 in the migrated row.
 
 | Source filter                                       | Destination override         | What it migrates                        |
-|-----------------------------------------------------|------------------------------|-----------------------------------------|
+| --- | --- | --- |
 | `attribute`                                         | `attribute2`                 | The TIMES parameter being rewritten     |
 | `cset_cn` (alias `commodity`)                       | `commodity2` (alias `cset_cn2`) | Commodity                            |
 | `year` / `yr`                                       | `year2` / `yr2`              | Year migration (e.g. project base-year data forward) |
@@ -303,7 +298,7 @@ existing number matches the condition are migrated. Examples: `>1`,
 Some patterns this enables:
 
 | Pattern | Source / destination columns to use |
-|---|---|
+| --- | --- |
 | **Re-attribute** a value (write the same numbers under a different attribute) | `attribute` → `attribute2` |
 | **Project a base-year value forward** to a target year | `year` (source) → `year2` (target), value can be a multiplier |
 | **Shift values between regions** | `region` (source) and a paired destination row |
@@ -321,11 +316,9 @@ exceeds 1 for processes whose commodity-in matches certain renewable /
 solar-thermal / heat patterns, write that value as the year-2100 value
 (unchanged: `*1`):
 
-```
-~TFM_MIG: attribute=stock
-year2 | Val_Cond | value | pset_ci
-2100  | >1       | *1    | ???GEO,???STH,???HET
-```
+| **~TFM_MIG: attribute=stock** | **year2** | **Val_Cond** | **value** | **pset_ci** |
+| --- | --- | --- | --- | --- |
+| | 2100 | >1 | `*1` | ???GEO,???STH,???HET |
 
 The header directive `attribute=stock` lifts the source attribute out
 of the column list (so every row applies to `stock`). The migration
@@ -338,11 +331,9 @@ From `BY_Trans.xlsx :: Transport`. Take the `PASTI` attribute on
 trade-related transport processes (`Trd[_]*`) in any region, scale it
 down by the factor 0.062, and write it to year 2019:
 
-```
-~TFM_MIG
-attribute | pset_pn  | year2 | allregions
-PASTI     | Trd[_]*  | 2019  | *0.0620343872322709
-```
+| **~TFM_MIG** | **attribute** | **pset_pn** | **year2** | **allregions** |
+| --- | --- | --- | --- | --- |
+| | PASTI | `Trd[_]*` | 2019 | `*0.0620343872322709` |
 
 Here `allregions` is being used as the value column (one of its
 aliases). The source year is unfiltered (so all source years match);
@@ -432,12 +423,10 @@ Two directives are placed on the tag-header line itself, separated by
 
 Real example from `SubRES_Transport_trans.xlsx :: Road transport`:
 
-```
-~TFM_FILL-R: w=RoadTra_BY; hcol=region
-Scenario | Attribute | PSET_CO | AllRegions
-BASE     | AF        | Trd[_]* | *1
-BASE     | EFF       | Trd[_]* | *1
-```
+| **~TFM_FILL-R: w=RoadTra_BY; hcol=region** | **Scenario** | **Attribute** | **PSET_CO** | **AllRegions** |
+| --- | --- | --- | --- | --- |
+| | BASE | AF | `Trd[_]*` | `*1` |
+| | BASE | EFF | `Trd[_]*` | `*1` |
 
 The `w=RoadTra_BY` directive points at a separate sheet whose columns
 are region names; `hcol=region` tells Veda to read each column header
@@ -470,11 +459,9 @@ of the topology flow.
 
 Real example from `BY_Trans.xlsx :: IND2`:
 
-```
-~TFM_TOPINS
-pset_ci | pset_co | pset_pn | commodity | io
-INDNGA  | INDELC  | EA*     | INDBFG    | IN
-```
+| **~TFM_TOPINS** | **pset_ci** | **pset_co** | **pset_pn** | **commodity** | **io** |
+| --- | --- | --- | --- | --- | --- |
+| | INDNGA | INDELC | EA* | INDBFG | IN |
 
 The `io` column takes `IN` (commodity-in side) or `OUT`
 (commodity-out side), letting the rule target one side of the
@@ -486,11 +473,9 @@ Attribute-form of `~TFM_TOPINS`. The columns are reduced to `process`,
 `commodity`, `value`. Real example from
 `BY_Trans.xlsx :: pumped hydro`:
 
-```
-~TFM_TOPINS-A
-process | commodity   | value
-EP_HPS* | AuxStoOUT   | OUT
-```
+| **~TFM_TOPINS-A** | **process** | **commodity** | **value** |
+| --- | --- | --- | --- |
+| | EP_HPS* | AuxStoOUT | OUT |
 
 ### ~TFM_TOPDINS
 
@@ -524,7 +509,7 @@ handle data layouts the plain forms can't express compactly.
 The suffix conventions, derived from real model usage:
 
 | Suffix | Meaning                                                                                                                          |
-|--------|----------------------------------------------------------------------------------------------------------------------------------|
+| --- | --- |
 | `-AT`  | "Attributes as columns" — each column header is itself an attribute name; one row touches multiple attributes at once.            |
 | `-TS`  | "Time-series columns" — year values are column headers (e.g. `2020`, `2025`, `2030`); each row supplies a time series.            |
 | `-TSL` | "Time-slice columns" — timeslice values are column headers; each row supplies one value per timeslice.                            |
@@ -539,13 +524,11 @@ INS with a time-series column layout. A header directive can fix the
 
 Real example from `SubRES_H2-Production_Trans.xlsx :: misc.`:
 
-```
-~TFM_INS-TS
-pset_set | pset_ci | pset_co | pset_pn | attribute | oth_ind          | commodity        | 2020 | 2022 | 2030 | 0 | limtype
-         | GASNGA  | HH2     | *CCS    | FLO_EMIS  | HH2CO2Ng         | CO2Captured_sup  | 0.9  |      | 0.95
-         | BIOBSL  | HH2     | *CCS    | FLO_EMIS  | HH2CO2Nb         | CO2Captured_ccu  | 0.9  |      | 0.95
-         | ELCCurt | HH2     |         | FLO_SHAR  | ELC_gc           | ELC              | 0    |      |      | 3 | LO
-```
+| **~TFM_INS-TS** | **pset_set** | **pset_ci** | **pset_co** | **pset_pn** | **attribute** | **oth_ind** | **commodity** | **2020** | **2022** | **2030** | **0** | **limtype** |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| | GASNGA | HH2 | `*CCS` | FLO_EMIS | HH2CO2Ng | CO2Captured_sup | 0.9 | | 0.95 | | | |
+| | BIOBSL | HH2 | `*CCS` | FLO_EMIS | HH2CO2Nb | CO2Captured_ccu | 0.9 | | 0.95 | | | |
+| | ELCCurt | HH2 | | FLO_SHAR | ELC_gc | ELC | 0 | | | 3 | LO |
 
 Years are columns; the special `0` column carries the *default year*
 value. `limtype` (LO/UP/FX) is the limit type for the row. The same
@@ -561,12 +544,10 @@ attribute column.
 
 Real example from `Scen_RE-Targets_EMBER.xlsx :: RE outlook`:
 
-```
-~TFM_INS-AT
-pset_set | year     | PRC_AOFF | START | region
-E_Coal   | 2040-EOH | 0        |       | Bangladesh,Indonesia,Malaysia,Philippines,Thailand,Vietnam
-E_Coal   |          |          | 2025  | Bangladesh,Indonesia,Malaysia,Philippines,Thailand,Vietnam
-```
+| **~TFM_INS-AT** | **pset_set** | **year** | **PRC_AOFF** | **START** | **region** |
+| --- | --- | --- | --- | --- | --- |
+| E_Coal | 2040-EOH | 0 | | Bangladesh,Indonesia,Malaysia,Philippines,Thailand,Vietnam |
+| E_Coal | | | 2025 | Bangladesh,Indonesia,Malaysia,Philippines,Thailand,Vietnam |
 
 Here `PRC_AOFF` and `START` are both column headers (i.e. attributes
 to be written), and the row writes a value into one or both for the
@@ -587,13 +568,11 @@ commodity) pair directly rather than via filters.
 Real example from `Scen_Base-Industry.xlsx :: com_bndprd`, with the
 attribute and limit type fixed in the header:
 
-```
-~TFM_DINS-TS:attribute=COM_BNDPRD;LimType=LO
-Commodity | Region    | 2019  | 2020  | 2021  | … | 2030 | 0
-pc_2eh    | Asia_Dev  | 0.374 | 0.293 | 0.281 | … | 0.311| 5
-pc_2eh    | Asia_Em   | 0.037 | 0.033 | 0.035 | … | 0.048| 5
-pc_2eh    | Belgium   | 0.041 | 0.037 | 0.037 | … | 0.054| 5
-```
+| **~TFM_DINS-TS:attribute=COM_BNDPRD;LimType=LO** | **Commodity** | **Region** | **2019** | **2020** | **2021** | **…** | **2030** | **0** |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| | pc_2eh | Asia_Dev | 0.374 | 0.293 | 0.281 | … | 0.311 | 5 |
+| | pc_2eh | Asia_Em | 0.037 | 0.033 | 0.035 | … | 0.048 | 5 |
+| | pc_2eh | Belgium | 0.041 | 0.037 | 0.037 | … | 0.054 | 5 |
 
 The `0` column again carries the default-year value; the header
 directive locks the whole table to `COM_BNDPRD` as a lower bound.
