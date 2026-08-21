@@ -1,0 +1,13 @@
+{# VEDA 2.0 Reference Energy System hero — see HERO-BANNER-IMPLEMENTATION.md #}
+{% extends "base.html" %}
+
+{% block content %}
+  {% set home_src = page.file.src_path %}
+  {% set is_docs_home = home_src == "index.md" or (
+    home_src.startswith("index.") and home_src.endswith(".md")
+  ) %}
+  {% if page.is_homepage or is_docs_home %}
+    {% include "partials/hero-banner.html" %}
+  {% endif %}
+  {% include "partials/content.html" %}
+{% endblock %}

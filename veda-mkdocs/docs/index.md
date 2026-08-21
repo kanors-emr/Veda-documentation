@@ -1,4 +1,4 @@
-# Veda 2.0 Documentation
+# Welcome to VEDA 2.0 — your gateway to building, exploring, and understanding energy system models.
 
 **The complete data-management solution for energy-system models**
 

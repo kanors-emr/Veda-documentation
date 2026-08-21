@@ -1,5 +1,74 @@
 /* Veda 2.0 documentation custom styles */
 
+/* KanORS brand colours — primary #2A3E68, accent #FC8462 */
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: #2a3e68;
+  --md-primary-fg-color--light: #6976aa;
+  --md-primary-fg-color--dark: #1f2f4f;
+  /* fg = brand surfaces (header, primary buttons); bg = text/icons on those surfaces */
+  --md-primary-bg-color: #fff;
+  --md-primary-bg-color--light: #ffffffb3;
+  --md-primary-bg-color--dark: #ffffffde;
+}
+
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: #fc8462;
+  --md-accent-fg-color--transparent: rgba(252, 132, 98, 0.12);
+  /* fg = accent surfaces (hover); bg = text/icons on those surfaces */
+  --md-accent-bg-color: #fff;
+  --md-accent-bg-color--light: #ffffffb3;
+  --md-accent-bg-color--dark: #ffffffde;
+}
+
+/* Dark mode — brand navy is too dark for body links and outline buttons */
+[data-md-color-scheme="slate"][data-md-color-primary="custom"] {
+  --md-typeset-a-color: #9caedb;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button:not(.md-button--primary) {
+  color: #9caedb;
+  border-color: #9caedb;
+}
+
+/* Header tabs — active tab stays white on navy bar (not orange) */
+.md-tabs__item--active .md-tabs__link {
+  color: inherit !important;
+  opacity: 1 !important;
+}
+
+/* Sidebar — section headings (Getting Started, Features, …) stay default when active */
+.md-nav--primary .md-nav__item--section.md-nav__item--active > .md-nav__link[for] {
+  color: var(--md-default-fg-color--light) !important;
+}
+
+/* Sidebar — orange only on the clicked page link, not the parent section heading */
+.md-nav--primary .md-nav__item--active:not(.md-nav__item--section) > .md-nav__link--active,
+.md-nav--primary .md-nav__item--active:not(.md-nav__item--section) a.md-nav__link--active {
+  color: var(--md-accent-fg-color) !important;
+}
+
+/* Sidebar sections — indent child pages under headers like Excel Add-In › Features */
+[dir=ltr] .md-nav--primary .md-nav__item--section > .md-nav {
+  margin-left: 0.5rem;
+}
+
+[dir=rtl] .md-nav--primary .md-nav__item--section > .md-nav {
+  margin-right: 0.5rem;
+}
+
+[dir=ltr] .md-nav--primary .md-nav__item--section > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+  padding-left: 1.35rem;
+}
+
+[dir=rtl] .md-nav--primary .md-nav__item--section > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+  padding-right: 1.35rem;
+}
+
+/* Excel Add-In › Features — section header weight */
+label[for="__nav_10_6"] {
+  font-weight: 700 !important;
+}
+
 /* Wider content area for tables */
 .md-grid {
   max-width: 1400px;
@@ -93,3 +162,94 @@
   margin-top: 0.75em;
   clear: both;
 }
+
+/* --------------------------------------------------------------------------
+ * Homepage hero banner (interactive particle network)
+ * Revert: DEMO-HERO-BANNER.md | Re-apply: HERO-BANNER-IMPLEMENTATION.md
+ * -------------------------------------------------------------------------- */
+
+.veda-hero-banner {
+  position: relative;
+  width: 100%;
+  min-height: 168px;
+  margin: 0 0 1.5rem;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    #2A3E68 0%,
+    #FC8462 55%,
+    #F8B26A 100%
+  );
+}
+
+.veda-hero-banner__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: auto;
+  z-index: 0;
+}
+
+.md-typeset h1.veda-hero-banner__title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 2.5rem 2rem;
+  color: #ffffff;
+  opacity: 1;
+  font-size: 2em;
+  font-weight: 800;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45), 0 0 24px rgba(255, 255, 255, 0.12);
+  border: none;
+  pointer-events: none;
+}
+
+.md-content__inner.md-typeset:has(.veda-hero-banner) > h1:first-child {
+  display: none;
+}
+
+[data-md-color-scheme="slate"] .veda-hero-banner {
+  background: linear-gradient(
+    90deg,
+    #2A3E68 0%,
+    #FC8462 55%,
+    #F8B26A 100%
+  );
+}
+
+@media screen and (max-width: 76.1875em) {
+  .veda-hero-banner {
+    min-height: 148px;
+  }
+
+  .md-typeset h1.veda-hero-banner__title {
+    padding: 2rem 1.5rem;
+    font-size: 1.75em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veda-hero-banner__canvas {
+    opacity: 0.9;
+  }
+}
+
+/* KanORS header logo — revert per DEMO-LOGO.md */
+/* Top header bar uses brand navy; theme.logo supplies white PNG via <img src> */
+.md-header__button.md-logo img,
+.md-nav__button.md-logo img {
+  height: 1.85rem;
+  width: auto;
+}
+
+/* Mobile drawer on light pages: dark logo on light background */
+:not([data-md-color-scheme="slate"]) .md-nav__button.md-logo img {
+  content: url("../images/brand/kanors-logo-black.png");
+}
+

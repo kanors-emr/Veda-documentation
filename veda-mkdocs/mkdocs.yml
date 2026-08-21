@@ -15,6 +15,8 @@ docs_dir: docs
 theme:
   name: material
   language: en
+  logo: images/brand/kanors-logo-white.png
+  favicon: images/brand/kanors-favicon.png
   features:
     - navigation.tabs
     - navigation.tabs.sticky
@@ -34,15 +36,17 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
+      logo: images/brand/kanors-logo-white.png
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
+      logo: images/brand/kanors-logo-white.png
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -55,6 +59,10 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+
+# DEMO: homepage hero banner — revert per DEMO-HERO-BANNER.md
+extra_javascript:
+  - javascripts/hero-particles.js
 
 plugins:
   - search:
@@ -88,6 +96,18 @@ plugins:
             Items detail: 項目詳細
             Model Info: モデル情報
             Menu: メニュー
+            Excel Add-In: Excel アドイン
+            Installation: インストール
+            How we connect: 接続方法
+            How models are linked: モデルのリンク方法
+            Workbook recognition: ワークブックの認識
+            Features: 機能
+            Cell(s) Info: セル情報
+            Add Tag: タグの追加
+            Evaluate Row: 行の評価
+            Add Column Headers: 列ヘッダーの追加
+            About and help: バージョン情報とヘルプ
+            Where to find the logs: ログの場所
             Run and analyze: 実行と分析
             Run Manager: 実行マネージャー
             Results: 結果
@@ -139,6 +159,18 @@ plugins:
             Items detail: Détail des éléments
             Model Info: Informations sur le modèle
             Menu: Menu
+            Excel Add-In: Complément Excel
+            Installation: Installation
+            How we connect: Connexion
+            How models are linked: Liaison des modèles
+            Workbook recognition: Reconnaissance du classeur
+            Features: Fonctionnalités
+            Cell(s) Info: Informations sur les cellules
+            Add Tag: Ajouter une balise
+            Evaluate Row: Évaluer la ligne
+            Add Column Headers: Ajouter les en-têtes de colonnes
+            About and help: À propos et aide
+            Where to find the logs: Emplacement des journaux
             Run and analyze: Exécuter et analyser
             Run Manager: Gestionnaire d'exécution
             Results: Résultats
@@ -190,6 +222,18 @@ plugins:
             Items detail: Elementdetails
             Model Info: Modellinformationen
             Menu: Menü
+            Excel Add-In: Excel-Add-In
+            Installation: Installation
+            How we connect: Verbindung
+            How models are linked: Modellverknüpfung
+            Workbook recognition: Arbeitsmappen-Erkennung
+            Features: Funktionen
+            Cell(s) Info: Zelleninformation
+            Add Tag: Tag hinzufügen
+            Evaluate Row: Zeile auswerten
+            Add Column Headers: Spaltenüberschriften hinzufügen
+            About and help: Info und Hilfe
+            Where to find the logs: Protokolle finden
             Run and analyze: Ausführen und analysieren
             Run Manager: Run-Manager
             Results: Ergebnisse
@@ -241,6 +285,18 @@ plugins:
             Items detail: Detalle de elementos
             Model Info: Información del modelo
             Menu: Menú
+            Excel Add-In: Complemento de Excel
+            Installation: Instalación
+            How we connect: Conexión
+            How models are linked: Vinculación de modelos
+            Workbook recognition: Reconocimiento del libro
+            Features: Funciones
+            Cell(s) Info: Información de celdas
+            Add Tag: Añadir etiqueta
+            Evaluate Row: Evaluar fila
+            Add Column Headers: Añadir encabezados de columna
+            About and help: Acerca de y ayuda
+            Where to find the logs: Ubicación de los registros
             Run and analyze: Ejecutar y analizar
             Run Manager: Gestor de ejecución
             Results: Resultados
@@ -292,6 +348,18 @@ plugins:
             Items detail: 项目详情
             Model Info: 模型信息
             Menu: 菜单
+            Excel Add-In: Excel 加载项
+            Installation: 安装
+            How we connect: 连接方式
+            How models are linked: 模型链接
+            Workbook recognition: 工作簿识别
+            Features: 功能
+            Cell(s) Info: 单元格信息
+            Add Tag: 添加标签
+            Evaluate Row: 评估行
+            Add Column Headers: 添加列标题
+            About and help: 关于和帮助
+            Where to find the logs: 日志位置
             Run and analyze: 运行和分析
             Run Manager: 运行管理器
             Results: 结果
@@ -407,6 +475,20 @@ nav:
       - GAMS Engine credentials: trouble-gams-credentials.md
       - Problem with Microsoft Excel: trouble-excel-problem.md
       - Uninstalling Postgres: trouble-uninstall-postgres.md
+  - Excel Add-In:
+      - Introduction: excel-addin/index.md
+      - Installation: excel-addin/installation.md
+      - How we connect: excel-addin/how-we-connect.md
+      - How models are linked: excel-addin/how-models-are-linked.md
+      - Workbook recognition: excel-addin/workbook-recognition.md
+      - Features:
+          - Cell(s) Info: excel-addin/cell-info.md
+          - Add Tag: excel-addin/add-tag.md
+          - Evaluate Row: excel-addin/evaluate-row.md
+          - Add Column Headers: excel-addin/add-column-headers.md
+          - About and help: excel-addin/about-and-help.md
+      - Where to find the logs: excel-addin/logs.md
+      - Troubleshooting: excel-addin/troubleshooting.md
 
 extra:
   social:
