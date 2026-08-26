@@ -10,21 +10,17 @@ Version History
 
 **[Enhancements]**
 
-- Users can view the Jacobian list and open a selected analysis directly from Veda 2.0.
-- Parametric scenarios now support `RFCmd_*`, `CmdF_*`, `SFCmd_Top`, and `SFCmd_Bot` so VTRUN.cmd and related run-file commands can be controlled from Parscen. Regular-scenario RFCmd / CmdF values are no longer dropped when a parametric case is built. The case <case_name>_iedata.gdx file is included in the run zip.
-- Import of large parametric scenarios is faster. Work was driven by KiNESYS_AR6R10, where Parscen import became slow after a large scen_tsparameter file. 
+- Jacobian Analysis – Users can view the Jacobian list and open a selected analysis directly from Veda2.0.
+- RF/SFCmd Support in Parscen – Added support for RF/SFCmd commands in parametric scenarios and included the case IEDATA GDX file in the run package.
+- Parametric Scenario Performance – Improved the import performance of large parametric scenarios.
 
 **[Fixes]**
 
-- On servers that cannot reach the internet, Veda 2.0 could take several minutes to open (reported on the Serbian server). License validation now has a 5-second timeout, unused startup network requests are removed, and license and news checks run in the background. Users get immediate access from the local license while server validation continues. Server-side license deactivation is also asynchronous.
-
-- Run Status log values could stay empty after a case finished solving. Status is now written when the run completes.
-
-- The displayed count of parametric cases was wrong. The count now matches the cases that belong to the parametric group.
-
-- On Browse, scenario groups with the same name created by different users could not be told apart. Groups are now identified correctly per user.
-
-- Running several cases one after another could fail after the first case (reported by Steffen Dockweiler). The first run succeeded; later runs failed unless Max Runs was raised so each case used its own folder. Sequential runs no longer start while files from the previous case are still locked. `#33 (comment) <https://github.com/kanors-emr/Veda2.0-Installation/issues/33#issuecomment-2092375294>`_
+- Offline Startup Performance – Improved Veda2.0 startup on servers without Internet access by making license and network checks non-blocking.
+- Run Status Logging – Fixed an issue where Run Status values remained empty after a case completed successfully.
+- Parametric Case Count – Fixed incorrect parametric case counts to accurately reflect the cases in the parametric group.
+- Scenario Group Identification – Fixed Browse issues with distinguishing scenario groups having the same name but created by different users.
+- Sequential Model Runs – Fixed failures when running multiple cases sequentially by preventing subsequent runs from starting while files from the previous case are still locked. `#33 (comment) <https://github.com/kanors-emr/Veda2.0-Installation/issues/33#issuecomment-2092375294>`_
 
 
 4.3.3.0 [28Apr26]
