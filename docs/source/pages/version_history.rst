@@ -3,6 +3,30 @@ Version History
 ################
 
 
+4.4.0.0 [24Aug26]
+^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+**[Enhancements]**
+
+- Users can view the Jacobian list and open a selected analysis directly from Veda 2.0.
+- Parametric scenarios now support `RFCmd_*`, `CmdF_*`, `SFCmd_Top`, and `SFCmd_Bot` so VTRUN.cmd and related run-file commands can be controlled from Parscen. Regular-scenario RFCmd / CmdF values are no longer dropped when a parametric case is built. The case <case_name>_iedata.gdx file is included in the run zip.
+- Import of large parametric scenarios is faster. Work was driven by KiNESYS_AR6R10, where Parscen import became slow after a large scen_tsparameter file. 
+
+**[Fixes]**
+
+- On servers that cannot reach the internet, Veda 2.0 could take several minutes to open (reported on the Serbian server). License validation now has a 5-second timeout, unused startup network requests are removed, and license and news checks run in the background. Users get immediate access from the local license while server validation continues. Server-side license deactivation is also asynchronous.
+
+- Run Status log values could stay empty after a case finished solving. Status is now written when the run completes.
+
+- The displayed count of parametric cases was wrong. The count now matches the cases that belong to the parametric group.
+
+- On Browse, scenario groups with the same name created by different users could not be told apart. Groups are now identified correctly per user.
+
+- Running several cases one after another could fail after the first case (reported by Steffen Dockweiler). The first run succeeded; later runs failed unless Max Runs was raised so each case used its own folder. Sequential runs no longer start while files from the previous case are still locked. `#33 (comment) <https://github.com/kanors-emr/Veda2.0-Installation/issues/33#issuecomment-2092375294>`_
+
+
 4.3.3.0 [28Apr26]
 ^^^^^^^^^^^^^^^^^
 
@@ -11,7 +35,6 @@ Version History
 **[Fixes]**
 
 - Fixed issue regarding the ~TFM_FILL-R processing: Regular vs. Parametric Scenarios `[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1606>`_
-
 
 
 4.3.2.1 [15Apr26]
@@ -31,7 +54,6 @@ Version History
     * Region column header - TFM_INS-TS, FI_Comm 
     * Value column header - TFM_FILL-R, TFM_AVA
 
-
 **[Fixes]**
 
 - Added critical warnings and export option for duplicate process/commodity entries.
@@ -49,7 +71,6 @@ Version History
 - Reporting enhancements 
     * Introduced *grid_flows* variables in Reports
     * Improved *process_map* processing in Reports
-
 
 
 4.2.1.0 [19Oct25]
