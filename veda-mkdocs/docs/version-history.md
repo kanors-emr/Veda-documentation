@@ -2,13 +2,7 @@
 
 ## 4.4.0.0 [24Aug26]
 
-!!! note "License activation"
 
-    If the License Wizard shows *"The license key does not correspond
-    to the current version of your product"*, ignore the message and
-    click **Activate your license** to continue.
-
-    ![](images/license_wizard_version_mismatch.gif)
 
 **ALL VERSIONS**
 
@@ -38,6 +32,18 @@
     sequentially by preventing subsequent runs from starting while
     files from the previous case are still locked.
     [#33 (comment)](https://github.com/kanors-emr/Veda2.0-Installation/issues/33#issuecomment-2092375294){ target="_blank" rel="noopener noreferrer" }
+
+!!! note "License activation"
+
+    **⚠️Attention:** Users with an activated license, and users trying to upgrade
+    to this version(4.4.0.0) of the Veda2.0 application, will see this message.
+
+    The License Wizard shows *"The license key "XXXXX-XXXXX-XXXXX-XXXXX" does not correspond
+    to the current version of your product"*, ignore the message and
+    click **Activate your license** to continue.
+
+    ![](images/license_wizard_version_mismatch.gif)
+
 
 ## 4.3.3.0 [28Apr26]
 
