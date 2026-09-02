@@ -2,6 +2,14 @@
 
 ## 4.4.0.0 [24Aug26]
 
+!!! note "License activation"
+
+    If the License Wizard shows *"The license key does not correspond
+    to the current version of your product"*, ignore the message and
+    click **Activate your license** to continue.
+
+    ![](images/license_wizard_version_mismatch.gif)
+
 **ALL VERSIONS**
 
 **[Enhancements]**
