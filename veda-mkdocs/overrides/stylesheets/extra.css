@@ -163,93 +163,20 @@ label[for="__nav_10_6"] {
   clear: both;
 }
 
-/* --------------------------------------------------------------------------
- * Homepage hero banner (interactive particle network)
- * Revert: DEMO-HERO-BANNER.md | Re-apply: HERO-BANNER-IMPLEMENTATION.md
- * -------------------------------------------------------------------------- */
-
-.veda-hero-banner {
-  position: relative;
-  width: 100%;
-  min-height: 168px;
-  margin: 0 0 1.5rem;
-  border-radius: 16px;
-  overflow: hidden;
-  background: linear-gradient(
-    90deg,
-    #2A3E68 0%,
-    #FC8462 55%,
-    #F8B26A 100%
-  );
-}
-
-.veda-hero-banner__canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  pointer-events: auto;
-  z-index: 0;
-}
-
-.md-typeset h1.veda-hero-banner__title {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  padding: 2.5rem 2rem;
-  color: #ffffff;
-  opacity: 1;
-  font-size: 2em;
-  font-weight: 800;
-  line-height: 1.2;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45), 0 0 24px rgba(255, 255, 255, 0.12);
-  border: none;
-  pointer-events: none;
-}
-
-.md-content__inner.md-typeset:has(.veda-hero-banner) > h1:first-child {
+/* Header source widget is a docs-issue CTA, not a repo badge. */
+.md-header .md-source__facts {
   display: none;
 }
 
-[data-md-color-scheme="slate"] .veda-hero-banner {
-  background: linear-gradient(
-    90deg,
-    #2A3E68 0%,
-    #FC8462 55%,
-    #F8B26A 100%
-  );
-}
-
-@media screen and (max-width: 76.1875em) {
-  .veda-hero-banner {
-    min-height: 148px;
-  }
-
-  .md-typeset h1.veda-hero-banner__title {
-    padding: 2rem 1.5rem;
-    font-size: 1.75em;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .veda-hero-banner__canvas {
-    opacity: 0.9;
-  }
-}
-
-/* KanORS header logo — revert per DEMO-LOGO.md */
-/* Top header bar uses brand navy; theme.logo supplies white PNG via <img src> */
-.md-header__button.md-logo img,
-.md-nav__button.md-logo img {
-  height: 1.85rem;
+/* Show the full "Report a documentation issue" label (Material ellipsizes it). */
+.md-header__source {
   width: auto;
+  max-width: none;
 }
 
-/* Mobile drawer on light pages: dark logo on light background */
-:not([data-md-color-scheme="slate"]) .md-nav__button.md-logo img {
-  content: url("../images/brand/kanors-logo-black.png");
+.md-header .md-source__repository {
+  max-width: none;
+  overflow: visible;
+  text-overflow: unset;
+  white-space: nowrap;
 }
-
