@@ -527,6 +527,51 @@ selected (in addition to the other options you are using), and use this
 group for Ref runs. The casename.GDX file can also be used to freeze the
 solution up to a certain period.
 
+#### How to use
+
+1. Run a **Ref** case with **Save solution information** selected in
+    the properties group (add **Write B Price for Elastic Demands** if
+    you will need base prices later). That produces `casename_P.GDX`
+    and, if requested, `casename_DP.GDX`.
+2. Open or create the case that should reuse that solution.
+3. Next to **GDX References**, click **Open**. The **GDX references**
+    dialog lists GDX files from the current WrkTimes folder (files under
+    a `GAMSSAVE` path).
+4. If the files you need are not in that list, use **Select Folder** to
+    point at another work folder, or **AppData** to use the model’s
+    `AppData/GAMSSAVE` backup. All files you select must come from the
+    same folder.
+5. Use the tabs as needed (you can set more than one):
+
+    - **Use Solution** — select a GDX (`casename_P.GDX` or
+        `casename.GDX`). Set **Fix Years Upto** (step 6). Choose
+        **As Starting Point** (warm start) or **Reports Only**.
+    - **Elastic Demands** — select a `casename_DP.GDX` for base
+        prices.
+    - **IRE prices/bounds** — select a GDX and choose **Prices** or
+        **Bounds**.
+6. On **Use Solution**, set **Fix Years Upto** (TIMES `$SET FIXBOH` —
+    last year to freeze from the referenced GDX). This year is
+    **independent of the case Periods Definition**:
+
+    - Leave **None** (or empty) to use the GDX without fixing
+        beginning-of-horizon periods.
+    - Pick a suggested year from the list (milestone years of the
+        current **Periods Definition**, newest first), **or type any
+        integer year ≥ 1000** (for example `2105`, even if it is not
+        in the period definition).
+    - **Update** rejects anything other than **None** or an integer
+        ≥ 1000. A typed or saved year that is not in the current period
+        list is kept when you reopen the dialog, and is not cleared if
+        you only change a GDX file and click **Update**.
+7. Click **Update** to store the links, then **Save** the case.
+    **Apply** stays on while the case has GDX references.
+8. Solve the case.
+
+To clear the links, turn **Apply** off, or use **Remove** on the cases
+grid (see below). If a linked file is gone, the grid shows **Missing**
+or **Backup Available**.
+
 #### Managing GDX files
 
 **In version 3.1.1.0**, we have made a major change in GDX file
@@ -692,3 +737,4 @@ the Namespace and Model name, follow these steps:
 
 For more detailed guidance and an illustrative image, please refer to
 the provided [link](https://www.gams.com/engine/administration.html){ target="_blank" rel="noopener noreferrer" }.
+
