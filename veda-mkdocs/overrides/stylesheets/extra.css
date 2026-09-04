@@ -93,3 +93,21 @@
   margin-top: 0.75em;
   clear: both;
 }
+
+/* Header source widget is a docs-issue CTA, not a repo badge. */
+.md-header .md-source__facts {
+  display: none;
+}
+
+/* Show the full "Report a documentation issue" label (Material ellipsizes it). */
+.md-header__source {
+  width: auto;
+  max-width: none;
+}
+
+.md-header .md-source__repository {
+  max-width: none;
+  overflow: visible;
+  text-overflow: unset;
+  white-space: nowrap;
+}

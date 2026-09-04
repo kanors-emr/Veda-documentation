@@ -6,9 +6,9 @@ site_author: KanORS-EMR
 copyright: "© KanORS-EMR, 2026"
 site_url: https://kanors-emr.github.io/Veda-documentation/
 
-repo_url: https://github.com/kanors-emr/Veda2.0-Installation
-repo_name: kanors-emr/Veda2.0-Installation
-edit_uri: edit/master/docs/
+repo_url: https://github.com/kanors-emr/Veda-documentation/issues
+repo_name: Report a documentation issue
+edit_uri: ""
 
 docs_dir: docs
 
