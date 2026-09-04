@@ -694,7 +694,7 @@ Engine credentials.
 Users must enter their User Name and Password as provided by 'GAMS.' For
 the Namespace and Model name, follow these steps:
 
-- Launch the GAMS Engine UI.
+- Launch the [GAMS Engine UI](https://engine.gams.com/login){ target="_blank" rel="noopener noreferrer" }.
 - Navigate to the Namespaces tab.
 - Review the listed Namespaces and Models to find yours.
 - Ensure that your namespace and model name are correct.
@@ -717,24 +717,41 @@ the Namespace and Model name, follow these steps:
 
     !!! note "Note"
 
-        **DemoS_001** is a Veda model. You need to add TIMES
-        model source instead of Veda model. You can download the
-        latest TIMES model code from
+        Upload the **TIMES model source**, not a Veda model. For
+        example, **DemoS_001** is a Veda model used in Veda
+        cases — do **not** upload it here. Instead, upload the TIMES
+        model source code. You can download the latest version from
         [here](https://github.com/etsap-TIMES/TIMES_model/releases){ target="_blank" rel="noopener noreferrer" }.
 
         After downloading, replace the source folder files with
-        the new files. Do not change or remove the
-        **`times.gms`** file.
+        the new files. Do not remove the **`times.gms`** file,
+        but you can rename it.
+
+        You may use **any main file name** (not only
+        **`times.gms`**), provided that:
+
+        - the name is **strictly lowercase** (e.g. `abc.gms`);
+        - the file name in the TIMES source zip **must match** the
+          name you enter in the GAMS Engine (**Name of the main
+          file**) field below.
+
+        ![](images/gams_engineui_modelname_registration_2.png)
+
+        Examples: `ABC.gms` and `aBC_01.gms` are invalid;
+        `abc.gms` and `abc_01.gms` are valid.
 
     - **Identifier for the model** - Enter
-      `latest`
+      `latest` (you may use any model name, but it must match the
+      **Model** value in the Veda Application GAMS Engine credentials dialog below)
+
+        ![](images/gams_engine_credentials_model_highlight.png)
+
     - **Name of the main file** – Enter
-      `times.gms`
+      `times.gms` (lowercase letters only; no uppercase letters)
     - **Command line arguments** – Enter
       `idir1=source,idir2=model,fileCase=2`
 
     ![](images/gams_engineui_modelname_registration_filled.png)
 
-For more detailed guidance and an illustrative image, please refer to
-the provided [link](https://www.gams.com/engine/administration.html){ target="_blank" rel="noopener noreferrer" }.
-
+For more detailed guidance, see the
+[GAMS Engine documentation](https://www.gams.com/engine/administration.html){ target="_blank" rel="noopener noreferrer" }.

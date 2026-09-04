@@ -3,6 +3,26 @@ Version History
 ################
 
 
+4.4.0.0 [24Aug26]
+^^^^^^^^^^^^^^^^^
+
+**ALL VERSIONS**
+
+**[Enhancements]**
+
+- Jacobian Analysis – Users can view the Jacobian list and open a selected analysis directly from Veda2.0.
+- RF/SFCmd Support in Parscen – Added support for RF/SFCmd commands in parametric scenarios and included the case IEDATA GDX file in the run package.
+- Parametric Scenario Performance – Improved the import performance of large parametric scenarios.
+
+**[Fixes]**
+
+- Offline Startup Performance – Improved Veda2.0 startup on servers without Internet access by making license and network checks non-blocking.
+- Run Status Logging – Fixed an issue where Run Status values remained empty after a case completed successfully.
+- Parametric Case Count – Fixed incorrect parametric case counts to accurately reflect the cases in the parametric group.
+- Scenario Group Identification – Fixed Browse issues with distinguishing scenario groups having the same name but created by different users.
+- Sequential Model Runs – Fixed failures when running multiple cases sequentially by preventing subsequent runs from starting while files from the previous case are still locked. `#33 (comment) <https://github.com/kanors-emr/Veda2.0-Installation/issues/33#issuecomment-2092375294>`_
+
+
 4.3.3.0 [28Apr26]
 ^^^^^^^^^^^^^^^^^
 
@@ -11,7 +31,6 @@ Version History
 **[Fixes]**
 
 - Fixed issue regarding the ~TFM_FILL-R processing: Regular vs. Parametric Scenarios `[See Details] <https://forum.kanors-emr.org/showthread.php?tid=1606>`_
-
 
 
 4.3.2.1 [15Apr26]
@@ -31,7 +50,6 @@ Version History
     * Region column header - TFM_INS-TS, FI_Comm 
     * Value column header - TFM_FILL-R, TFM_AVA
 
-
 **[Fixes]**
 
 - Added critical warnings and export option for duplicate process/commodity entries.
@@ -49,7 +67,6 @@ Version History
 - Reporting enhancements 
     * Introduced *grid_flows* variables in Reports
     * Improved *process_map* processing in Reports
-
 
 
 4.2.1.0 [19Oct25]

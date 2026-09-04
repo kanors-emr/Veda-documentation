@@ -3,3 +3,4 @@ docs/build/
 veda-mkdocs/site/
 .cursor/
 
+/veda-mkdocs/site
