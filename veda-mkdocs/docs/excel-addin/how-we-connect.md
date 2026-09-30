@@ -26,5 +26,5 @@ If VEDA is closed, the port file is missing, or the API is unreachable, features
 
 1. VEDA 2.0 is open.
 2. Your model is imported in VEDA.
-3. Excel shows a model name on the **VEDA** ribbon (not `Model: (none)`), for a workbook saved under that model’s folders.
+3. Excel shows a model name on the **VEDA** ribbon (not `Model: (none)`). Under an imported model folder that name is the file’s model; on a Desktop or unsaved file it is the model open in VEDA ([Files outside the model](files-outside-the-model.md)).
 4. If something fails, confirm `%LocalAppData%\VEDA\assistant_api_port.txt` exists while VEDA is running.

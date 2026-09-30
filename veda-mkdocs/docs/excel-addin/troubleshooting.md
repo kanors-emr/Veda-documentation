@@ -10,15 +10,15 @@ Use this page for common problems.
 | Disabled by Excel? | Enable it from the Disabled Items list if present, then restart Excel. |
 | Excel restarted after install? | Fully quit Excel (all windows) and reopen. |
 
-## Ribbon shows `Model: (none)` or “import this model first”
+## Ribbon shows `Model: (none)` or “open a model”
 
 | Check | Action |
 |-------|--------|
-| Workbook saved? | Save the file under the model folder tree. Unsaved workbooks have no folder to match. |
-| Model imported in VEDA? | In VEDA 2.0, import the model that owns this folder, then retry in Excel. |
-| File under the right tree? | Open a workbook that lives inside the imported model’s directories, not a random copy elsewhere. |
+| Is VEDA running with a model open? | Start VEDA 2.0 and open a model, then retry. |
+| File under an imported model? | Open a workbook inside that model’s directories for Cell Info and folder-based linking. |
+| File on Desktop / unsaved? | Tag work uses the **open** VEDA model. See [Files outside the model](files-outside-the-model.md). |
 
-The add-in does not silently use the model selected in the VEDA UI. See [How models are linked](how-models-are-linked.md).
+For workbooks **under an imported model**, the add-in uses the folder match, not the VEDA window’s selected model. See [How models are linked](how-models-are-linked.md).
 
 ## Connection fails / features cannot reach VEDA
 
@@ -36,6 +36,8 @@ The add-in does not silently use the model selected in the VEDA UI. See [How mod
 | Correct folder? | Scenario files must sit in the folders VEDA expects for that type (same rules as VEDA 2.0). |
 | Correct filename? | Name must match the pattern for that scenario type. |
 | Footer / message | Add Tag may show “File not recognized — no tags available.” |
+
+A file **outside** the model folder (Desktop, unsaved) is not this case: it either lists tags for the scenario-like name, or all tags. See [Files outside the model](files-outside-the-model.md).
 
 See [Workbook recognition](workbook-recognition.md).
 

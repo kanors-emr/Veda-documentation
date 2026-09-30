@@ -481,6 +481,7 @@ nav:
       - How we connect: excel-addin/how-we-connect.md
       - How models are linked: excel-addin/how-models-are-linked.md
       - Workbook recognition: excel-addin/workbook-recognition.md
+      - Files outside the model: excel-addin/files-outside-the-model.md
       - Features:
           - Cell(s) Info: excel-addin/cell-info.md
           - Add Tag: excel-addin/add-tag.md

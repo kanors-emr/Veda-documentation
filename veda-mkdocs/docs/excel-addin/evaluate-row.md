@@ -2,7 +2,7 @@
 
 ## What it is for
 
-**Evaluate Row** reads the active cell’s tag table and the **current data row**, then shows context in the Add Tag task pane: which tag you are in, available attributes, and which **processes** and **commodities** match the filter values in that row’s process- and commodity-type columns.
+**Evaluate Row** reads the active cell’s tag table and the **current data row**, then shows context in the Add Tag task pane: which tag you are in, available attributes, and which **processes** and **commodities** match the filter values in that row’s process- and commodity-type columns. It works on tags already on the sheet even when those tags are not in the Add Tag list.
 
 Those filters define the scope for which flat-file data is associated with that tag row in the model. Use **Get Process** and **Get Commodity** to refresh the matching lists; use **Show mapping** to see the filter values collected from the row.
 
@@ -12,7 +12,8 @@ Those filters define the scope for which flat-file data is associated with that 
 |----------------|----------|
 | Classified and synced | Full evaluate on tag tables |
 | Classified, not synced | Allowed; status may show `Local file (not synced)` |
-| Not classified | Blocked |
+| Not classified (inside the model folder) | Blocked |
+| Outside the imported model | Allowed; members come from the model open in VEDA. See [Files outside the model](files-outside-the-model.md). |
 
 See [Workbook recognition](workbook-recognition.md).
 

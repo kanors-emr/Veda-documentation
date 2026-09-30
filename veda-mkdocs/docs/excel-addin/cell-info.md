@@ -4,7 +4,7 @@
 
 **Cell(s) Info** fetches flat-file data from the model for the cells you select in Excel and shows it in a **pivot** view. Use it to explore what lies behind values in a synced scenario workbook without leaving Excel.
 
-The workbook must be **classified** and **synced**. Unsynced or unrecognized files are blocked before any request. See [Workbook recognition](workbook-recognition.md).
+The workbook must be **classified** and **synced** under an imported model. Unsynced, unrecognized, or files outside the model folder are blocked before any request. See [Workbook recognition](workbook-recognition.md) and [Files outside the model](files-outside-the-model.md).
 
 ## Modes
 

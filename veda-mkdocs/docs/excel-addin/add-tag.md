@@ -15,9 +15,12 @@ Each open workbook gets its **own** Add Tag pane (independent state). Closing th
 
 ## How to use — insert a tag
 
-1. Connect to VEDA and open a **classified** scenario workbook ([Workbook recognition](workbook-recognition.md)).
+1. Connect to VEDA. For a classified scenario workbook see [Workbook recognition](workbook-recognition.md); for a file outside the model folder see [Files outside the model](files-outside-the-model.md).
 2. Choose **Add Tag** from the **VEDA** ribbon or right-click menu (or use the **Add Tag** mode button in the pane).
-3. In the tag list, pick a tag. The list depends on whether the file is synced (tags for this workbook) or only classified (tags for that file type). Unrecognized files show an empty list.
+3. In the tag list, pick a tag.
+    - Under an imported model: synced files show tags for this workbook; classified-only files show tags for that file type; unrecognized names show an empty list.
+    - Outside the model: a scenario-like file name shows tags for that type; any other name shows all tags with columns.
+    - A few tags are left off the list (they are not offered for new tables). **Evaluate Row** still works if those tags are already on the sheet.
 4. The add-in writes `~TagName` and a header row at the active cell, then selects the first data cell.
 
     ![Add Tag task pane with a tag table on the sheet](../images/excel-addin/excel-addin_add-tag-pane.png)

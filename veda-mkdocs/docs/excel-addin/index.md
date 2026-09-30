@@ -17,7 +17,7 @@ Commands appear in two places and do the same things:
 - VEDA Excel Add-In installed and loaded ([Installation](installation.md) — from the **VedaExcelAddOnItemsView** `.vsto` shipped with VEDA 2.0)
 - **VEDA 2.0** running on the same machine, with your model imported
 
-You do not use the add-in without VEDA 2.0. Connection details are in [How we connect](how-we-connect.md).
+You do not use the add-in without VEDA 2.0. Connection details are in [How we connect](how-we-connect.md). How the open workbook is tied to a model is in [How models are linked](how-models-are-linked.md). You can also insert and evaluate tag tables on a file that is **not** under a model folder; see [Files outside the model](files-outside-the-model.md).
 
 ## Ribbon layout
 
