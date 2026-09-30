@@ -1,5 +1,50 @@
 # Version History
 
+## 4.4.0.0 [24Aug26]
+
+
+
+**ALL VERSIONS**
+
+**[Enhancements]**
+
+- Jacobian Analysis – Users can view the Jacobian list and open a
+    selected analysis directly from Veda2.0.
+- RF/SFCmd Support in Parscen – Added support for RF/SFCmd commands
+    in parametric scenarios and included the case IEDATA GDX file in
+    the run package.
+- Parametric Scenario Performance – Improved the import performance
+    of large parametric scenarios.
+
+**[Fixes]**
+
+- Offline Startup Performance – Improved Veda2.0 startup on servers
+    without Internet access by making license and network checks
+    non-blocking.
+- Run Status Logging – Fixed an issue where Run Status values
+    remained empty after a case completed successfully.
+- Parametric Case Count – Fixed incorrect parametric case counts to
+    accurately reflect the cases in the parametric group.
+- Scenario Group Identification – Fixed Browse issues with
+    distinguishing scenario groups having the same name but created
+    by different users.
+- Sequential Model Runs – Fixed failures when running multiple cases
+    sequentially by preventing subsequent runs from starting while
+    files from the previous case are still locked.
+    [#33 (comment)](https://github.com/kanors-emr/Veda2.0-Installation/issues/33#issuecomment-2092375294){ target="_blank" rel="noopener noreferrer" }
+
+!!! note "License activation"
+
+    **⚠️Attention:** Users with an activated license, and users trying to upgrade
+    to this version(4.4.0.0) of the Veda2.0 application, will see this message.
+
+    The License Wizard shows *"The license key "XXXXX-XXXXX-XXXXX-XXXXX" does not correspond
+    to the current version of your product"*, ignore the message and
+    click **Activate your license** to continue.
+
+    ![](images/license_wizard_version_mismatch.gif)
+
+
 ## 4.3.3.0 [28Apr26]
 
 **ALL VERSIONS**
