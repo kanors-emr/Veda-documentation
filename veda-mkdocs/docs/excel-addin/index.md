@@ -21,14 +21,16 @@ You do not use the add-in without VEDA 2.0. Connection details are in [How we co
 
 ## Ribbon layout
 
-The **VEDA** tab is organized into four groups:
+The **VEDA** tab is organized into six groups:
 
-1. **Tag model info**
+1. **Cell Info**
     - **Cell(s) Info** — explore flat-file data for the selection in a pivot view
     - **By Row** / **By Column** — same pivot view for an entire row or column within the current table region
-    - **Evaluate Row** — check which processes and commodities match the filter values in the active tag row
-2. **Tag tables**
+2. **Evaluate Row** — check which processes and commodities match the filter values in the active tag row
+3. **Tag tables**
     - **Add Tag** — insert tag tables on the sheet
     - **Add Column Headers** — add missing column headers
-3. **About** — who provides the add-in and basic requirements
-4. **Session** — connection status (**Connected**), add-in version, and linked model name (**Model: …**)
+    - **Add Process Set** / **Add Commodity Set** — append sets to `pset_set` or `cset_set` on the active tag row ([Add Process / Commodity Set](add-set.md))
+4. **About** — who provides the add-in and basic requirements
+5. **Session** — connection status (**Connected**), add-in version, and linked model name (**Model: …**)
+6. **Fill colors** — key for empty required cells (light red) and empty value cells (light gray) ([Fill colors](fill-colors.md))

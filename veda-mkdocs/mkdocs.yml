@@ -487,6 +487,8 @@ nav:
           - Add Tag: excel-addin/add-tag.md
           - Evaluate Row: excel-addin/evaluate-row.md
           - Add Column Headers: excel-addin/add-column-headers.md
+          - Add Process / Commodity Set: excel-addin/add-set.md
+          - Fill colors: excel-addin/fill-colors.md
           - About and help: excel-addin/about-and-help.md
       - Where to find the logs: excel-addin/logs.md
       - Troubleshooting: excel-addin/troubleshooting.md
