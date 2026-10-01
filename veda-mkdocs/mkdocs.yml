@@ -59,6 +59,7 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/hero-banner.css
 
 # DEMO: homepage hero banner — revert per DEMO-HERO-BANNER.md
 extra_javascript:
