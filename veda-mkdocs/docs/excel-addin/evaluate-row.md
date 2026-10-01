@@ -30,6 +30,25 @@ See [Workbook recognition](workbook-recognition.md).
 
 The context menu exposes **Evaluate Row** only; Get Process and Get Commodity are buttons inside the pane.
 
+## Topology
+
+The **Topology** checkbox sits in **Process & Commodity**, beside **Get Process** and **Get Commodity**. It is on by default. Resetting the pane turns it back on.
+
+| Topology | What Get Process / Get Commodity do |
+|----------|-------------------------------------|
+| On | Use this row’s `top_check` or `top_chk`, and only when the other side of the row also has a value |
+| Off | Process and commodity filters stay independent |
+
+With the checkbox on:
+
+| Cell | Effect |
+|------|--------|
+| Column missing | **all** (input or output links) |
+| **in** | Input links only |
+| **out** | Output links only |
+| **all** | Either |
+| Empty or **No** | No topology filter |
+
 ## Orange outline
 
 **Evaluate Row**, **Get Process**, and **Get Commodity** outline the active **data row** of the resolved tag table in orange (full width of the header row). Closing or hiding the pane, switching mode, resetting the pane, or changing sheet clears the outline. Only one orange outline exists at a time; opening **Cell(s) Info** replaces it with that feature’s own range outline.
