@@ -1,8 +1,35 @@
 # Version History
 
+## 4.5.0.0 [22Sep26]
+
+!!! important "Final Release of Major Version 4.0"
+    
+    This is the **final release of Major Version 4.0**.
+    
+    Users whose license maintenance expired **on or before September 24, 2026**, should continue using this version.
+    
+    **Major Version 5.0 and later releases** are available only to users with license maintenance active **after September 24, 2026**.
+    
+    Users are advised to verify their license maintenance validity before upgrading to Major Version 5.0.
+
+**ALL VERSIONS**
+
+**[Enhancements]**
+
+- Pivot Chart Improved – Pivot charts now include Line, Bar, and Area, plus stacked versions of each. Mouseover tooltips are available on all chart types. The legend is off by default, plot-area margins are improved, and Y-axis labels are horizontal. The settings panel no longer shows Orientation, Data by Rows and Columns, or chart title options. The legend can be scrolled, and clicking a legend entry toggles that series. 
+- Consistent Tab Footer – Application tabs use the same footer, including a link to the model folder.
+- FIXBOH Validation – FIXBOH is no longer limited to years in the Veda period set. Any integer year can be entered, matching TIMES. Changing the period definition no longer clears a FIXBOH year that is still valid.
+
+**[Fixes]**
+
+- Navigator Freeze – Navigator could freeze while a model was being added. The add-model flow no longer blocks the UI in that way.
+- GAMS Engine Submission Issue – Upgraded the GAMS Engine C# client
+- ProcessAVATag Incremental Sync – On large models, ProcessAVATag could take 8-19 minutes per SubRES scenario on an incremental sync, scaling with the number of ~TFM_AVA rows rather than with data volume. A fresh import of the same AVA tags finished in seconds. Incremental AVA processing no longer pays that per-row penalty on a previously synced database.
+- Trade Rows Deleted on commodity2 QC – Sync QC step validated commodity2 against region1 instead of region2. Valid IRE_FLO, IRE_CCVT, and GR_PTDF rows were then deleted silently (logged only as "Commodity2 is invalid" in deleted_from_flat_file). Commodity2 is accepted if it exists in region1 or region2. COM_AGG, VDA_EMCB, and the other single-region commodity2 attributes are unchanged.
+- Non-binding UC_RHS Dummy Commodities – One UC_RHS* row with lim_type N in any region or scenario removed that UC's dummy commodities from every region and every scenario. Binding UC_RHS in other scenarios then hit domain violations, so a UC could not be switched between binding and non-binding. Dummy commodities stay in the domain; non-binding suppression is no longer applied model-wide from a single N row.
+
+
 ## 4.4.0.0 [24Aug26]
-
-
 
 **ALL VERSIONS**
 
