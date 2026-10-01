@@ -25,9 +25,8 @@ For workbooks **under an imported model**, the add-in uses the folder match, not
 | Check | Action |
 |-------|--------|
 | Is VEDA 2.0 running? | Start VEDA and leave it open. |
-| Port file present? | Confirm `%LocalAppData%\VEDA\assistant_api_port.txt` exists while VEDA is running. |
 | Restart both? | Close Excel and VEDA, start VEDA first, then Excel. |
-| Still failing? | Collect `%LocalAppData%\VEDA\addin.log` ([Logs](logs.md)). |
+| Still failing? | Collect the day’s log, `%LocalAppData%\VEDA\addin-yyyy-MM-dd.log` ([Logs](logs.md)). |
 
 ## File not recognized / empty tag list
 
@@ -55,7 +54,7 @@ The active cell lies in more than one overlapping tag table region.
 | Check | Action |
 |-------|--------|
 | Overlapping `~` tables? | Move tables apart or clear overlapping blocks so only one tag region contains the cell. |
-| Nested tags? | Avoid placing one tag table inside another’s current region. |
+| Nested tags? | Do not nest one tag table inside another. The add-in reports **Tag In Tag** when the active cell belongs to more than one tag table ([Add Tag](add-tag.md)). |
 
 ## “No tag table contains the active cell”
 

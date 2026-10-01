@@ -32,5 +32,7 @@ The **VEDA** tab is organized into six groups:
     - **Add Column Headers** — add missing column headers
     - **Add Process Set** / **Add Commodity Set** — append sets to `pset_set` or `cset_set` on the active tag row ([Add Process / Commodity Set](add-set.md))
 4. **About** — who provides the add-in and basic requirements
-5. **Session** — connection status (**Connected**), add-in version, and linked model name (**Model: …**)
+5. **Session** ([How we connect](how-we-connect.md))
+    - Connection — **Connected** or **Not Connected**, and **Model: …**
+    - **Version** — a separate line for compatibility (ok, or upgrade the add-in or VEDA)
 6. **Fill colors** — key for empty required cells (light red) and empty value cells (light gray) ([Fill colors](fill-colors.md))

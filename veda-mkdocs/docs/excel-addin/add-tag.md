@@ -10,7 +10,8 @@ Each open workbook gets its **own** Add Tag pane (independent state). Closing th
 
 - A tag cell starts with `~` followed by the tag name (for example `~FI_T`).
 - The **header row** is the row **immediately below** the `~` cell.
-- The add-in treats each tag’s Excel current region as one table block and finds which block contains the active cell.
+- Column headers are the contiguous non-empty cells on that header row, found by walking left and right from the tag column until a blank cell.
+- A title in another column on another row (for example a section title beside the tag) does not shrink or shift that header range.
 - If the active cell sits in **more than one** overlapping tag table, you get a **Tag In Tag** error. Separate or adjust tables so only one applies.
 
 ## How to use — insert a tag
@@ -28,6 +29,20 @@ Each open workbook gets its **own** Add Tag pane (independent state). Closing th
 5. Use the **Attributes** section to choose attributes. **Process & Commodity** starts collapsed after insert so you can pick attributes first; expand it when you need process/commodity tools.
 
 Sections use accordion expanders (**Attributes**, **Process & Commodity**). **Show mapping** opens a popup of the current row’s process/commodity filter values.
+
+## Expanded value headers
+
+For some tags, **Add Tag** writes member names as the value headers. Those headers sit at the right of the default columns.
+
+| Tags | What is written |
+|------|-----------------|
+| `tfm_ins`, `tfm_dins`, `tfm_upd` | Endogenous region names (no `value` column) |
+| `tfm_ins-ts`, `tfm_dins-ts`, `tfm_upd-ts` | Milestone years, and one `region` column |
+| `tfm_ins-tsl`, `tfm_dins-tsl` | Time-slice names, and one `region` column |
+
+If the model has no matching members, the original header is left as-is.
+
+Empty required dimension cells are light red. Empty value cells (including these expanded headers) are light gray. See [Fill colors](fill-colors.md).
 
 ## Typing an attribute in the sheet
 
