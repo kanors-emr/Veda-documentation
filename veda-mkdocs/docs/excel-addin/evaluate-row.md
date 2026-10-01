@@ -32,21 +32,22 @@ The context menu exposes **Evaluate Row** only; Get Process and Get Commodity ar
 
 ## Topology
 
+`top_check` (alias `top_chk`) keeps a process–commodity pair only when the model topology already links them. **in** keeps input links, **out** keeps output links, and **all** keeps either. An empty cell or **No** turns that filter off, so the process and commodity filters stay independent.
+
 The **Topology** checkbox sits in **Process & Commodity**, beside **Get Process** and **Get Commodity**. It is on by default. Resetting the pane turns it back on.
 
 | Topology | What Get Process / Get Commodity do |
 |----------|-------------------------------------|
-| On | Use this row’s `top_check` or `top_chk`, and only when the other side of the row also has a value |
+| On | Use this row’s `top_check` or `top_chk`, and only when the other side of the row also has a value. If that column is missing, both input and output links are kept. |
 | Off | Process and commodity filters stay independent |
 
 With the checkbox on:
 
 | Cell | Effect |
 |------|--------|
-| Column missing | **all** (input or output links) |
 | **in** | Input links only |
 | **out** | Output links only |
-| **all** | Either |
+| **all**, or any other value | Either |
 | Empty or **No** | No topology filter |
 
 ## Orange outline
