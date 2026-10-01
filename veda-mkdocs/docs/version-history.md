@@ -1,5 +1,19 @@
 # Version History
 
+## 5.0.0.0 [30Sep26]
+
+**ALL VERSIONS**
+
+**[New Features]**
+
+- VEDA 2.0 Excel Add-In Integration
+
+    Introduced the new **VEDA 2.0 Excel Add-In** in version **5.0.0.0**, enabling users to manage, validate, and interact with VEDA model input tables directly within Microsoft Excel.
+
+    The add-in supports **VEDA tag functionality**, simplifies table editing, improves syntax validation, and helps streamline data synchronization with VEDA 2.0.
+
+    Users are encouraged to try the new Excel Add-In and share any questions, feedback, or issues with us at **support@kanors.com** or **deepak@kanors.com**.
+
 ## 4.5.0.0 [22Sep26]
 
 !!! important "Final Release of Major Version 4.0"
