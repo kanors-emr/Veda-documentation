@@ -6,7 +6,7 @@ Use this page for common problems.
 
 | Check | Action |
 |-------|--------|
-| Add-in installed? | Install from the **VedaExcelAddOnItemsView** `.vsto` in your VEDA 2.0 package ([Installation](installation.md)). Confirm it appears under Excel **File → Options → Add-ins** (COM / disabled items). |
+| Add-in installed? | Install from `VedaExcelAddIn_<version>.zip` on the VEDA 2.0 release ([Installation](installation.md)). Confirm it appears under Excel **File → Options → Add-ins** (COM / disabled items). |
 | Disabled by Excel? | Enable it from the Disabled Items list if present, then restart Excel. |
 | Excel restarted after install? | Fully quit Excel (all windows) and reopen. |
 
