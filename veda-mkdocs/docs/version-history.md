@@ -759,7 +759,7 @@
 
 - Menu layout enhanced for convenience in Results module.
 
-## 243 [25Oct21]
+## 1.243 [25Oct21]
 
 **ALL VERSIONS**
 
@@ -773,14 +773,14 @@
   can be used create timeslice aggregations. For example, months
   and hours can be different dimensions.
 
-## 242 [27Sep21]
+## 1.242 [27Sep21]
 
 **ALL VERSIONS**
 
 - [BugFix] related to lower case in Super-region name; introduced
     in version 241.
 
-## 241 [25Sep21]
+## 1.241 [25Sep21]
 
 **ALL VERSIONS**
 
@@ -809,7 +809,7 @@
 
 - Several enhancements in Reports processing.
 
-## 239 [23Aug21]
+## 1.239 [23Aug21]
 
 **ALL VERSIONS**
 
@@ -823,7 +823,7 @@
 - Reporting of duplicate declarations improved (Information >
     Model > Manage Duplicates)
 
-## 238 [07Aug21]
+## 1.238 [07Aug21]
 
 **ALL VERSIONS**
 
@@ -838,7 +838,7 @@
 - TS_Defs tag supports fields "show_me" and "discard" to give more
     control over aggregations
 
-## 237 [23Jul21]
+## 1.237 [23Jul21]
 
 **ALL VERSIONS**
 
@@ -850,7 +850,7 @@
 - Additional dimensions don't need the source dimensions in "group
     by" anymore
 
-## 236 [17Jul21]
+## 1.236 [17Jul21]
 
 **ALL VERSIONS**
 
@@ -870,7 +870,7 @@
 
 - perCapita and perGDP reporting
 
-## 234 [26Jun21]
+## 1.234 [26Jun21]
 
 **ALL VERSIONS**
 
@@ -889,7 +889,7 @@
 
 - Report browser enhancements
 
-## 233 [07Jun21]
+## 1.233 [07Jun21]
 
 **ALL VERSIONS**
 
@@ -908,7 +908,7 @@
 
 - Report creation process smoother
 
-## 231 [17Apr21]
+## 1.231 [17Apr21]
 
 **ALL VERSIONS**
 
@@ -930,7 +930,7 @@
 
 - **Major update in default layout of Reports**
 
-## 230 [31Mar21]
+## 1.230 [31Mar21]
 
 **ALL VERSIONS**
 
@@ -941,14 +941,14 @@
 - **Default layout settings enhanced (further) for pivot grids in
     all modules**
 
-## 227 [12Mar21]
+## 1.227 [12Mar21]
 
 **ALL VERSIONS**
 
 - Default layout settings enhanced for pivot grids in all modules
 - Layouts can be saved with names in Browse
 
-## 225 [05Mar21]
+## 1.225 [05Mar21]
 
 **ALL VERSIONS**
 
@@ -961,7 +961,7 @@
 - **Layout can be saved with names in Browse**
 - **Item details pivot layout is saved, like ExRES**
 
-## 219 [20Feb21]
+## 1.219 [20Feb21]
 
 **ALL VERSIONS**
 
@@ -986,7 +986,7 @@
 - **Scenario groups (from Run manager) available to filter scenarios
     in Browse (like process/commodity sets)**
 
-## 213 [25Jan21]
+## 1.213 [25Jan21]
 
 - Debug: ExRes layout
 - Run manager: Filter added for GDX file lists
@@ -998,7 +998,7 @@
 - Default TS for STG_CHRG = ANNUAL
 - Added a few missing attributes and set TS_OFF
 
-## 205 [06Jan21]
+## 1.205 [06Jan21]
 
 - Bugfix: user-defined sets, as set specification for other set,
     were not working in the new sets editor functionality.
@@ -1010,7 +1010,7 @@
 - **Pop-ups from the auxiliary EXEs, after run completion, have been
     suppressed.**
 
-## 202 [25Dec20]
+## 1.202 [25Dec20]
 
 - **Veda.FrontEnd.exe has been renamed as Veda2.0.exe**
 - Sets Browser: Processes and Commodities on different tabs
@@ -1027,13 +1027,13 @@
     creation/editing/copying of sets. Definitions in Excel file are
     updated seamlessly.**
 
-## 197 [12Dec20]
+## 1.197 [12Dec20]
 
 - Attribute **RFCmd_bot** added to introduce GAMS commands at the
     bottom of RUN files
 - **Element descriptions on mouseover in Results pivot grids**
 
-## 196 [06Dec20]
+## 1.196 [06Dec20]
 
 - Bugfix: Information - Model - tag details had duplication
 - **RFCmd* and SFCmd* attributes can introduce GAMS code in RUN
@@ -1045,7 +1045,7 @@
 - Information - TIMES attributes updated to the current version of
     documentation
 
-## 194 [02Dec20]
+## 1.194 [02Dec20]
 
 - Bugfix: using ENDYEAR with the new ~Milestoneyears tag was
     producing a "0" in list of periods
@@ -1061,7 +1061,7 @@
 - NSV candidates reporting improved; Open File button added
 - Arrow keys supported in PivotGrid
 
-## 189 [21Nov20]
+## 1.189 [21Nov20]
 
 - Bugfix: Processes no longer required to be in .VDS files
 - Bugfix: TS filtering (year2=0/1) was not able to ignore records
@@ -1078,7 +1078,7 @@
 - **Units handling in Results [See ~UnitConversion table on
     Defaults sheet in SysSettings - DemoS models]**
 
-## 182 [07Nov20]
+## 1.182 [07Nov20]
 
 - Bugfix: bilateral trade processes with reg1=reg2 were getting
     deleted.
@@ -1093,7 +1093,7 @@
 - **Run manager now reports key solution metrics after runs
     finish.**
 
-## 178 [28Oct20]
+## 1.178 [28Oct20]
 
 - Added validations for Gams source folder selected for cases.
 - ExRes works from pivot grid in Results.
@@ -1110,14 +1110,14 @@
     S, and scenarios A and C, then the value from scenario A will be
     selected.
 
-## 173 [20Oct20]
+## 1.173 [20Oct20]
 
 - New feature: Tools - Sync AppData folder, to import/export results
     table definitions, scenario groups and cases from other users.
 - New feature: Direct specification of MILESTONEYEARS via new tags
     ~MileStoneYears and ~EndYear (optional), in SysSettings.
 
-## 172 [16Oct20]
+## 1.172 [16Oct20]
 
 - Bugfix: Results - batch export Excel file was locked in some
     cases.
@@ -1129,7 +1129,7 @@
 - UPD, MIG and FILL tags can handle complex operands now (*-1,
     *0,25, for example)
 
-## 168 [10Oct20]
+## 1.168 [10Oct20]
 
 - Bugfix: all but BY templates turned "not imported" after renaming
     scenario files.
@@ -1147,14 +1147,14 @@
     Excel file.
 - No empty cells in Row header section of Excel export.
 
-## 161 [24Sep20]
+## 1.161 [24Sep20]
 
 - Bugfix: Process column was not showing the right values in
     AttributeMaster.
 - "Add new" button added in "Model" menu.
 - Delete for saved layouts of Results added on UserOptions form.
 
-## 159 [19Sep20]
+## 1.159 [19Sep20]
 
 - Results: Tool tip on scenario list: Date | VD file path | Model |
     User | Study.
@@ -1163,7 +1163,7 @@
 - UI refinements in Run Manager, Navigator and Attributes master.
 - Known bug: Add dimension combo on Browse gets duplicate entries.
 
-## 155 [13Sep20]
+## 1.155 [13Sep20]
 
 - Combos for scenario groups on run manager, and on case definition
     form, now work as a filter box.
@@ -1172,7 +1172,7 @@
 - Dependency check form debugged.
 - Attribute master revamped.
 
-## 154 [08Sep20]
+## 1.154 [08Sep20]
 
 - bugfix: Trade processes with multiple commodity types were getting
     multiple PCGs. Now they are assigned in the following priority
@@ -1181,14 +1181,14 @@
 - Sets browser introduced under Tools menu.
 - Model tags details enhanced (under Information - Model menu).
 
-## 152 [05Sep20]
+## 1.152 [05Sep20]
 
 - bugfix: TFM_AVA-C had introduced case-sensitivity in commodities.
 - batch export (CSV and Excel) for Results
 - All layout changes in Results, Navigator and Run manager are
     retained, across Veda updates as well.
 
-## 148 [29Aug20]
+## 1.148 [29Aug20]
 
 - TFM_AVA-C supported
 - User-defined CG recognized as valid commodity names by Veda (no
@@ -1199,14 +1199,14 @@
 - `<Model>`Appdatafolder has priority over the Resource folder for
     solver options files
 
-## 145 [25Aug20]
+## 1.145 [25Aug20]
 
 - bugfix: * as the first character in PSET_PN was ignoring rows in
     TFM_PSET; it applies only to SetName col.
 - Several UI improvements
 - Configuration of the dimension lists in Results section is saved
 
-## 143 over 139 [22Aug20]
+## 1.143 over 1.139 [22Aug20]
 
 - Several UI changes in Run manager and Results
 - Icon on "New" button in navigator
