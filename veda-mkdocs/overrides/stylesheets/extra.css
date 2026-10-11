@@ -193,3 +193,55 @@ label[for="__nav_10_6"] {
 :not([data-md-color-scheme="slate"]) .md-nav__button.md-logo img {
   content: url("../images/brand/kanors-logo-black.png");
 }
+
+/* Supported-versions popup on the Excel add-in installation page. */
+.veda-supported-dialog {
+  position: relative;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.1rem 0.55rem;
+  max-width: 40rem;
+  width: calc(100% - 2rem);
+}
+
+.veda-supported-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.veda-supported-dialog form {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.4rem;
+  margin: 0;
+}
+
+.veda-supported-dialog__close {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 1.35rem;
+  line-height: 1;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  cursor: pointer;
+}
+
+.md-typeset .veda-supported-dialog > p {
+  margin: 0 1.5rem 0.25rem 0;
+}
+
+.md-typeset .veda-supported-dialog > p + p {
+  margin: 0 0 0.35rem;
+}
+
+.md-typeset .veda-supported-dialog table {
+  margin: 0.35rem 0 0;
+  margin-bottom: 0;
+}
+
+.md-typeset .veda-supported-dialog th,
+.md-typeset .veda-supported-dialog td {
+  padding-top: 0.35em;
+  padding-bottom: 0.35em;
+}

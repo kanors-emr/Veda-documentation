@@ -6,9 +6,59 @@ Install the VEDA Excel Add-In on a PC that already has Microsoft Excel. The add-
 
 ## What you need
 
-- Microsoft Excel 2016 or later
-- The **VedaExcelAddOnItemsView** install folder from your VEDA 2.0 package (the folder that contains the `.vsto` installer)
+- Microsoft Excel 2016 or later ([check supported version](#veda-supported-versions))
+- `VedaExcelAddIn_<version>.zip` from the VEDA 2.0 GitHub release (with VEDA 5.0.0.0 this is `VedaExcelAddIn_1.0.0.20.zip`)
 - Permission to install software for your Windows user (ClickOnce / VSTO install)
+
+<div markdown="0">
+<dialog id="veda-supported-versions" class="veda-supported-dialog">
+  <form method="dialog">
+    <button class="veda-supported-dialog__close" type="submit" aria-label="Close">&times;</button>
+  </form>
+  <p><strong>Supported versions</strong></p>
+  <p>Tested combinations for Microsoft Excel 2016 or later.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Windows</th>
+        <th>Excel versions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Windows 11</td>
+        <td>Excel 2016, 2019, 2021, 2024, and Microsoft 365</td>
+      </tr>
+      <tr>
+        <td>Servers 2019</td>
+        <td>Excel 2016, 2019, 2021, 2024, and Microsoft 365</td>
+      </tr>
+      <tr>
+        <td>Servers 2022</td>
+        <td>Excel 2016, 2019, 2021, 2024, and Microsoft 365</td>
+      </tr>
+    </tbody>
+  </table>
+</dialog>
+<script>
+(function () {
+  var link = document.querySelector('a[href="#veda-supported-versions"]');
+  var dialog = document.getElementById("veda-supported-versions");
+  if (!link || !dialog || !dialog.showModal) {
+    return;
+  }
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+    dialog.showModal();
+  });
+  dialog.addEventListener("click", function (event) {
+    if (event.target === dialog) {
+      dialog.close();
+    }
+  });
+})();
+</script>
+</div>
 
 ## How to install
 
