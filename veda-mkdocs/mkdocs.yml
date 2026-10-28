@@ -64,6 +64,7 @@ extra_css:
 # DEMO: homepage hero banner — revert per DEMO-HERO-BANNER.md
 extra_javascript:
   - javascripts/hero-particles.js
+  - _static/smooth-anchor.js
 
 plugins:
   - search:
@@ -141,6 +142,7 @@ plugins:
             GAMS Engine credentials: GAMS Engine 認証情報
             Problem with Microsoft Excel: Microsoft Excel の問題
             Uninstalling Postgres: Postgres のアンインストール
+            PostgreSQL - Specified Port Number is Not Available: PostgreSQL ポートが使用できません
         - locale: fr
           name: Français
           build: true
@@ -204,6 +206,7 @@ plugins:
             GAMS Engine credentials: Identifiants GAMS Engine
             Problem with Microsoft Excel: Problème avec Microsoft Excel
             Uninstalling Postgres: Désinstallation de Postgres
+            PostgreSQL - Specified Port Number is Not Available: Port PostgreSQL indisponible
         - locale: de
           name: Deutsch
           build: true
@@ -267,6 +270,7 @@ plugins:
             GAMS Engine credentials: GAMS-Engine-Anmeldedaten
             Problem with Microsoft Excel: Problem mit Microsoft Excel
             Uninstalling Postgres: Postgres deinstallieren
+            PostgreSQL - Specified Port Number is Not Available: PostgreSQL-Port nicht verfügbar
         - locale: es
           name: Español
           build: true
@@ -330,6 +334,7 @@ plugins:
             GAMS Engine credentials: Credenciales de GAMS Engine
             Problem with Microsoft Excel: Problema con Microsoft Excel
             Uninstalling Postgres: Desinstalación de Postgres
+            PostgreSQL - Specified Port Number is Not Available: Puerto de PostgreSQL no disponible
         - locale: zh
           name: 中文
           build: true
@@ -393,6 +398,7 @@ plugins:
             GAMS Engine credentials: GAMS Engine 凭据
             Problem with Microsoft Excel: Microsoft Excel 问题
             Uninstalling Postgres: 卸载 Postgres
+            PostgreSQL - Specified Port Number is Not Available: PostgreSQL 端口不可用
 
 markdown_extensions:
   - abbr
@@ -476,6 +482,7 @@ nav:
       - GAMS Engine credentials: trouble-gams-credentials.md
       - Problem with Microsoft Excel: trouble-excel-problem.md
       - Uninstalling Postgres: trouble-uninstall-postgres.md
+      - PostgreSQL - Specified Port Number is Not Available: trouble-postgres-port.md
   - Excel Add-In:
       - Introduction: excel-addin/index.md
       - Installation: excel-addin/installation.md
