@@ -114,7 +114,6 @@ plugins:
             Run Manager: 実行マネージャー
             Results: 結果
             Reports: レポート
-            Tags: タグ
             Overview: 概要
             System settings: システム設定
             RES templates: RES テンプレート
@@ -178,7 +177,6 @@ plugins:
             Run Manager: Gestionnaire d'exécution
             Results: Résultats
             Reports: Rapports
-            Tags: Balises
             Overview: Aperçu
             System settings: Paramètres système
             RES templates: Modèles RES
@@ -242,7 +240,6 @@ plugins:
             Run Manager: Run-Manager
             Results: Ergebnisse
             Reports: Berichte
-            Tags: Tags
             Overview: Übersicht
             System settings: Systemeinstellungen
             RES templates: RES-Vorlagen
@@ -306,7 +303,6 @@ plugins:
             Run Manager: Gestor de ejecución
             Results: Resultados
             Reports: Informes
-            Tags: Etiquetas
             Overview: Resumen
             System settings: Configuración del sistema
             RES templates: Plantillas RES
@@ -370,7 +366,6 @@ plugins:
             Run Manager: 运行管理器
             Results: 结果
             Reports: 报告
-            Tags: 标签
             Overview: 概览
             System settings: 系统设置
             RES templates: RES 模板
@@ -451,8 +446,8 @@ nav:
       - Run Manager: run-manager.md
       - Results: results.md
       - Reports: reports.md
-  - Tags:
-      - Overview: tags/index.md
+  - VedaTL:
+      - The tag language: tags/index.md
       - Files and layers: tags/files-and-layers.md
       - How a table is read: tags/reading-tables.md
       - Values, wildcards and filters: tags/values-and-filters.md
