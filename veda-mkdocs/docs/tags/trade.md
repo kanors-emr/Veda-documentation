@@ -1,84 +1,91 @@
 # Trade
 
-Tags for inter-regional trade — the TradeLinks family for declaring trade links, `~TFM_AVA` / `~TFM_AVA-C` for technology and commodity availability across regions, `~ReplicateInRegions` for cloning content across regions, and `~FI_Process_Trades` for per-trade-process metadata.
+Inter-regional trade is declared in the **trade-links file**,
+`SuppXLS\Trades\ScenTrade__Trade_Links.xlsx` (two underscores). Its tags
+declare which regions trade which commodities, and the trade processes
+that carry the flows. Data for those processes (costs, bounds,
+efficiencies) then goes in **trade workbooks**, `ScenTrade_<name>.xlsx`,
+with the ordinary [insert and update tags](data-tags.md).
 
-## Trade Links
+## ~TradeLinks
 
-Veda models inter-regional trade through dedicated TradeLinks files.
-The following tags work together to describe trade between regions.
+The matrix form. The first column's header is the traded commodity, and
+its cells list exporting regions; the other column headers are importing
+regions. A cell holding `1` (or another non-zero whole number) creates a
+link with a generated process name, `T<B|U>_<commodity>_<from>_<to>_01`;
+`0` or empty creates none; a cell holding text creates a link and uses
+the text as the trade process name. Links to regions that are not in the
+model are dropped.
 
-### ~Tradelinks
-
-The primary trade-links input, given as a **region-by-region matrix**.
-Rows and columns are regions; cell entries identify which commodities
-are traded between the pair. Concise when many region pairs trade the
-same commodities; switch to `~Tradelinks_DINS` when each link needs
-its own row-level parameters.
-
-### ~Tradelinks_DINS
-
-The fully-enumerated (Direct Insert) form of trade-link declarations.
-Each row identifies a single trade link explicitly — origin region,
-destination region, commodity (and optionally process) — and carries
-the parameter values directly.
-
-### ~Tradelinks_Desc
-
-Adds short and long descriptions to the trade links defined via
-`~Tradelinks_DINS` (per `scentype_taglist`: "description of trade links
-that are defined in DINS"). Pure metadata.
-
-
-## Technology and commodity availability
-
-### ~TFM_AVA
-
-Indicates **availability of technologies across regions**. The
-columns are one process filter column (typically `process` or
-`PSET_PN`), the `AllRegions` default-flag column, then **one column
-per individual region**. Cells carry `0` (unavailable) or `1`
-(available).
-
-Real example from `SubRES_H2-Production_Trans.xlsx :: AVA`:
-
-| **~TFM_AVA** | **PSET_PN** | **AllRegions** | **GBL** |
+| ~TradeLinks | | | |
 | --- | --- | --- | --- |
-| | `*` | 1 | 0 |
+| **ELC** | **REG1** | **REG2** | **REG3** |
+| REG1 | | 1 | |
+| REG2 | 1 | | 1 |
+| REG3 | | 1 | |
 
-This row says: every process matching `*` (i.e. all H2-production
-processes in this SubRES) is available in `AllRegions = 1` (default
-yes), except `GBL = 0` (excluded from the global region). Add more
-columns for other regions where the default needs to be overridden.
+**The sheet name sets the direction**: on a sheet whose name starts with
+`B`, links are bilateral (two-way); on any other sheet they are
+unidirectional (exporter → importer). Models usually keep two sheets,
+`Bi` and `Uni`.
 
-### ~TFM_AVA-C
+Writing `distr` in the tag text marks the links as distribution links.
 
-The commodity-side analogue of `~TFM_AVA`. Uses commodity filter
-columns (`cset_set`, `cset_cn`, `cset_cd`) plus the same `allregions`
-+ per-region column layout to indicate availability of commodities.
+!!! tip "Marketplace regions"
 
-### ~ReplicateInRegions
+    A column headed by a market region (for example `GBL`, which must be a
+    region of the model), with the same trade process name in the cells of
+    every participating region, creates one process linking the market
+    with each of them. TIMES then treats `GBL` as a marketplace.
 
-Enumerates per-region replications of processes — useful when a SubRES
-template introduces a generic process that needs to be cloned with
-region-specific identifiers (e.g. ISO codes) and metadata.
+## ~TradeLinks_DINS
 
-Real example from `SubRes_B-NewTechs_Trans.xlsx :: TechSelection`:
+The row form: one link per row, with explicit commodities on each side.
 
-| **~ReplicateInRegions** | **Region** | **incode** | **indesc** | **Process** |
-| --- | --- | --- | --- | --- |
-| | Africa_North | DZA | Algeria - [Export] | LNG_New-Export |
+| Column | Meaning |
+| --- | --- |
+| `Reg1`, `Reg2` | The two regions (may be the same, for links inside a region) |
+| `Comm` | The traded commodity (a label for the link) |
+| `Comm1`, `Comm2` | The commodity in `Reg1` and in `Reg2` |
+| `Tech` | The trade process |
+| `TradeLink` | `B` (bilateral) or `U` (unidirectional) |
 
-The columns: `Region` (model region), `incode` (an ISO/country code or
-similar identifier to plug into the cloned process name), `indesc`
-(description), `Process` (the template process to clone).
+Use it when the commodity has a different name in each region, or for
+networks (grid lines, pipelines) where every link is its own process.
 
+## ~TradeLinks_c1c2
 
-## Trade-process linkage
+A matrix like `~TradeLinks` for links where the commodity differs between
+the exporting and the importing region. As with `~TradeLinks`, the sheet
+name sets the direction.
 
-### ~FI_Process_Trades
+## ~TradeLinks_Desc
 
-Augments the `TradeLinks` files with per-trade-process data. Where
-`~Tradelinks` and `~Tradelinks_DINS` declare which commodities flow
-between which regions, `~FI_Process_Trades` lets process-specific
-data (such as the trade process's own attributes) be attached to
-those links.
+Descriptions of the trade processes declared by `~TradeLinks_DINS`:
+process name and description.
+
+## ~FI_Process_Trades
+
+Declares the characteristics of trade processes (as `~FI_Process` does
+for other processes): units, timeslice level, description.
+
+## ~commodity_geo
+
+Geographic coordinates of commodity nodes, for drawing grids on a map:
+columns `region`, `commodity`, `lat`, `lng`, `shape`. It has no effect on
+the model data.
+
+## Trade workbooks
+
+`ScenTrade_<name>` files hold data for the trade processes, using
+`~TFM_INS`, `~TFM_DINS`, `~TFM_UPD` and so on. A common pattern is a
+`~TFM_DINS-AT` table with `Region`, `Process`, `Year` and one column per
+attribute (`ACT_COST`, `INVCOST`, `EFF`, `LIFE`, `START`, …).
+
+!!! note
+
+    Process filters in trade workbooks currently see every process in the
+    model, not only trade processes.
+
+The legacy trade tags `~Trade_Param` and `~TradeLinks_GenLinks` no
+longer have any effect ([not recommended](not-recommended.md)).

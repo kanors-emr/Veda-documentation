@@ -453,23 +453,28 @@ nav:
       - Reports: reports.md
   - Tags:
       - Overview: tags/index.md
+      - Files and layers: tags/files-and-layers.md
+      - How a table is read: tags/reading-tables.md
+      - Values, wildcards and filters: tags/values-and-filters.md
+      - Processing order: tags/processing-order.md
       - System settings: tags/system-settings.md
-      - RES templates: tags/res-templates.md
-      - Data (INS / DINS / UPD): tags/data-tags.md
-      - Sets and groups: tags/sets-and-groups.md
+      - Declarations (RES templates): tags/res-templates.md
+      - Insert and update: tags/data-tags.md
+      - Migrate: tags/migrate.md
+      - Topology: tags/topology.md
+      - Fill: tags/fill.md
+      - SubRES availability: tags/availability.md
       - Trade: tags/trade.md
       - User constraints: tags/user-constraints.md
+      - Sets and groups: tags/sets-and-groups.md
       - Parametric scenarios: tags/parametric.md
       - Metadata: tags/metadata.md
-      - Reference: tags/reference.md
+      - Not recommended: tags/not-recommended.md
+      - Tag catalog: tags/reference.md
   - Reference:
       - Notes:
           - Overview: notes.md
           - UPD tables: upd-tables.md
-          - Fill tables: filltables.md
-          - DINS tables: dins-tables.md
-          - Tags processing order: tags-proc-order.md
-          - Conventions: veda-conventions.md
       - Version history: version-history.md
   - Licensing:
       - License operations: license-operations.md

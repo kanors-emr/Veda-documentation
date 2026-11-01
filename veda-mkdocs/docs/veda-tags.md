@@ -5,7 +5,7 @@ hide:
   - toc
 ---
 
-<meta http-equiv="refresh" content="0; url=tags/">
+<meta http-equiv="refresh" content="0; url=../tags/">
 
 # Veda Tags has moved
 

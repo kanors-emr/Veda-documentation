@@ -2,8 +2,6 @@
 
 Reference notes on Veda data structures and conventions.
 
-- [UPD tables](upd-tables.md)
-- [Fill tables](filltables.md)
-- [DINS tables](dins-tables.md)
-- [Tags processing order](tags-proc-order.md)
-- [Veda conventions](veda-conventions.md)
+- [UPD tables](upd-tables.md): making slow update tables fast
+- The notes on fill tables, DINS tables, processing order and conventions
+  are now part of the [Tags](tags/index.md) section.
