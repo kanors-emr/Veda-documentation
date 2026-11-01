@@ -23,25 +23,20 @@ span their whole region; *single value* tags read the cell below
 | --- | --- | --- | --- | --- |
 | [`~ActivePDef`](system-settings.md#activepdef) | Period definition active by default | SysSettings | single value |  |
 | [`~BookRegions_Map`](system-settings.md#bookregions_map) | Regions and their books | SysSettings | corner |  |
-| [`~COMAGG`](not-recommended.md) |  | BY, SubRES | corner | not recommended |
-| [`~COMAGG_R1C2`](not-recommended.md) |  | BY, SubRES | corner | not recommended |
-| [`~COMAGG_R2C1`](not-recommended.md) |  | BY, SubRES | corner | **no effect** |
-| [`~COMEMI`](not-recommended.md) |  | BY, SubRES | corner | not recommended |
+| [`~COMAGG`](not-recommended.md) | Legacy, still read | BY, SubRES | corner | not recommended |
+| [`~COMAGG_R1C2`](not-recommended.md) | Legacy, still read | BY, SubRES | corner | not recommended |
+| [`~COMEMI`](not-recommended.md) | Legacy, still read | BY, SubRES | corner | not recommended |
 | [`~commodity_geo`](trade.md#commodity_geo) | Map coordinates of commodity nodes | TradeLinks | corner |  |
 | [`~Currencies`](system-settings.md#currencies) | Currencies; the first is the default | SysSettings | corner |  |
 | [`~DefaultYear`](system-settings.md#defaultyear) | Year given to values without a year | SysSettings | single value |  |
 | [`~DefUnits`](system-settings.md#defunits) | Default units by sector | SysSettings | corner |  |
-| `~DRVR_Allocation` |  | DemAlloc | corner | demand tool |
-| [`~DRVR_Scenario`](not-recommended.md) |  | DemScen | corner | **no effect** |
-| `~DRVR_Table` |  | DemScen | floating | demand tool |
+| `~DRVR_Allocation` | Demand projection tool | DemAlloc | corner | demand tool |
+| `~DRVR_Table` | Demand projection tool | DemScen | floating | demand tool |
 | [`~EndYear`](system-settings.md#endyear) | Last year of the horizon | SysSettings | single value |  |
 | [`~FI_Comm`](res-templates.md#commodity-definition-table-fi_comm) | Declare commodities | BY, SubRES, SysSettings | floating |  |
-| [`~FI_GenComm`](not-recommended.md) |  | BY, SubRES | corner | **no effect** |
-| [`~FI_GenProcess`](not-recommended.md) |  | BY, SubRES | corner | **no effect** |
 | [`~FI_Process`](res-templates.md#process-definition-table-fi_process) | Declare processes | BY, SubRES | floating |  |
 | [`~FI_Process_Trades`](trade.md#fi_process_trades) | Trade process characteristics | TradeLinks | floating |  |
 | [`~FI_T`](res-templates.md#flexible-import-table-fi_t) | Topology and base data | BY, SubRES | floating |  |
-| [`~ImpSettings`](not-recommended.md) |  | SysSettings | corner | **no effect** |
 | [`~INPUTCELL`](parametric.md#inputcell) | Run index of a parametric file | ParScen | corner |  |
 | [`~MD-C_C`](metadata.md) | Metadata | BY, SubRES, SysSettings | floating |  |
 | [`~MD-C_R`](metadata.md) | Metadata | BY, SubRES, SysSettings | floating |  |
@@ -62,27 +57,22 @@ span their whole region; *single value* tags read the cell below
 | [`~NOpCol`](system-settings.md#nopcol) | Column headers ignored model-wide | SysSettings | floating |  |
 | `~OsemosysCsv` | Marker for OSeMOSYS CSV imports | BY_OSe | corner |  |
 | [`~ParentRegions_Map`](system-settings.md#parentregions_map) | Parent regions for reporting | SysSettings | floating |  |
-| [`~PRCCOMEMI`](not-recommended.md) |  | BY, SubRES | floating | not recommended |
+| [`~PRCCOMEMI`](not-recommended.md) | Legacy, still read | BY, SubRES | floating | not recommended |
 | [`~RegionGroup_Map`](system-settings.md#regiongroup_map) | Region groups | SysSettings | floating |  |
 | [`~ReplicateInRegions`](availability.md#replicateinregions) | Clone a process per region | SR_Trans | corner |  |
-| [`~RFInput`](not-recommended.md) |  | SysSettings | corner | **no effect** |
 | `~ScenMap` |  | ReportDefs, ParScen | floating |  |
-| `~Series` |  | DemAlloc | corner | demand tool |
+| `~Series` | Demand projection tool | DemAlloc | corner | demand tool |
 | [`~StartYear`](system-settings.md#startyear) | First year of the model | SysSettings | single value |  |
-| [`~TFM_ADRCREATE`](not-recommended.md) |  | BY_Trans, RegScen, TradeScen, SubParScen, NSV | corner | **no effect** |
-| [`~TFM_AttribSet`](not-recommended.md) |  | SysSettings | corner | **no effect** |
 | [`~TFM_AVA`](availability.md#tfm_ava) | Regions where repository processes exist | SR_Trans | corner |  |
 | [`~TFM_AVA-C`](availability.md#tfm_ava-c) | Regions where repository commodities exist | SR_Trans | floating |  |
-| [`~TFM_CINS`](not-recommended.md) |  | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | corner | **no effect** |
 | [`~TFM_COMGRP`](sets-and-groups.md#tfm_comgrp) | Commodity groups | BY, SubRES, SysSettings | corner |  |
 | [`~TFM_CSets`](sets-and-groups.md#process-and-commodity-sets-tfm_psets-tfm_csets) | User commodity sets | SetRules | corner |  |
 | [`~TFM_DINS`](data-tags.md#tfm_dins) | Insert, fully enumerated | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating |  |
 | [`~TFM_DINS-AT`](data-tags.md#layouts-at-ts-tsl) | DINS, attributes across | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating |  |
 | [`~TFM_DINS-TS`](data-tags.md#layouts-at-ts-tsl) | DINS, years across | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating |  |
 | [`~TFM_DINS-TSL`](data-tags.md#layouts-at-ts-tsl) | DINS, timeslices across | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating |  |
-| [`~TFM_FILL`](not-recommended.md) |  | BY_Trans, SR_Trans, RegScen, TradeScen, ParScen, SysSettings, NSV | corner | not recommended |
+| [`~TFM_FILL`](not-recommended.md) | Legacy, still read | BY_Trans, SR_Trans, RegScen, TradeScen, ParScen, SysSettings, NSV | corner | not recommended |
 | [`~TFM_FILL-R`](fill.md) | Write existing values to a sheet | BY_Trans, SR_Trans, RegScen, TradeScen, ParScen, SysSettings, NSV | corner |  |
-| [`~TFM_GAMS`](not-recommended.md) |  | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | corner | **no effect** |
 | [`~TFM_INS`](data-tags.md#tfm_ins) | Insert by rule | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating |  |
 | [`~TFM_INS-AT`](data-tags.md#layouts-at-ts-tsl) | INS, attributes across | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating |  |
 | [`~TFM_INS-TS`](data-tags.md#layouts-at-ts-tsl) | INS, years across | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating |  |
@@ -91,33 +81,29 @@ span their whole region; *single value* tags read the cell below
 | [`~TFM_MIG`](migrate.md) | Copy existing values to new indexes | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | corner |  |
 | [`~TFM_MIG-AT`](migrate.md) | MIG, attributes across | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating |  |
 | [`~TFM_MIG-TS`](migrate.md) | MIG, years across | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating |  |
-| [`~TFM_PCINS`](not-recommended.md) |  | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | corner | **no effect** |
-| [`~TFM_PCopy`](not-recommended.md) |  | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | corner | **no effect** |
-| [`~TFM_PINS`](not-recommended.md) |  | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | corner | **no effect** |
 | [`~TFM_PSets`](sets-and-groups.md#process-and-commodity-sets-tfm_psets-tfm_csets) | User process sets | SetRules | corner |  |
 | [`~TFM_TOPDINS`](topology.md#tfm_topdins) | Add topology, enumerated | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | corner |  |
 | [`~TFM_TOPINS`](topology.md#tfm_topins) | Add topology by rule | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | corner |  |
 | [`~TFM_TOPINS-A`](topology.md#tfm_topins-a) | Add topology, compact form | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | corner |  |
 | [`~TFM_UPD`](data-tags.md#tfm_upd) | Update existing values | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating |  |
 | [`~TFM_UPD-AT`](data-tags.md#layouts-at-ts-tsl) | UPD, attributes across | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating |  |
-| [`~TFM_UPD-N`](not-recommended.md) |  | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating | read as `~TFM_UPD` |
-| [`~TFM_UPD-NS`](not-recommended.md) |  | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating | read as `~TFM_UPD` |
-| [`~TFM_UPD-T`](not-recommended.md) |  | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating | read as `~TFM_UPD` |
+| [`~TFM_UPD-N`](not-recommended.md) | Same as `~TFM_UPD` | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating | read as `~TFM_UPD` |
+| [`~TFM_UPD-NS`](not-recommended.md) | Same as `~TFM_UPD` | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating | read as `~TFM_UPD` |
+| [`~TFM_UPD-T`](not-recommended.md) | Same as `~TFM_UPD` | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating | read as `~TFM_UPD` |
 | [`~TFM_UPD-TS`](data-tags.md#layouts-at-ts-tsl) | UPD, years across | BY_Trans, SR_Trans, SysSettings, RegScen, TradeScen, SubParScen, NSV | floating |  |
 | [`~TimePeriods`](system-settings.md#timeperiods) | Period lengths, by named definition | SysSettings | corner |  |
 | [`~TimeSlices`](system-settings.md#timeslices) | Timeslice tree | SysSettings, RegScen, SubParScen | corner |  |
-| [`~Trade_Param`](not-recommended.md) |  | TradeScen | corner | **no effect** |
 | [`~TradeLinks`](trade.md#tradelinks) | Trade links, matrix form | TradeLinks | corner |  |
 | [`~TradeLinks_c1c2`](trade.md#tradelinks_c1c2) | Trade links, different commodity per side | TradeLinks | floating |  |
 | [`~TradeLinks_Desc`](trade.md#tradelinks_desc) | Trade process descriptions | TradeLinks | corner |  |
 | [`~TradeLinks_DINS`](trade.md#tradelinks_dins) | Trade links, row form | TradeLinks | corner |  |
-| [`~TradeLinks_GenLinks`](not-recommended.md) |  | TradeLinks | corner | **no effect** |
 | [`~UC_GENT`](user-constraints.md#uc_gent) | Read with ~UC_T | SysSettings, RegScen, SubParScen, NSV | floating |  |
-| [`~UC_S`](not-recommended.md) |  | SysSettings, RegScen, SubParScen, NSV | corner | **no effect** |
 | [`~UC_SETS`](user-constraints.md#uc_sets) | Domain of user constraints | SysSettings, RegScen, SubParScen, NSV | corner |  |
 | [`~UC_T`](user-constraints.md#uc_t) | User constraints | SysSettings, RegScen, SubParScen, NSV | floating |  |
 | [`~UnitConversion`](system-settings.md#unitconversion) | Unit conversion factors for results | SysSettings | floating |  |
 | [`~VbeViews`](sets-and-groups.md) | Saved browse views | SetRules | floating |  |
+
+**Retired tags** are accepted but have no effect, and are not listed above: `~COMAGG_R2C1`, `~DRVR_Scenario`, `~FI_GenComm`, `~FI_GenProcess`, `~ImpSettings`, `~RFInput`, `~TFM_ADRCREATE`, `~TFM_AttribSet`, `~TFM_CINS`, `~TFM_GAMS`, `~TFM_PCINS`, `~TFM_PCopy`, `~TFM_PINS`, `~Trade_Param`, `~TradeLinks_GenLinks`, `~UC_S`. See [Not recommended](not-recommended.md#retired-tags).
 
 Report-definition tags (allowed in ReportDefs files only) are described in
 [Reports](../reports.md): `~ATS`, `~ATS_final`, `~CName_Map`, `~Commodity_Map`, `~Cset_Map`, `~Downscale_Commodity`, `~Downscale_Data`, `~Downscale_Process`, `~Geolocation`, `~ISO_Map`, `~Language`, `~Op_Varbl`, `~PName_Map`, `~Process_Map`, `~Pset_Map`, `~Region_Map`, `~ScenG`, `~Timeslice_Map`, `~TS_Agg`, `~TS_Defs`, `~TS_Ratios`, `~UnitConv`, `~Varbl_Map`.
@@ -130,25 +116,19 @@ marked `* or \I:` ([comment rows](reading-tables.md#comment-rows)). **Carries do
 empty cell takes the value above. **List**: the cell may hold a comma list. Variant
 layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag.
 
-### ~comagg
+### ~COMAGG
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
 | `commname` |  | `*` or `\I:` |  |  |
 
-### ~comagg_r1c2
+### ~COMAGG_R1C2
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
 | `commname` |  | `*` or `\I:` |  |  |
 
-### ~comagg_r2c1
-
-| Column | Aliases | Comment | Carries down | List |
-| --- | --- | --- | --- | --- |
-| `commname` |  | `*` or `\I:` |  |  |
-
-### ~comemi
+### ~COMEMI
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -164,7 +144,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `region` |  | `*` or `\I:` |  |  |
 | `shape` |  | `*` or `\I:` |  |  |
 
-### ~fi_comm
+### ~FI_Comm
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -178,7 +158,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `region` |  | `*` or `\I:` |  |  |
 | `unit` |  | `*` or `\I:` |  |  |
 
-### ~fi_process
+### ~FI_Process
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -192,7 +172,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `tslvl` | `timeslicelevel` | `*` or `\I:` |  |  |
 | `vintage` |  |  |  |  |
 
-### ~fi_t
+### ~FI_T
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -212,40 +192,40 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `timeslice` | `timeslices`, `time_slice`, `time_slices`, `ts` | `*` or `\I:` |  | yes |
 | `year` | `yr` | `*` or `\I:` |  | yes |
 
-### ~md_dimensions
+### ~MD_Dimensions
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
 | `name` | `dimension_name`, `dimension` | `*` or `\I:` |  |  |
 
-### ~nopcol
+### ~NOpCol
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
 | `name` |  | `*` or `\I:` |  |  |
 
-### ~parentregions_map
+### ~ParentRegions_Map
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
 | `parent_region` | `pregion`, `p_region` | `*` or `\I:` |  |  |
 | `sub_region` | `region` | `*` or `\I:` |  | yes |
 
-### ~prccomemi
+### ~PRCCOMEMI
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
 | `commname` |  | `*` or `\I:` |  |  |
 | `techname` |  | `*` or `\I:` |  |  |
 
-### ~regiongroup_map
+### ~RegionGroup_Map
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
 | `region` |  | `*` or `\I:` |  |  |
 | `regiongroup` | `region_group`, `reg_group` | `*` or `\I:` |  |  |
 
-### ~scenmap
+### ~ScenMap
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -256,7 +236,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `spr_period_report` | `spr_period_rep` | `*` or `\I:` |  |  |
 | `spr_period_run` |  | `*` or `\I:` |  |  |
 
-### ~tfm_ava
+### ~TFM_AVA
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -266,7 +246,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `pset_pn` | `process`, `techname`, `tech_name`, `pset:pn`, `pset: pn` | `\I:` |  |  |
 | `pset_set` | `pset:set`, `pset: set` | `\I:` |  |  |
 
-### ~tfm_ava-c
+### ~TFM_AVA-C
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -275,7 +255,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `cset_cn` | `commodity`, `commname`, `comm_name`, `cset:cn`, `cset: cn` | `\I:` |  |  |
 | `cset_set` | `cset:set`, `cset: set` | `\I:` |  |  |
 
-### ~tfm_comgrp
+### ~TFM_COMGRP
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -286,7 +266,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `name` |  | `*` or `\I:` |  |  |
 | `value` | `valfield`, `val_field`, `allregions` | `\I:` |  |  |
 
-### ~tfm_dins
+### ~TFM_DINS
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -306,7 +286,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `value` | `valfield`, `val_field`, `allregions` | `\I:` |  |  |
 | `year` | `yr` | `*` or `\I:` |  |  |
 
-### ~tfm_fill
+### ~TFM_FILL
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -345,7 +325,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `value` | `valfield`, `val_field`, `allregions` | `\I:` |  |  |
 | `year` | `yr` | `*` or `\I:` |  |  |
 
-### ~tfm_ins
+### ~TFM_INS
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -402,7 +382,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `value` | `valfield`, `val_field`, `allregions` | `\I:` |  |  |
 | `year` | `yr` | `*` or `\I:` |  | yes |
 
-### ~tfm_mig
+### ~TFM_MIG
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -451,7 +431,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `year` | `yr` | `*` or `\I:` |  |  |
 | `year2` | `yr2` | `*` or `\I:` |  |  |
 
-### ~tfm_topdins
+### ~TFM_TOPDINS
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -460,7 +440,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `region` |  | `*` or `\I:` |  |  |
 | `value` | `valfield`, `val_field`, `allregions`, `io` | `\I:` |  |  |
 
-### ~tfm_topins
+### ~TFM_TOPINS
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -483,7 +463,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `t_pos_andor_forsets` | `p_pos_andor_forsets` |  |  |  |
 | `value` | `valfield`, `val_field`, `allregions`, `io` | `\I:` |  |  |
 
-### ~tfm_upd
+### ~TFM_UPD
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -540,7 +520,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `value` | `valfield`, `val_field`, `allregions` | `\I:` |  |  |
 | `year` | `yr` | `*` or `\I:` |  | yes |
 
-### ~uc_t
+### ~UC_T
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -581,7 +561,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `value` | `valfield`, `val_field`, `allregions` | `\I:` |  |  |
 | `year` | `yr` | `*` or `\I:` |  |  |
 
-### ~unitconversion
+### ~UnitConversion
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |
@@ -589,7 +569,7 @@ layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag
 | `multiplier` |  |  |  |  |
 | `to_unit` |  | `*` or `\I:` |  |  |
 
-### ~vbeviews
+### ~VbeViews
 
 | Column | Aliases | Comment | Carries down | List |
 | --- | --- | --- | --- | --- |

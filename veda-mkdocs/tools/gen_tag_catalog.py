@@ -153,7 +153,7 @@ def link(tag):
         page, anchor, _ = PURPOSE[t]
         if page:
             return page + ("#" + anchor if anchor else "")
-    if t in NO_EFFECT or t in READ_AS_UPD or t in NOT_RECOMMENDED_EFFECT:
+    if t in READ_AS_UPD or t in NOT_RECOMMENDED_EFFECT:
         return "not-recommended.md"
     return ""
 
@@ -199,14 +199,23 @@ def main(repo, out):
           "| --- | --- | --- | --- | --- |"]
     for r in sorted(model_tags, key=lambda x: x["tag"].lower()):
         t = r["tag"].lower()
-        purpose = PURPOSE.get(t, ("", "", ""))[2]
+        if t in NO_EFFECT:
+            continue
+        purpose = PURPOSE.get(t, ("", "", ""))[2] or (
+            "Same as `~TFM_UPD`" if t in READ_AS_UPD else
+            "Accepted, ignored" if t in NO_EFFECT else
+            "Legacy, still read" if t in NOT_RECOMMENDED_EFFECT else
+            "Demand projection tool" if t in DEMAND else "")
         lk = link(r["tag"])
         name = f"[`~{r['tag']}`]({lk})" if lk else f"`~{r['tag']}`"
         kind = "single value" if r["single"] else ("corner" if r["corner"] else "floating")
         if t.startswith("md-"):
             purpose, name = "Metadata", f"[`~{r['tag']}`](metadata.md)"
         L.append(f"| {name} | {purpose} | {', '.join(r['types'])} | {kind} | {status_of(r['tag'], r['offer'])} |")
-    L += ["", "Report-definition tags (allowed in ReportDefs files only) are described in",
+    retired = sorted((r["tag"] for r in model_tags if r["tag"].lower() in NO_EFFECT), key=str.lower)
+    L += ["", "**Retired tags** are accepted but have no effect, and are not listed above: " +
+          ", ".join(f"`~{t}`" for t in retired) + ". See [Not recommended](not-recommended.md#retired-tags).",
+          "", "Report-definition tags (allowed in ReportDefs files only) are described in",
           "[Reports](../reports.md): " + ", ".join(f"`~{r['tag']}`" for r in sorted(report_tags, key=lambda x: x['tag'].lower())) + ".", ""]
 
     L += ["## Columns of each tag", "",
@@ -217,10 +226,11 @@ def main(repo, out):
           "layouts (`-AT`, `-TS`, `-TSL`, `-A`, `-TXT`) use the columns of their parent tag.", ""]
     skip = {"fi_t_test", "tfm_ava_new", "scenmap_case_priority"}
     report_lc = {r["tag"].lower() for r in report_tags}
+    proper = {r["tag"].lower(): r["tag"] for r in model_tags + report_tags}
     for t in sorted(by_tag):
-        if t in skip or t in report_lc:
+        if t in skip or t in report_lc or t in NO_EFFECT:
             continue
-        L += [f"### ~{t}", ""]
+        L += [f"### ~{proper.get(t, t)}", ""]
         L += ["| Column | Aliases | Comment | Carries down | List |", "| --- | --- | --- | --- | --- |"]
         for c in sorted(by_tag[t], key=lambda c: c["field"]):
             others = [a for a in c["aliases"] if a.lower() != (c["field"] or "").lower()]

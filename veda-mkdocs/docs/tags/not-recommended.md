@@ -27,28 +27,23 @@ them means exactly [`~TFM_UPD`](data-tags.md#tfm_upd).
 | `~TFM_UPD-NS` | `~TFM_UPD` |
 | `~TFM_UPD-T` | `~TFM_UPD` (it is **not** a time-series layout; that is [`~TFM_UPD-TS`](data-tags.md#layouts-at-ts-tsl)) |
 
-## Tags with no effect
+## Retired tags
 
-These tags are accepted without error but produce nothing. Most belong
-to VEDA_FE features that Veda2.0 did not carry over. Remove them from
-models, or rewrite them with the tag in the last column.
+These tags are no longer part of the language: Veda2.0 accepts them
+without error but produces nothing from them. Most belong to VEDA_FE
+features that were not carried over. If you find one in a model, the
+table it heads is not used; remove it, or rewrite it as shown. The names
+stay reserved, so that no tool gives them a new meaning.
 
-| Tag | Allowed in | Instead |
-| --- | --- | --- |
-| `~FI_GenProcess` | BY, SubRES | `~FI_Process` |
-| `~FI_GenComm` | BY, SubRES | `~FI_Comm` |
-| `~TFM_PINS`, `~TFM_CINS`, `~TFM_PCINS` | trans, scenario files | `~TFM_INS` |
-| `~TFM_PCopy` | trans, scenario files | — |
-| `~TFM_ADRCREATE` | BY_Trans, scenario files | — |
-| `~TFM_GAMS` | trans, scenario files, SysSettings | the `RFCmd` attributes ([Run Manager](../run-manager.md)) |
-| `~TFM_AttribSet` | SysSettings | — |
-| `~ImpSettings` | SysSettings | dummy imports are set in Veda's user settings |
-| `~RFInput` | SysSettings | the `RFCmd` / `RFSwitch` attributes |
-| `~Trade_Param` | trade files | `~TFM_INS` / `~TFM_DINS` in a [trade workbook](trade.md#trade-workbooks) |
-| `~TradeLinks_GenLinks` | trade-links file | `~TradeLinks` or `~TradeLinks_DINS` |
-| `~UC_S` | SysSettings, scenario files | [`~UC_T`](user-constraints.md) |
-| `~COMAGG_R2C1` | BY, SubRES | `~TFM_INS` with attribute `COM_AGG` |
-| `~DRVR_Scenario` | demand files | — |
+- `~FI_GenProcess`, `~FI_GenComm` — use [`~FI_Process`](res-templates.md#process-definition-table-fi_process) and [`~FI_Comm`](res-templates.md#commodity-definition-table-fi_comm).
+- `~TFM_PINS`, `~TFM_CINS`, `~TFM_PCINS` — use [`~TFM_INS`](data-tags.md#tfm_ins).
+- `~TFM_GAMS`, `~RFInput` — use the `RFCmd` / `RFSwitch` attributes ([below](#attributes-instead-of-tags)).
+- `~Trade_Param` — use `~TFM_INS` / `~TFM_DINS` in a [trade workbook](trade.md#trade-workbooks).
+- `~TradeLinks_GenLinks` — use [`~TradeLinks`](trade.md#tradelinks) or [`~TradeLinks_DINS`](trade.md#tradelinks_dins).
+- `~UC_S` — use [`~UC_T`](user-constraints.md).
+- `~COMAGG_R2C1` — use `~TFM_INS` with attribute `COM_AGG`.
+- `~ImpSettings` — dummy imports are switched on and off in Veda's user settings.
+- `~TFM_PCopy`, `~TFM_ADRCREATE`, `~TFM_AttribSet`, `~DRVR_Scenario` — no replacement.
 
 ## Attributes instead of tags
 
