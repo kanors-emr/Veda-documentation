@@ -3,8 +3,8 @@
 !!! warning "Proposed feature"
     Veda CLI is in development and is not part of a released version of
     Veda 2.0 yet. This page describes what we have built so far; commands
-    and options may change. Tell us what you need on the
-    [VedaSupport forum](https://forum.kanors-emr.org/forumdisplay.php?fid=22){ target="_blank" rel="noopener noreferrer" }.
+    and options may change. Tell us what you need in the
+    [Veda CLI forum thread](https://forum.kanors-emr.org/showthread.php?tid=1627){ target="_blank" rel="noopener noreferrer" }.
 
 ## Overview
 
