@@ -7,3 +7,4 @@ Solutions for common Veda 2.0 issues.
 - [Error saving GAMS Engine credentials](trouble-gams-credentials.md)
 - [Problem with Microsoft Excel](trouble-excel-problem.md)
 - [Uninstalling Postgres](trouble-uninstall-postgres.md)
+- [PostgreSQL - Specified Port Number is Not Available](trouble-postgres-port.md)

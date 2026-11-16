@@ -296,9 +296,22 @@
     initAll();
   }
 
+  function replayHeroIntro() {
+    var banners = document.querySelectorAll(".veda-hero-banner");
+    for (var i = 0; i < banners.length; i++) {
+      var banner = banners[i];
+      banner.classList.remove("veda-hero-banner--intro");
+      void banner.offsetWidth;
+      banner.classList.add("veda-hero-banner--intro");
+    }
+  }
+
   if (typeof document$ !== "undefined" && document$.subscribe) {
     document$.subscribe(function () {
       initAll();
+      if (document.querySelector(".veda-hero-banner")) {
+        replayHeroIntro();
+      }
     });
   }
 })();

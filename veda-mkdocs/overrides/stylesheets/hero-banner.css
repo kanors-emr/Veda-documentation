@@ -9,6 +9,9 @@
 
 .veda-hero-banner {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   min-height: 168px;
   margin: 0 0 1.5rem;
@@ -34,9 +37,11 @@
 
 .md-typeset h1.veda-hero-banner__title {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  width: 100%;
   margin: 0;
-  padding: 2.5rem 2rem;
+  padding: 0 2rem;
+  text-align: center;
   color: #ffffff;
   opacity: 1;
   font-size: 2em;
@@ -68,7 +73,7 @@
   }
 
   .md-typeset h1.veda-hero-banner__title {
-    padding: 2rem 1.5rem;
+    padding: 0 1.5rem;
     font-size: 1.75em;
   }
 }
@@ -76,5 +81,65 @@
 @media (prefers-reduced-motion: reduce) {
   .veda-hero-banner__canvas {
     opacity: 0.9;
+  }
+}
+
+/* One-time intro: artwork slides in, then a single shine sweeps across. */
+.veda-hero-banner--intro .veda-hero-banner__canvas {
+  animation: veda-hero-canvas-in 0.9s cubic-bezier(0.3, 0.7, 0.2, 1) both;
+}
+
+.veda-hero-banner--intro .veda-hero-banner__title {
+  animation: veda-hero-title-in 0.7s cubic-bezier(0.3, 0.7, 0.2, 1) 0.15s both;
+}
+
+.veda-hero-banner--intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.16) 50%, transparent 65%);
+  transform: translateX(-100%);
+  animation: veda-hero-sweep 1.4s ease-in-out 1.6s both;
+}
+
+@keyframes veda-hero-canvas-in {
+  from {
+    opacity: 0;
+    transform: translateX(-1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes veda-hero-title-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes veda-hero-sweep {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veda-hero-banner::after,
+  .veda-hero-banner__canvas,
+  .veda-hero-banner__title {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .veda-hero-banner::after {
+    display: none;
   }
 }
