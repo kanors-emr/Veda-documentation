@@ -9,15 +9,13 @@
 ## Overview
 
 Veda CLI (`veda.exe`) runs Veda 2.0 jobs from the command line, without
-opening the Veda window. Use it to automate repetitive work, run jobs
-overnight, or call Veda from your own scripts (batch files, PowerShell,
-Python, a scheduler).
+opening the Veda window.
 
 | Command | Does the same as | Changes |
 | --- | --- | --- |
 | `veda sync` | Sync in the Navigator | The model's data in the database |
 | `veda solve` | Solve in the Run Manager | DD and run files, GAMS runs, imported results |
-| `veda results` | A full refresh of the Results module | Deletes and rebuilds the model's results |
+| `veda results` | A results rebuild, as Veda Online does | Deletes and rebuilds the model's results |
 
 **Requirements**
 
@@ -119,8 +117,7 @@ veda solve --model DemoS_011 --case BASE --rebuild-results
 ## veda results
 
 Deletes a model's results and builds them again from all your imported
-cases. Use it after cases were solved outside Veda, or when the Results
-module looks out of date.
+cases.
 
 ```
 veda results --model <model folder name>
@@ -129,9 +126,6 @@ veda results --model <model folder name>
 | Option | Value | Meaning |
 | --- | --- | --- |
 | `--model` | folder name | Required. Model folder name of a registered model. |
-
-The rebuild also reads the model's set-rules and sys-settings files and
-prints their messages.
 
 !!! caution "Caution"
     - The model's results are deleted first. If the rebuild fails part
@@ -179,17 +173,3 @@ and the model or results may be left part way.
 - TIMES cases only.
 - Run types `local` and `dd_only` only.
 - One model per command.
-
-## Troubleshooting
-
-| Message | What to do |
-| --- | --- |
-| No activated Veda licence for user … | Open Veda on this computer as this user to activate the licence. |
-| User … is not registered on computer … | Open Veda once on this computer, then run again. |
-| Cannot connect to the Veda database on … | Check that the database server in your Veda settings is running. |
-| No model for folder … | Register it first: `veda sync --path <model folder>`. |
-| Close these files and run again | Close the listed workbooks in Excel. |
-| The Run Manager settings of this model are not saved yet | Open the Run Manager for this model in Veda once. |
-| GAMS was not found on the PATH | Install GAMS, or use `--run-type dd_only`. |
-| The model has no TIMES sets or base / SubRES data | Sync the model first. |
-| N case(s) failed | Read `<case>_run_log.txt` and `<case>.lst` in the case folder shown. |
