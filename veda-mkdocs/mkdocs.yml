@@ -445,6 +445,7 @@ nav:
       - Run Manager: run-manager.md
       - Results: results.md
       - Reports: reports.md
+      - Command line (proposed): cli.md
   - Tags:
       - Overview: tags/index.md
       - System settings: tags/system-settings.md
