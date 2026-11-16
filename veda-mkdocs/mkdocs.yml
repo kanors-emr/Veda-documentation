@@ -446,6 +446,7 @@ nav:
       - Run Manager: run-manager.md
       - Results: results.md
       - Reports: reports.md
+      - Command line (proposed): cli.md
   - VedaTL:
       - The tag language: tags/index.md
       - Files and layers: tags/files-and-layers.md
